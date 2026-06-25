@@ -41,8 +41,6 @@ def list_codex():
         sp = os.path.join(CODEX, slug)
         if not os.path.isdir(sp) or JUNK_RE.search(slug) or slug in EXCLUDE:
             continue
-        if slug.startswith(("anna-", "coff0xc-")):  # 用户要求移除这两个家族
-            continue
         if not is_skill_dir(sp):
             # some like orchestration have SKILL.md nested deeper
             has = any(f == "SKILL.md" for _,_,fs in os.walk(sp) for f in fs)

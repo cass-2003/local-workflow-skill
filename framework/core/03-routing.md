@@ -19,33 +19,33 @@
 
 ## 二级路由：执行能力 → 能力库（`skills/`）
 
-`implement` / `fix` 真正动手时，按问题域委托到能力库对应领域大类。能力库为**双层结构** `skills/<领域大类>/<来源>/<skill>/`（来源 = ours｜codex｜cskills，去重优先级 ours>codex>cskills），共 **398 个技能 / 19 大类**：
+`implement` / `fix` 真正动手时，按问题域委托到能力库对应领域大类。能力库为**双层结构** `skills/<领域大类>/<来源>/<skill>/`（来源 = ours｜codex｜cskills，去重优先级 ours>codex>cskills），共 **434 个技能 / 19 大类**：
 
 | 问题域 | 领域大类 | 数量 | 代表技能 |
 |---|---|---|---|
-| 通用工程模式 | `engineering-core/` | 23 | api-versioning、rate-limiting、idempotency、system-design |
-| 编程语言 | `programming-languages/` | 18 | python-dev、go-dev、rust-dev、java-jvm-development |
-| 后端与 API | `backend-api/` | 23 | fastapi-dev、nestjs-dev、microservices、graphql-dev |
-| 前端与 UI | `frontend-ui/` | 33 | nextjs-dev、vue-dev、figma-*、UIdesign、accessibility |
-| 移动与跨端 | `mobile-crossplatform/` | 15 | flutter-dart-dev、swift-ios-dev、harmonyos-arkts、各小程序 |
-| 数据与分析 | `data-analysis/` | 8 | data-engineering、sql-optimization、spreadsheet-analysis |
+| 通用工程模式 | `engineering-core/` | 26 | api-versioning、rate-limiting、idempotency、system-design |
+| 编程语言 | `programming-languages/` | 21 | python-dev、go-dev、rust-dev、java-jvm-development |
+| 后端与 API | `backend-api/` | 26 | fastapi-dev、nestjs-dev、microservices、graphql-dev |
+| 前端与 UI | `frontend-ui/` | 35 | nextjs-dev、vue-dev、figma-*、UIdesign、accessibility |
+| 移动与跨端 | `mobile-crossplatform/` | 18 | flutter-dart-dev、swift-ios-dev、harmonyos-arkts、各小程序 |
+| 数据与分析 | `data-analysis/` | 9 | data-engineering、sql-optimization、spreadsheet-analysis |
 | 云与基础设施 | `cloud-infra/` | 17 | docker-k8s、terraform、sre-practices、各 deploy |
-| AI 与自动化 | `ai-automation/` | 16 | rag-engineering、prompt-engineering、playwright、mlops |
-| 逆向工程 | `reverse-engineering/` | 62 | binrev、asmrev、javarev、fwrev、malrev（cskills 全家桶） |
-| 安全工程 | `security-engineering/` | 73 | full-pentest、ad-pentest、forensics、threat-hunting |
+| AI 与自动化 | `ai-automation/` | 17 | rag-engineering、prompt-engineering、playwright、mlops |
+| 逆向工程 | `reverse-engineering/` | 63 | binrev、asmrev、javarev、fwrev、malrev（cskills 全家桶） |
+| 安全工程 | `security-engineering/` | 85 | full-pentest、ad-pentest、forensics、threat-hunting |
 | 支付与电商 | `payments-commerce/` | 12 | stripe、paypal、alipay-pay、wechat-pay、wallet-* |
 | 地图与位置 | `maps-location/` | 11 | amap-gaode、google-maps-platform、mapbox-maplibre |
 | 硬件与系统 | `hardware-systems/` | 8 | embedded-firmware、fpga-asic-hdl、*-driver-development |
-| 质量与交付 | `quality-delivery/` | 21 | testing、code-audit、git-workflow、tools(verify-*) |
-| 内容创作与文档 | `content-authoring/` | 12 | doc-office、pdf、presentation-authoring、notion-* |
+| 质量与交付 | `quality-delivery/` | 24 | testing、code-audit、git-workflow、tools(verify-*) |
+| 内容创作与文档 | `content-authoring/` | 14 | doc-office、pdf、presentation-authoring、notion-* |
 | 研究与知识 | `research-knowledge/` | 10 | research、academic-writing、search-engine、web-fetch |
-| 产品与增长 | `product-growth/` | 7 | product-manager、ai-content-marketing、social-media-ops |
-| 工作流与编排 | `workflow-orchestration/` | 28 | project-workflow、orchestration(多 agent)、skill-creator |
+| 产品与增长 | `product-growth/` | 8 | product-manager、ai-content-marketing、social-media-ops |
+| 工作流与编排 | `workflow-orchestration/` | 29 | project-workflow、orchestration(多 agent)、coff0xc-skill-router |
 | 杂项 | `misc/` | 1 | hatch-pet |
 
 > 能力库随筛选会变化，权威以 `skills/` 实际目录与 `skills/README.md` 索引为准；合并对照表见 `skills/_merge-manifest.csv`。新增大类时回这里补一行。
 
-**大类内如何选具体技能**：上表只定到"大类"。进了大类后（如 `programming-languages/` 18 个），用各技能 `SKILL.md` 的 `description`（frontmatter）做终选——挑触发语义最贴合当前任务的那个。两条捷径：
+**大类内如何选具体技能**：上表只定到"大类"。进了大类后（如 `programming-languages/` 21 个），用各技能 `SKILL.md` 的 `description`（frontmatter）做终选——挑触发语义最贴合当前任务的那个。两条捷径：
 - **trivial 改动**（如加一个小函数、改一行）可**不委托**，直接内联完成（呼应 `01-workflow.md` 的轻量任务裁剪）。
 - 大类内多个近义技能都像候选时，优先 `ours` > `codex` > `cskills`（与去重优先级一致），或并列时取 `description` 命中更精确者。
 
