@@ -1,0 +1,12 @@
+interface:
+  display_name: "四态工作流"
+  short_description: "工具中立的多 Agent 项目工作流：四态系统恢复 + 路由 + 验证同步 + 保守沉淀"
+  default_prompt: >-
+    按四态工作流处理本任务：先扫描仓库、从四态系统(日志/需求/记忆/进度)恢复项目状态，
+    解析权威、路由到合适能力，执行后过验证与文档同步，再到交付闸门。
+    流程规范单一真相见 framework/core/*，本入口只负责触发与指路。
+
+# 说明：
+# - 本文件是「四态工作流框架」在 Codex 上的薄入口，不复制规范。
+# - 规范单一真相在 framework/core/ 中立核心；改流程改 core，不改本入口。
+# - 安装与映射见 framework/adapters/codex.md。

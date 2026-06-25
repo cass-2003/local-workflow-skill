@@ -71,7 +71,7 @@ scan → state restore → intent → authority → route → execute → valida
 - [x] 四态系统 drop-in 模板
 - [x] 能力库接入路由层（`skills/README.md`）
 - [x] Claude Code 适配器（已登记 project-workflow，references 收敛为指向 core 的薄指针）
-- [ ] Codex 适配器（`AGENTS.md` / `agents/*.yaml`）
+- [x] Codex 适配器（`framework/adapters/codex/` 模板：`AGENTS.md` + `agents/workflow.yaml`）
 - [ ] CC + Codex 端到端实测
 - [ ] 给能力库 skill 打"通用 / 半通用 / 项目定制"标记
 
