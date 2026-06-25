@@ -1,0 +1,7 @@
+interface:
+  display_name: "Dev"
+  short_description: "Autonomous full-stack build, verify, review, and audit workflow"
+  default_prompt: "Use fullstack-autonomous-dev to implement this end to end with minimal questions. Make low-risk decisions yourself; stop only for production, secrets, paid resources, deletion, remote publication, or other irreversible actions."
+  brand_color: "#2563EB"
+policy:
+  allow_implicit_invocation: true

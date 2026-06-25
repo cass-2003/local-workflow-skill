@@ -1,0 +1,23 @@
+{
+  "skill_name": "refactor",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "这个 TypeScript service 太大了，需要行为不变地重构。请先查官方最佳实践和成熟 GitHub/refactor 工具模式，再建立安全网，分片拆分并验证。",
+      "expected_output": "The assistant should refresh evidence, define behavior boundary, run baseline checks or add characterization tests, refactor in slices, and hand off to qa for final gates.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "帮我把重复的 React 表单逻辑提取成可复用 hook/component，不要改变现有 UI 行为。需要先调研最佳实践，再小步验证。",
+      "expected_output": "The assistant should use refactor, preserve UI behavior, avoid broad redesign, verify after each extraction, and keep compatibility where needed.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "这个仓库有很多旧 API 调用方式，想做 codemod 迁移。先研究官方迁移文档和 GitHub 项目做法，再设计安全的机械替换流程。",
+      "expected_output": "The assistant should use refactor, prefer AST/structural tools over raw regex, create sample diffs and tests, and avoid public behavior changes without confirmation.",
+      "files": []
+    }
+  ]
+}

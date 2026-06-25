@@ -1,0 +1,67 @@
+[
+  {
+    "query": "在这个 Next.js 仓库里端到端做一个客户管理模块，前端列表/详情/创建，后端 API 和数据库都接上，低风险决策你直接定。",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a full-stack admin dashboard for orders, revenue, and failed jobs. I want you to reduce questions and handle the implementation, tests, and review.",
+    "should_trigger": true
+  },
+  {
+    "query": "帮我从零做一个 RAG 知识库应用：上传文档、切分入库、聊天带引用，尽量少问我。",
+    "should_trigger": true
+  },
+  {
+    "query": "one-shot build this SaaS onboarding flow with frontend screens, backend endpoints, validation, and tests",
+    "should_trigger": true
+  },
+  {
+    "query": "这个仓库需要新增一个多模块 billing feature，你自己做需求假设、查文档、实现、审查和测试。",
+    "should_trigger": true
+  },
+  {
+    "query": "Please autonomously refactor the app settings area into a proper full-stack feature: UI, API, persistence, errors, and e2e smoke test.",
+    "should_trigger": true
+  },
+  {
+    "query": "做一个 agent 工具平台 MVP，前端配置工具，后端执行任务，要有基本评测和失败恢复。",
+    "should_trigger": true
+  },
+  {
+    "query": "I need an end-to-end CRUD workflow for projects and tasks in this repo. Pick sensible defaults and only stop for high-risk actions.",
+    "should_trigger": true
+  },
+  {
+    "query": "解释一下什么是全栈开发。",
+    "should_trigger": false
+  },
+  {
+    "query": "修复这个 TypeScript 文件里的一个拼写错误。",
+    "should_trigger": false
+  },
+  {
+    "query": "Review this PR diff and list bugs only, do not change files.",
+    "should_trigger": false
+  },
+  {
+    "query": "帮我写一个 Python 函数计算斐波那契数列。",
+    "should_trigger": false
+  },
+  {
+    "query": "查一下 Claude Code skills 的安装路径是什么，不要修改本地文件。",
+    "should_trigger": false
+  },
+  {
+    "query": "只把这个 README 翻译成中文。",
+    "should_trigger": false
+  },
+  {
+    "query": "删除数据库里所有测试用户然后部署到生产环境。",
+    "should_trigger": false
+  },
+  {
+    "query": "生成一个 landing page hero 文案，不需要代码。",
+    "should_trigger": false
+  }
+]
+

@@ -1,0 +1,23 @@
+{
+  "skill_name": "qa",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "这个 Next.js 改动准备合并了。请做最终质量门：先查当前官方最佳实践和成熟 GitHub 项目，再根据本仓库脚本跑 lint/typecheck/test/build/browser 检查，最后给 GO/NO-GO。",
+      "expected_output": "The assistant should refresh evidence, inspect local scripts/CI, run cheap gates before expensive gates, browser-check UI if applicable, and report GO/NO-GO with skipped checks and risks.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "帮我确认这个前端页面能不能发版：需要浏览器检查、移动端、console、主要交互、构建和测试。不要只跑 build。",
+      "expected_output": "The assistant should use qa, include browser verification, run local checks, and avoid claiming readiness if any gate is skipped without explanation.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "我们想给这个 repo 增加一个发布前 quality gate。请先调研官方最佳实践和大量 GitHub 仓库，再设计最小但可靠的检查矩阵。",
+      "expected_output": "The assistant should research current docs and GitHub patterns, map local tools, propose a gate matrix, and avoid adding paid/destructive/external actions without confirmation.",
+      "files": []
+    }
+  ]
+}

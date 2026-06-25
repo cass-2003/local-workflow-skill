@@ -1,0 +1,34 @@
+[
+  {
+    "query": "这个分支准备 merge，帮我做最终验证，跑该跑的测试、浏览器检查和发布前质量门，最后告诉我 GO 还是 NO-GO。",
+    "should_trigger": true
+  },
+  {
+    "query": "run all checks and tell me if this is safe to ship; include browser smoke and CI readiness",
+    "should_trigger": true
+  },
+  {
+    "query": "给这个项目设计 pre-release quality gate，先查官方最佳实践和 GitHub 上成熟项目怎么做。",
+    "should_trigger": true
+  },
+  {
+    "query": "页面已经写好了，不改设计，帮我看 desktop/mobile、console、build、test 是否都过。",
+    "should_trigger": true
+  },
+  {
+    "query": "新增一个用户管理模块，列表详情创建和 API 数据库都接上，尽量少问。",
+    "should_trigger": false
+  },
+  {
+    "query": "把这个页面视觉做得更现代，调整布局、色彩和响应式。",
+    "should_trigger": false
+  },
+  {
+    "query": "把这个巨大 service 拆小，行为不要变，先建立测试安全网。",
+    "should_trigger": false
+  },
+  {
+    "query": "解释一下什么是测试金字塔，不需要动本地文件。",
+    "should_trigger": false
+  }
+]

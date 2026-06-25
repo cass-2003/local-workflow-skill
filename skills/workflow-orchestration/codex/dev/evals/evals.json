@@ -1,0 +1,23 @@
+{
+  "skill_name": "dev",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "在现有 Next.js 项目里做一个客户管理模块：列表、搜索、详情、创建客户，后端 API 和本地数据库都要接上。低风险决策你直接定，只有涉及生产或删除数据再问我。",
+      "expected_output": "The assistant should classify risk, inspect the repo, create assumptions and acceptance criteria, implement by module, verify each module, run final build/tests, and report concise results.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "帮我从零构建一个 RAG 知识库应用，前端上传文档，后端切分入库，聊天时带引用。希望尽量少问我，按最佳实践推进。",
+      "expected_output": "The assistant should use the autonomous workflow, perform deeper AI/RAG research as needed, define eval and safety criteria, build frontend/backend/data pieces in module loops, and verify with tests or explain skipped checks.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "这个仓库需要新增一个管理员仪表盘页面，展示订单、收入和异常任务。你自己决定 UI 和接口细节，完成后审查有没有冗余和逻辑问题。",
+      "expected_output": "The assistant should avoid over-questioning, inspect existing UI/API patterns, implement the dashboard consistently, run focused checks, perform module review for logic and redundancy, then run broader validation.",
+      "files": []
+    }
+  ]
+}
