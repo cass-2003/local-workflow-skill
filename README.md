@@ -78,7 +78,7 @@ scan → state restore → intent → authority → route → execute → valida
 - [x] Codex 适配器（`framework/adapters/codex/` 模板：`AGENTS.md` + `agents/workflow.yaml`）
 - [x] 合并三源丰富能力库（ours + .codex + C_Skills → 434 技能 / 19 大类，双层去重）
 - [~] CC + Codex 端到端实测（CC 侧已 dogfood 跑通，见 `framework/validation/dogfood-stage5.md`；Codex 侧待测）
-- [ ] 给能力库 skill 打"通用 / 半通用 / 项目定制"标记，并清理近义变体
+- [~] 给能力库 skill 打"通用/半通用/项目定制"标记（已完成：323/85/26，见 `skills/TIERS.md`）；近义变体已列出，精简 policy 待定
 
 ## 与来源经验的关系
 

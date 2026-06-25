@@ -117,8 +117,8 @@
 - **ours**：local-workflow、project-workflow、source-command-audit、source-command-fix、source-command-implement、source-command-review、source-command-sprint、source-command-status、source-command-sync-docs
 - **codex**：attack-chain-orchestrator、audit、autoredteam-orchestrator、coff0xc-skill-router、deep-thinking、dev、fix、implement、mcp-builder、memory、migrate-to-codex、orchestration、review、skill-creator、spec、spec-check、spec-do、sprint、status、sync-docs
 
-## 待办（框架路线图阶段 6）
+## 分级与变体（框架路线图阶段 6）
 
-- 给技能打"通用 / 半通用 / 项目定制"标记。
-- 清理近义变体（如多个 Java / TypeScript 技能），择优保留。
-- `_merge-manifest.csv` 可作为后续筛选的工作底稿。
+- ✅ 已打"通用 / 半通用 / 项目定制"标记：**通用 323 · 半通用 85 · 项目定制 26**，详见 `TIERS.md`。
+- ⏳ 近义变体 18 簇（多为 `anna-*` 与非-anna 并存）已列出，**精简 policy 待定夺**，见 `TIERS.md`。
+- `_merge-manifest.csv`（已含 `tier` 列）是后续筛选的工作底稿。
