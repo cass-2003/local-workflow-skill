@@ -28,7 +28,7 @@
 │  ├─ core/                #   工具中立的工作流核心（10 阶段 / 路由 / 权威 / 验证 / 演进）
 │  ├─ state-systems/       #   四态系统说明 + drop-in 模板
 │  └─ adapters/            #   各家 Agent 适配层（CC / Codex 已登记）
-├─ skills/                 # 能力库（双手）：434 技能 / 19 领域大类
+├─ skills/                 # 能力库（双手）：398 技能 / 19 领域大类
 │  │                        #   双层结构 <领域大类>/<来源>/<skill>/
 │  ├─ reverse-engineering/  security-engineering/  programming-languages/
 │  ├─ frontend-ui/          backend-api/           mobile-crossplatform/
@@ -76,9 +76,9 @@ scan → state restore → intent → authority → route → execute → valida
 - [x] 能力库接入路由层（`skills/README.md`）
 - [x] Claude Code 适配器（已登记 project-workflow，references 收敛为指向 core 的薄指针）
 - [x] Codex 适配器（`framework/adapters/codex/` 模板：`AGENTS.md` + `agents/workflow.yaml`）
-- [x] 合并三源丰富能力库（ours + .codex + C_Skills → 434 技能 / 19 大类，双层去重）
+- [x] 合并三源丰富能力库（ours + .codex + C_Skills，双层去重；下线 anna-*/coff0xc- 后 → 398 技能 / 19 大类）
 - [~] CC + Codex 端到端实测（CC 侧已 dogfood 跑通，见 `framework/validation/dogfood-stage5.md`；Codex 侧待测）
-- [~] 给能力库 skill 打"通用/半通用/项目定制"标记（已完成：323/85/26，见 `skills/TIERS.md`）；近义变体已列出，精简 policy 待定
+- [x] 给能力库 skill 打"通用/半通用/项目定制"标记（323/49/26，见 `skills/TIERS.md`），并清理近义变体（下线 anna-*/coff0xc-）
 
 ## 与来源经验的关系
 

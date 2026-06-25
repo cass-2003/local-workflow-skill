@@ -20,8 +20,8 @@
 └───────────────┬─────────────────────────────────────────────┘
                 │ Phase 4/5 委托 ↓
 ┌───────────────▼─────────────────────────────────────────────┐
-│  双手 skills/   434 技能 / 19 领域大类（双层 <大类>/<来源>/）   │
-│    reverse 63 · security 85 · frontend 35 · …                  │
+│  双手 skills/   398 技能 / 19 领域大类（双层 <大类>/<来源>/）   │
+│    reverse 62 · security 73 · frontend 33 · …                  │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -67,7 +67,7 @@ local-skills-workspace/
 │  └─ adapters/          各家 Agent 适配登记 + 模板
 │     ├─ claude-code.md   CC 适配器 → skills/.../project-workflow
 │     └─ codex.md + codex/ Codex 模板（AGENTS.md + agents/workflow.yaml）
-├─ skills/              双手：434 技能 / 19 大类
+├─ skills/              双手：398 技能 / 19 大类
 │  ├─ README.md          能力库索引
 │  ├─ _merge-manifest.csv 三源合并对照表
 │  └─ <大类>/<来源>/<skill>/  来源 = ours｜codex｜cskills
@@ -90,7 +90,7 @@ local-skills-workspace/
 | `codex`（`~/.codex/skills`） | 248 | 主池，已含 `~/.claude/skills` 全部 |
 | `cskills`（C_Skills） | 163 | 高度互补，逆向为主 |
 
-合并去重后 **434 技能 / 19 大类**。其中 `workflow-orchestration` 里的 `orchestration`（蚁群多 Agent）与 `coff0xc-skill-router`（skill 分诊）天然对应框架的**编排层**与**路由层**，可被 `core/03-routing` 直接复用。
+合并去重、并下线 `anna-*`/`coff0xc-*` 两家族后 **398 技能 / 19 大类**。其中 `workflow-orchestration` 里的 `orchestration`（蚁群多 Agent）天然对应框架的**编排层**，可被 `core/03-routing` 直接复用。
 
 ## 路线图位置
 
