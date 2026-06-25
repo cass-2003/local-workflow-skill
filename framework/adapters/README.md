@@ -1,6 +1,6 @@
-# 适配层（后置）
+# 适配层
 
-> 状态：**计划中**。当前阶段刻意只交付中立核心，适配器后置，避免过早抽象。
+> 状态：Claude Code 适配器**已登记**（见 `claude-code.md`）；其余 runtime 后置，避免过早抽象。
 
 ## 适配层要解决什么
 
@@ -24,7 +24,7 @@
 
 ## 落地顺序（见 FRAMEWORK.md 路线图）
 
-1. 阶段 3 — Claude Code 适配器
+1. ✅ 阶段 3 — Claude Code 适配器（`claude-code.md`；project-workflow 的 references 已收敛为指向 core 的薄指针）
 2. 阶段 4 — Codex 适配器
 3. 阶段 5 — CC + Codex 两边端到端实测，再回头抽公共适配模式
 

@@ -5,6 +5,10 @@ description: Orchestrate a generic project workflow by scanning repository autho
 
 # Project Workflow
 
+> **角色**：这是「四态工作流框架」在 **Claude Code** 上的适配器实例。
+> 流程规范的**单一真相**在框架中立核心 `../../../framework/core/*`；本 skill 只负责在 CC 里被触发并指路。
+> 适配登记见 `../../../framework/adapters/claude-code.md`。
+
 将此 skill 用作“项目工作流编排层”。
 
 - 先识别仓库内真正有效的规则、技能、文档和验证入口，再决定如何执行。
@@ -83,12 +87,14 @@ description: Orchestrate a generic project workflow by scanning repository autho
 
 ## Reference Loading Guide
 
-- 在项目结构复杂、存在多个本地技能层时，读取 `references/authority-resolution.md`。
-- 在任务语义模糊、多个 skill 都像是候选时，读取 `references/routing-matrix.md`。
-- 在任务跨越扫描、实现、验证、同步、交付多个阶段时，读取 `references/execution-phases.md`。
-- 在需要确认日志、需求、记忆、进度这些状态面从哪里恢复时，读取 `references/state-systems.md`。
-- 在准备声明完成、提交、交付或 handoff 时，读取 `references/validation-gates.md` 和 `references/git-and-handoff.md`。
-- 在发现旧路径、镜像漂移、重复解释、重复手工决策时，读取 `references/skill-evolution.md`。
+规范单处维护在框架中立核心；下列 reference 仅作 CC 内的薄指针，按需直接读 core：
+
+- 项目结构复杂、存在多个本地规则层时 → `../../../framework/core/04-authority.md`
+- 任务语义模糊、多条路线像候选时 → `../../../framework/core/03-routing.md`
+- 任务跨扫描/实现/验证/同步/交付多阶段时 → `../../../framework/core/01-workflow.md`
+- 需确认日志/需求/记忆/进度从哪里恢复时 → `../../../framework/core/02-state-systems.md`
+- 准备声明完成、提交、交付或 handoff 时 → `../../../framework/core/05-validation.md` + `01-workflow.md`(Phase 8)
+- 发现旧路径、漂移、重复解释、重复手工决策时 → `../../../framework/core/06-evolution.md`
 
 ## Output Discipline
 

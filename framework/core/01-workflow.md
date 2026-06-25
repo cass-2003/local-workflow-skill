@@ -49,6 +49,20 @@
 - **目的**：在 commit / push / PR / handoff 前确认 ready。
 - **检查项**：diff 是否已检查、validation 是否匹配范围、docs sync 是否已考虑、是否存在不应隐式执行的破坏性 Git 动作。
 
+**诚实交付状态**（只给当前证据支持得起的结论）：
+
+- not ready for delivery
+- ready for commit
+- ready for branch or PR flow
+- ready for handoff without Git action
+
+**Handoff 摘要**（交接时简洁包含）：
+
+- 改了什么
+- 验证了什么
+- 还有哪些不确定或未验证
+- 下一步最有价值的动作是什么
+
 ## Phase 9 · Evolution
 
 - **目的**：把重复模式转成长期可复用资产（见 `06-evolution.md`）。

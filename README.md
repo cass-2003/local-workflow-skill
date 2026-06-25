@@ -70,7 +70,7 @@ scan → state restore → intent → authority → route → execute → valida
 - [x] 中立核心（`framework/core/` + `state-systems/`）
 - [x] 四态系统 drop-in 模板
 - [x] 能力库接入路由层（`skills/README.md`）
-- [ ] Claude Code 适配器（登记 project-workflow）
+- [x] Claude Code 适配器（已登记 project-workflow，references 收敛为指向 core 的薄指针）
 - [ ] Codex 适配器（`AGENTS.md` / `agents/*.yaml`）
 - [ ] CC + Codex 端到端实测
 - [ ] 给能力库 skill 打"通用 / 半通用 / 项目定制"标记

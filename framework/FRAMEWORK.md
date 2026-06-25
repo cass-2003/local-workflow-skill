@@ -116,7 +116,7 @@ skills/                    # 能力库：执行阶段委托的具体技能（按
 
 - [x] 阶段 1：中立核心（`core/` + `state-systems/`）
 - [x] 阶段 2：四态系统 drop-in 模板
-- [ ] 阶段 3：Claude Code 适配器（把 project-workflow 正式登记为 CC 实例）
+- [x] 阶段 3：Claude Code 适配器（project-workflow 已登记为 CC 实例，references 收敛为指向 core 的薄指针）
 - [ ] 阶段 4：Codex 适配器（`AGENTS.md` / `agents/*.yaml` 映射）
 - [ ] 阶段 5：在 CC + Codex 两边各跑通一次端到端实测
 - [ ] 阶段 6：给能力库 skill 打"通用 / 半通用 / 项目定制"标记
