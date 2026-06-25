@@ -90,7 +90,7 @@ local-skills-workspace/
 | `codex`（`~/.codex/skills`） | 248 | 主池，已含 `~/.claude/skills` 全部 |
 | `cskills`（C_Skills） | 163 | 高度互补，逆向为主 |
 
-合并去重后 **434 技能 / 19 大类**。其中 `workflow-orchestration` 里的 `orchestration`（蚁群多 Agent）与 `coff0xc-skill-router`（skill 分诊）天然对应框架的**编排层**与**路由层**，可被 `core/03-routing` 直接复用。
+合并去重后 **434 技能 / 19 大类**。其中 `workflow-orchestration` 里的 `orchestration`（蚁群多 Agent）与 `skill-router`（skill 分诊）天然对应框架的**编排层**与**路由层**，可被 `core/03-routing` 直接复用。
 
 ## 路线图位置
 
