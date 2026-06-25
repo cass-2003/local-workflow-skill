@@ -77,7 +77,7 @@ scan → state restore → intent → authority → route → execute → valida
 - [x] Claude Code 适配器（已登记 project-workflow，references 收敛为指向 core 的薄指针）
 - [x] Codex 适配器（`framework/adapters/codex/` 模板：`AGENTS.md` + `agents/workflow.yaml`）
 - [x] 合并三源丰富能力库（ours + .codex + C_Skills → 434 技能 / 19 大类，双层去重）
-- [ ] CC + Codex 端到端实测
+- [~] CC + Codex 端到端实测（CC 侧已 dogfood 跑通，见 `framework/validation/dogfood-stage5.md`；Codex 侧待测）
 - [ ] 给能力库 skill 打"通用 / 半通用 / 项目定制"标记，并清理近义变体
 
 ## 与来源经验的关系

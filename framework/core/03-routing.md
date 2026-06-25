@@ -2,6 +2,8 @@
 
 把模糊请求稳定映射到正确的工作流路线和能力库技能，不只靠关键词硬猜。
 
+> **消歧（重要）**：下表的路由名（`implement / fix / audit / review / status / sprint / sync-docs / evolution`）是**流程动作**，不是技能名。能力库里恰好有同名技能（`workflow-orchestration/*/implement`、`.../audit` 等）——那些是 J-SOP / codex 的命令封装技能，**不要**把"路由到 implement"理解成"必须调用叫 implement 的技能"。路由先定动作，执行阶段再按问题域选技能（见下方二级路由）。
+
 ## 主路由（按意图）
 
 | 用户意图 | 常见表达 | 主路由 | 常见次路由 |
@@ -42,6 +44,10 @@
 | 杂项 | `misc/` | 1 | hatch-pet |
 
 > 能力库随筛选会变化，权威以 `skills/` 实际目录与 `skills/README.md` 索引为准；合并对照表见 `skills/_merge-manifest.csv`。新增大类时回这里补一行。
+
+**大类内如何选具体技能**：上表只定到"大类"。进了大类后（如 `programming-languages/` 21 个），用各技能 `SKILL.md` 的 `description`（frontmatter）做终选——挑触发语义最贴合当前任务的那个。两条捷径：
+- **trivial 改动**（如加一个小函数、改一行）可**不委托**，直接内联完成（呼应 `01-workflow.md` 的轻量任务裁剪）。
+- 大类内多个近义技能都像候选时，优先 `ours` > `codex` > `cskills`（与去重优先级一致），或并列时取 `description` 命中更精确者。
 
 ## 消歧规则
 
