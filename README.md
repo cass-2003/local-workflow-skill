@@ -1,85 +1,224 @@
-# Portable Agent Workflow · 四态工作流框架
+<div align="center">
 
-一个**工具中立的多 Agent 项目工作流框架**。同一套纯 Markdown 约定，能在 Claude Code、Codex 等不同 Agent runtime 上跑出一致行为。
+# 🧭 Portable Agent Workflow
 
-源于 `J:\J-SOP 伴随式自动化助手` 的实践，但已去项目化，沉淀为可迁移的通用骨架。
+### 工具中立的多 Agent 项目工作流框架
 
-## 核心：四态系统
+*一套纯 Markdown 约定，让 Claude Code、Codex 等不同 AI Agent 在同一个项目里跑出一致行为。*
 
-一个项目被多 Agent、多会话持续推进时，最需要的是四件事 —— 这就是框架的核心：
+![status](https://img.shields.io/badge/status-alpha-orange)
+![agents](https://img.shields.io/badge/agents-Claude_Code_·_Codex-5b6cf9)
+![skills](https://img.shields.io/badge/skills-434-2ea44f)
+![domains](https://img.shields.io/badge/domains-19-2ea44f)
+![format](https://img.shields.io/badge/core-pure_Markdown-lightgrey)
+![deps](https://img.shields.io/badge/runtime_deps-0-blue)
 
-| 系统 | 回答 |
-|---|---|
-| 🗒️ 日志系统 | 最近发生了什么 |
-| 📋 需求系统 | 当前要满足什么 |
-| 🧠 记忆系统 | 为什么这样设计 |
-| 📊 进度系统 | 现在做到哪里 |
+</div>
 
-四态系统全部用 Markdown 承载，让 Agent 的上下文有了**可持久、可交接、可审计**的落点 —— 这是它和普通 prompt 工程的根本区别，也是跨工具、跨会话协作的基础。
+---
 
-## 仓库结构
+## ✨ 这是什么
+
+不同的 AI 编码 Agent（Claude Code、Codex、Cursor……）各有各的配置格式、各有各的入口文件，但它们在一个真实项目里需要的东西其实是同一套：**知道最近发生了什么、当前要满足什么、为什么这样设计、现在做到哪里。**
+
+本框架把"一个项目该怎么被 Agent 持续推进"抽象成一层**工具中立的核心约定**，再用**后置的适配层**把它翻译成各家 Agent 的原生格式。核心全部用 Markdown 承载 —— 零运行时依赖，任何能读写文本、能按文档推理的 Agent 都能消费。
+
+> 🧠 **大脑** `framework/` 决定何时做什么 · 🛠️ **双手** `skills/` 决定具体怎么做 · 🔌 **插口** `adapters/` 对接各家 Agent
+
+---
+
+## 🧩 核心理念：四态系统
+
+一个项目被多 Agent、多会话持续推进时，最需要的是这四件事 —— 这就是框架的地基，**全部用纯 Markdown 文件承载**：
+
+| 系统 | 回答的问题 | 默认承载 | 典型内容 |
+|:--|:--|:--|:--|
+| 🗒️ **日志** `project-log` | 最近发生了什么 | `LOG.md` | 变更/部署/运行记录 |
+| 📋 **需求** `project-requirements` | 当前要满足什么 | `REQUIREMENTS.md` | PRD、验收标准、基线 |
+| 🧠 **记忆** `project-memory` | 为什么这样设计 | `MEMORY.md` | 架构决策、研究结论 |
+| 📊 **进度** `project-progress` | 现在做到哪里 | `PROGRESS.md` | 计划、todo、阻塞项 |
+
+普通 prompt 工程的上下文是**易失**的：会话一结束、工具一切换，Agent 就"失忆"。四态系统给上下文四个**可持久、可交接、可审计**的落点：
+
+- 🔁 **跨会话** — 新会话先读四态系统就能恢复，不靠用户重述
+- 🤝 **跨 Agent** — Claude Code 写的状态，Codex 也能读（都是纯 Markdown）
+- 🔍 **可审计** — 每次变更回写对应系统，历史可回看
+
+> 💡 不强制固定文件名。框架认的是四个**角色**，已有项目可把 `CHANGELOG.md`、`PRD.md` 等认领为对应系统。
+
+---
+
+## 🏗️ 架构总览
 
 ```text
-.
-├─ README.md               # 仓库门面与快速上手
-├─ ARCHITECTURE.md         # 整张架构图（先读这个看全局）
-├─ framework/              # 框架本体（大脑）
-│  ├─ FRAMEWORK.md         #   总设计 + 路线图
-│  ├─ core/                #   工具中立的工作流核心（10 阶段 / 路由 / 权威 / 验证 / 演进）
-│  ├─ state-systems/       #   四态系统说明 + drop-in 模板
-│  └─ adapters/            #   各家 Agent 适配层（CC / Codex 已登记）
-├─ skills/                 # 能力库（双手）：434 技能 / 19 领域大类
-│  │                        #   双层结构 <领域大类>/<来源>/<skill>/
-│  ├─ reverse-engineering/  security-engineering/  programming-languages/
-│  ├─ frontend-ui/          backend-api/           mobile-crossplatform/
-│  ├─ ai-automation/        cloud-infra/           workflow-orchestration/
-│  └─ …（来源 ours｜codex｜cskills，去重优先级 ours>codex>cskills，详见 skills/README.md）
-└─ tools/skill-merge/      # 可复现的能力库合并脚本与说明
+┌─────────────────────────────────────────────────────────────┐
+│  🔌 adapters/   各家 Agent 原生入口（薄，只负责"被触发 + 指路"）  │
+│       Claude Code → SKILL.md       Codex → AGENTS.md + *.yaml   │
+└───────────────────────────┬─────────────────────────────────┘
+                            │ 触发，指向 ↓
+┌───────────────────────────▼─────────────────────────────────┐
+│  🧠 framework/core/   工具中立的工作流核心（单一真相）           │
+│       10 阶段骨架 · 路由 · 权威解析 · 验证闸门 · 保守演进         │
+│                            ↑ 读 / 写                           │
+│  ★ framework/state-systems/   四态系统（地基）                  │
+│       🗒️ 日志 · 📋 需求 · 🧠 记忆 · 📊 进度                      │
+└───────────────────────────┬─────────────────────────────────┘
+                            │ Phase 4/5 委托 ↓
+┌───────────────────────────▼─────────────────────────────────┐
+│  🛠️ skills/   434 技能 / 19 领域大类（双层 <大类>/<来源>/）      │
+│       安全 85 · 逆向 63 · 前端 35 · 编排 29 · 后端 26 · …       │
+└─────────────────────────────────────────────────────────────┘
 ```
 
-两层分工：`framework/` 决定**何时做什么**（恢复状态、路由、验证、交付），`skills/` 决定**具体怎么做**（限流、容器化、双向同步……）。整体架构见 `ARCHITECTURE.md`。
+| 层 | 职责 | 关键不变量 |
+|:--|:--|:--|
+| 🔌 `adapters/` | 把核心挂载到各家 Agent 入口 | 保持薄，只触发 + 指路，不复制规范 |
+| 🧠 `framework/core/` | 流程的唯一真相 | 改流程只改 core，适配器跟着指 |
+| ★ `state-systems/` | 项目状态的持久落点 | 状态先于动作，开工先恢复 |
+| 🛠️ `skills/` | 执行阶段委托的具体能力 | 去重优先级 `ours > codex > cskills` |
 
-## 设计原则
+---
 
-1. **状态先于动作** — 任何实质性工作前，先从四态系统恢复状态。
-2. **纯文本承载** — 四态系统全是 Markdown，零运行时依赖，任何工具都能读写。
-3. **中立核心，适配后置** — 核心不提任何一家 Agent 的私有概念，差异隔离在 `adapters/`。
-4. **约定优于代码** — 框架定义读写约定与流程闸门，不强制特定脚本。
-5. **保守演进** — 重复模式先观察、聚类、建议，经批准再沉淀。
+## 🔄 10 阶段工作流
 
-## 工作流骨架（10 阶段）
+中等以上复杂度的任务，按固定顺序推进：
 
 ```text
-scan → state restore → intent → authority → route → execute → validate → sync → deliver → evolve
+0️⃣ scan ─▶ 1️⃣ state restore ─▶ 2️⃣ intent ─▶ 3️⃣ authority ─▶ 4️⃣ route
+                                                                      │
+9️⃣ evolve ◀─ 8️⃣ deliver ◀─ 7️⃣ sync ◀─ 6️⃣ validate ◀─ 5️⃣ execute ◀─┘
 ```
 
-详见 `framework/core/01-workflow.md`。
+<details>
+<summary>📖 展开看每个阶段在做什么</summary>
 
-## 快速上手
+| # | 阶段 | 目的 |
+|:-:|:--|:--|
+| 0 | **workspace scan** | 看清仓库有哪些规则、技能、文档、验证入口 |
+| 1 | **state restore** | 从四态系统恢复项目状态（不靠记忆与假设） |
+| 2 | **intent classify** | 判断任务类型：status / audit / implement / fix / review / sync / evolve |
+| 3 | **authority resolve** | 解析该信任哪一层规则、技能、文档 |
+| 4 | **route & delegate** | 按问题域路由到 `skills/` 对应能力 |
+| 5 | **execute** | 先读后改，只做必要改动，区分事实/推断/假设 |
+| 6 | **validation gate** | 完成必须有与范围匹配的证据，不靠口头声明 |
+| 7 | **docs & state sync** | 把成果分类回写四态系统 |
+| 8 | **git & delivery gate** | commit / push / PR 前过 readiness 检查 |
+| 9 | **evolution** | 重复模式转成保守的沉淀建议（observe → suggest → approve → apply）|
+
+> ⚖️ 轻量任务可裁剪阶段，但**不跳过**状态恢复、权威判断、验证推理。
+
+</details>
+
+---
+
+## 🛠️ 能力库（434 技能 · 19 大类）
+
+执行阶段委托的具体技能，三源合并去重，双层结构 `<领域大类>/<来源>/<skill>/`：
+
+| 🏷️ 领域 | 数量 | 🏷️ 领域 | 数量 | 🏷️ 领域 | 数量 |
+|:--|:-:|:--|:-:|:--|:-:|
+| 安全工程 | 85 | 移动跨端 | 18 | 数据分析 | 9 |
+| 逆向工程 | 63 | 云基础设施 | 17 | 硬件系统 | 8 |
+| 前端 UI | 35 | AI 自动化 | 17 | 产品增长 | 8 |
+| 工作流编排 | 29 | 内容创作 | 14 | 杂项 | 1 |
+| 后端 API | 26 | 支付电商 | 12 | | |
+| 通用工程 | 26 | 地图位置 | 11 | | |
+| 质量交付 | 24 | 研究知识 | 10 | | |
+| 编程语言 | 21 | | | | |
+
+技能按通用性分级：**🟢 通用 359 · 🟡 半通用 49 · 🔵 项目定制 26**（见 [`skills/TIERS.md`](skills/TIERS.md)）。完整索引见 [`skills/README.md`](skills/README.md)。
+
+---
+
+## 🚀 快速上手
 
 把框架用到一个目标项目：
 
-1. 复制 `framework/state-systems/templates/` 的四个文件到目标项目（或映射到已有等价文档）。
-2. 让 Agent 第一次只做 `scan + state restore + 路由分析`，先不改代码。
-3. 状态恢复与路由稳定后，再带验证闸门和文档同步跑完整任务。
+```text
+1. 复制 framework/state-systems/templates/ 的四个文件到目标项目
+   （或映射到项目已有的等价文档）
+2. 让 Agent 第一次只做：scan + state restore + 路由分析，先不改代码
+3. 状态恢复与路由稳定后，再带验证闸门和文档同步跑完整任务
+```
 
 适合第一轮试跑的提示词：
 
-- `先扫描当前仓库，识别规则/技能/文档/验证入口，恢复四态系统状态，只做路由分析。`
-- `判断这个需求该走 audit / implement / fix / review，并说明验证与文档同步策略。`
-- `检查当前改动在 commit 前是否已满足验证、文档同步和交付三道闸门。`
+```text
+🗣️ 先扫描当前仓库，识别规则/技能/文档/验证入口，恢复四态系统状态，只做路由分析。
+🗣️ 判断这个需求该走 audit / implement / fix / review，并说明验证与文档同步策略。
+🗣️ 检查当前改动在 commit 前是否已满足验证、文档同步和交付三道闸门。
+```
 
-## 路线图
+> 🧪 想看完整跑一遍的样子？[`framework/validation/sample-project/`](framework/validation/sample-project/) 是个可直接重跑的最小样板，附 dogfood 验证报告。
 
-- [x] 中立核心（`framework/core/` + `state-systems/`）
-- [x] 四态系统 drop-in 模板
-- [x] 能力库接入路由层（`skills/README.md`）
-- [x] Claude Code 适配器（已登记 project-workflow，references 收敛为指向 core 的薄指针）
-- [x] Codex 适配器（`framework/adapters/codex/` 模板：`AGENTS.md` + `agents/workflow.yaml`）
-- [x] 合并三源丰富能力库（ours + .codex + C_Skills → 434 技能 / 19 大类，双层去重）
-- [~] CC + Codex 端到端实测（CC 侧已 dogfood 跑通，见 `framework/validation/dogfood-stage5.md`；Codex 侧待测）
-- [~] 给能力库 skill 打"通用/半通用/项目定制"标记（已完成：323/85/26，见 `skills/TIERS.md`）；近义变体已列出，精简 policy 待定
+---
 
-## 与来源经验的关系
+## 🔌 跨 Agent 通用性
 
-真正被认为值得通用化的，不是具体文件名，而是这些稳定模式：开工前先做权威解析、实质工作前先恢复状态、用意图和范围路由、完成必须过验证闸门、变更后同步文档与状态、交付前有 Git readiness gate、重复模式走保守沉淀。这些比"某个项目叫 SPRINT-PLAN.md"更稳定，也更适合带去别的仓库。
+核心是纯 Markdown，**任何能读写文本的 Agent 都能消费**。差异隔离在薄薄的适配层：
+
+| Agent | 原生入口 | 适配方式 | 状态 |
+|:--|:--|:--|:-:|
+| **Claude Code** | `SKILL.md` / `CLAUDE.md` | 薄 `SKILL.md`，正文指向 `core/*` | ✅ |
+| **Codex** | `AGENTS.md` / `agents/*.yaml` | `AGENTS.md` 挂载，正文指向 `core/*` | ✅ |
+| **Cursor 等** | `.cursor/rules` 等 | 同理：薄入口 + 指向中立核心 | 🔜 |
+
+> 共同模式：**入口保持薄**，只负责"被触发"和"指路"，流程逻辑全留在核心，单处维护。
+
+---
+
+## 📁 仓库结构
+
+```text
+.
+├─ 📄 README.md            仓库门面（本文件）
+├─ 📄 ARCHITECTURE.md      整张架构图（看全局先读这个）
+├─ 🧠 framework/           框架本体
+│   ├─ FRAMEWORK.md         总设计 + 路线图
+│   ├─ core/                ★ 单一真相：10 阶段/状态/路由/权威/验证/演进
+│   ├─ state-systems/       ★ 四态系统说明 + drop-in 模板
+│   ├─ adapters/            各家 Agent 适配登记（CC / Codex）
+│   └─ validation/          dogfood 样板 + 端到端验证报告
+├─ 🛠️ skills/              能力库：434 技能 / 19 大类
+│   ├─ README.md             领域索引
+│   ├─ TIERS.md              分级（通用/半通用/项目定制）
+│   ├─ _merge-manifest.csv   三源合并对照表
+│   └─ <大类>/<来源>/<skill>/
+└─ 🔧 tools/skill-merge/    可复现的能力库合并脚本
+```
+
+---
+
+## 🗺️ 路线图
+
+- [x] 🧱 中立核心（`framework/core/` + `state-systems/`）
+- [x] 📑 四态系统 drop-in 模板
+- [x] 🤖 Claude Code 适配器
+- [x] 🤖 Codex 适配器
+- [x] 🛠️ 三源合并丰富能力库（434 技能 / 19 大类）
+- [x] 🏷️ 能力库分级标记 + 命名清理
+- [x] 🧪 Claude Code 侧端到端 dogfood 跑通
+- [ ] 🧪 Codex 侧端到端实测
+- [ ] 🔌 抽取公共适配层（CC / Codex 跑通后回头做）
+
+---
+
+## 🧠 设计原则
+
+```text
+1. 状态先于动作   任何实质性工作前，先从四态系统恢复状态
+2. 纯文本承载     四态系统全是 Markdown，零运行时依赖
+3. 中立核心       核心不提任何一家 Agent 的私有概念，差异隔离在 adapters/
+4. 约定优于代码   框架定义读写约定与流程闸门，不强制特定脚本
+5. 保守演进       重复模式先观察、聚类、建议，经批准再沉淀
+```
+
+---
+
+<div align="center">
+
+*源于一套内部 SOP 实践，已去项目化为可迁移的通用骨架。*
+
+**🧭 大脑决定何时做什么，双手决定具体怎么做，状态让一切可持久、可交接、可审计。**
+
+</div>
