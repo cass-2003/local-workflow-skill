@@ -21,21 +21,23 @@
 
 ```text
 .
-├─ README.md
+├─ README.md               # 仓库门面与快速上手
+├─ ARCHITECTURE.md         # 整张架构图（先读这个看全局）
 ├─ framework/              # 框架本体（大脑）
-│  ├─ FRAMEWORK.md         #   总设计 + 路线图，从这里读起
+│  ├─ FRAMEWORK.md         #   总设计 + 路线图
 │  ├─ core/                #   工具中立的工作流核心（10 阶段 / 路由 / 权威 / 验证 / 演进）
 │  ├─ state-systems/       #   四态系统说明 + drop-in 模板
-│  └─ adapters/            #   各家 Agent 适配层（后置，先留计划）
-└─ skills/                 # 能力库（双手）：434 技能 / 19 领域大类
-   │                        #   双层结构 <领域大类>/<来源>/<skill>/
-   ├─ reverse-engineering/  security-engineering/  programming-languages/
-   ├─ frontend-ui/          backend-api/           mobile-crossplatform/
-   ├─ ai-automation/        cloud-infra/           workflow-orchestration/
-   └─ …（来源 ours｜codex｜cskills，去重优先级 ours>codex>cskills，详见 skills/README.md）
+│  └─ adapters/            #   各家 Agent 适配层（CC / Codex 已登记）
+├─ skills/                 # 能力库（双手）：434 技能 / 19 领域大类
+│  │                        #   双层结构 <领域大类>/<来源>/<skill>/
+│  ├─ reverse-engineering/  security-engineering/  programming-languages/
+│  ├─ frontend-ui/          backend-api/           mobile-crossplatform/
+│  ├─ ai-automation/        cloud-infra/           workflow-orchestration/
+│  └─ …（来源 ours｜codex｜cskills，去重优先级 ours>codex>cskills，详见 skills/README.md）
+└─ tools/skill-merge/      # 可复现的能力库合并脚本与说明
 ```
 
-两层分工：`framework/` 决定**何时做什么**（恢复状态、路由、验证、交付），`skills/` 决定**具体怎么做**（限流、容器化、双向同步……）。
+两层分工：`framework/` 决定**何时做什么**（恢复状态、路由、验证、交付），`skills/` 决定**具体怎么做**（限流、容器化、双向同步……）。整体架构见 `ARCHITECTURE.md`。
 
 ## 设计原则
 
