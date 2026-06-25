@@ -47,7 +47,9 @@ framework/
 └─ adapters/               # 各家 Agent 的适配层（后置，先留计划）
    └─ README.md
 
-skills/                    # 能力库：执行阶段委托的具体技能（按类别组织）
+skills/                    # 能力库：执行阶段委托的具体技能
+                           #   双层结构 <领域大类>/<来源>/<skill>/，434 技能 / 19 大类
+                           #   来源 ours｜codex｜cskills，去重优先级 ours>codex>cskills
 ```
 
 两层职责分工：
@@ -108,8 +110,8 @@ skills/                    # 能力库：执行阶段委托的具体技能（按
 
 ## 与现有 skill 的关系
 
-- `../skills/workflow-core/local-workflow`：**来源样本**，保留 J-SOP 的原始本地工作流写法，作为参考母本。
-- `../skills/workflow-core/project-workflow`：**去项目化的 Claude Code 形态**，本质上是本框架在 CC 上的第一个实例。后续会在 `adapters/` 里正式登记它与中立核心的映射关系。
+- `../skills/workflow-orchestration/ours/local-workflow`：**来源样本**，保留 J-SOP 的原始本地工作流写法，作为参考母本。
+- `../skills/workflow-orchestration/ours/project-workflow`：**去项目化的 Claude Code 形态**，本质上是本框架在 CC 上的第一个实例。后续会在 `adapters/` 里正式登记它与中立核心的映射关系。
 - 其余 `../skills/*`：执行阶段的能力库，由路由层（`core/03-routing.md`）按需委托。详见 `../skills/README.md`。
 
 ## 路线图

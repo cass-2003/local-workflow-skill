@@ -6,7 +6,7 @@
 
 Claude Code 在 skills 目录里发现并触发 `SKILL.md`，所以本适配器的可执行入口必须落在 skills 位置，而不在 `adapters/` 下。本文件只做**登记与映射**，真正的入口是：
 
-➡️ **`../../skills/workflow-core/project-workflow/SKILL.md`**
+➡️ **`../../skills/workflow-orchestration/ours/project-workflow/SKILL.md`**
 
 ## 工作方式
 

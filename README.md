@@ -27,10 +27,12 @@
 │  ├─ core/                #   工具中立的工作流核心（10 阶段 / 路由 / 权威 / 验证 / 演进）
 │  ├─ state-systems/       #   四态系统说明 + drop-in 模板
 │  └─ adapters/            #   各家 Agent 适配层（后置，先留计划）
-└─ skills/                 # 能力库（双手）：执行阶段委托的具体技能
-   ├─ workflow-core/        engineering-core/   backend-infra/
-   ├─ frontend-extension/   data-sync-validation/
-   └─ language-runtime/     source-commands/
+└─ skills/                 # 能力库（双手）：434 技能 / 19 领域大类
+   │                        #   双层结构 <领域大类>/<来源>/<skill>/
+   ├─ reverse-engineering/  security-engineering/  programming-languages/
+   ├─ frontend-ui/          backend-api/           mobile-crossplatform/
+   ├─ ai-automation/        cloud-infra/           workflow-orchestration/
+   └─ …（来源 ours｜codex｜cskills，去重优先级 ours>codex>cskills，详见 skills/README.md）
 ```
 
 两层分工：`framework/` 决定**何时做什么**（恢复状态、路由、验证、交付），`skills/` 决定**具体怎么做**（限流、容器化、双向同步……）。
@@ -72,8 +74,9 @@ scan → state restore → intent → authority → route → execute → valida
 - [x] 能力库接入路由层（`skills/README.md`）
 - [x] Claude Code 适配器（已登记 project-workflow，references 收敛为指向 core 的薄指针）
 - [x] Codex 适配器（`framework/adapters/codex/` 模板：`AGENTS.md` + `agents/workflow.yaml`）
+- [x] 合并三源丰富能力库（ours + .codex + C_Skills → 434 技能 / 19 大类，双层去重）
 - [ ] CC + Codex 端到端实测
-- [ ] 给能力库 skill 打"通用 / 半通用 / 项目定制"标记
+- [ ] 给能力库 skill 打"通用 / 半通用 / 项目定制"标记，并清理近义变体
 
 ## 与来源经验的关系
 

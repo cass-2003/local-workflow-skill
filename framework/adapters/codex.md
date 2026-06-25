@@ -14,7 +14,7 @@ Codex 在仓库根发现 `AGENTS.md`，并可读取 `agents/*.yaml` 的角色描
 | | Claude Code | Codex |
 |---|---|---|
 | 原生发现入口 | `SKILL.md`（skills 目录） | `AGENTS.md` + `agents/*.yaml`（仓库根） |
-| 实例位置 | `../../skills/workflow-core/project-workflow/` | 本目录 `codex/`（模板，复制到目标项目根） |
+| 实例位置 | `../../skills/workflow-orchestration/ours/project-workflow/` | 本目录 `codex/`（模板，复制到目标项目根） |
 | 规范来源 | `../core/*`（薄指针） | `../core/*`（薄指针） |
 | 登记文件 | `claude-code.md` | 本文件 |
 

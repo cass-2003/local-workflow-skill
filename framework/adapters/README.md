@@ -20,8 +20,8 @@
 
 ## 现状里已有的两个半成品
 
-- `../../skills/workflow-core/project-workflow`：已经是本框架在 **Claude Code** 上的事实实例（含 `agents/openai.yaml`）。阶段 3 会把它正式登记为 CC 适配器，并把它的 `references/*` 收敛为指向 `../core/*` 的薄引用，消除与中立核心的重复。
-- `../../skills/workflow-core/local-workflow`：J-SOP 来源样本，保留作参考母本，不作为适配器。
+- `../../skills/workflow-orchestration/ours/project-workflow`：已经是本框架在 **Claude Code** 上的事实实例（含 `agents/openai.yaml`）。阶段 3 会把它正式登记为 CC 适配器，并把它的 `references/*` 收敛为指向 `../core/*` 的薄引用，消除与中立核心的重复。
+- `../../skills/workflow-orchestration/ours/local-workflow`：J-SOP 来源样本，保留作参考母本，不作为适配器。
 
 ## 落地顺序（见 FRAMEWORK.md 路线图）
 
