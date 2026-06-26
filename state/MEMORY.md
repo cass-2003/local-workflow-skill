@@ -32,8 +32,16 @@
 - **影响**：后续 `project-inception-docs` 生成完整启动包时应优先使用该目录结构，而不是把所有 Markdown 平铺到 `docs/`。
 - **时间**：2026-06-26
 
+### D-004 · Coffee skill 授权导入采用原位更新
+
+- **决定**：授权导入 `Coff0xc/coffee-skill` 时，不新增重复来源层，而是原位更新已存在的 18 个规范化 Coff0xc 技能目录，并保留本仓库 slug。
+- **为什么**：这些技能此前已以去前缀形式存在于能力库；新增一套 `coffee/` 来源会造成重复触发和计数膨胀。
+- **影响**：触发和索引仍使用现有 slug；上游授权、LICENSE、NOTICE、manifest 和映射记录放在 `tools/skill-merge/provenance/coffee-skill/`。
+- **时间**：2026-06-26
+
 ## 已知坑
 
 - `quick_validate.py` 不接受 `disable-model-invocation`、`user-invocable` 等旧 frontmatter 字段；新增或更新 skill 时只保留允许字段。
 - `Import-Csv` 读取中文 CSV 时可能出现列名/编码异常；manifest 计数可用文本行过滤或显式编码方式复核。
 - `assets/templates/startup-docs/` 是输出资产，可以包含要复制到目标项目的 `README.md`；这不违反 skill 根目录不放杂项 README 的约束。
+- `coffee-skill` 上游 `SKILL.md` 的 frontmatter `name` 是 `coff0xc-*`；导入到本仓库时必须归一化为本地目录 slug，否则 `quick_validate.py` 会失败。

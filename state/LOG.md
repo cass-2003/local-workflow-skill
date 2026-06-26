@@ -6,6 +6,10 @@
 
 ## 2026-06-26
 
+- `change` 按用户授权从 `Coff0xc/coffee-skill` 原位更新 18 个 Coff0xc 技能，并保存 LICENSE/NOTICE/manifest 来源记录。
+  - 触发：用户希望把授权的 Coffee skill 纳入本地能力库。
+  - 验证：检查 18 个目录文件数、frontmatter 名称归一化、skill quick_validate、来源记录位置和 Git diff。
+
 - `change` 从 `J:\无界画布-AI视觉工作台\docs` 抽取标准启动文档包，并沉淀为 `project-inception-docs` 的 reference 与模板资产。
   - 触发：需要把真实项目中验证过的多文档结构转成可复用模板，支持新项目从想法自动生成文档包。
   - 验证：运行 skill frontmatter 校验、模板路径枚举、链接与占位检查。

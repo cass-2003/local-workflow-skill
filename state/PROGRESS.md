@@ -23,6 +23,7 @@
 
 ## 已完成（近期）
 
+- [x] 按授权原位更新 18 个 Coffee/Coff0xc 技能并保存来源记录 — 2026-06-26（详情可见 LOG.md）
 - [x] 沉淀 `project-inception-docs` 标准启动文档模板资产 — 2026-06-26（详情可见 LOG.md）
 - [x] 完成 `project-inception-docs` 多文档启动包增强与索引计数同步 — 2026-06-26（详情可见 LOG.md）
 - [x] 初始化本仓库根 `state/` 四态系统 — 2026-06-26（详情可见 LOG.md）

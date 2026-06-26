@@ -16,6 +16,8 @@
 
 目录采用**双层**结构：`<领域大类>/<来源>/<skill-slug>/SKILL.md`。同一能力在多源出现时按上表优先级保留一个赢家；**根名不同的近义变体**（如 `python-dev` 与 `java-jvm-development`）作为不同技能保留。合并对照表见 `_merge-manifest.csv`。
 
+> **Coffee/Coff0xc 授权导入**：18 个 `coff0xc-*` 技能已在保留本仓库规范化 slug 的前提下更新到 `Coff0xc/coffee-skill` 授权版本；来源、许可与映射记录见 `../tools/skill-merge/provenance/coffee-skill/`。
+
 > **`-2` 后缀**：少数同域同源里有两个同主题但内容不同的技能（合并自不同作者），后到的取 `<名>-2`（如 `python-dev` / `python-dev-2`）。两者都保留，路由时按 `description` 择一。
 
 > 容器型技能（`workflow-orchestration/codex/orchestration`、`quality-delivery/codex/tools`、`engineering-core/codex/domains`）的 `SKILL.md` 位于其子目录，整目录保留。

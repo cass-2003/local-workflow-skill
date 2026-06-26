@@ -1,0 +1,458 @@
+[
+  {
+    "name": "coff0xc-software-engineering",
+    "description": "Use when / 当用户请求 dev/software engineering：build product、repo repair、failing tests/CI、bugfix、feature/refactor、full-stack/end-to-end implementation、REST API/frontend UI implementation、scripts、Python/JS/TS/Go/Rust/Java/C/C++/Shell、dashboard/admin/API、browser smoke、diff/lockfile hygiene、最小修复、直接实现、证明好了。手动触发：使用 coff0xc-software-engineering。",
+    "source_skills": [
+      "c-cpp-dev",
+      "code-simplifier",
+      "git-workflow",
+      "go-dev",
+      "java-dev",
+      "js-ts-dev",
+      "python-dev",
+      "rust-dev",
+      "shell-scripting",
+      "testing"
+    ],
+    "similar_installed_skills": [
+      "dev",
+      "modern-python",
+      "property-based-testing",
+      "planning-with-files"
+    ],
+    "security_boundary": false,
+    "capability_domains": [
+      "自主开发",
+      "代码修复",
+      "功能实现",
+      "测试验证",
+      "CI 分诊",
+      "快速内循环",
+      "构建质量",
+      "Git 协作"
+    ]
+  },
+  {
+    "name": "coff0xc-ai-agent-rag",
+    "description": "Use when / 当用户请求 Agent、RAG、LLM、Prompt、embedding、向量数据库、LangChain/AutoGen、tool calling、多模型编排、记忆/缓存、评测、观测、成本、失败恢复或可落地 AI 助手。交付架构、工具 schema、检索引用、eval 和降级。手动触发：使用 coff0xc-ai-agent-rag。",
+    "source_skills": [
+      "ai-agent-dev",
+      "ai-orchestrator",
+      "deep-thinking"
+    ],
+    "similar_installed_skills": [
+      "dev",
+      "source-command-ai-agent-dev",
+      "openai-docs"
+    ],
+    "security_boundary": false,
+    "capability_domains": [
+      "Agent 架构",
+      "RAG 管线",
+      "工具调用",
+      "记忆系统",
+      "Prompt 工程",
+      "评测观测"
+    ]
+  },
+  {
+    "name": "coff0xc-api-data-platform",
+    "description": "Use when / 当用户请求 API、数据库、数据平台、CLI/SDK 或接口契约：REST、GraphQL、OpenAPI、SQL/Postgres、schema/migration、分页、认证/鉴权、错误码、JSON、ETL、数据质量、usage ledger、filter builder、impact analysis。手动触发：使用 coff0xc-api-data-platform。",
+    "source_skills": [
+      "api-design",
+      "database",
+      "cli-creator"
+    ],
+    "similar_installed_skills": [
+      "cli-creator",
+      "gh-cli"
+    ],
+    "security_boundary": false,
+    "capability_domains": [
+      "API 契约",
+      "数据模型",
+      "认证授权",
+      "CLI/SDK",
+      "数据质量",
+      "兼容演进"
+    ]
+  },
+  {
+    "name": "coff0xc-ui-doc-output",
+    "description": "Use when / 当用户请求 UI/frontend/product surface/report/translation polish：dashboard/admin/SaaS、component/design system、responsive/mobile、accessibility/ARIA/contrast、loading/empty/error/hover/focus/keyboard states、browser smoke/screenshot/console cleanliness、anti-AI visual polish。正式 Office 文件用 office-doc-tools。手动触发：使用 coff0xc-ui-doc-output。",
+    "source_skills": [
+      "UIdesign",
+      "quick-translate"
+    ],
+    "similar_installed_skills": [
+      "UIdesign",
+      "source-command-quick-translate",
+      "coff0xc-office-doc-tools"
+    ],
+    "security_boundary": false,
+    "capability_domains": [
+      "产品 UI",
+      "设计系统",
+      "组件架构",
+      "交互状态",
+      "视觉验收",
+      "报告输出",
+      "翻译润色"
+    ]
+  },
+  {
+    "name": "coff0xc-office-doc-tools",
+    "description": "Use when / 当用户请求正式 Office 或文件型交付物：PPT PPTX PowerPoint slides deck、DOCX Word redline comments、PDF read create review render、Excel XLSX CSV workbook chart formula table export。要求可编辑文件、渲染/OOXML/公式/格式检查。手动触发：使用 coff0xc-office-doc-tools。",
+    "source_skills": [
+      "documents",
+      "presentations",
+      "spreadsheets",
+      "pdf"
+    ],
+    "similar_installed_skills": [
+      "documents:documents",
+      "presentations:Presentations",
+      "spreadsheets:Spreadsheets",
+      "pdf",
+      "coff0xc-ui-doc-output"
+    ],
+    "security_boundary": false,
+    "capability_domains": [
+      "PPT/PPTX",
+      "DOCX/Word",
+      "PDF",
+      "Excel/XLSX",
+      "CSV/表格",
+      "渲染验证"
+    ]
+  },
+  {
+    "name": "coff0xc-research-drawio-diagram",
+    "description": "Use when / 当用户请求 draw.io、diagrams.net、.drawio、科研图、论文方法图、architecture/method/model diagram、algorithm pipeline、Transformer/CNN/GNN/diffusion/RAG/agent 架构图。绘制前需要 paper/arXiv/official GitHub/docs 或用户来源。手动触发：使用 coff0xc-research-drawio-diagram。",
+    "source_skills": [
+      "new workflow"
+    ],
+    "similar_installed_skills": [
+      "diagramming-code",
+      "crypto-protocol-diagram",
+      "source-command-paper",
+      "coff0xc-ui-doc-output"
+    ],
+    "security_boundary": false,
+    "capability_domains": [
+      "科研绘图",
+      "论文方法图",
+      "模型结构图",
+      "draw.io",
+      "证据表",
+      "推断标注"
+    ]
+  },
+  {
+    "name": "coff0xc-secure-code-appsec",
+    "description": "Use when / 当用户请求 code/AppSec audit：source/sink、taint、Web/API/GraphQL/OAuth、CSP/CORS/Cookie、LLM prompt injection、access control/authorization bypass、SSRF/XSS/SQLi、backdoor/Webshell、security regression。仅限授权范围。手动触发：使用 coff0xc-secure-code-appsec。",
+    "source_skills": [
+      "api-discovery",
+      "api-security-test",
+      "backdoor-detector",
+      "browser-security",
+      "code-audit",
+      "graphql-pentest",
+      "llm-red-teaming",
+      "oauth-security",
+      "spa-pentest",
+      "web-pentest"
+    ],
+    "similar_installed_skills": [
+      "source-command-code-audit",
+      "semgrep",
+      "codeql",
+      "variant-analysis",
+      "burpsuite-project-parser"
+    ],
+    "security_boundary": true,
+    "capability_domains": [
+      "代码审计",
+      "Source/Sink",
+      "认证授权",
+      "Web/API 安全",
+      "GraphQL/OAuth",
+      "后门检测"
+    ]
+  },
+  {
+    "name": "coff0xc-cloud-devsecops",
+    "description": "Use when / 当用户请求 cloud、container、Kubernetes/K8s、serverless、DevSecOps、supply chain、CI/CD 或 secrets：AWS/Azure/GCP、IAM、S3/Blob/GCS、Docker、Terraform/IaC、GitHub Actions、SBOM/SCA、secret scanning、pipeline risk。手动触发：使用 coff0xc-cloud-devsecops。",
+    "source_skills": [
+      "cloud-security",
+      "container-security",
+      "devsecops",
+      "docker-k8s",
+      "secrets-management",
+      "serverless-security",
+      "supply-chain-security"
+    ],
+    "similar_installed_skills": [
+      "supply-chain-risk-auditor",
+      "insecure-defaults",
+      "agentic-actions-auditor",
+      "devcontainer-setup"
+    ],
+    "security_boundary": true,
+    "capability_domains": [
+      "云配置",
+      "容器镜像",
+      "Kubernetes",
+      "CI/CD",
+      "供应链",
+      "密钥管理"
+    ]
+  },
+  {
+    "name": "coff0xc-detection-response",
+    "description": "Use when / 当用户请求 SOC、安全运营、detection engineering、threat hunting/intel、incident response/IR、forensics、malware、phishing：SIEM、Sigma、YARA、IOC、logs、alerts、EDR、timeline、alert tuning、误报和检测逻辑。手动触发：使用 coff0xc-detection-response。",
+    "source_skills": [
+      "detection-engineering",
+      "email-security",
+      "forensics-analysis",
+      "incident-response",
+      "malware-analysis",
+      "osint",
+      "soc-operations",
+      "threat-hunting",
+      "threat-intelligence"
+    ],
+    "similar_installed_skills": [
+      "yara-rule-authoring",
+      "sarif-parsing",
+      "source-command-vuln-research"
+    ],
+    "security_boundary": true,
+    "capability_domains": [
+      "检测工程",
+      "威胁狩猎",
+      "SIEM/SOC",
+      "YARA/Sigma",
+      "应急响应",
+      "取证分析"
+    ]
+  },
+  {
+    "name": "coff0xc-vulnerability-lifecycle",
+    "description": "Use when / 当用户请求 vulnerability lifecycle：CVE、advisory、patch diff、CVSS/EPSS/KEV、PoC 验证、bug bounty、pentest report、影响范围、修复优先级、缓解措施、security patch 或修复跟踪。授权验证优先。手动触发：使用 coff0xc-vulnerability-lifecycle。",
+    "source_skills": [
+      "bug-bounty",
+      "pentest-report",
+      "red-team-poc",
+      "vuln-research",
+      "vulnerability-management"
+    ],
+    "similar_installed_skills": [
+      "source-command-vuln-research",
+      "fp-check",
+      "differential-review"
+    ],
+    "security_boundary": true,
+    "capability_domains": [
+      "CVE 研究",
+      "补丁分析",
+      "影响评估",
+      "优先级",
+      "授权验证",
+      "修复跟踪"
+    ]
+  },
+  {
+    "name": "coff0xc-identity-zero-trust",
+    "description": "Use when / 当用户请求 identity、IAM、zero trust、AD/Active Directory、Kerberos、SSO/MFA、BloodHound、PAM、service accounts、权限/凭证风险、identity paths、lateral movement defense、access governance 或特权账号收敛。手动触发：使用 coff0xc-identity-zero-trust。",
+    "source_skills": [
+      "ad-pentest",
+      "credential-access",
+      "identity-security",
+      "lateral-movement",
+      "privilege-escalation",
+      "zero-trust"
+    ],
+    "similar_installed_skills": [
+      "source-command-ad-pentest",
+      "source-command-privesc",
+      "zeroize-audit"
+    ],
+    "security_boundary": true,
+    "capability_domains": [
+      "身份治理",
+      "AD/Kerberos",
+      "IAM",
+      "凭证风险",
+      "横向移动防御",
+      "零信任"
+    ]
+  },
+  {
+    "name": "coff0xc-authorized-assessment",
+    "description": "Use only for authorized security assessment / 当用户请求已授权评估、ROE、attack surface、recon/fingerprint、red team/adversary emulation、防御化攻击链规划、control validation、CDN/WAF 边界、phishing/social-engineering simulation planning 或报告。高风险动作先确认范围。手动触发：使用 coff0xc-authorized-assessment。",
+    "source_skills": [
+      "attack-chain-orchestrator",
+      "autoredteam-orchestrator",
+      "c2-framework",
+      "cdn-bypass",
+      "data-exfiltration",
+      "evasion-toolkit",
+      "fingerprint-engine",
+      "full-pentest",
+      "phishing-simulation",
+      "post-exploitation",
+      "proxy-pool-manager",
+      "recon-workflow",
+      "red-team-infra",
+      "security-tool-dev",
+      "social-engineering"
+    ],
+    "similar_installed_skills": [
+      "source-command-purple-team",
+      "secure-workflow-guide",
+      "audit-prep-assistant"
+    ],
+    "security_boundary": true,
+    "capability_domains": [
+      "授权范围",
+      "ROE",
+      "攻击面",
+      "控制验证",
+      "红队防御化",
+      "报告"
+    ]
+  },
+  {
+    "name": "coff0xc-binary-mobile-iot",
+    "description": "Use when / 当用户请求 reverse engineering、PWN、kernel、APK/IPA、Frida、firmware、IoT/ICS/SCADA、PLC/Modbus、UART/JTAG/SPI、BLE/RF、CTF、crypto review、constant-time、设备包或可执行文件分析。手动触发：使用 coff0xc-binary-mobile-iot。",
+    "source_skills": [
+      "binary-exploit",
+      "crypto-security",
+      "ctf",
+      "ics-scada",
+      "iot-security",
+      "kernel-security",
+      "mobile-security",
+      "reverse-engineering"
+    ],
+    "similar_installed_skills": [
+      "source-command-binary-exploit",
+      "source-command-iot-ics",
+      "source-command-mobile-security",
+      "constant-time-analysis",
+      "wycheproof"
+    ],
+    "security_boundary": true,
+    "capability_domains": [
+      "逆向分析",
+      "移动安全",
+      "IoT 固件",
+      "ICS/OT",
+      "密码实现",
+      "崩溃/漏洞线索"
+    ]
+  },
+  {
+    "name": "coff0xc-blockchain-security",
+    "description": "Use when / 当用户请求 blockchain、smart contract、DeFi/Web3、多链安全：Solidity/EVM、Solana、Cosmos、Substrate、Cairo/StarkNet、TON、Algorand、AMM、oracle、bridge、token/NFT、Foundry/Hardhat/Slither、资产流和权限。手动触发：使用 coff0xc-blockchain-security。",
+    "source_skills": [
+      "blockchain-security"
+    ],
+    "similar_installed_skills": [
+      "solana-vulnerability-scanner",
+      "cosmos-vulnerability-scanner",
+      "substrate-vulnerability-scanner",
+      "token-integration-analyzer",
+      "secure-workflow-guide"
+    ],
+    "security_boundary": true,
+    "capability_domains": [
+      "智能合约",
+      "DeFi",
+      "资产流",
+      "权限模型",
+      "预言机/跨链",
+      "多链审计"
+    ]
+  },
+  {
+    "name": "coff0xc-compliance-architecture",
+    "description": "Use when / 当用户请求 security architecture、threat modeling、compliance、data security/privacy/DLP、baseline：STRIDE、等保、PCI-DSS、GDPR、ISO27001、SOC2、CIS/NIST、control evidence、risk register、audit log、executive/compliance report、release evidence。手动触发：使用 coff0xc-compliance-architecture。",
+    "source_skills": [
+      "compliance-audit",
+      "data-security",
+      "security-architecture"
+    ],
+    "similar_installed_skills": [
+      "guidelines-advisor",
+      "sharp-edges",
+      "code-maturity-assessor"
+    ],
+    "security_boundary": true,
+    "capability_domains": [
+      "安全架构",
+      "威胁建模",
+      "合规映射",
+      "数据安全",
+      "隐私",
+      "成熟度"
+    ]
+  },
+  {
+    "name": "coff0xc-purple-deception",
+    "description": "Use when / 当用户请求 purple team、ATT&CK、control validation、detection coverage、emulation plan、honeypot/deception、decoy/canary、SOC 改进、检测有效性、覆盖指标或防守能力验证。仅限授权防御演练。手动触发：使用 coff0xc-purple-deception。",
+    "source_skills": [
+      "honeypot",
+      "purple-team"
+    ],
+    "similar_installed_skills": [
+      "source-command-purple-team",
+      "detection-engineering"
+    ],
+    "security_boundary": true,
+    "capability_domains": [
+      "紫队演练",
+      "ATT&CK",
+      "检测覆盖",
+      "响应验证",
+      "欺骗防御",
+      "运营改进"
+    ]
+  },
+  {
+    "name": "coff0xc-network-protocol-security",
+    "description": "Use when / 当用户请求 network/protocol security：TLS、DNS、TCP/UDP、HTTP/2、HTTP/3、QUIC、WiFi、Bluetooth/BLE、RF、packet/pcap/Wireshark、抓包、握手、状态机、secure communication、ProVerif 或 Mermaid protocol。手动触发：使用 coff0xc-network-protocol-security。",
+    "source_skills": [
+      "network-protocol",
+      "wireless-security"
+    ],
+    "similar_installed_skills": [
+      "crypto-protocol-diagram",
+      "mermaid-to-proverif"
+    ],
+    "security_boundary": true,
+    "capability_domains": [
+      "协议分析",
+      "TLS/DNS/HTTP",
+      "Packet/pcap",
+      "无线/BLE/RF",
+      "状态机",
+      "形式化建模"
+    ]
+  },
+  {
+    "name": "coff0xc-skill-router",
+    "description": "Coff0xc lightweight skill router/composer. Use only when the user asks AI to decide which coff0xc skills to use, chain skills, build a task/workflow graph, orchestrate vibe coding, handle cross-domain/multi-domain work, or recover an uncertain trigger. Also for broad plan work spanning dev API UI or security cloud identity detection compliance Office. 中文触发：自主编排、多 skill、AI 自己判断、跨领域、工作流图。窄任务不用 router。",
+    "source_skills": [],
+    "similar_installed_skills": [],
+    "security_boundary": true,
+    "capability_domains": [
+      "自治编排",
+      "多 skill 工作流",
+      "任务图",
+      "阶段门禁",
+      "重路由"
+    ]
+  }
+]
