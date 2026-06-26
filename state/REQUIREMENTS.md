@@ -16,6 +16,7 @@
 | REQ-002 | `project-inception-docs` 能从想法生成项目启动文档包 | 技能列出核心包、工程实施包、治理迁移包，并覆盖截图里的多文档产物 | done | PROGRESS#已完成 |
 | REQ-003 | 本仓库自身具备四态承载文件 | 根目录存在 `state/LOG.md`、`state/REQUIREMENTS.md`、`state/MEMORY.md`、`state/PROGRESS.md` 且包含当前目标 | done | PROGRESS#已完成 |
 | REQ-004 | 完成单一范围变更后默认原子提交 | commit 前检查 status、diff、验证结果，且不自动 push/merge/PR | done | PROGRESS#已完成 |
+| REQ-005 | `project-inception-docs` 提供可复制的标准启动文档模板资产 | skill 内存在 `references/startup-doc-package.md` 与 `assets/templates/startup-docs/`，覆盖产品、架构、API、AI、计划、测试、运维、安全、迁移和四态模板 | done | PROGRESS#已完成 |
 
 ## 约束与非目标
 

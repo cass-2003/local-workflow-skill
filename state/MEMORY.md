@@ -25,7 +25,15 @@
 - **影响**：后续重要技能、规则、计数、验证和交付变化应同步写入 `state/`。
 - **时间**：2026-06-26
 
+### D-003 · 启动文档模板采用分域目录
+
+- **决定**：从 `J:\无界画布-AI视觉工作台\docs` 抽取标准模板时，保留 `docs/INDEX.md` + `docs/architecture/` + `docs/api/` + `docs/planning/` + `docs/testing/` + `docs/operations/` + `references/` + `state/` 的分域结构。
+- **为什么**：真实样板证明扁平多文档容易膨胀，分域目录更利于首次阅读、开发接手、验收和运维。
+- **影响**：后续 `project-inception-docs` 生成完整启动包时应优先使用该目录结构，而不是把所有 Markdown 平铺到 `docs/`。
+- **时间**：2026-06-26
+
 ## 已知坑
 
 - `quick_validate.py` 不接受 `disable-model-invocation`、`user-invocable` 等旧 frontmatter 字段；新增或更新 skill 时只保留允许字段。
 - `Import-Csv` 读取中文 CSV 时可能出现列名/编码异常；manifest 计数可用文本行过滤或显式编码方式复核。
+- `assets/templates/startup-docs/` 是输出资产，可以包含要复制到目标项目的 `README.md`；这不违反 skill 根目录不放杂项 README 的约束。

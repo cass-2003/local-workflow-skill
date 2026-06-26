@@ -35,6 +35,12 @@ description: 项目初始分析、项目启动文档包、PRD、页面/信息架
 | 生成/更新文档 | `apply_patch` | `Edit` |
 | 验证链接/引用 | 目录扫描 + `rg` | 逐文件检查 |
 
+## 资源使用
+
+- 生成完整启动包前，先读 `references/startup-doc-package.md`，确认目录、分层和每份文档的职责。
+- 需要快速落地标准包时，复用 `assets/templates/startup-docs/` 下的模板文件，再按项目事实改写占位内容。
+- 不要原样复制模板占位；模板是结构起点，最终文档必须填入当前项目的事实、假设、风险和待确认项。
+
 ## 决策树
 
 ```text
@@ -63,23 +69,26 @@ description: 项目初始分析、项目启动文档包、PRD、页面/信息架
 - `docs/INDEX.md`：文档导航、阅读顺序、文档状态、断链检查结果
 - `docs/PRD.md`：目标、范围、MVP、验收标准
 - `docs/页面原型.md` 或 `docs/信息架构-页面原型.md`：页面结构、信息层级、交互说明
-- `docs/技术架构.md`：模块、数据流、接口、状态、部署边界
-- `docs/数据模型.md`：实体、字段、关系、约束
-- `docs/API设计.md`：接口列表、请求响应、鉴权、错误码
-- `docs/AI工作流.md`：Agent 交互流程、提示词策略、任务流转
+- `docs/architecture/技术架构.md`：模块、数据流、接口、状态、部署边界
+- `docs/architecture/数据模型.md`：实体、字段、关系、约束
+- `docs/api/API设计.md`：接口列表、请求响应、鉴权、错误码
+- `docs/architecture/AI工作流.md`：Agent 交互流程、提示词策略、任务流转
 
 ### 工程实施包
 
-- `docs/开发路线图.md`：阶段拆分、里程碑、依赖、风险
-- `docs/工程初始化方案.md`：目录结构、脚手架、初始化顺序
-- `docs/测试验收.md`：测试矩阵、验收标准、验证命令
-- `docs/Prompt设计.md`：系统提示词、任务提示词、输入输出约束、评估样例
-- `docs/部署运维.md`：环境、部署流程、配置、日志、监控、回滚
-- `docs/安全合规.md`：权限、数据边界、密钥管理、隐私和合规风险
+- `docs/architecture/Prompt模板规范.md`：系统提示词、任务提示词、输入输出约束、评估样例
+- `docs/architecture/技术决策记录.md`：关键技术取舍、理由、影响和日期
+- `docs/planning/开发路线图.md`：阶段拆分、里程碑、依赖、风险
+- `docs/planning/工程初始化方案.md`：目录结构、脚手架、初始化顺序
+- `docs/planning/当前工程状态.md`：当前代码骨架、运行方式、已验证内容和下一步
+- `docs/testing/测试验收计划.md`：测试矩阵、验收标准、验证命令
 
 ### 治理迁移包
 
-- `docs/参考项目迁移清单.md`：已有旧文档、草稿、待合并项
+- `docs/planning/指标埋点.md`：北极星指标、核心漏斗、事件、质量与成本指标
+- `docs/planning/风险成本.md`：技术、产品、成本、安全与合规风险
+- `docs/operations/部署运维.md`：环境、部署流程、配置、日志、监控、回滚
+- `docs/operations/安全合规.md`：权限、数据边界、密钥管理、隐私和合规风险
 - `references/参考项目迁移清单.md`：当迁移资料很长或包含逐项证据时，把详细清单放到 `references/`
 - `state/LOG.md`、`state/REQUIREMENTS.md`、`state/MEMORY.md`、`state/PROGRESS.md`：缺少四态系统时初始化，并把本次分析写入
 
