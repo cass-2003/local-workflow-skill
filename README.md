@@ -162,7 +162,7 @@
 
 | Agent | 原生入口 | 适配方式 | 状态 |
 |:--|:--|:--|:-:|
-| **Claude Code** | `SKILL.md` / `CLAUDE.md` | 薄 `SKILL.md`，正文指向 `core/*` | ✅ |
+| **Claude Code** | `SKILL.md` / `CLAUDE.md` | 项目根 `CLAUDE.md` + 执行级 `SKILL.md` 双入口，正文都指向 `core/*` | ✅ |
 | **Codex** | `AGENTS.md` / `agents/*.yaml` | `AGENTS.md` 挂载，正文指向 `core/*` | ✅ |
 | **Cursor 等** | `.cursor/rules` 等 | 同理：薄入口 + 指向中立核心 | 🔜 |
 

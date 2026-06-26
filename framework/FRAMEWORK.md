@@ -95,7 +95,7 @@ skills/                    # 能力库：执行阶段委托的具体技能
 
 1. **中立核心（已建）**：`core/` 和 `state-systems/` 完全不提任何一家 Agent 的私有概念。一个 Agent 只要能读写 Markdown、能按文档推理，就能消费这层约定 —— 这已经覆盖了 Claude Code、Codex、Cursor 等绝大多数工具。
 
-2. **适配层（后置）**：各家 Agent 的"入口约定"不同 —— Claude Code 用 `SKILL.md` / `CLAUDE.md`，Codex 用 `AGENTS.md` / `agents/*.yaml`，Cursor 用 `.cursor/rules`。适配层负责把中立核心**翻译/挂载**到各家入口，让用户在各自工具里用原生方式触发同一套流程。详见 `adapters/README.md`。
+2. **适配层（后置）**：各家 Agent 的"入口约定"不同 —— Claude Code 用项目根 `CLAUDE.md` + 执行级 `SKILL.md`，Codex 用 `AGENTS.md` / `agents/*.yaml`，Cursor 用 `.cursor/rules`。适配层负责把中立核心**翻译/挂载**到各家入口，让用户在各自工具里用原生方式触发同一套流程。详见 `adapters/README.md`。
 
 > 当前阶段刻意只交付**中立核心**，不急着写适配器。先让核心约定在一两个 runtime 上跑通，再回头抽公共适配层，避免过早抽象。
 
@@ -118,7 +118,7 @@ skills/                    # 能力库：执行阶段委托的具体技能
 
 - [x] 阶段 1：中立核心（`core/` + `state-systems/`）
 - [x] 阶段 2：四态系统 drop-in 模板
-- [x] 阶段 3：Claude Code 适配器（project-workflow 已登记为 CC 实例，references 收敛为指向 core 的薄指针）
+- [x] 阶段 3：Claude Code 适配器（project-workflow 已登记为 CC 实例，references 收敛为指向 core 的薄指针；补齐项目根 `CLAUDE.md` 模板）
 - [x] 阶段 4：Codex 适配器（`adapters/codex/` 模板：`AGENTS.md` + `agents/workflow.yaml`，指向 core）
 - [x] 阶段 5：端到端实测 —— CC 侧见 `validation/dogfood-stage5.md`；Codex 侧见 `validation/dogfood-stage5-codex.md`
 - [~] 阶段 6：分级标记已完成（通用 360/半通用 49/项目定制 26，见 `../skills/TIERS.md`）；近义变体 9 簇已列出，精简待定

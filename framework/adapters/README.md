@@ -11,16 +11,18 @@
 
 | Agent runtime | 原生入口 | 适配方式（设想） |
 |---|---|---|
-| Claude Code | `SKILL.md` / `CLAUDE.md` / `.claude/skills` | 一个薄 `SKILL.md`，frontmatter 描述触发词，正文指向 `../core/*` |
+| Claude Code | `SKILL.md` / `CLAUDE.md` / `.claude/skills` | 项目根 `CLAUDE.md` + 执行级 `SKILL.md` 双入口，正文都指向 `../core/*` |
 | Codex | `AGENTS.md` / `agents/*.yaml` | `AGENTS.md` 挂载工作流，`agents/*.yaml` 描述角色，正文指向 `../core/*` |
 | Cursor | `.cursor/rules/*` | 规则文件引用四态系统与工作流骨架 |
 | 其他 | 各自 rules / instructions | 同理：薄入口 + 指向中立核心 |
 
 共同模式：**入口文件保持薄**，只负责"被触发"和"指路"，真正的流程逻辑全部留在中立核心，单处维护。
 
-## 现状里已有的两个半成品
+## 现状里已有的适配器
 
-- `../../skills/workflow-orchestration/ours/project-workflow`：已经是本框架在 **Claude Code** 上的事实实例（含 `agents/openai.yaml`）。阶段 3 会把它正式登记为 CC 适配器，并把它的 `references/*` 收敛为指向 `../core/*` 的薄引用，消除与中立核心的重复。
+- `../../skills/workflow-orchestration/ours/project-workflow`：Claude Code 的执行级 skill 入口（含 `agents/openai.yaml`）。
+- `claude-code/CLAUDE.md`：Claude Code 的项目根薄入口模板。
+- `codex/AGENTS.md` + `codex/agents/workflow.yaml`：Codex 的项目根薄入口模板。
 - `../../skills/workflow-orchestration/ours/local-workflow`：J-SOP 来源样本，保留作参考母本，不作为适配器。
 
 ## 落地顺序（见 FRAMEWORK.md 路线图）
