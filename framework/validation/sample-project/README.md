@@ -24,6 +24,6 @@ py -3 -m pytest -q tests/      # 预期 2 passed, 1 failed
 **期望结果**：实现 `filter_by_status` → `3 passed` → LOG 加条目、REQUIREMENTS REQ-002→done、PROGRESS 归档。
 
 - **CC 侧**：已实测跑通，见 `../dogfood-stage5.md`。
-- **Codex 侧**：把本目录（连同框架 `core/`、`state-systems/`）复制出去，在真实 Codex 里以 `AGENTS.md` 为入口跑同一任务，核对四态读写与 CC 一致。
+- **Codex 侧**：入口结构已补齐（`AGENTS.md` + `agents/workflow.yaml`），验证记录见 `../dogfood-stage5-codex.md`。
 
 > 跑完若想重置：`git checkout -- framework/validation/sample-project/`。

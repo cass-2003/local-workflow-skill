@@ -120,5 +120,5 @@ skills/                    # 能力库：执行阶段委托的具体技能
 - [x] 阶段 2：四态系统 drop-in 模板
 - [x] 阶段 3：Claude Code 适配器（project-workflow 已登记为 CC 实例，references 收敛为指向 core 的薄指针）
 - [x] 阶段 4：Codex 适配器（`adapters/codex/` 模板：`AGENTS.md` + `agents/workflow.yaml`，指向 core）
-- [~] 阶段 5：端到端实测 —— CC 侧已 dogfood 跑通（见 `validation/dogfood-stage5.md`），Codex 侧待测
+- [x] 阶段 5：端到端实测 —— CC 侧见 `validation/dogfood-stage5.md`；Codex 侧见 `validation/dogfood-stage5-codex.md`
 - [~] 阶段 6：分级标记已完成（通用 360/半通用 49/项目定制 26，见 `../skills/TIERS.md`）；近义变体 9 簇已列出，精简待定

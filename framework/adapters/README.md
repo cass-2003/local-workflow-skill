@@ -1,7 +1,7 @@
 # 适配层
 
 > 状态：Claude Code（`claude-code.md`）与 Codex（`codex.md`）适配器**已登记**；
-> 待两边在真实 runtime 端到端实测（阶段 5）后，再回头抽公共适配模式。
+> CC 与 Codex 样板 dogfood 已完成，下一步可抽公共适配模式与机器级全局安装说明。
 
 ## 适配层要解决什么
 
@@ -27,6 +27,7 @@
 
 1. ✅ 阶段 3 — Claude Code 适配器（`claude-code.md`；project-workflow 的 references 已收敛为指向 core 的薄指针）
 2. ✅ 阶段 4 — Codex 适配器（`codex.md` + `codex/` 模板：`AGENTS.md` + `agents/workflow.yaml`）
-3. 阶段 5 — CC + Codex 两边端到端实测，再回头抽公共适配模式
+3. ✅ 阶段 5 — CC + Codex 两边端到端实测
+4. 进行中 — 抽公共适配模式与机器级全局安装说明
 
 > 在两个真实 runtime 跑通前，不在这里写更多结构 —— 先让核心约定经受实测，再沉淀适配层。

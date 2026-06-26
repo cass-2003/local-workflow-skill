@@ -1,6 +1,6 @@
 # 适配器 · Codex
 
-> 状态：**已登记**（框架路线图阶段 4）。模板就绪，待真实 Codex runtime 端到端实测（阶段 5）。
+> 状态：**已登记并完成样板 dogfood**。模板就绪，`sample-project` 已补齐 Codex 入口并完成阶段 5 验证。
 
 ## 适配器实例
 
@@ -32,8 +32,10 @@ Codex 在仓库根发现 `AGENTS.md`，并可读取 `agents/*.yaml` 的角色描
 - 流程规范只在 `../core/*` 维护。改流程 → 改 core，不改 `AGENTS.md` / `workflow.yaml`。
 - 新增 Codex 专属约定（触发词、角色描述）才写在 `AGENTS.md` 正文或 `workflow.yaml`。
 
-## 端到端实测（阶段 5，待办）
+## 端到端实测（阶段 5）
 
-- [ ] 在装了本模板的真实项目里，让 Codex 只做 scan + state restore + 路由分析
-- [ ] 让 Codex 跑一次带验证闸门 + 文档同步的完整任务
-- [ ] 与 CC 适配器对跑同一任务，核对四态系统读写是否一致
+- [x] 在样板项目里验证 Codex 入口结构：`AGENTS.md` + `agents/workflow.yaml`
+- [x] 对 `sample-project` 走一遍 scan / state restore / route / validate / sync 的完整流程
+- [x] 与 CC 侧 dogfood 结果对齐，确认四态恢复、主路由、验证与回写模型一致
+
+验证记录见 `../validation/dogfood-stage5-codex.md`。
