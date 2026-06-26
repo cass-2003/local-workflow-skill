@@ -71,6 +71,7 @@ description: Orchestrate a generic project workflow by scanning repository autho
 - 检查 diff、找变更风险、做 code review 时，优先路由到 `review`。
 - 补计划、补记录、补文档、补归档时，优先路由到 `sync-docs`。
 - 做 commit、branch、push、PR、handoff 时，优先走 Git 相关技能。
+- 做项目起始分析、文档体系搭建、PRD/技术架构/验收包生成时，优先路由到 `project-inception-docs`。
 - 优化 skill、流程、路径、编排规则时，留在 `project-workflow` 的演进模式中。
 
 如果项目里存在更具体的本地领域 skill，保留此 skill 的编排权，但把执行委托出去。

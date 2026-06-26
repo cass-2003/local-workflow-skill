@@ -117,7 +117,7 @@
 
 ### workflow-orchestration — 工作流与编排（29）
 > 来源：ours 9 · codex 20
-- **ours**：local-workflow、project-workflow、source-command-audit、source-command-fix、source-command-implement、source-command-review、source-command-sprint、source-command-status、source-command-sync-docs
+- **ours**：local-workflow、project-inception-docs、project-workflow、source-command-audit、source-command-fix、source-command-implement、source-command-review、source-command-sprint、source-command-status、source-command-sync-docs
 - **codex**：attack-chain-orchestrator、audit、autoredteam-orchestrator、deep-thinking、dev、fix、implement、mcp-builder、memory、migrate-to-codex、orchestration、review、skill-creator、skill-router、spec、spec-check、spec-do、sprint、status、sync-docs
 
 ## 分级与变体（框架路线图阶段 6）
