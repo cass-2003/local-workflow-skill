@@ -19,7 +19,7 @@
 
 ## 二级路由：执行能力 → 能力库（`skills/`）
 
-`implement` / `fix` 真正动手时，按问题域委托到能力库对应领域大类。能力库为**双层结构** `skills/<领域大类>/<来源>/<skill>/`（来源 = ours｜codex｜cskills，去重优先级 ours>codex>cskills），共 **435 个技能 / 19 大类**：
+`implement` / `fix` 真正动手时，按问题域委托到能力库对应领域大类。能力库为**双层结构** `skills/<领域大类>/<来源>/<skill>/`（来源 = ours｜codex｜cskills，去重优先级 ours>codex>cskills），共 **436 个技能 / 19 大类**：
 
 | 问题域 | 领域大类 | 数量 | 代表技能 |
 |---|---|---|---|
@@ -40,7 +40,7 @@
 | 内容创作与文档 | `content-authoring/` | 14 | doc-office、pdf、presentation-authoring、notion-* |
 | 研究与知识 | `research-knowledge/` | 10 | research、academic-writing、search-engine、web-fetch |
 | 产品与增长 | `product-growth/` | 8 | product-manager、ai-content-marketing、social-media-ops |
-| 工作流与编排 | `workflow-orchestration/` | 29 | project-workflow、orchestration(多 agent)、skill-router |
+| 工作流与编排 | `workflow-orchestration/` | 30 | project-workflow、project-inception-docs、orchestration(多 agent)、skill-router |
 | 杂项 | `misc/` | 1 | hatch-pet |
 
 > 能力库随筛选会变化，权威以 `skills/` 实际目录与 `skills/README.md` 索引为准；合并对照表见 `skills/_merge-manifest.csv`。新增大类时回这里补一行。

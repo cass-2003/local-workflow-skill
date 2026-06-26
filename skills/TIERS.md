@@ -1,13 +1,13 @@
 # 技能分级与变体（阶段 6）
 
-> 给 435 技能打「通用 / 半通用 / 项目定制」标记。
+> 给 436 技能打「通用 / 半通用 / 项目定制」标记。
 > 标记只落在 `_merge-manifest.csv` 的 `tier` 列与本文件，**不写进各 SKILL.md frontmatter**（沿用「不标记直接融合」偏好）。
 
 ## tier 分布
 
 | 分级 | 数量 | 含义 | 代表 |
 |---|---|---|---|
-| 通用 | 360 | 纯工程/领域模式，跨项目可直接复用 | engineering-core、programming-languages、reverse-engineering、多数 security |
+| 通用 | 361 | 纯工程/领域模式，跨项目可直接复用 | engineering-core、programming-languages、reverse-engineering、多数 security、project-inception-docs |
 | 半通用 | 49 | 厂商/产品绑定但可跨项目复用，或需轻度去项目化 | payments(stripe…)、maps(高德…)、figma-*、notion-*、各 deploy |
 | 项目定制 | 26 | 强绑 J-SOP 或特定 runtime/产品 | ours/source-command-*、ours 的 J-SOP 技能、codex 的 audit/status/sprint 等(硬读 J-SOP 文件)、floatly-* |
 
@@ -20,4 +20,4 @@
 - **26 个直接去前缀**：去掉后无路径冲突（含 7 个"同名但在 `cskills` 源文件夹、靠双层结构天然分开"的）。
 - **10 个真撞名**（同 `<域>/codex/` 下已有同名）取 `-2` 后缀：`api-design-2`、`shell-scripting-2`、`go-dev-2`、`js-ts-dev-2`、`python-dev-2`、`code-audit-2`、`git-workflow-2`、`reverse-engineering-2`、`mobile-security-2`、`blockchain-security-2`。
 
-新增 `ai-automation/ours/llm-guardrails` 后，技能总数现为 **435**。
+新增 `workflow-orchestration/ours/project-inception-docs` 后，技能总数现为 **436**。

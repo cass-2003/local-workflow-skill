@@ -6,7 +6,7 @@
 
 ## 规模与结构
 
-**435 个技能 · 19 个领域大类**，由三个来源合并去重而成：
+**436 个技能 · 19 个领域大类**，由三个来源合并去重而成：
 
 | 来源 | 含义 | 去重优先级 |
 |---|---|---|
@@ -115,13 +115,13 @@
 - **codex**：ad-pentest、api-security-test、authorized-assessment、backdoor-detector、binary-mobile-iot、blockchain-security、blockchain-security-2、browser-security、bug-bounty、c2-framework、cdn-bypass、cloud-devsecops、cloud-security、compliance-architecture、compliance-audit、container-security、credential-access、crypto-security、ctf、data-exfiltration、data-security、detection-engineering、detection-response、devsecops、edr-endpoint、email-security、evasion-toolkit、fingerprint-engine、forensics-analysis、full-pentest、graphql-pentest、honeypot、iac-devops、ics-scada、identity-security、identity-zero-trust、incident-response、iot-security、kernel-security、lateral-movement、linux-hardening、llm-red-teaming、malware-analysis、mobile-security、mobile-security-2、network-monitoring、network-protocol、network-protocol-security、oauth-security、osint、pentest-report、phishing-simulation、post-exploitation、privacy-engineering、privilege-escalation、proxy-pool-manager、purple-deception、purple-team、quantum-security、recon-workflow、red-team-infra、red-team-poc、secrets-management、secure-code-appsec、security-architecture、security-best-practices、security-ownership-map、security-threat-model、security-tool-dev、serverless-security、soc-operations、social-engineering、spa-pentest、supply-chain-security、threat-hunting、threat-intelligence、vuln-research、vulnerability-lifecycle、vulnerability-management、web-pentest、windows-hardening、wireless-security、zero-trust
 - **cskills**：protocol-analysis、web-security
 
-### workflow-orchestration — 工作流与编排（29）
-> 来源：ours 9 · codex 20
+### workflow-orchestration — 工作流与编排（30）
+> 来源：ours 10 · codex 20
 - **ours**：local-workflow、project-inception-docs、project-workflow、source-command-audit、source-command-fix、source-command-implement、source-command-review、source-command-sprint、source-command-status、source-command-sync-docs
 - **codex**：attack-chain-orchestrator、audit、autoredteam-orchestrator、deep-thinking、dev、fix、implement、mcp-builder、memory、migrate-to-codex、orchestration、review、skill-creator、skill-router、spec、spec-check、spec-do、sprint、status、sync-docs
 
 ## 分级与变体（框架路线图阶段 6）
 
-- ✅ 已打"通用 / 半通用 / 项目定制"标记：**通用 360 · 半通用 49 · 项目定制 26**，详见 `TIERS.md`。
+- ✅ 已打"通用 / 半通用 / 项目定制"标记：**通用 361 · 半通用 49 · 项目定制 26**，详见 `TIERS.md`。
 - ✅ 已去掉全部 `anna-*`/`coff0xc-*` 前缀（36 个，技能全保留）；同域同源真撞名的 10 个取 `-2` 后缀。
 - `_merge-manifest.csv`（已含 `tier` 列）是后续筛选的工作底稿。

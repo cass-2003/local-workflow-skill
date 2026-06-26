@@ -446,6 +446,7 @@ codex,status,status,workflow-orchestration,exact,no,status,WIN,项目定制
 codex,sync-docs,sync-docs,workflow-orchestration,exact,no,sync-docs,WIN,项目定制
 ours,local-workflow,local-workflow,workflow-orchestration,rule:ours-path,yes,workflow-orchestration/ours/local-workflow,WIN,项目定制
 ours,project-workflow,project-workflow,workflow-orchestration,rule:ours-path,yes,workflow-orchestration/ours/project-workflow,WIN,通用
+ours,project-inception-docs,project-inception-docs,workflow-orchestration,rule:ours-path,yes,workflow-orchestration/ours/project-inception-docs,WIN,通用
 ours,source-command-audit,source-command-audit,workflow-orchestration,rule:ours-path,no,workflow-orchestration/ours/source-command-audit,WIN,项目定制
 ours,source-command-fix,source-command-fix,workflow-orchestration,rule:ours-path,no,workflow-orchestration/ours/source-command-fix,WIN,项目定制
 ours,source-command-implement,source-command-implement,workflow-orchestration,rule:ours-path,no,workflow-orchestration/ours/source-command-implement,WIN,项目定制
