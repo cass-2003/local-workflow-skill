@@ -6,7 +6,7 @@
 
 ## 规模与结构
 
-**434 个技能 · 19 个领域大类**，由三个来源合并去重而成：
+**435 个技能 · 19 个领域大类**，由三个来源合并去重而成：
 
 | 来源 | 含义 | 去重优先级 |
 |---|---|---|
@@ -22,8 +22,9 @@
 
 ## 领域索引
 
-### ai-automation — AI 与自动化（17）
-> 来源：codex 11 · cskills 6
+### ai-automation — AI 与自动化（18）
+> 来源：ours 1 · codex 11 · cskills 6
+- **ours**：llm-guardrails
 - **codex**：ai-agent-dev、ai-agent-rag、ai-orchestrator、mlops、playwright、playwright-e2e、playwright-interactive、prompt-engineering、rag-engineering、speech、transcribe
 - **cskills**：agent-briefing、ai-engineering、ai-image-prompt、autojs-automation、llm-eval、mcp-tool-use
 
@@ -121,6 +122,6 @@
 
 ## 分级与变体（框架路线图阶段 6）
 
-- ✅ 已打"通用 / 半通用 / 项目定制"标记：**通用 359 · 半通用 49 · 项目定制 26**，详见 `TIERS.md`。
+- ✅ 已打"通用 / 半通用 / 项目定制"标记：**通用 360 · 半通用 49 · 项目定制 26**，详见 `TIERS.md`。
 - ✅ 已去掉全部 `anna-*`/`coff0xc-*` 前缀（36 个，技能全保留）；同域同源真撞名的 10 个取 `-2` 后缀。
 - `_merge-manifest.csv`（已含 `tier` 列）是后续筛选的工作底稿。

@@ -19,7 +19,7 @@
 
 ## 二级路由：执行能力 → 能力库（`skills/`）
 
-`implement` / `fix` 真正动手时，按问题域委托到能力库对应领域大类。能力库为**双层结构** `skills/<领域大类>/<来源>/<skill>/`（来源 = ours｜codex｜cskills，去重优先级 ours>codex>cskills），共 **434 个技能 / 19 大类**：
+`implement` / `fix` 真正动手时，按问题域委托到能力库对应领域大类。能力库为**双层结构** `skills/<领域大类>/<来源>/<skill>/`（来源 = ours｜codex｜cskills，去重优先级 ours>codex>cskills），共 **435 个技能 / 19 大类**：
 
 | 问题域 | 领域大类 | 数量 | 代表技能 |
 |---|---|---|---|
@@ -30,7 +30,7 @@
 | 移动与跨端 | `mobile-crossplatform/` | 18 | flutter-dart-dev、swift-ios-dev、harmonyos-arkts、各小程序 |
 | 数据与分析 | `data-analysis/` | 9 | data-engineering、sql-optimization、spreadsheet-analysis |
 | 云与基础设施 | `cloud-infra/` | 17 | docker-k8s、terraform、sre-practices、各 deploy |
-| AI 与自动化 | `ai-automation/` | 17 | rag-engineering、prompt-engineering、playwright、mlops |
+| AI 与自动化 | `ai-automation/` | 18 | llm-guardrails、rag-engineering、prompt-engineering、playwright |
 | 逆向工程 | `reverse-engineering/` | 63 | binrev、asmrev、javarev、fwrev、malrev（cskills 全家桶） |
 | 安全工程 | `security-engineering/` | 85 | full-pentest、ad-pentest、forensics、threat-hunting |
 | 支付与电商 | `payments-commerce/` | 12 | stripe、paypal、alipay-pay、wechat-pay、wallet-* |

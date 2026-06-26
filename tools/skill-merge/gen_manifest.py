@@ -12,6 +12,47 @@ OUT    = r"J:\07-Codex与AI工具\05-工作区与技能\skills-workspace\local-s
 JUNK_RE = re.compile(r'\.bak|backup|\.tmp', re.I)
 EXCLUDE = {".system", "codex-windows-fast-patch"}  # 运行时内部 / 桌面补丁，非可移植能力
 
+# 2026-06-26: codex 源里部分 anna-/coff0xc- 技能在正式库中已去前缀；
+# manifest 需要保留上游 relpath，同时输出正式采用的 slug。
+CODEX_FINAL_SLUG = {
+    "coff0xc-ai-agent-rag": "ai-agent-rag",
+    "anna-api-design": "api-design-2",
+    "anna-backend-engineering": "backend-engineering",
+    "coff0xc-api-data-platform": "api-data-platform",
+    "coff0xc-office-doc-tools": "office-doc-tools",
+    "coff0xc-research-drawio-diagram": "research-drawio-diagram",
+    "anna-db-design": "db-design",
+    "anna-perf-engineering": "perf-engineering",
+    "anna-shell-scripting": "shell-scripting-2",
+    "coff0xc-software-engineering": "software-engineering",
+    "anna-ui-design": "ui-design",
+    "coff0xc-ui-doc-output": "ui-doc-output",
+    "anna-apple-development": "apple-development",
+    "anna-flutter-development": "flutter-development",
+    "anna-uniapp-dev": "uniapp-dev",
+    "anna-product-manager": "product-manager",
+    "anna-go-dev": "go-dev-2",
+    "anna-js-ts-dev": "js-ts-dev-2",
+    "anna-python-dev": "python-dev-2",
+    "anna-code-audit": "code-audit-2",
+    "anna-git-workflow": "git-workflow-2",
+    "anna-test-engineering": "test-engineering",
+    "anna-reverse-engineering": "reverse-engineering-2",
+    "coff0xc-authorized-assessment": "authorized-assessment",
+    "coff0xc-binary-mobile-iot": "binary-mobile-iot",
+    "coff0xc-blockchain-security": "blockchain-security-2",
+    "coff0xc-cloud-devsecops": "cloud-devsecops",
+    "coff0xc-compliance-architecture": "compliance-architecture",
+    "coff0xc-detection-response": "detection-response",
+    "coff0xc-identity-zero-trust": "identity-zero-trust",
+    "anna-mobile-security": "mobile-security-2",
+    "coff0xc-network-protocol-security": "network-protocol-security",
+    "coff0xc-purple-deception": "purple-deception",
+    "coff0xc-secure-code-appsec": "secure-code-appsec",
+    "coff0xc-vulnerability-lifecycle": "vulnerability-lifecycle",
+    "coff0xc-skill-router": "skill-router",
+}
+
 def norm_key(slug):
     k = slug.lower()
     k = re.sub(r'-(dev|development|engineering)$', '', k)
@@ -24,15 +65,18 @@ def is_skill_dir(path):
 # ---------- enumerate sources ----------
 def list_ours():
     out = []  # (slug, src, domain_hint, multifile, relpath)
-    for cat in sorted(os.listdir(OURS)):
-        catp = os.path.join(OURS, cat)
-        if not os.path.isdir(catp) or cat.startswith("_") or cat == "README.md":
+    for domain in sorted(os.listdir(OURS)):
+        domainp = os.path.join(OURS, domain)
+        if not os.path.isdir(domainp) or domain.startswith("_"):
             continue
-        for slug in sorted(os.listdir(catp)):
-            sp = os.path.join(catp, slug)
+        oursp = os.path.join(domainp, "ours")
+        if not os.path.isdir(oursp):
+            continue
+        for slug in sorted(os.listdir(oursp)):
+            sp = os.path.join(oursp, slug)
             if is_skill_dir(sp):
-                nf = sum(len(f) for _,_,f in os.walk(sp))
-                out.append((slug, "ours", cat, sum(1 for _,_,f in os.walk(sp) for _ in f) > 1, f"{cat}/{slug}"))
+                nfiles = sum(1 for _, _, fs in os.walk(sp) for _ in fs)
+                out.append((slug, "ours", domain, nfiles > 1, f"{domain}/ours/{slug}"))
     return out
 
 def list_codex():
@@ -77,13 +121,6 @@ CSK_MAP = {
     "hardware-systems":"hardware-systems","backend-api":"backend-api","security-engineering":"security-engineering",
     "research-knowledge":"research-knowledge","data-analysis":"data-analysis","content-authoring":"content-authoring",
     "engineering":"engineering-core",
-}
-# ours 现有目录 → 统一大类
-OURS_MAP = {
-    "workflow-core":"workflow-orchestration","engineering-core":"engineering-core",
-    "backend-infra":"backend-api","frontend-extension":"frontend-ui",
-    "data-sync-validation":"data-analysis","language-runtime":"engineering-core",
-    "source-commands":"workflow-orchestration",
 }
 # codex 精确映射（最高优先，处理歧义 slug）
 CODEX_EXACT = {
@@ -149,10 +186,10 @@ def classify_codex(slug):
 cats = parse_csk_categories()
 rows = []
 for slug, src, hint, mf, rel in list_ours():
-    rows.append([src, slug, norm_key(slug), OURS_MAP.get(hint, hint), "rule:ours-path", "yes" if mf else "no", rel])
+    rows.append([src, slug, norm_key(slug), hint, "rule:ours-path", "yes" if mf else "no", rel])
 for slug, src, hint, mf, rel in list_codex():
     dom, why = classify_codex(slug)
-    rows.append([src, slug, norm_key(slug), dom, why, "yes" if mf else "no", rel])
+    rows.append([src, CODEX_FINAL_SLUG.get(slug, slug), norm_key(slug), dom, why, "yes" if mf else "no", rel])
 for slug, src, hint, mf, rel in list_csk(cats):
     rows.append([src, slug, norm_key(slug), CSK_MAP.get(hint, hint or "UNCLASSIFIED"), "rule:csk-readme", "no", rel])
 
