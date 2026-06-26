@@ -3,10 +3,10 @@
 ## Source
 
 - Repository: `https://github.com/Coff0xc/coffee-skill`
-- Local import snapshot: `J:\tmp\coffee-skill-ref`
+- Local import snapshot: external working clone
 - Local snapshot commit: `0c2cf22a38b2ab6ebbf02ee172b6c0f6f19c06ee` (`Tighten skill inventory consistency checks`, 2026-05-22T15:30:41+08:00)
 - Imported on: 2026-06-26
-- User note: 用户声明“我有授权”后执行导入。
+- Authorization note: imported with maintainer/user-confirmed authorization.
 - Online HEAD check: not completed during import because GitHub HTTPS access timed out from this machine.
 
 ## Import Policy

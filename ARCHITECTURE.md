@@ -20,8 +20,8 @@
 └───────────────┬─────────────────────────────────────────────┘
                 │ Phase 4/5 委托 ↓
 ┌───────────────▼─────────────────────────────────────────────┐
-│  双手 skills/   436 技能 / 19 领域大类（双层 <大类>/<来源>/）   │
-│    reverse 63 · security 85 · frontend 35 · …                  │
+│  双手 skills/   409 技能 / 18 领域大类（双层 <大类>/<来源>/）   │
+│    reverse 63 · security 85 · frontend 27 · …                  │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -68,7 +68,7 @@ local-skills-workspace/
 │  └─ adapters/          各家 Agent 适配登记 + 模板
 │     ├─ claude-code.md   CC 适配器 → skills/.../project-workflow
 │     └─ codex.md + codex/ Codex 模板（AGENTS.md + agents/workflow.yaml）
-├─ skills/              双手：436 技能 / 19 大类
+├─ skills/              双手：409 技能 / 18 大类
 │  ├─ README.md          能力库索引
 │  ├─ _merge-manifest.csv 三源合并对照表
 │  └─ <大类>/<来源>/<skill>/  来源 = ours｜codex｜cskills
@@ -87,13 +87,13 @@ local-skills-workspace/
 
 | 来源 | 数量 | 角色 |
 |---|---|---|
-| `ours` | 43 | J-SOP 抽取/沉淀，去重最高优先 |
-| `codex`（`~/.codex/skills`） | 248 | 主池，已含 `~/.claude/skills` 全部 |
+| `ours` | 28 | 本仓库沉淀的通用工作流与可复用技能，去重最高优先 |
+| `codex`（`~/.codex/skills`） | 218 | 主池，已含 `~/.claude/skills` 全部 |
 | `cskills`（C_Skills） | 163 | 高度互补，逆向为主 |
 
-合并去重后 **436 技能 / 19 大类**。其中 `workflow-orchestration` 里的 `orchestration`（多 Agent 编排）、`skill-router`（skill 分诊）与 `project-inception-docs`（项目起始分析文档包）天然对应框架的**编排层**、**路由层**与**起始文档层**，可被 `core/03-routing` 直接复用。
+合并去重并剔除项目定制项后 **409 技能 / 18 大类**。其中 `workflow-orchestration` 里的 `orchestration`（多 Agent 编排）、`skill-router`（skill 分诊）与 `project-inception-docs`（项目起始分析文档包）天然对应框架的**编排层**、**路由层**与**起始文档层**，可被 `core/03-routing` 直接复用。
 
 ## 路线图位置
 
-已完成：中立核心 → 四态模板 → CC 适配器 → Codex 适配器 → 三源能力库合并。
-待办：CC + Codex 端到端实测（阶段 5）；给技能打「通用/半通用/项目定制」标记并清理近义变体（阶段 6）。详见 `framework/FRAMEWORK.md` 与 `README.md` 路线图。
+已完成：中立核心 → 四态模板 → CC 适配器 → Codex 适配器 → 三源能力库合并 → 项目定制项清理。
+待办：抽公共适配层与全局安装说明。详见 `framework/FRAMEWORK.md` 与 `README.md` 路线图。

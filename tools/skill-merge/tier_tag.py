@@ -1,30 +1,25 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""阶段 6：给 winner 打 tier(通用/半通用/项目定制) + 检测近义变体簇。标注只进 manifest/报告。"""
+"""阶段 6：给 winner 打 tier(通用/半通用) + 检测近义变体簇。标注只进 manifest/报告。"""
 import csv, re, os
 from collections import defaultdict
 
-MAN = r"J:\07-Codex与AI工具\05-工作区与技能\skills-workspace\local-skills-workspace\skills\_merge-manifest.csv"
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+MAN = os.environ.get("PAW_MERGE_MANIFEST", os.path.join(REPO_ROOT, "skills", "_merge-manifest.csv"))
 
 rows = list(csv.DictReader(open(MAN, encoding="utf-8-sig")))
 wins = [r for r in rows if r["winner"] == "WIN"]
 
 # --- tier 规则 ---
-JSOP_OURS = {"local-workflow","echo-go-server","i18n-trio","panel-ui","dom-scraping",
-             "anti-detection","sync-bidirectional","validation-pipeline"}
-JSOP_CODEX = {"audit","fix","implement","review","status","sprint","sync-docs"}  # status 等硬绑 J-SOP 文件
-CUSTOM_CODEX = {"hatch-pet","migrate-to-codex"}
+# Project-specific skills are excluded by gen_manifest.py before tiering. This
+# repository keeps only portable skills: generic or vendor/product-specific.
 SEMI_VENDOR_DOMAINS = {"payments-commerce","maps-location"}
-SEMI_PREFIX = ("figma","notion","anna-","coff0xc-","floatly")
+SEMI_PREFIX = ("figma","notion","anna-","coff0xc-")
 SEMI_SLUGS = {"vercel-deploy","netlify-deploy","cloudflare-deploy","render-deploy",
               "linear","sentry","chatgpt-apps","winui-app","aspnet-core"}
 
 def tier(r):
     s, slug, dom = r["source"], r["slug"], r["proposed_domain"]
-    if slug.startswith("source-command-"): return "项目定制"
-    if s == "ours" and slug in JSOP_OURS: return "项目定制"
-    if s == "codex" and slug in JSOP_CODEX: return "项目定制"
-    if slug in CUSTOM_CODEX or slug.startswith("floatly"): return "项目定制"
     if dom in SEMI_VENDOR_DOMAINS: return "半通用"
     if slug in SEMI_SLUGS: return "半通用"
     if slug.startswith(SEMI_PREFIX): return "半通用"

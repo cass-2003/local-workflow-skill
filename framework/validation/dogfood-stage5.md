@@ -27,8 +27,8 @@
 ## 发现
 
 ### 发现 1 ·（已修）路由名与技能名撞名
-intent 路由名 `implement / fix / audit / review / status / sprint / sync-docs` 与能力库里**同名技能**（`workflow-orchestration/*/implement` 等）撞名，Phase 4 时"路由到 implement"会被误解为"委托给叫 implement 的技能"。
-→ 已在 `core/03-routing.md` 加消歧说明：路由名是**流程动作**，不是技能名；那些同名技能是 J-SOP/codex 的命令封装。
+intent 路由名 `implement / fix / audit / review / status / sprint / sync-docs` 曾与能力库里的旧同名命令封装技能撞名，Phase 4 时"路由到 implement"容易被误解为"委托给叫 implement 的技能"。
+→ 已在 `core/03-routing.md` 加消歧说明：路由名是**流程动作**，不是技能名；旧同名命令封装属于 runtime/project 绑定项，不进入通用能力库。
 
 ### 发现 2 ·（已修）二级路由止于大类，缺"大类内选具体技能"
 `core/03-routing` 的二级路由把问题域映射到**大类**（如 programming-languages，21 个技能），但没给"21 选 1"的判据。trivial 改动我按"轻量任务可跳过委托"内联完成，但非平凡任务存在选择空窗。

@@ -6,7 +6,7 @@
 
 ## 当前焦点
 
-在后续真实项目中 dogfood `project-inception-docs`，确认标准启动文档模板能稳定从想法落地。
+把仓库整理成可公开发布的通用工作流与技能库，并持续避免项目定制内容回流。
 
 ## 进行中
 
@@ -23,6 +23,8 @@
 
 ## 已完成（近期）
 
+- [x] 清理项目定制 skill，同步能力库为 409 技能 / 18 大类 / 项目定制 0 — 2026-06-26（详情可见 LOG.md）
+- [x] 补齐开源治理文件：LICENSE、NOTICE、CONTRIBUTING、SECURITY、CODE_OF_CONDUCT、GitHub issue/PR 模板 — 2026-06-26（详情可见 LOG.md）
 - [x] 补齐根 README 与启动模板 README 的项目地基说明 — 2026-06-26（详情可见 LOG.md）
 - [x] 强化新项目地基门禁：Git、忽略文件、agent 入口、四态、文档入口、验证入口 — 2026-06-26（详情可见 LOG.md）
 - [x] 按授权原位更新 18 个 Coffee/Coff0xc 技能并保存来源记录 — 2026-06-26（详情可见 LOG.md）

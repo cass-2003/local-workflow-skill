@@ -3,11 +3,13 @@
 """按 manifest 把 winner 整目录复制到 skills/.merged/<domain>/<source>/<slug>/。"""
 import os, csv, shutil
 
-ROOT   = r"J:\07-Codex与AI工具\05-工作区与技能\skills-workspace"
-SKILLS = os.path.join(ROOT, "local-skills-workspace", "skills")
-OURS   = SKILLS
-CODEX  = r"C:\Users\Administrator\.codex\skills"
-CSK    = os.path.join(ROOT, "C_Skills", "_unzipped", "全部skills163个")
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+WORKSPACE_ROOT = os.path.abspath(os.path.join(REPO_ROOT, ".."))
+
+SKILLS = os.environ.get("PAW_SKILLS_DIR", os.path.join(REPO_ROOT, "skills"))
+OURS = os.environ.get("PAW_OURS_SKILLS", SKILLS)
+CODEX = os.environ.get("PAW_CODEX_SKILLS", os.path.expanduser("~/.codex/skills"))
+CSK = os.environ.get("PAW_CSKILLS_DIR", os.path.join(WORKSPACE_ROOT, "C_Skills", "_unzipped", "all-skills"))
 MANIFEST = os.path.join(SKILLS, "_merge-manifest.csv")
 MERGED = os.path.join(SKILLS, ".merged")
 

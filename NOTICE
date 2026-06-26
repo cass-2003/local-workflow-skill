@@ -1,0 +1,19 @@
+Portable Agent Workflow
+
+This repository contains a portable, Markdown-first workflow framework and a
+curated skill library for agent-assisted software projects.
+
+The original framework documents, adapters, merge scripts, state templates, and
+repository-maintained skills are licensed under the MIT License unless a file or
+directory states otherwise.
+
+Some imported or mirrored skills keep their own license and notice files inside
+their skill directories. Those local license files continue to govern the
+corresponding imported materials.
+
+The Coff0xc/coffee-skill import is tracked in:
+
+- tools/skill-merge/provenance/coffee-skill/
+
+Before redistributing a subset of this repository, preserve the applicable
+LICENSE, NOTICE, and provenance files for any included third-party skill.

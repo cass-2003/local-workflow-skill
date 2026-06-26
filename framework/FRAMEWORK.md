@@ -48,7 +48,7 @@ framework/
    └─ README.md
 
 skills/                    # 能力库：执行阶段委托的具体技能
-                           #   双层结构 <领域大类>/<来源>/<skill>/，436 技能 / 19 大类
+                           #   双层结构 <领域大类>/<来源>/<skill>/，409 技能 / 18 大类
                            #   来源 ours｜codex｜cskills，去重优先级 ours>codex>cskills
 ```
 
@@ -110,7 +110,7 @@ skills/                    # 能力库：执行阶段委托的具体技能
 
 ## 与现有 skill 的关系
 
-- `../skills/workflow-orchestration/ours/local-workflow`：**来源样本**，保留 J-SOP 的原始本地工作流写法，作为参考母本。
+- `../skills/workflow-orchestration/ours/local-workflow`：**通用本地工作流样本**，用于展示机器级/项目级入口如何指向中立核心。
 - `../skills/workflow-orchestration/ours/project-workflow`：**去项目化的 Claude Code 形态**，本质上是本框架在 CC 上的第一个实例。后续会在 `adapters/` 里正式登记它与中立核心的映射关系。
 - 其余 `../skills/*`：执行阶段的能力库，由路由层（`core/03-routing.md`）按需委托。详见 `../skills/README.md`。
 
@@ -121,4 +121,4 @@ skills/                    # 能力库：执行阶段委托的具体技能
 - [x] 阶段 3：Claude Code 适配器（project-workflow 已登记为 CC 实例，references 收敛为指向 core 的薄指针；补齐项目根 `CLAUDE.md` 模板）
 - [x] 阶段 4：Codex 适配器（`adapters/codex/` 模板：`AGENTS.md` + `agents/workflow.yaml`，指向 core）
 - [x] 阶段 5：端到端实测 —— CC 侧见 `validation/dogfood-stage5.md`；Codex 侧见 `validation/dogfood-stage5-codex.md`
-- [~] 阶段 6：分级标记已完成（通用 361/半通用 49/项目定制 26，见 `../skills/TIERS.md`）；近义变体 9 簇已列出，精简待定
+- [x] 阶段 6：分级标记与项目定制项清理完成（通用 360/半通用 49/项目定制 0，见 `../skills/TIERS.md`）

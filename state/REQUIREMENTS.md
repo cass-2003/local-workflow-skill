@@ -19,10 +19,12 @@
 | REQ-005 | `project-inception-docs` 提供可复制的标准启动文档模板资产 | skill 内存在 `references/startup-doc-package.md` 与 `assets/templates/startup-docs/`，覆盖产品、架构、API、AI、计划、测试、运维、安全、迁移和四态模板 | done | PROGRESS#已完成 |
 | REQ-006 | 授权 Coffee skill 导入可追溯且不产生重复触发 | 18 个 Coff0xc 技能原位更新，保留本地 slug，并保存 LICENSE/NOTICE/manifest/import mapping | done | PROGRESS#已完成 |
 | REQ-007 | 新项目必须先补齐可持续开发地基 | 首次接入时检查 Git、`.gitignore`、agent 入口、四态系统、README、docs/INDEX 和验证命令；缺 Git 时默认初始化但不默认 push | done | PROGRESS#已完成 |
+| REQ-008 | 本仓库必须保持开源通用，不携带项目定制 skill | manifest、README、路由表和分级文档显示项目定制项为 0；强绑具体项目/产品/旧命令封装的 skill 不进入 `skills/` | done | PROGRESS#已完成 |
 
 ## 约束与非目标
 
 - 约束：项目本地 `AGENTS.md`、`CLAUDE.md`、rules、skills 和 truth docs 优先于全局兜底。
 - 约束：技能内容保持精简，不为单个 skill 增加无必要 README、CHANGELOG 等杂物。
 - 约束：自动 commit 只在验证充分、变更单一且无敏感信息时执行。
+- 约束：本仓库只保留通用或半通用 skill；项目定制 skill 应放在目标项目本地或私有仓库，不进入开源通用库。
 - 非目标：不默认自动 push、merge 或创建 PR。

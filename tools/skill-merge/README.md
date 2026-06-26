@@ -1,6 +1,6 @@
 # 能力库合并工具（一次性 · provenance 记录）
 
-记录 `skills/` 从 42 → 436 技能是怎么合并出来的。**脚本内路径为生成时的本机绝对路径**，非通用工具；保留是为了**可复现与可审计**，再次运行需按本机环境改路径。
+记录 `skills/` 从 42 → 409 技能是怎么合并出来的。脚本默认使用仓库相对路径和 `~/.codex/skills`，也可以通过环境变量改写来源位置，保留是为了**可复现与可审计**。
 
 ## 三步流水线
 
@@ -14,15 +14,20 @@
 
 - **归一化键**：小写 + 剥 `-dev/-development/-engineering` 后缀 + 别名表（`js-ts`↔`javascript-typescript`）。不剥家族前缀（`anna-`/`coff0xc-`），故同语言的不同作者变体作为独立技能保留。
 - **去重**：同键按 ours>codex>cskills 留一个赢家。
-- **排除**：`.system`、`codex-windows-fast-patch` 等运行时内部项；`*.bak/.tmp`。
+- **排除**：`.system`、`codex-windows-fast-patch`、运行时命令封装、项目/产品定制样本等非通用项；`*.bak/.tmp`。
 - **领域**：cskills 取 C_Skills README 的「分类」列；ours 取原目录；codex 用 `CODEX_EXACT` 精确映射 + 关键词规则。
 
 ## 复现
 
 ```bash
+# 可选：按你的机器位置覆盖来源
+# export PAW_CODEX_SKILLS="$HOME/.codex/skills"
+# export PAW_CSKILLS_DIR="/path/to/C_Skills/_unzipped/all-skills"
+# export PAW_CSKILLS_README="/path/to/C_Skills/README.md"
+
 py -3 tools/skill-merge/gen_manifest.py   # 先看 _merge-manifest.csv
 py -3 tools/skill-merge/do_copy.py        # 复制到 .merged 暂存
 py -3 tools/skill-merge/do_swap.py        # 切换为正式结构
 ```
 
-体检基线：436 赢家 · frontmatter 0 缺失 · 0 空目录 · 0 跨域重复 slug · README 计数 0 不符。
+体检基线：409 赢家 · frontmatter 0 缺失 · 0 空目录 · 0 跨域重复 slug · README 计数 0 不符。

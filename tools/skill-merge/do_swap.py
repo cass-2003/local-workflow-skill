@@ -3,7 +3,8 @@
 """把 .merged 双层结构切换为 skills/ 正式结构：删旧 7 类目录 → 上移 .merged/* → 清理。"""
 import os, shutil, time
 
-SKILLS = r"J:\07-Codex与AI工具\05-工作区与技能\skills-workspace\local-skills-workspace\skills"
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+SKILLS = os.environ.get("PAW_SKILLS_DIR", os.path.join(REPO_ROOT, "skills"))
 MERGED = os.path.join(SKILLS, ".merged")
 OLD_CATS = ["backend-infra","data-sync-validation","engineering-core",
             "frontend-extension","language-runtime","source-commands","workflow-core"]

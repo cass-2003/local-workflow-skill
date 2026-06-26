@@ -2,7 +2,7 @@
 
 把模糊请求稳定映射到正确的工作流路线和能力库技能，不只靠关键词硬猜。
 
-> **消歧（重要）**：下表的路由名（`implement / fix / audit / review / status / sprint / sync-docs / evolution`）是**流程动作**，不是技能名。能力库里恰好有同名技能（`workflow-orchestration/*/implement`、`.../audit` 等）——那些是 J-SOP / codex 的命令封装技能，**不要**把"路由到 implement"理解成"必须调用叫 implement 的技能"。路由先定动作，执行阶段再按问题域选技能（见下方二级路由）。
+> **消歧（重要）**：下表的路由名（`implement / fix / audit / review / status / sprint / sync-docs / evolution`）是**流程动作**，不是技能名。路由先定动作，执行阶段再按问题域选择具体领域技能（见下方二级路由）。旧的同名命令封装技能属于 runtime/project 绑定项，不进入本通用库。
 
 ## 主路由（按意图）
 
@@ -19,16 +19,16 @@
 
 ## 二级路由：执行能力 → 能力库（`skills/`）
 
-`implement` / `fix` 真正动手时，按问题域委托到能力库对应领域大类。能力库为**双层结构** `skills/<领域大类>/<来源>/<skill>/`（来源 = ours｜codex｜cskills，去重优先级 ours>codex>cskills），共 **436 个技能 / 19 大类**：
+`implement` / `fix` 真正动手时，按问题域委托到能力库对应领域大类。能力库为**双层结构** `skills/<领域大类>/<来源>/<skill>/`（来源 = ours｜codex｜cskills，去重优先级 ours>codex>cskills），共 **409 个技能 / 18 大类**：
 
 | 问题域 | 领域大类 | 数量 | 代表技能 |
 |---|---|---|---|
 | 通用工程模式 | `engineering-core/` | 26 | api-versioning、rate-limiting、idempotency、system-design |
 | 编程语言 | `programming-languages/` | 21 | python-dev、go-dev、rust-dev、java-jvm-development |
-| 后端与 API | `backend-api/` | 26 | fastapi-dev、nestjs-dev、microservices、graphql-dev |
-| 前端与 UI | `frontend-ui/` | 35 | nextjs-dev、vue-dev、figma-*、UIdesign、accessibility |
+| 后端与 API | `backend-api/` | 25 | fastapi-dev、nestjs-dev、microservices、graphql-dev |
+| 前端与 UI | `frontend-ui/` | 27 | nextjs-dev、vue-dev、figma-*、UIdesign、accessibility |
 | 移动与跨端 | `mobile-crossplatform/` | 18 | flutter-dart-dev、swift-ios-dev、harmonyos-arkts、各小程序 |
-| 数据与分析 | `data-analysis/` | 9 | data-engineering、sql-optimization、spreadsheet-analysis |
+| 数据与分析 | `data-analysis/` | 7 | data-engineering、sql-optimization、spreadsheet-analysis |
 | 云与基础设施 | `cloud-infra/` | 17 | docker-k8s、terraform、sre-practices、各 deploy |
 | AI 与自动化 | `ai-automation/` | 18 | llm-guardrails、rag-engineering、prompt-engineering、playwright |
 | 逆向工程 | `reverse-engineering/` | 63 | binrev、asmrev、javarev、fwrev、malrev（cskills 全家桶） |
@@ -40,8 +40,7 @@
 | 内容创作与文档 | `content-authoring/` | 14 | doc-office、pdf、presentation-authoring、notion-* |
 | 研究与知识 | `research-knowledge/` | 10 | research、academic-writing、search-engine、web-fetch |
 | 产品与增长 | `product-growth/` | 8 | product-manager、ai-content-marketing、social-media-ops |
-| 工作流与编排 | `workflow-orchestration/` | 30 | project-workflow、project-inception-docs、orchestration(多 agent)、skill-router |
-| 杂项 | `misc/` | 1 | hatch-pet |
+| 工作流与编排 | `workflow-orchestration/` | 15 | project-workflow、project-inception-docs、orchestration(多 agent)、skill-router |
 
 > 能力库随筛选会变化，权威以 `skills/` 实际目录与 `skills/README.md` 索引为准；合并对照表见 `skills/_merge-manifest.csv`。新增大类时回这里补一行。
 

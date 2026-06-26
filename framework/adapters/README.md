@@ -23,7 +23,7 @@
 - `../../skills/workflow-orchestration/ours/project-workflow`：Claude Code 的执行级 skill 入口（含 `agents/openai.yaml`）。
 - `claude-code/CLAUDE.md`：Claude Code 的项目根薄入口模板。
 - `codex/AGENTS.md` + `codex/agents/workflow.yaml`：Codex 的项目根薄入口模板。
-- `../../skills/workflow-orchestration/ours/local-workflow`：J-SOP 来源样本，保留作参考母本，不作为适配器。
+- `../../skills/workflow-orchestration/ours/local-workflow`：通用本地工作流样本，保留作机器级/项目级挂载参考，不作为适配器。
 
 ## 落地顺序（见 FRAMEWORK.md 路线图）
 

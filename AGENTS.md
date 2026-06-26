@@ -1,0 +1,54 @@
+# AGENTS.md
+
+This repository is the source workspace for Portable Agent Workflow: a generic,
+Markdown-first workflow framework and curated skill library for multiple coding
+agents.
+
+## Repository Workflow
+
+For substantial work, follow the Four-State Workflow:
+
+```text
+scan -> state restore -> intent -> authority -> route -> execute -> validate -> sync -> deliver -> evolve
+```
+
+Read these core files before changing workflow, adapter, skill, or state
+behavior:
+
+- `framework/core/01-workflow.md`
+- `framework/core/02-state-systems.md`
+- `framework/core/03-routing.md`
+- `framework/core/04-authority.md`
+- `framework/core/05-validation.md`
+- `framework/core/06-evolution.md`
+
+## State System
+
+This repository uses local Four-State files:
+
+- `state/LOG.md`
+- `state/REQUIREMENTS.md`
+- `state/MEMORY.md`
+- `state/PROGRESS.md`
+
+Update them when repository truth changes. Prefer appending concise entries
+instead of rewriting history.
+
+## Skill Library Policy
+
+This is a generic open-source skill/workflow repository.
+
+- Keep generic skills and semi-generic vendor/product skills.
+- Do not add project-specific skills tied to private projects, product names,
+  local paths, accounts, servers, or one-off command wrappers.
+- Store project-specific skills in the target project's local `.codex/skills`,
+  `.claude/skills`, `.agents/skills`, or a private repository instead.
+- Preserve license and provenance files for imported third-party material.
+
+## Delivery Discipline
+
+- Inspect status and diffs before staging or committing.
+- Do not stage unrelated local changes.
+- Run validation appropriate to the scope.
+- After a validated single-scope change, prefer an atomic commit.
+- Do not auto-push, merge, or open a PR unless explicitly requested.

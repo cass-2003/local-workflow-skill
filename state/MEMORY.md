@@ -27,7 +27,7 @@
 
 ### D-003 · 启动文档模板采用分域目录
 
-- **决定**：从 `J:\无界画布-AI视觉工作台\docs` 抽取标准模板时，保留 `docs/INDEX.md` + `docs/architecture/` + `docs/api/` + `docs/planning/` + `docs/testing/` + `docs/operations/` + `references/` + `state/` 的分域结构。
+- **决定**：从一个真实项目文档集抽取标准模板时，保留 `docs/INDEX.md` + `docs/architecture/` + `docs/api/` + `docs/planning/` + `docs/testing/` + `docs/operations/` + `references/` + `state/` 的分域结构。
 - **为什么**：真实样板证明扁平多文档容易膨胀，分域目录更利于首次阅读、开发接手、验收和运维。
 - **影响**：后续 `project-inception-docs` 生成完整启动包时应优先使用该目录结构，而不是把所有 Markdown 平铺到 `docs/`。
 - **时间**：2026-06-26
@@ -44,6 +44,13 @@
 - **决定**：新项目、空目录或首次接入 workflow 时，先检查并补齐 Git、`.gitignore`、agent 入口、四态系统、README、`docs/INDEX.md` 和验证命令，再进入业务开发。
 - **为什么**：项目一旦跳过地基，后续日志、需求、验证、commit 和多 agent 接手都会失去稳定落点。
 - **影响**：`project-inception-docs` 和核心工作流都应默认执行地基检查；没有 `.git/` 且不在父级仓库中时可默认 `git init`，但不默认 push、配置远端或改写已有历史。
+- **时间**：2026-06-26
+
+### D-006 · 开源仓库不携带项目定制 skill
+
+- **决定**：本仓库定位为通用开源工作流与技能库，`skills/` 只保留通用或半通用能力；强绑具体项目、产品、旧命令封装或私有上下文的 skill 从公开库移除。
+- **为什么**：项目定制 skill 会污染路由、泄露上下文，并让开源用户无法判断哪些能力可复用。
+- **影响**：项目专属 skill 应保存在目标项目本地 `.codex/skills`、`.claude/skills`、`.agents/skills` 或私有仓库；本仓库只保留可迁移模板和通用 workflow。
 - **时间**：2026-06-26
 
 ## 已知坑

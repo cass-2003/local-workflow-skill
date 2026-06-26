@@ -8,8 +8,8 @@
 
 ![status](https://img.shields.io/badge/status-alpha-orange)
 ![agents](https://img.shields.io/badge/agents-Claude_Code_·_Codex-5b6cf9)
-![skills](https://img.shields.io/badge/skills-436-2ea44f)
-![domains](https://img.shields.io/badge/domains-19-2ea44f)
+![skills](https://img.shields.io/badge/skills-409-2ea44f)
+![domains](https://img.shields.io/badge/domains-18-2ea44f)
 ![format](https://img.shields.io/badge/core-pure_Markdown-lightgrey)
 ![deps](https://img.shields.io/badge/runtime_deps-0-blue)
 
@@ -65,8 +65,8 @@
 └───────────────────────────┬─────────────────────────────────┘
                             │ Phase 4/5 委托 ↓
 ┌───────────────────────────▼─────────────────────────────────┐
-│  🛠️ skills/   436 技能 / 19 领域大类（双层 <大类>/<来源>/）      │
-│       安全 85 · 逆向 63 · 前端 35 · 编排 30 · 后端 26 · …       │
+│  🛠️ skills/   409 技能 / 18 领域大类（双层 <大类>/<来源>/）      │
+│       安全 85 · 逆向 63 · 前端 27 · 编排 15 · 后端 25 · …       │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -111,22 +111,22 @@
 
 ---
 
-## 🛠️ 能力库（436 技能 · 19 大类）
+## 🛠️ 能力库（409 技能 · 18 大类）
 
 执行阶段委托的具体技能，三源合并去重，双层结构 `<领域大类>/<来源>/<skill>/`：
 
 | 🏷️ 领域 | 数量 | 🏷️ 领域 | 数量 | 🏷️ 领域 | 数量 |
 |:--|:-:|:--|:-:|:--|:-:|
-| 安全工程 | 85 | 移动跨端 | 18 | 数据分析 | 9 |
+| 安全工程 | 85 | 移动跨端 | 18 | 数据分析 | 7 |
 | 逆向工程 | 63 | 云基础设施 | 17 | 硬件系统 | 8 |
-| 前端 UI | 35 | AI 自动化 | 18 | 产品增长 | 8 |
-| 工作流编排 | 30 | 内容创作 | 14 | 杂项 | 1 |
-| 后端 API | 26 | 支付电商 | 12 | | |
+| 前端 UI | 27 | AI 自动化 | 18 | 产品增长 | 8 |
+| 工作流编排 | 15 | 内容创作 | 14 | | |
+| 后端 API | 25 | 支付电商 | 12 | | |
 | 通用工程 | 26 | 地图位置 | 11 | | |
 | 质量交付 | 24 | 研究知识 | 10 | | |
 | 编程语言 | 21 | | | | |
 
-技能按通用性分级：**🟢 通用 361 · 🟡 半通用 49 · 🔵 项目定制 26**（见 [`skills/TIERS.md`](skills/TIERS.md)）。完整索引见 [`skills/README.md`](skills/README.md)。
+技能按通用性分级：**🟢 通用 360 · 🟡 半通用 49 · 🔵 项目定制 0**（见 [`skills/TIERS.md`](skills/TIERS.md)）。完整索引见 [`skills/README.md`](skills/README.md)。
 
 ---
 
@@ -193,6 +193,8 @@
 ```text
 .
 ├─ 📄 README.md            仓库门面（本文件）
+├─ 📄 AGENTS.md / CLAUDE.md 本仓库的 Agent 本地工作流入口
+├─ 📄 LICENSE / NOTICE     许可证与第三方来源说明
 ├─ 📄 ARCHITECTURE.md      整张架构图（看全局先读这个）
 ├─ 📊 state/               本仓库当前四态：日志/需求/记忆/进度
 ├─ 🧠 framework/           框架本体
@@ -201,9 +203,9 @@
 │   ├─ state-systems/       ★ 四态系统说明 + drop-in 模板
 │   ├─ adapters/            各家 Agent 适配登记（CC / Codex）
 │   └─ validation/          dogfood 样板 + 端到端验证报告
-├─ 🛠️ skills/              能力库：436 技能 / 19 大类
+├─ 🛠️ skills/              能力库：409 技能 / 18 大类
 │   ├─ README.md             领域索引
-│   ├─ TIERS.md              分级（通用/半通用/项目定制）
+│   ├─ TIERS.md              分级（通用/半通用；项目定制不进入开源库）
 │   ├─ _merge-manifest.csv   三源合并对照表
 │   └─ <大类>/<来源>/<skill>/
 └─ 🔧 tools/skill-merge/    可复现的能力库合并脚本
@@ -217,11 +219,19 @@
 - [x] 📑 四态系统 drop-in 模板
 - [x] 🤖 Claude Code 适配器
 - [x] 🤖 Codex 适配器
-- [x] 🛠️ 三源合并丰富能力库（436 技能 / 19 大类）
-- [x] 🏷️ 能力库分级标记 + 命名清理
+- [x] 🛠️ 三源合并丰富能力库（409 技能 / 18 大类）
+- [x] 🏷️ 能力库分级标记 + 项目定制项清理
 - [x] 🧪 Claude Code 侧端到端 dogfood 跑通
 - [x] 🧪 Codex 侧端到端实测
 - [~] 🔌 抽取公共适配层 / 全局安装说明
+
+---
+
+## 📜 许可证与来源
+
+本仓库原创的框架文档、适配器模板、合并脚本、状态模板和仓库维护技能默认使用 MIT License。部分导入或镜像技能保留各自目录内的 `LICENSE` / `NOTICE`，重新分发子集时需要一并保留。
+
+贡献边界见 [`CONTRIBUTING.md`](CONTRIBUTING.md)：通用或半通用 skill 可以进入本仓库；强绑具体项目、私有产品、服务器、账号、本机路径或旧命令封装的 skill 应放在目标项目本地或私有仓库。
 
 ---
 
@@ -239,7 +249,7 @@
 
 <div align="center">
 
-*源于一套内部 SOP 实践，已去项目化为可迁移的通用骨架。*
+*源于可迁移的多 Agent 工作流实践，持续去项目化为通用骨架。*
 
 **🧭 大脑决定何时做什么，双手决定具体怎么做，状态让一切可持久、可交接、可审计。**
 

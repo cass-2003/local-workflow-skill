@@ -6,11 +6,11 @@
 
 ## 规模与结构
 
-**436 个技能 · 19 个领域大类**，由三个来源合并去重而成：
+**409 个技能 · 18 个领域大类**，由三个来源合并去重并剔除项目定制项而成：
 
 | 来源 | 含义 | 去重优先级 |
 |---|---|---|
-| `ours` | 本仓库从 J-SOP 抽取/沉淀 | 最高（同能力时保留） |
+| `ours` | 本仓库沉淀的通用工作流与可复用技能 | 最高（同能力时保留） |
 | `codex` | `~/.codex/skills`（含 `~/.claude/skills` 全部） | 次之 |
 | `cskills` | C_Skills 收费技能库（逆向为主） | 再次 |
 
@@ -30,9 +30,9 @@
 - **codex**：ai-agent-dev、ai-agent-rag、ai-orchestrator、mlops、playwright、playwright-e2e、playwright-interactive、prompt-engineering、rag-engineering、speech、transcribe
 - **cskills**：agent-briefing、ai-engineering、ai-image-prompt、autojs-automation、llm-eval、mcp-tool-use
 
-### backend-api — 后端与 API（26）
-> 来源：ours 4 · codex 18 · cskills 4
-- **ours**：background-jobs、dockerfile-best、echo-go-server、websocket-impl
+### backend-api — 后端与 API（25）
+> 来源：ours 3 · codex 18 · cskills 4
+- **ours**：background-jobs、dockerfile-best、websocket-impl
 - **codex**：api-data-platform、api-design、api-design-2、api-discovery、aspnet-core、backend-engineering、cms-headless、django-dev、event-driven、fastapi-dev、graphql-dev、laravel-dev、microservices、nestjs-dev、rails-dev、realtime-communication、service-mesh、spring-boot-dev
 - **cskills**：api-engineering、backend-engineering、graphql-grpc-events、sdk-integration
 
@@ -46,9 +46,9 @@
 - **codex**：doc-office、jupyter-notebook、notion-knowledge-capture、notion-meeting-intelligence、notion-research-documentation、notion-spec-to-implementation、office-doc-tools、pdf、quick-translate、research-drawio-diagram、research-paper-writing、technical-writing
 - **cskills**：document-authoring、presentation-authoring
 
-### data-analysis — 数据与分析（9）
-> 来源：ours 3 · codex 5 · cskills 1
-- **ours**：sync-bidirectional、validation-pipeline、validation-schema
+### data-analysis — 数据与分析（7）
+> 来源：ours 1 · codex 5 · cskills 1
+- **ours**：validation-schema
 - **codex**：data-engineering、data-visualization、database、db-design、sql-optimization
 - **cskills**：spreadsheet-analysis
 
@@ -58,10 +58,10 @@
 - **codex**：domains、perf-engineering、shell-scripting、shell-scripting-2、software-engineering、system-design
 - **cskills**：ponytail
 
-### frontend-ui — 前端与 UI（35）
-> 来源：ours 7 · codex 24 · cskills 4
-- **ours**：anti-detection、chrome-mv3-ext、css-modern-2025、dom-scraping、i18n-trio、panel-ui、preact-popup
-- **codex**：UIdesign、accessibility、angular-dev、chatgpt-apps、figma、figma-code-connect-components、figma-create-design-system-rules、figma-create-new-file、figma-generate-design、figma-generate-library、figma-implement-design、figma-use、floatly-design-implementation、floatly-ui-style、frontend-dev、graphics-rendering、i18n-l10n、nextjs-dev、screenshot、svelte-dev、ui-design、ui-doc-output、vue-dev、winui-app
+### frontend-ui — 前端与 UI（27）
+> 来源：ours 1 · codex 22 · cskills 4
+- **ours**：css-modern-2025
+- **codex**：UIdesign、accessibility、angular-dev、chatgpt-apps、figma、figma-code-connect-components、figma-create-design-system-rules、figma-create-new-file、figma-generate-design、figma-generate-library、figma-implement-design、figma-use、frontend-dev、graphics-rendering、i18n-l10n、nextjs-dev、screenshot、svelte-dev、ui-design、ui-doc-output、vue-dev、winui-app
 - **cskills**：nextdev、react-development、screenshot-to-ui、ui-design
 
 ### hardware-systems — 硬件与系统（8）
@@ -72,10 +72,6 @@
 ### maps-location — 地图与位置（11）
 > 来源：cskills 11
 - **cskills**：amap-gaode、baidu-map、esri-arcgis、google-maps-platform、huawei-map-kit、leaflet-openlayers、map-gis-core、mapbox-maplibre、openstreetmap-routing、tencent-map、tianditu-map
-
-### misc — 杂项（1）
-> 来源：codex 1
-- **codex**：hatch-pet
 
 ### mobile-crossplatform — 移动与跨端（18）
 > 来源：codex 7 · cskills 11
@@ -117,13 +113,13 @@
 - **codex**：ad-pentest、api-security-test、authorized-assessment、backdoor-detector、binary-mobile-iot、blockchain-security、blockchain-security-2、browser-security、bug-bounty、c2-framework、cdn-bypass、cloud-devsecops、cloud-security、compliance-architecture、compliance-audit、container-security、credential-access、crypto-security、ctf、data-exfiltration、data-security、detection-engineering、detection-response、devsecops、edr-endpoint、email-security、evasion-toolkit、fingerprint-engine、forensics-analysis、full-pentest、graphql-pentest、honeypot、iac-devops、ics-scada、identity-security、identity-zero-trust、incident-response、iot-security、kernel-security、lateral-movement、linux-hardening、llm-red-teaming、malware-analysis、mobile-security、mobile-security-2、network-monitoring、network-protocol、network-protocol-security、oauth-security、osint、pentest-report、phishing-simulation、post-exploitation、privacy-engineering、privilege-escalation、proxy-pool-manager、purple-deception、purple-team、quantum-security、recon-workflow、red-team-infra、red-team-poc、secrets-management、secure-code-appsec、security-architecture、security-best-practices、security-ownership-map、security-threat-model、security-tool-dev、serverless-security、soc-operations、social-engineering、spa-pentest、supply-chain-security、threat-hunting、threat-intelligence、vuln-research、vulnerability-lifecycle、vulnerability-management、web-pentest、windows-hardening、wireless-security、zero-trust
 - **cskills**：protocol-analysis、web-security
 
-### workflow-orchestration — 工作流与编排（30）
-> 来源：ours 10 · codex 20
-- **ours**：local-workflow、project-inception-docs、project-workflow、source-command-audit、source-command-fix、source-command-implement、source-command-review、source-command-sprint、source-command-status、source-command-sync-docs
-- **codex**：attack-chain-orchestrator、audit、autoredteam-orchestrator、deep-thinking、dev、fix、implement、mcp-builder、memory、migrate-to-codex、orchestration、review、skill-creator、skill-router、spec、spec-check、spec-do、sprint、status、sync-docs
+### workflow-orchestration — 工作流与编排（15）
+> 来源：ours 3 · codex 12
+- **ours**：local-workflow、project-inception-docs、project-workflow
+- **codex**：attack-chain-orchestrator、autoredteam-orchestrator、deep-thinking、dev、mcp-builder、memory、orchestration、skill-creator、skill-router、spec、spec-check、spec-do
 
 ## 分级与变体（框架路线图阶段 6）
 
-- ✅ 已打"通用 / 半通用 / 项目定制"标记：**通用 361 · 半通用 49 · 项目定制 26**，详见 `TIERS.md`。
+- ✅ 已打"通用 / 半通用"标记，并剔除项目定制项：**通用 360 · 半通用 49 · 项目定制 0**，详见 `TIERS.md`。
 - ✅ 已去掉全部 `anna-*`/`coff0xc-*` 前缀（36 个，技能全保留）；同域同源真撞名的 10 个取 `-2` 后缀。
 - `_merge-manifest.csv`（已含 `tier` 列）是后续筛选的工作底稿。

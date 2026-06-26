@@ -32,9 +32,10 @@
 
 ## 推荐机器级入口
 
-文件位置：
+文件位置示例：
 
-- `C:\Users\Administrator\.codex\AGENTS.md`
+- Windows: `%USERPROFILE%\.codex\AGENTS.md`
+- macOS/Linux: `$HOME/.codex/AGENTS.md`
 
 建议结构：
 
@@ -44,9 +45,9 @@
 
 ## 推荐核心路径
 
-当前工作区内这套框架核心实际位于：
+推荐使用仓库内相对位置，或在机器级入口里写入你自己的绝对路径：
 
-`J:\07-Codex与AI工具\05-工作区与技能\skills-workspace\local-skills-workspace\framework\core\`
+- `<path-to-this-repo>/framework/core/`
 
 若将来迁移仓库位置，只需更新机器级 `AGENTS.md` 中的路径指针。
 
