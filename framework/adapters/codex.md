@@ -27,6 +27,22 @@ Codex 在仓库根发现 `AGENTS.md`，并可读取 `agents/*.yaml` 的角色描
 3. 把框架中立核心（`framework/core/` + `framework/state-systems/`）放到目标项目，推荐 `.agent-os/framework/`。
 4. 按实际安装位置，校正 `AGENTS.md` 规范指针表里的路径前缀。
 
+## 默认自动行为
+
+接入后，Codex 侧默认按以下方式工作：
+
+- 开工先 scan，再从四态系统恢复状态
+- 若仓库缺少稳定的日志 / 需求 / 记忆 / 进度承载，先初始化最小四态骨架
+- 执行完成后先过验证，再回写四态系统
+- 若验证通过、四态已同步、且本轮是单一逻辑改动，则默认创建原子 commit
+
+默认**不**自动做：
+
+- push
+- merge
+- PR 创建
+- 在验证不足或混合改动时强行 commit
+
 ## 单一真相原则
 
 - 流程规范只在 `../core/*` 维护。改流程 → 改 core，不改 `AGENTS.md` / `workflow.yaml`。

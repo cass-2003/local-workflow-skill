@@ -16,9 +16,11 @@ scan → state restore → intent → authority → route → execute → valida
 ```
 
 - 任何实质性工作前，先从**四态系统**（日志 / 需求 / 记忆 / 进度）恢复项目状态。
+- 若项目还没有稳定的四态承载文件，先用框架模板初始化最小骨架，并补齐当前目标/约束/焦点/最近变更。
 - 完成必须有与范围匹配的验证证据，不靠口头声明。
 - 变更后把成果分类回写四态系统。
-- commit / push / PR 前过验证、文档、交付三道闸门。
+- 若验证通过、四态已同步、且本轮是单一逻辑改动，则默认创建原子 commit。
+- commit / push / PR 前过验证、文档、交付三道闸门；不要默认 auto-push 或 auto-merge。
 
 ## 规范指针（单一真相在中立核心）
 
@@ -39,4 +41,5 @@ scan → state restore → intent → authority → route → execute → valida
 按四态工作流先扫描仓库、恢复四态系统状态，只做路由分析，不改代码。
 按四态工作流判断该走 audit / implement / fix / review，并说明验证与文档同步策略。
 按四态工作流检查当前改动在 commit 前是否满足验证、文档同步、交付三道闸门。
+若仓库缺少日志/需求/记忆/进度系统，先初始化最小四态骨架，再继续开发。
 ```

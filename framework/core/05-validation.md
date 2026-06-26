@@ -44,3 +44,15 @@
 1. **验证闸门**（本文件）：成果有匹配范围的证据。
 2. **文档闸门**（`01-workflow.md` Phase 7 + `02-state-systems.md`）：四态系统已回写。
 3. **交付闸门**（`01-workflow.md` Phase 8）：diff 已查、无意外破坏性 Git 动作。
+
+## Auto-commit 前提
+
+若工作流或适配器希望默认在完成后自动 commit，至少确认：
+
+- 本轮变更是单一逻辑改动，可用一个 commit 表达
+- 已完成与范围匹配的验证
+- 四态系统已同步到最新状态
+- 已检查 `git status` 与 `git diff --staged`
+- 未发现敏感信息、调试残留、无关文件
+
+任一条件不满足时，结论应退回到 `not ready for delivery` 或 `ready for handoff without Git action`，而不是勉强自动提交。
