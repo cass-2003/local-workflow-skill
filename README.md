@@ -135,19 +135,37 @@
 把框架用到一个目标项目：
 
 ```text
-1. 复制 framework/state-systems/templates/ 的四个文件到目标项目
-   （或映射到项目已有的等价文档）
-2. 若目标项目还没有日志 / 需求 / 记忆 / 进度系统，让 Agent 先初始化最小四态骨架并补齐当前目标/约束/焦点
-3. 让 Agent 第一次只做：scan + state restore + 路由分析，先不改代码
-4. 状态恢复与路由稳定后，再带验证闸门和文档同步跑完整任务
-5. 验证通过且本轮是单一逻辑改动时，默认允许 Agent 自动创建原子 commit
+1. 先打项目地基：若目标目录没有 Git 且不在父级仓库中，让 Agent 执行 git init
+2. 补齐 .gitignore、README.md、AGENTS.md / CLAUDE.md、docs/INDEX.md 和基础验证命令
+3. 复制 framework/state-systems/templates/ 的四个文件到目标项目
+   （或映射到项目已有的等价文档），并写入当前目标/约束/焦点
+4. 让 Agent 第一次只做：scan + state restore + 路由分析，先不改业务代码
+5. 状态恢复与路由稳定后，再带验证闸门和文档同步跑完整任务
+6. 验证通过且本轮是单一逻辑改动时，默认允许 Agent 自动创建原子 commit
 ```
+
+### 新项目地基门禁
+
+每个新项目、空目录或首次接入 workflow 的项目，默认先补这几块地基：
+
+| 地基项 | 默认动作 |
+|:--|:--|
+| Git | 没有 `.git/` 且不在父级仓库中时执行 `git init`；已有仓库只读状态，不重建、不改历史 |
+| 忽略文件 | 生成或合并 `.gitignore`，覆盖依赖、构建产物、日志、环境变量、本地缓存和密钥 |
+| Agent 入口 | 生成或更新 `AGENTS.md` / `CLAUDE.md`，指向四态系统和项目真相文档 |
+| 四态系统 | 初始化或映射日志、需求、记忆、进度，并写入当前目标、约束、焦点和下一步 |
+| 文档入口 | 保证 `README.md` 与 `docs/INDEX.md` 能说明项目状态、文档地图和验证入口 |
+| 验证入口 | 记录 install / dev / test / lint / build 命令；未知就标 `待确认`，不伪造 |
+| 首次提交 | 地基补齐并验证后创建原子 commit；不默认 push、merge、PR 或配置远端 |
+
+> 🧱 想从一个想法直接开新项目，用 `project-inception-docs`：它会把 Git、忽略文件、Agent 入口、四态系统、README、PRD、架构、测试验收和运维文档一起打成启动包。
 
 适合第一轮试跑的提示词：
 
 ```text
 🗣️ 先扫描当前仓库，识别规则/技能/文档/验证入口，恢复四态系统状态，只做路由分析。
-🗣️ 如果当前项目还没有日志系统、需求系统、记忆系统、进度系统，先按模板补齐最小四态骨架。
+🗣️ 如果当前项目还没有 Git、.gitignore、AGENTS/CLAUDE、README、docs/INDEX 或四态系统，先补齐项目地基。
+🗣️ 使用 project-inception-docs，把这个想法初始化成可开发项目，并生成启动文档包。
 🗣️ 判断这个需求该走 audit / implement / fix / review，并说明验证与文档同步策略。
 🗣️ 检查当前改动在 commit 前是否已满足验证、文档同步和交付三道闸门；满足时直接原子 commit。
 ```
