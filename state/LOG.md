@@ -6,6 +6,10 @@
 
 ## 2026-06-26
 
+- `change` 强化项目启动地基门禁，要求新项目先补 Git、忽略文件、agent 入口、四态系统、文档索引和验证入口。
+  - 触发：用户要求每个项目初始时，如果没有 Git 等基础设施就先初始化，把项目地基打好。
+  - 验证：运行 skill frontmatter 校验、模板路径/关键词检查、diff 检查与 Git 提交闸门。
+
 - `change` 按用户授权从 `Coff0xc/coffee-skill` 原位更新 18 个 Coff0xc 技能，并保存 LICENSE/NOTICE/manifest 来源记录。
   - 触发：用户希望把授权的 Coffee skill 纳入本地能力库。
   - 验证：检查 18 个目录文件数、frontmatter 名称归一化、skill quick_validate、来源记录位置和 Git diff。

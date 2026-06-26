@@ -7,6 +7,7 @@
 - 阶段：<idea / docs / prototype / MVP / beta / production>
 - 当前焦点：<本阶段最重要的一件事>
 - 最近验证：<命令、人工验收或未验证原因>
+- 仓库地基：<Git/.gitignore/AGENTS/四态/验证入口是否就绪>
 
 ## 快速开始
 
@@ -35,6 +36,12 @@
 - <约束 1>
 - <约束 2>
 - <非目标或边界>
+
+## 协作与记录
+
+- Agent 入口：<AGENTS.md / CLAUDE.md / 待补>
+- 状态系统：<state/LOG.md、REQUIREMENTS.md、MEMORY.md、PROGRESS.md>
+- 提交策略：<完成单一范围变更并验证后原子 commit；不默认 push>
 
 ## 下一步
 

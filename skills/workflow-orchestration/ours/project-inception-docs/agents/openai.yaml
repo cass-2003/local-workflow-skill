@@ -1,4 +1,4 @@
 interface:
   display_name: "Project Inception Docs"
-  short_description: "从想法生成项目启动文档包和四态骨架"
-  default_prompt: "Use $project-inception-docs to turn a project idea or rough notes into a complete startup documentation package, including PRD, architecture, workflow, validation, and state docs."
+  short_description: "初始化项目地基并生成启动文档包"
+  default_prompt: "Use $project-inception-docs to initialize a project foundation, including Git, .gitignore, agent entries, Four-State docs, README, PRD, architecture, workflow, validation, and startup docs."

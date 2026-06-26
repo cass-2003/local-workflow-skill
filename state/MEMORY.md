@@ -39,9 +39,17 @@
 - **影响**：触发和索引仍使用现有 slug；上游授权、LICENSE、NOTICE、manifest 和映射记录放在 `tools/skill-merge/provenance/coffee-skill/`。
 - **时间**：2026-06-26
 
+### D-005 · 新项目先过地基门禁
+
+- **决定**：新项目、空目录或首次接入 workflow 时，先检查并补齐 Git、`.gitignore`、agent 入口、四态系统、README、`docs/INDEX.md` 和验证命令，再进入业务开发。
+- **为什么**：项目一旦跳过地基，后续日志、需求、验证、commit 和多 agent 接手都会失去稳定落点。
+- **影响**：`project-inception-docs` 和核心工作流都应默认执行地基检查；没有 `.git/` 且不在父级仓库中时可默认 `git init`，但不默认 push、配置远端或改写已有历史。
+- **时间**：2026-06-26
+
 ## 已知坑
 
 - `quick_validate.py` 不接受 `disable-model-invocation`、`user-invocable` 等旧 frontmatter 字段；新增或更新 skill 时只保留允许字段。
 - `Import-Csv` 读取中文 CSV 时可能出现列名/编码异常；manifest 计数可用文本行过滤或显式编码方式复核。
 - `assets/templates/startup-docs/` 是输出资产，可以包含要复制到目标项目的 `README.md`；这不违反 skill 根目录不放杂项 README 的约束。
 - `coffee-skill` 上游 `SKILL.md` 的 frontmatter `name` 是 `coff0xc-*`；导入到本仓库时必须归一化为本地目录 slug，否则 `quick_validate.py` 会失败。
+- 对已有 Git 仓库只读状态并补缺口；不要把已有项目重新 `git init`，也不要覆盖 remote、分支或历史。
