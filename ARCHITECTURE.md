@@ -13,7 +13,7 @@
 │ 触发，指向 ↓
 ┌───────────────▼─────────────────────────────────────────────┐
 │  大脑 framework/core/   工具中立的工作流核心（单一真相）         │
-│    10 阶段骨架 · 路由 · 权威解析 · 验证闸门 · 产物契约 · 保守演进 │
+│    10 阶段骨架 · 路由 · 权威解析 · 验证闸门 · 产物契约 · 自主循环 · 保守演进 │
 │                         ↑ 读/写                                │
 │  核心状态 framework/state-systems/   ★ 四态系统                │
 │    日志 LOG · 需求 REQUIREMENTS · 记忆 MEMORY · 进度 PROGRESS   │
@@ -54,6 +54,8 @@
    → Phase 9 evolve：重复模式转成保守的沉淀建议
 ```
 
+当用户授权“继续推进项目 / 按计划开发 / 自动审计修复”时，core 先进入 `08-autonomous-project-loop.md`：补齐或更新路线图和下一步工作包，再按“实现 → 验证 → 自审 → 修复 → 同步 → commit → 选下一个目标”的循环推进，直到遇到明确停止条件。
+
 ## 目录责任
 
 ```text
@@ -63,7 +65,7 @@ local-skills-workspace/
 ├─ state/               本仓库当前四态：日志/需求/记忆/进度
 ├─ framework/           大脑 + 核心状态
 │  ├─ FRAMEWORK.md       总设计与路线图
-│  ├─ core/              ★ 单一真相：10 阶段/状态/路由/权威/验证/产物/演进
+│  ├─ core/              ★ 单一真相：10 阶段/状态/路由/权威/验证/产物/自主循环/演进
 │  ├─ state-systems/     ★ 四态系统说明 + drop-in 模板
 │  └─ adapters/          各家 Agent 适配登记 + 模板
 │     ├─ claude-code.md   CC 适配器 → skills/.../project-workflow

@@ -8,6 +8,13 @@
 - Prefer project-local truth docs over global memory.
 - After a validated single-scope change, create an atomic commit by default; do not push unless explicitly requested.
 
+## Autonomous Progress
+
+- When asked to continue the project, move forward by plan, auto-audit/fix, or make real project progress, first check `docs/planning/开发路线图.md`, `docs/planning/下一步工作包.md`, and `state/PROGRESS.md`.
+- If the roadmap or next work packages are missing or stale, update planning before implementation.
+- Each loop should select one small goal, confirm acceptance criteria, implement or fix, validate, self-audit, repair in-scope findings, sync docs/state, and commit when eligible.
+- Stop only for user decisions, external credentials, high-risk operations, missing validation environment, repeated failure, or budget/scope limits; write the stop reason and next smallest executable goal.
+
 ## State System
 
 - Log: `state/LOG.md`
@@ -21,6 +28,8 @@
 - Documentation map: `docs/INDEX.md`
 - Initialization plan: `docs/planning/工程初始化方案.md`
 - Current status: `docs/planning/当前工程状态.md`
+- Roadmap: `docs/planning/开发路线图.md`
+- Next actions: `docs/planning/下一步工作包.md`
 
 ## Artifact Contracts
 

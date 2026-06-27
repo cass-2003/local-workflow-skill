@@ -37,7 +37,8 @@ framework/
 │  ├─ 04-authority.md      #   多层规则的权威解析
 │  ├─ 05-validation.md     #   验证闸门 / 文档闸门 / 交付闸门
 │  ├─ 06-evolution.md      #   重复模式的保守沉淀机制
-│  └─ 07-artifact-contracts.md # 审计、验证、文档和状态产物契约
+│  ├─ 07-artifact-contracts.md # 审计、验证、文档和状态产物契约
+│  └─ 08-autonomous-project-loop.md # 初始规划与自主推进循环
 ├─ state-systems/          # 四态系统的可直接落地模板
 │  ├─ README.md            #   四态系统说明
 │  └─ templates/           #   drop-in Markdown 模板
@@ -108,7 +109,8 @@ skills/                    # 能力库：执行阶段委托的具体技能
 2. 让 Agent 第一次只做 `workspace scan` + `state restore` + 路由分析，先不改代码。
 3. 等状态恢复与路由稳定后，再带验证闸门和文档同步跑完整任务。
 4. 审计、验收、验证或文档同步需要留下长期证据时，按 `core/07-artifact-contracts.md` 写入报告、索引和状态文件。
-5. 重复模式出现时，走 `core/06-evolution.md` 的保守沉淀流程。
+5. 用户授权持续推进项目时，按 `core/08-autonomous-project-loop.md` 先做路线图和下一步工作包，再循环实现、验证、自审、修复、同步和提交。
+6. 重复模式出现时，走 `core/06-evolution.md` 的保守沉淀流程。
 
 ## 与现有 skill 的关系
 

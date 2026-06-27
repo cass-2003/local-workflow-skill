@@ -10,6 +10,8 @@
 |---|---|---|---|
 | status | 状态、进度、现在到哪了、当前情况 | `status` | 读四态系统 |
 | audit | 审计、差距分析、基线检查、验收预检 | `audit` | `review` |
+| autonomous progress | 继续推进项目、自己往下做、按计划开发、自动审计修复、推进到可用版本 | `autonomous-loop` | `planning` / `implement` / `audit` / `fix` |
+| planning | 项目规划、路线图、下一步该做什么、先分析进度 | `planning` | `audit` / `status` |
 | implement | 实现、开发、做功能、新增能力 | `implement` | `validation` |
 | fix | 修复、repair、close findings、批量修 bug | `fix` | `review` |
 | review | review、检查 diff、找风险、代码评审 | `review` | `validation` |
@@ -53,6 +55,8 @@
 - "检查最近改动有没有问题"通常是 `review`，不是 `audit`。
 - "关闭审计缺口"通常是 `fix`，不是 `audit`。
 - "按需求做功能"通常是 `implement`，不是 `review`。
+- "继续推进项目"通常先走 `autonomous-loop`；如果没有路线图，先进入 `planning`，再选择第一轮可验证工作包。
+- "先分析接下来该做什么"通常是 `planning`，不是直接 `implement`。
 - "更新计划或记录"通常是 `sync-docs`，不是 `status`。
 - "为什么这套流程开始混乱"通常先走 `evolution`，而不是直接编码。
 
@@ -63,6 +67,8 @@
 - 仓库级基线比对 → `audit`
 - 单个 diff 检查 → `review`
 - 只看状态不改内容 → `status`
+- 持续推进多个工作包 → `autonomous-loop`
+- 项目启动或方向不清 → `planning`
 - 代码 + 文档 + 验证一起做 → `implement` 或 `fix`
 - 只做交付打包 → git flow
 

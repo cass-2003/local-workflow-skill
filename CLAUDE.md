@@ -24,6 +24,7 @@ Read:
 - `framework/core/05-validation.md`
 - `framework/core/06-evolution.md`
 - `framework/core/07-artifact-contracts.md`
+- `framework/core/08-autonomous-project-loop.md`
 
 Update `state/LOG.md`, `state/REQUIREMENTS.md`, `state/MEMORY.md`, and
 `state/PROGRESS.md` when repository truth changes.
@@ -43,6 +44,17 @@ docs-sync work only in chat.
   new files are discoverable.
 - Before commit, confirm validation evidence, state sync, index sync, and
   `git status`.
+
+## Autonomous Project Progress
+
+When the user asks to continue a project, move forward by plan, auto-audit and
+fix, or otherwise make real project progress, first check whether the project
+has a usable roadmap and next-action plan. If not, create or update those
+planning artifacts before implementation. Then follow
+`framework/core/08-autonomous-project-loop.md`: select one small goal, confirm
+acceptance criteria, implement, validate, self-audit, repair in-scope findings,
+sync state/docs, commit when eligible, and either select the next goal or stop
+with a clear reason.
 
 ## Skill Library Policy
 

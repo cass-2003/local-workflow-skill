@@ -39,6 +39,7 @@ scan → state restore → intent → authority → route → execute → valida
 | 验证/文档/交付闸门 | `.agent-os/framework/core/05-validation.md` |
 | 重复模式保守沉淀 | `.agent-os/framework/core/06-evolution.md` |
 | 审计/验证/文档/状态产物契约 | `.agent-os/framework/core/07-artifact-contracts.md` |
+| 初始项目规划与自主推进循环 | `.agent-os/framework/core/08-autonomous-project-loop.md` |
 
 ## 默认产物行为
 
@@ -46,6 +47,13 @@ scan → state restore → intent → authority → route → execute → valida
 - 实现或修复完成后，默认回写日志和进度系统；行为、用法、架构、验证或风险变化时同步对应文档。
 - 文档新增或重组后，默认更新 `docs/INDEX.md` 或相关目录索引。
 - commit 前确认验证证据、状态同步、索引同步和 `git status`。
+
+## 自主推进行为
+
+- 当用户要求“继续推进项目”“按计划开发”“自动审计修复”或等价表达时，先检查是否已有路线图和下一步工作包；没有则先生成或更新。
+- 每轮只选择一个小目标，确认验收标准后执行、验证、自审、修复本轮范围内问题、同步状态和文档。
+- 满足单一逻辑改动、验证通过、状态同步和 diff 检查后，默认创建原子 commit；不要默认 push。
+- 遇到需要用户决策、外部凭据、高风险操作、验证环境缺失或连续失败时停止，并写明下一步最小目标。
 
 ## 与 Claude Code Skill 的关系
 
@@ -61,4 +69,5 @@ scan → state restore → intent → authority → route → execute → valida
 按四态工作流判断该走 audit / implement / fix / review，并说明验证与文档同步策略。
 按四态工作流检查当前改动在 commit 前是否满足验证、文档同步、交付三道闸门。
 若仓库缺少日志/需求/记忆/进度系统，先初始化最小四态骨架，再继续开发。
+继续推进这个项目：先做/更新路线图和下一步工作包，然后按自主循环实现、验证、自审、修复和提交。
 ```

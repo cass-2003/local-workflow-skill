@@ -58,7 +58,7 @@
                             │ 触发，指向 ↓
 ┌───────────────────────────▼─────────────────────────────────┐
 │  🧠 framework/core/   工具中立的工作流核心（单一真相）           │
-│       10 阶段骨架 · 路由 · 权威解析 · 验证闸门 · 产物契约 · 保守演进 │
+│       10 阶段骨架 · 路由 · 权威解析 · 验证闸门 · 产物契约 · 自主循环 · 保守演进 │
 │                            ↑ 读 / 写                           │
 │  ★ framework/state-systems/   四态系统（地基）                  │
 │       🗒️ 日志 · 📋 需求 · 🧠 记忆 · 📊 进度                      │
@@ -123,6 +123,12 @@
 | `validation` / 回归验证 | 验证命令、结果、证据摘要 | 必要时写入 `docs/testing/`，并在 `state/LOG.md` 记录验证范围 |
 
 新项目通过 `project-inception-docs` 初始化时，会默认带上 `docs/audit/INDEX.md`、`docs/audit/TEMPLATE-GLOBAL-AUDIT.md`，并在 `AGENTS.md` / `CLAUDE.md` 中写入 Artifact Contracts。这样你说“审计一下”“验收预检”“修复这个缺口”时，Agent 不应只在聊天里给结论，而要把报告、索引、日志和进度同步好。
+
+## 🔁 自主推进模式
+
+当用户说“继续推进项目”“按计划开发”“自动审计修复”这类话时，Agent 不应只做一个临时任务就停下。默认流程是：先检查或生成项目路线图和下一步工作包，再选择一个小而完整的目标，完成实现、验证、自审、修复、状态同步和原子 commit；之后回到路线图选择下一个目标，直到遇到需要用户决策、验证环境缺失、高风险操作或预算边界。
+
+核心规则见 [`framework/core/08-autonomous-project-loop.md`](framework/core/08-autonomous-project-loop.md)。默认推荐产物包括路线图、下一步工作包、初始审计报告和 `state/PROGRESS.md` 中的当前循环状态；本仓库启动模板使用 `docs/planning/开发路线图.md` 与 `docs/planning/下一步工作包.md`，已有项目可映射到自己的等价文档。
 
 ---
 

@@ -60,6 +60,13 @@
 - **影响**：后续 `audit` / `acceptance` 默认写报告并更新索引；`implement` / `fix` 默认同步 `state/LOG.md` 与 `state/PROGRESS.md`；文档结构变化默认同步 `docs/INDEX.md`。
 - **时间**：2026-06-27
 
+### D-008 · 持续推进前先做项目规划，再进入自主循环
+
+- **决定**：新增 `framework/core/08-autonomous-project-loop.md`，把“继续推进项目”类请求定义为：先确认或生成路线图和下一步工作包，再按单一工作包循环执行、验证、自审、修复、同步和提交。
+- **为什么**：仅有 10 阶段 checklist 会让 agent 完成一个局部动作后自然停下；真实项目推进需要先判断阶段、拆目标、定义验收标准，并把自审缺口转成下一轮目标。
+- **影响**：`project-workflow` 新增 `autonomous-loop` / `planning` 路由；新项目模板新增 `docs/planning/下一步工作包.md`，并增强 `state/PROGRESS.md` 的 Active Goal / Current Loop / Next Candidate Goals。
+- **时间**：2026-06-27
+
 ## 已知坑
 
 - `quick_validate.py` 不接受 `disable-model-invocation`、`user-invocable` 等旧 frontmatter 字段；新增或更新 skill 时只保留允许字段。

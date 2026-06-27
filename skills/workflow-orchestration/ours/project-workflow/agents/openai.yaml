@@ -1,4 +1,4 @@
 interface:
   display_name: "Project Workflow"
-  short_description: "通用项目工作流编排、验证同步与流程沉淀模板"
-  default_prompt: "Use $project-workflow to scan the repository, restore project state, resolve authority, route the task, and enforce validation plus docs sync before delivery."
+  short_description: "通用项目工作流编排、验证同步、自主推进与流程沉淀模板"
+  default_prompt: "Use $project-workflow to scan the repository, restore project state, resolve authority, route the task, and enforce validation plus docs sync before delivery. When asked to continue project progress, first update the roadmap and next work package, then run the autonomous loop: implement, validate, self-audit, repair, sync, commit when eligible, and choose the next goal."

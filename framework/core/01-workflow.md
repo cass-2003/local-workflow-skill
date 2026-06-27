@@ -37,6 +37,7 @@
 - **目的**：按任务类型完成分析、修改、修复、评审或同步。
 - **规则**：先读后改；只做必要改动；明确区分事实、推断与假设。
 - **自动产物**：审计、验收预检、重要实现、修复闭环、回归验证和文档同步不能只停留在对话里；应写入项目约定的报告、日志、计划或状态文件。
+- **自主推进**：当用户授权持续推进项目时，先按 `08-autonomous-project-loop.md` 的初始项目规划闸门建立路线图和下一步工作包，再进入实现。
 
 ## Phase 6 · Validation Gate
 
@@ -77,6 +78,24 @@
 
 - **目的**：把重复模式转成长期可复用资产（见 `06-evolution.md`）。
 - **输出**：observation、suggestion，或显式说明暂不需要沉淀。
+
+## 自主推进循环
+
+当任务不是单次交付，而是“继续推进项目 / 按计划开发 / 自动审计修复 / 推进到可用版本”时，使用 `08-autonomous-project-loop.md` 把本 10 阶段流程包成循环：
+
+```text
+project bootstrap planning
+-> select goal
+-> execute
+-> validate
+-> self-audit
+-> repair findings
+-> sync
+-> commit if eligible
+-> select next goal or stop with reason
+```
+
+循环不是无边界自动化。只有在目标清晰、风险可控、验证可做、变更仍是单一工作包时继续；遇到用户决策、外部凭据、高风险操作、连续失败或预算边界时停止并写明下一步。
 
 ## 轻量任务的裁剪
 

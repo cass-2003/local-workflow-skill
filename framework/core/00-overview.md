@@ -13,6 +13,7 @@
 | `05-validation.md` | 验证 / 文档 / 交付 三道闸门 | 准备声明完成、提交、交付时 |
 | `06-evolution.md` | 重复模式的保守沉淀机制 | 发现旧路径、漂移、重复解释时 |
 | `07-artifact-contracts.md` | 审计、验证、文档和状态产物契约 | 需要自动生成报告、索引、日志或同步状态时 |
+| `08-autonomous-project-loop.md` | 初始项目规划与自主推进循环 | 用户要求持续推进、自动审计修复或按路线图开发时 |
 
 ## 中立性约束
 
@@ -25,4 +26,4 @@
 
 ## 一句话心智模型
 
-> 先看清项目（scan）→ 恢复状态（state）→ 判断意图（intent）→ 解析权威（authority）→ 路由委托（route）→ 干活并留下产物（execute）→ 验证（validate）→ 回写状态与索引（sync）→ 交付闸门（deliver）→ 沉淀（evolve）。
+> 先看清项目（scan）→ 恢复状态（state）→ 判断意图（intent）→ 解析权威（authority）→ 路由委托（route）→ 干活并留下产物（execute）→ 验证（validate）→ 回写状态与索引（sync）→ 交付闸门（deliver）→ 沉淀（evolve）。当用户授权持续推进时，先做项目规划，再按 `08-autonomous-project-loop.md` 循环选择目标、实现、自审、修复、提交和继续。

@@ -8,6 +8,21 @@
 
 <此刻最重要的一件事。>
 
+## Active Goal
+
+- Goal: <本轮最小可执行目标>
+- Acceptance Criteria: <做到什么算完成>
+- Validation: <如何验证>
+- Scope Boundary: <本轮不做什么>
+
+## Current Loop
+
+- Status: planning
+- Last Action: 初始化项目启动文档包。
+- Last Validation: <已验证内容或待确认>
+- Last Self-Audit: <自审结论或待执行>
+- Stop Reason: 无。
+
 ## 进行中
 
 - [ ] <任务> — 关联 `REQ-001` — owner：<谁/哪个 agent>
@@ -15,6 +30,12 @@
 ## 待办
 
 - [ ] <任务> — 关联 `REQ-001`
+
+## Next Candidate Goals
+
+- [ ] P0 <打通主链路或关闭阻塞项>
+- [ ] P1 <完善核心能力>
+- [ ] P2 <增强体验、文档或工程卫生>
 
 ## 阻塞
 

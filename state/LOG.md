@@ -6,6 +6,10 @@
 
 ## 2026-06-27
 
+- `change` 新增自主项目推进循环，要求先做初始项目规划，再按工作包循环实现、验证、自审、修复、同步和提交。
+  - 触发：用户反馈工作流使用时 agent 容易停下，希望它能自己定 goal、完成一段后自动审计、修复并继续推进项目。
+  - 验证：新增 `framework/core/08-autonomous-project-loop.md`，并接入核心索引、路由矩阵、验证闸门、产物契约、仓库入口、适配模板、`project-workflow` 和 `project-inception-docs` 启动模板。
+
 - `docs` 在 README 增加“自动产物契约”独立小节。
   - 触发：用户确认 README 需要把审计报告、状态回写和文档索引同步规则写得更明显。
   - 验证：新增小节链接 `framework/core/07-artifact-contracts.md`，并列出 audit、implement/fix、docs-sync、validation 的默认产物与同步要求。

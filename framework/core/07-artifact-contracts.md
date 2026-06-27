@@ -7,6 +7,8 @@
 | 动作 | 默认产物 | 必须同步 |
 |---|---|---|
 | status | 对话摘要；必要时更新 `state/PROGRESS.md` | `state/PROGRESS.md` |
+| planning | `docs/planning/PROJECT-ROADMAP.md`、`docs/planning/NEXT-ACTIONS.md` 或项目等价文档 | `state/PROGRESS.md`、`docs/INDEX.md` |
+| autonomous-loop | 路线图 + 每轮实现/验证/自审/修复产物 | `state/LOG.md`、`state/PROGRESS.md`、相关索引 |
 | audit / acceptance | `docs/audit/<YYYY-MM-DD>-<scope>-audit.md` | `docs/audit/INDEX.md`、`state/LOG.md`、`state/PROGRESS.md` |
 | review | 对话 findings；重要结论写入 `docs/audit/` 或相关设计文档 | `state/LOG.md` |
 | implement | 代码 + 相关 docs / state | `state/LOG.md`、`state/PROGRESS.md`、必要时 `docs/INDEX.md` |
@@ -28,6 +30,16 @@
 - `# 验证证据`
 
 所有能力项必须显式归类为 `已实现`、`部分实现`、`未实现` 或 `未验证`。不能只复述旧报告；Critical / High 或 P0 / P1 结论必须回读对应源码、配置、测试或权威文档。
+
+## 自主推进产物
+
+进入自主推进循环时，不能只在对话里决定“下一步做什么”。至少要保证项目内可恢复：
+
+- 初始规划：路线图、候选工作包、当前第一目标、验收标准。
+- 每轮执行：实现或修复了什么、验证证据、自审结论、剩余缺口。
+- 循环交接：下一候选目标，或明确 stop reason。
+
+若项目已有等价的 roadmap、plan、todo、issue 或 sprint 文档，优先更新等价物；否则使用 `docs/planning/PROJECT-ROADMAP.md`、`docs/planning/NEXT-ACTIONS.md` 和 `state/PROGRESS.md`。
 
 ## 索引规则
 

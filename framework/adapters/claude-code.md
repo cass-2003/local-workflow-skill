@@ -32,6 +32,7 @@ Claude Code 侧现在有两类入口：
 | `../core/05-validation.md` | `references/validation-gates.md` |
 | `../core/06-evolution.md` | `references/skill-evolution.md` |
 | `../core/07-artifact-contracts.md` | 项目根入口与 `project-workflow` 直接指向 core |
+| `../core/08-autonomous-project-loop.md` | 项目根入口与 `project-workflow` 直接指向 core |
 
 ## 单一真相原则
 
@@ -45,6 +46,7 @@ Claude Code 侧现在有两类入口：
 - 开工先 scan，再从四态系统恢复状态
 - 若仓库缺少稳定的日志 / 需求 / 记忆 / 进度承载，先初始化最小四态骨架
 - 执行完成后先过验证，再回写四态系统
+- 用户要求继续推进项目时，先检查或生成路线图和下一步工作包，再按自主循环执行、验证、自审、修复和提交
 - 若验证通过、四态已同步、且本轮是单一逻辑改动，则默认创建原子 commit
 
 默认**不**自动做：
@@ -60,4 +62,5 @@ Claude Code 侧现在有两类入口：
 请使用 $project-workflow 先扫描当前仓库，恢复四态系统状态，只做路由分析。
 请使用 $project-workflow 判断这个需求该走 audit / implement / fix / review，并说明验证与文档同步策略。
 请使用 $project-workflow 检查当前改动在 commit 前是否已满足验证、文档同步和交付三道闸门。
+请使用 $project-workflow 继续推进这个项目：先做/更新路线图和下一步工作包，然后按自主循环实现、验证、自审、修复和提交。
 ```
