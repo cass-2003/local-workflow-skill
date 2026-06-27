@@ -6,6 +6,10 @@
 
 ## 2026-06-27
 
+- `change` 加强状态恢复与循环记录契约，避免项目初始化后仍然跨 agent 失忆。
+  - 触发：用户在 `J:\协作`、`J:\novels\novel-factory`、`J:\无界画布-AI视觉工作台`、`J:\视频工作流` 等已初始化项目中测试发现，入口文件存在但日志/记忆/进度不总是自动触发。
+  - 验证：核心 `01/02/08`、Codex/Claude 适配器、启动模板 `AGENTS.md` / `CLAUDE.md`、`project-workflow` 和 README 均补入 `State Restore` 摘要与 `Loop Record` 要求；后续用刷新脚本同步到本机和样例项目。
+
 - `change` 新增自主项目推进循环，要求先做初始项目规划，再按工作包循环实现、验证、自审、修复、同步和提交。
   - 触发：用户反馈工作流使用时 agent 容易停下，希望它能自己定 goal、完成一段后自动审计、修复并继续推进项目。
   - 验证：新增 `framework/core/08-autonomous-project-loop.md`，并接入核心索引、路由矩阵、验证闸门、产物契约、仓库入口、适配模板、`project-workflow` 和 `project-inception-docs` 启动模板。

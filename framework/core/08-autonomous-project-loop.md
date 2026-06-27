@@ -64,6 +64,8 @@ select goal
 -> select next goal or stop with reason
 ```
 
+每轮开始前必须有可恢复的 `Active Goal`；每轮结束前必须写入 `Loop Record`。若没有写入，不能把本轮声明为完成，也不能默认提交。
+
 ### 1. Select Goal
 
 从 `state/PROGRESS.md`、路线图、审计报告、需求文档或用户最新指令中选择下一轮目标。
@@ -110,6 +112,13 @@ select goal
 ### 6. Sync And Commit
 
 完成后按 `07-artifact-contracts.md` 同步产物，按 `05-validation.md` 和 `01-workflow.md` 的交付闸门判断是否 commit。
+
+同步时至少更新：
+
+- `state/LOG.md` 或等价日志：本轮做了什么、验证证据、提交状态。
+- `state/PROGRESS.md` 或等价进度：当前目标状态、自审结论、下一候选目标、停止原因。
+- `state/MEMORY.md` 或等价记忆：本轮学到的持久架构事实、命令、坑、边界。
+- `state/REQUIREMENTS.md` 或等价需求：验收标准、范围、done/open 状态发生变化时更新。
 
 满足以下条件时默认原子提交：
 

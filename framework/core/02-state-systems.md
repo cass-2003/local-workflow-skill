@@ -61,6 +61,16 @@
 
 若项目同时有 `docs/INDEX.md` 或审计索引，也应读取它们来定位真相文档，而不是凭文件名随机打开。
 
+### State Restore Gate
+
+开始编码、审计、修复或提交前，agent 必须先完成下面的恢复闸门：
+
+- 明确四态主来源分别是什么；缺失时创建或映射等价承载。
+- 读取四态主来源，而不是只检查文件存在。
+- 标记 `missing`、`stale`、`placeholder`、`conflict` 四类风险。
+- 若遇到 `<任务>`、`<项目由哪些部分组成>`、`待补充`、`TBD` 等占位内容，先用当前仓库事实补最小可用内容；无法补齐时在进度系统记录原因和下一步。
+- 在对话或交接中给出 `State Restore` 摘要；当恢复结论改变项目状态时，同步写回 `state/PROGRESS.md` 或等价进度系统。
+
 ```md
 ## State Restore
 
@@ -100,6 +110,26 @@
 - 自主推进循环结束一轮，或因为 stop condition 停止。
 
 若判断无需写入，交付时要说明“未写状态的原因”。
+
+### Loop Record
+
+自主推进、审计修复、重要实现、验收预检或跨 agent 交接结束时，必须留下可恢复的循环记录。优先写入 `state/PROGRESS.md`，需要历史流水时同时追加 `state/LOG.md`。
+
+```md
+## Loop Record · <YYYY-MM-DD> · <scope>
+
+- Goal:
+- Acceptance Criteria:
+- Validation Evidence:
+- Self-Audit:
+- Repairs:
+- State/Docs Sync:
+- Commit:
+- Next Goal:
+- Stop Reason:
+```
+
+`Stop Reason` 不能只写“完成”或“等待”；要写明下一步为什么不能由 agent 继续安全推进，或下一轮最小可执行目标是什么。
 
 ## 首次初始化建议
 

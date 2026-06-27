@@ -30,6 +30,8 @@
 - Also read `docs/INDEX.md` to find the project truth docs, and `docs/audit/INDEX.md` when audit reports exist.
 - Do not treat placeholder text such as `<任务>` or `<项目由哪些部分组成>` as valid state. Replace placeholders with current project facts as soon as the project has real information.
 - Prefer the newest project-local state and docs over chat memory or global rules.
+- Before coding, audit, fixing, or committing, produce a `State Restore` summary with: state sources, stale/placeholders, latest goal, latest validation, blocker, and assumptions for this loop.
+- If state files still contain placeholders like `<任务>`, `待补充`, or `TBD`, replace what can be confirmed from repository facts; record the rest as explicit open questions.
 
 ## State Write Contract
 
@@ -37,6 +39,7 @@
 - When current focus, active goal, next action, blocker, validation result, or stop reason changes, update `state/PROGRESS.md`.
 - When a durable decision, architecture fact, operational gotcha, external dependency, command, credential boundary, or recovery note is learned, update `state/MEMORY.md`.
 - When scope, acceptance criteria, P0/P1 priority, compliance boundary, or done/open status changes, update `state/REQUIREMENTS.md`.
+- After every autonomous loop, audit/fix loop, important implementation, or handoff, write a `Loop Record` to `state/PROGRESS.md` or `state/LOG.md`: goal, acceptance criteria, validation evidence, self-audit, repairs, state/docs sync, commit, next goal, and stop reason.
 - Before commit, verify state sync happened or explicitly record why no state file needed a change.
 
 ## Documentation Entry

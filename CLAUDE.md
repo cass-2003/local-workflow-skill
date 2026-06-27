@@ -29,6 +29,11 @@ Read:
 Update `state/LOG.md`, `state/REQUIREMENTS.md`, `state/MEMORY.md`, and
 `state/PROGRESS.md` when repository truth changes.
 
+Before substantial work, produce a `State Restore` summary from these files:
+state sources, stale/placeholders, latest goal, latest validation, blocker, and
+current assumptions. If placeholders or stale entries remain, replace what can
+be confirmed from repository facts before editing workflow behavior.
+
 ## Artifact Contracts
 
 Do not leave substantial audit, acceptance, implementation, fix, validation, or
@@ -55,6 +60,11 @@ planning artifacts before implementation. Then follow
 acceptance criteria, implement, validate, self-audit, repair in-scope findings,
 sync state/docs, commit when eligible, and either select the next goal or stop
 with a clear reason.
+
+Every autonomous loop, audit/fix loop, important implementation, or handoff
+must leave a `Loop Record` in `state/PROGRESS.md` or `state/LOG.md`: goal,
+acceptance criteria, validation evidence, self-audit, repairs, state/docs sync,
+commit, next goal, and stop reason.
 
 ## Skill Library Policy
 

@@ -119,6 +119,21 @@ description: Orchestrate a generic project workflow by scanning repository autho
 在内部至少形成两条可回看的简短记录：
 
 ```md
+## State Restore
+
+- Project log:
+- Project requirements:
+- Project memory:
+- Project progress:
+- Stale or placeholder systems:
+- Missing systems:
+- Latest known goal:
+- Latest known validation:
+- Latest known blocker:
+- Assumptions for this loop:
+```
+
+```md
 ## Authority Resolution
 
 - Rules source:
@@ -150,8 +165,12 @@ description: Orchestrate a generic project workflow by scanning repository autho
 - Validation plan:
 - Self-audit result:
 - Repair findings:
+- State/docs sync:
+- Commit:
 - Next candidate goal:
 - Stop reason:
 ```
 
 让关键判断可复查，而不是完全隐式。
+
+自主推进、审计修复、重要实现或 handoff 结束时，把 `Autonomous Loop State` 的结论写回项目进度或日志系统；只留在对话里不算完成同步。

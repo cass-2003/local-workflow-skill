@@ -21,6 +21,8 @@
 | REQ-007 | 新项目必须先补齐可持续开发地基 | 首次接入时检查 Git、`.gitignore`、agent 入口、四态系统、README、docs/INDEX 和验证命令；缺 Git 时默认初始化但不默认 push | done | PROGRESS#已完成 |
 | REQ-008 | 本仓库必须保持开源通用，不携带项目定制 skill | manifest、README、路由表和分级文档显示项目定制项为 0；强绑具体项目/产品/旧命令封装的 skill 不进入 `skills/` | done | PROGRESS#已完成 |
 | REQ-009 | 工作流应自动留下审计、验证、文档和状态产物 | 核心包含 `07-artifact-contracts.md`；新项目模板包含 `docs/audit/INDEX.md` 与审计模板；AGENTS/CLAUDE 入口声明审计、实现、修复和 docs-sync 不只停留在对话里 | done | PROGRESS#已完成 |
+| REQ-010 | 自主推进应先规划、再按工作包循环执行/自审/修复/提交 | 核心包含 `08-autonomous-project-loop.md`；入口模板要求路线图、下一步工作包、单目标循环、停止条件和默认原子 commit | done | PROGRESS#已完成 |
+| REQ-011 | 状态系统必须可恢复而非仅存在 | 核心和入口模板要求开工前输出 `State Restore` 摘要，识别占位/陈旧状态，并在每轮结束写入 `Loop Record`，包含目标、验收、验证、自审、修复、同步、commit、下一目标或停止原因 | done | PROGRESS#已完成 |
 
 ## 约束与非目标
 

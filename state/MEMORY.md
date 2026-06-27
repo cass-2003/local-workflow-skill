@@ -67,6 +67,13 @@
 - **影响**：`project-workflow` 新增 `autonomous-loop` / `planning` 路由；新项目模板新增 `docs/planning/下一步工作包.md`，并增强 `state/PROGRESS.md` 的 Active Goal / Current Loop / Next Candidate Goals。
 - **时间**：2026-06-27
 
+### D-009 · 状态恢复与循环记录成为运行时契约
+
+- **决定**：开工前必须形成 `State Restore` 摘要，收工前必须写入 `Loop Record`；占位状态不能视为有效记忆。
+- **为什么**：真实项目测试显示，初始化过 `AGENTS.md` / `CLAUDE.md` 和 `state/` 仍不足以保证 agent 自动读写记忆；必须把“读了什么、写了什么、下一步是什么”变成可检查产物。
+- **影响**：核心、适配器、启动模板和 `project-workflow` 技能都要求识别占位/陈旧状态，并把自主循环的目标、验收、验证、自审、修复、同步、commit 和停止原因写回项目状态。
+- **时间**：2026-06-27
+
 ## 已知坑
 
 - `quick_validate.py` 不接受 `disable-model-invocation`、`user-invocable` 等旧 frontmatter 字段；新增或更新 skill 时只保留允许字段。

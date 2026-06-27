@@ -23,6 +23,19 @@
 - Last Self-Audit: <自审结论或待执行>
 - Stop Reason: 无。
 
+## Loop Record
+
+- Date: <YYYY-MM-DD>
+- Goal: <本轮目标>
+- Acceptance Criteria: <验收标准>
+- Validation Evidence: <验证证据>
+- Self-Audit: <自审结论>
+- Repairs: <已修复问题或无>
+- State/Docs Sync: <已同步哪些状态/文档>
+- Commit: <commit hash 或未提交原因>
+- Next Goal: <下一步最小可执行目标>
+- Stop Reason: <停止原因或无>
+
 ## 进行中
 
 - [ ] <任务> — 关联 `REQ-001` — owner：<谁/哪个 agent>
