@@ -6,7 +6,7 @@
 
 ## 规模与结构
 
-**517 个技能 · 58 个领域大类**，由四个来源合并去重并剔除项目定制项而成：
+**523 个技能 · 58 个领域大类**，由四个来源合并去重并剔除项目定制项而成：
 
 | 来源 | 含义 | 去重优先级 |
 |---|---|---|
@@ -45,11 +45,11 @@
 > 来源：community 1
 - **community**：app-store-optimization
 
-### backend-api — 后端与 API（25）
-> 来源：codex 18 · cskills 4 · ours 3
+### backend-api — 后端与 API（28）
+> 来源：codex 18 · cskills 4 · ours 6
 - **codex**：api-data-platform、api-design、api-design-2、api-discovery、aspnet-core、backend-engineering、cms-headless、django-dev、event-driven、fastapi-dev、graphql-dev、laravel-dev、microservices、nestjs-dev、rails-dev、realtime-communication、service-mesh、spring-boot-dev
 - **cskills**：api-engineering、backend-engineering、graphql-grpc-events、sdk-integration
-- **ours**：background-jobs、dockerfile-best、websocket-impl
+- **ours**：api-error-observability、auth-access-control、background-jobs、database-transaction-consistency、dockerfile-best、websocket-impl
 
 ### brand-strategy — 品牌策略（3）
 > 来源：community 3
@@ -129,11 +129,11 @@
 > 来源：community 2
 - **community**：financial-analyst、saas-metrics-coach
 
-### frontend-ui — 前端与 UI（27）
-> 来源：codex 22 · cskills 4 · ours 1
+### frontend-ui — 前端与 UI（30）
+> 来源：codex 22 · cskills 4 · ours 4
 - **codex**：UIdesign、accessibility、angular-dev、chatgpt-apps、figma、figma-code-connect-components、figma-create-design-system-rules、figma-create-new-file、figma-generate-design、figma-generate-library、figma-implement-design、figma-use、frontend-dev、graphics-rendering、i18n-l10n、nextjs-dev、screenshot、svelte-dev、ui-design、ui-doc-output、vue-dev、winui-app
 - **cskills**：nextdev、react-development、screenshot-to-ui、ui-design
-- **ours**：css-modern-2025
+- **ours**：css-modern-2025、design-system-implementation、frontend-performance、frontend-state-data-flow
 
 ### grant-funding — 基金与资助（1）
 > 来源：community 1
@@ -283,6 +283,6 @@
 
 ## 分级与变体（框架路线图阶段 6）
 
-- ✅ 已打"通用 / 半通用"标记，并剔除项目定制项：**通用 468 · 半通用 49 · 项目定制 0**，详见 `TIERS.md`。
+- ✅ 已打"通用 / 半通用"标记，并剔除项目定制项：**通用 474 · 半通用 49 · 项目定制 0**，详见 `TIERS.md`。
 - ✅ 已去掉全部 `anna-*`/`coff0xc-*` 前缀（36 个，技能全保留）；同域同源真撞名的 10 个取 `-2` 后缀。
 - `_merge-manifest.csv`（已含 `tier` 列）是后续筛选的工作底稿。

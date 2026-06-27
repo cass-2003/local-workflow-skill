@@ -26,6 +26,7 @@
 | REQ-012 | 项目初始化和入口刷新能力应可复现 | 仓库内提供 `tools/project-init/Initialize-PortableAgentProject.ps1` 与 `Validate-PortableAgentWorkflow.ps1`；支持完整初始化、只刷新托管入口、保留项目专属内容，并有 smoke test | done | PROGRESS#已完成 |
 | REQ-013 | 能力库领域覆盖应减少安全/逆向/工程偏重 | 首批导入许可清晰、可追溯、通用的 community 技能，新增业务运营、商业策略、财务指标、产品管理、项目管理、研究运营领域；索引、路由、分级和来源记录同步 | done | PROGRESS#已完成 |
 | REQ-014 | 能力库至少覆盖 50 个领域大类 | 第二批导入许可清晰、可追溯、通用的 community 技能；README、skills README、路由、分级和 manifest 显示不少于 50 个大类，且项目定制项仍为 0 | done | PROGRESS#已完成 |
+| REQ-015 | 前端 UI 与后端 API 应具备高频基础工程技能 | 新增通用 `ours` 技能覆盖设计系统落地、前端状态/数据流、前端性能、认证授权、事务一致性、API 错误与可观测性；manifest、README、skills README、TIERS、路由和四态系统计数一致 | done | PROGRESS#已完成 |
 
 ## 约束与非目标
 

@@ -8,7 +8,7 @@
 
 ![status](https://img.shields.io/badge/status-alpha-orange)
 ![agents](https://img.shields.io/badge/agents-Claude_Code_·_Codex-5b6cf9)
-![skills](https://img.shields.io/badge/skills-517-2ea44f)
+![skills](https://img.shields.io/badge/skills-523-2ea44f)
 ![domains](https://img.shields.io/badge/domains-58-2ea44f)
 ![format](https://img.shields.io/badge/core-pure_Markdown-lightgrey)
 ![deps](https://img.shields.io/badge/runtime_deps-0-blue)
@@ -66,8 +66,8 @@
 └───────────────────────────┬─────────────────────────────────┘
                             │ Phase 4/5 委托 ↓
 ┌───────────────────────────▼─────────────────────────────────┐
-│  🛠️ skills/   517 技能 / 58 领域大类（双层 <大类>/<来源>/）      │
-│       安全 85 · 逆向 63 · 营销/合规/研究/生产力等非工程领域扩展 │
+│  🛠️ skills/   523 技能 / 58 领域大类（双层 <大类>/<来源>/）      │
+│       安全 85 · 逆向 63 · 前后端/营销/合规/研究等领域持续扩展    │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -138,7 +138,7 @@
 
 ---
 
-## 🛠️ 能力库（517 技能 · 58 大类）
+## 🛠️ 能力库（523 技能 · 58 大类）
 
 执行阶段委托的具体技能，四源合并去重，双层结构 `<领域大类>/<来源>/<skill>/`：
 
@@ -146,15 +146,15 @@
 |:--|:-:|:--|:-:|:--|:-:|
 | 安全工程 | 85 | 编程语言 | 21 | 商业策略 | 7 |
 | 逆向工程 | 63 | AI 自动化 | 18 | 数据分析 | 7 |
-| 前端 UI | 27 | 移动跨端 | 18 | 业务运营 | 6 |
+| 前端 UI | 30 | 移动跨端 | 18 | 业务运营 | 6 |
 | 通用工程 | 26 | 云基础设施 | 17 | 转化优化 | 6 |
-| 后端 API | 25 | 工作流编排 | 15 | 项目管理 | 4 |
+| 后端 API | 28 | 工作流编排 | 15 | 项目管理 | 4 |
 | 质量交付 | 24 | 内容创作 | 14 | SEO | 4 |
 | 支付电商 | 12 | 地图位置 | 11 | 社交媒体 | 4 |
 | 研究知识 | 10 | 产品管理 | 8 | Markdown 发布 | 4 |
-| 硬件系统 | 8 | 产品增长 | 8 | 其余长尾领域 | 155 |
+| 硬件系统 | 8 | 产品增长 | 8 | 其余长尾领域 | 65 |
 
-技能按通用性分级：**🟢 通用 468 · 🟡 半通用 49 · 🔵 项目定制 0**（见 [`skills/TIERS.md`](skills/TIERS.md)）。完整索引见 [`skills/README.md`](skills/README.md)。
+技能按通用性分级：**🟢 通用 474 · 🟡 半通用 49 · 🔵 项目定制 0**（见 [`skills/TIERS.md`](skills/TIERS.md)）。完整索引见 [`skills/README.md`](skills/README.md)。
 
 ---
 
@@ -259,7 +259,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass `
 │   ├─ state-systems/       ★ 四态系统说明 + drop-in 模板
 │   ├─ adapters/            各家 Agent 适配登记（CC / Codex）
 │   └─ validation/          dogfood 样板 + 端到端验证报告
-├─ 🛠️ skills/              能力库：517 技能 / 58 大类
+├─ 🛠️ skills/              能力库：523 技能 / 58 大类
 │   ├─ README.md             领域索引
 │   ├─ TIERS.md              分级（通用/半通用；项目定制不进入开源库）
 │   ├─ _merge-manifest.csv   四源合并对照表
@@ -277,7 +277,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass `
 - [x] 📑 四态系统 drop-in 模板
 - [x] 🤖 Claude Code 适配器
 - [x] 🤖 Codex 适配器
-- [x] 🛠️ 四源合并丰富能力库（517 技能 / 58 大类）
+- [x] 🛠️ 四源合并丰富能力库（523 技能 / 58 大类）
 - [x] 🏷️ 能力库分级标记 + 项目定制项清理
 - [x] 🧪 Claude Code 侧端到端 dogfood 跑通
 - [x] 🧪 Codex 侧端到端实测

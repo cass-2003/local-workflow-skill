@@ -45,7 +45,10 @@ cskills,backend-engineering,backend,backend-api,rule:csk-readme,no,backend-engin
 cskills,graphql,graphql,backend-api,rule:csk-readme,no,graphql,dup,
 cskills,graphql-grpc-events,graphql-grpc-events,backend-api,rule:csk-readme,no,graphql-grpc-events,WIN,通用
 cskills,sdk-integration,sdk-integration,backend-api,rule:csk-readme,no,sdk-integration,WIN,通用
+ours,api-error-observability,api-error-observability,backend-api,rule:ours-path,no,backend-api/ours/api-error-observability,WIN,通用
+ours,auth-access-control,auth-access-control,backend-api,rule:ours-path,no,backend-api/ours/auth-access-control,WIN,通用
 ours,background-jobs,background-jobs,backend-api,rule:ours-path,no,backend-api/ours/background-jobs,WIN,通用
+ours,database-transaction-consistency,database-transaction-consistency,backend-api,rule:ours-path,no,backend-api/ours/database-transaction-consistency,WIN,通用
 ours,dockerfile-best,dockerfile-best,backend-api,rule:ours-path,no,backend-api/ours/dockerfile-best,WIN,通用
 ours,websocket-impl,websocket-impl,backend-api,rule:ours-path,no,backend-api/ours/websocket-impl,WIN,通用
 community,brand-guidelines,brand-guidelines,brand-strategy,rule:community-path,yes,brand-strategy/community/brand-guidelines,WIN,通用
@@ -190,6 +193,9 @@ cskills,svelte,svelte,frontend-ui,rule:csk-readme,no,svelte,dup,
 cskills,ui-design,ui-design,frontend-ui,rule:csk-readme,no,ui-design,WIN,通用
 cskills,vue-development,vue,frontend-ui,rule:csk-readme,no,vue-development,dup,
 ours,css-modern-2025,css-modern-2025,frontend-ui,rule:ours-path,no,frontend-ui/ours/css-modern-2025,WIN,通用
+ours,design-system-implementation,design-system-implementation,frontend-ui,rule:ours-path,no,frontend-ui/ours/design-system-implementation,WIN,通用
+ours,frontend-performance,frontend-performance,frontend-ui,rule:ours-path,no,frontend-ui/ours/frontend-performance,WIN,通用
+ours,frontend-state-data-flow,frontend-state-data-flow,frontend-ui,rule:ours-path,no,frontend-ui/ours/frontend-state-data-flow,WIN,通用
 community,grants,grants,grant-funding,rule:community-path,yes,grant-funding/community/grants,WIN,通用
 community,ab-test-setup,ab-test-setup,growth-experiments,rule:community-path,yes,growth-experiments/community/ab-test-setup,WIN,通用
 community,free-tool-strategy,free-tool-strategy,growth-experiments,rule:community-path,yes,growth-experiments/community/free-tool-strategy,WIN,通用

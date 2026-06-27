@@ -6,6 +6,11 @@
 
 ## 2026-06-28
 
+- `change` 补强前端 UI 与后端 API 的通用基础工程技能，能力库推进到 523 技能 / 58 大类。
+  - 触发：用户指出前端 UI、后端等核心开发领域还需要继续丰富，避免能力库只在安全/逆向/通用工程上强。
+  - 范围：新增 6 个 `ours` 技能：`design-system-implementation`、`frontend-state-data-flow`、`frontend-performance`、`auth-access-control`、`database-transaction-consistency`、`api-error-observability`。
+  - 验证：同步 manifest、README、skills README、TIERS、路由矩阵和四态系统；执行 frontmatter、计数、旧口径残留、密钥模式和 `git diff --check` 校验。
+
 - `change` 第二批扩容 community 技能，把能力库推进到 517 技能 / 58 大类。
   - 触发：用户要求 README 与能力库继续丰富，并明确至少覆盖 50 个领域大类；同时参考 Codex/OpenAI skill 规范和开源 skill 库。
   - 范围：继续从 MIT 许可 `alirezarezvani/claude-skills` 筛选 78 个通用技能，新增 SEO、内容策略、文案编辑、付费获客、邮件营销、增长实验、品牌策略、合规质量、研究学习、个人生产力、客户成功、收入运营、销售赋能、组织管理、Markdown 发布等领域。

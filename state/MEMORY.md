@@ -95,6 +95,13 @@
 - **影响**：`framework/core/03-routing.md` 需要用分组行概括长尾领域；具体选择仍以 `skills/README.md` 和各技能 `description` 为准。
 - **时间**：2026-06-28
 
+### D-013 · 高频核心工程缺口优先沉淀为 ours
+
+- **决定**：当前端 UI、后端 API、数据流、认证、事务、可观测性等高频工程缺口没有足够明确的本仓库技能时，优先补充为 `ours`，前提是内容通用、非项目定制、可跨框架复用。
+- **为什么**：community 导入适合扩领域宽度，但核心开发流程需要可维护、可审计、可按本仓库工作流演进的基础技能；这些技能会被真实项目频繁路由。
+- **影响**：新增核心技能时保持 `SKILL.md` 精简、frontmatter 只有 `name` / `description`，并同步 manifest、索引、路由、分级和四态系统。
+- **时间**：2026-06-28
+
 ## 已知坑
 
 - `quick_validate.py` 不接受 `disable-model-invocation`、`user-invocable` 等旧 frontmatter 字段；新增或更新 skill 时只保留允许字段。
@@ -104,3 +111,4 @@
 - 对已有 Git 仓库只读状态并补缺口；不要把已有项目重新 `git init`，也不要覆盖 remote、分支或历史。
 - `tools/project-init/Initialize-PortableAgentProject.ps1 -AgentEntriesOnly` 只刷新 `AGENTS.md` / `CLAUDE.md` 托管块，不初始化 Git、不写 `.gitignore`、不覆盖 README/docs/state。
 - community 导入需要同时更新 `tools/skill-merge/provenance/<source>/`、`skills/_merge-manifest.csv`、`skills/README.md`、`skills/TIERS.md` 和路由矩阵，否则后续 agent 会看到不一致的能力库地图。
+- `tools/skill-merge/gen_manifest.py` 依赖 C_Skills 的真实解压路径；如果未设置 `PAW_CSKILLS_DIR` 且默认 `_unzipped/all-skills` 不存在，重生 manifest 会跳过 cskills 并造成赢家数量异常缩水。

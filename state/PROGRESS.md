@@ -6,11 +6,11 @@
 
 ## 当前焦点
 
-把能力库从偏工程/安全/逆向的结构扩展为更均衡的通用工作流技能库，同时保持来源、许可、索引和路由可追溯。
+把能力库从偏工程/安全/逆向的结构扩展为更均衡的通用工作流技能库，并补强前端 UI、后端 API 等真实项目高频开发基础能力，同时保持来源、许可、索引和路由可追溯。
 
 ## 进行中
 
-- 验证并提交第二批 community 技能扩容。
+- 无；前端 UI / 后端 API 基础技能补强已完成，等待真实项目 dogfood。
 
 ## 待办
 
@@ -20,6 +20,7 @@
 - [ ] 在真实项目中 dogfood `State Restore` 与 `Loop Record`，检查 agent 是否会主动替换占位状态并写回下一目标 — 关联 `REQ-011`
 - [ ] 把桌面 HTA 面板做成仓库可选包装，或明确作为本机私有便利入口 — 关联 `REQ-012`
 - [ ] 继续筛选许可清晰的开源 skill 源，重点补数据科学、法务、HR、教育、创意制作、行业知识和本地化等仍较薄领域 — 关联 `REQ-014`
+- [ ] 在真实前后端项目中 dogfood 新增的设计系统、前端性能、状态数据流、认证授权、事务一致性、API 错误可观测性技能，检查触发质量和执行粒度 — 关联 `REQ-015`
 
 ## 阻塞
 
@@ -27,6 +28,7 @@
 
 ## 已完成（近期）
 
+- [x] 新增 6 个前端 UI / 后端 API 通用 `ours` 技能，能力库扩展到 523 技能 / 58 大类 — 2026-06-28（详情可见 LOG.md）
 - [x] 第二批导入 78 个 MIT community 技能，能力库扩展到 517 技能 / 58 大类，覆盖至少 50 个领域大类 — 2026-06-28（详情可见 LOG.md）
 - [x] 首批导入 30 个 MIT community 技能，新增 6 个业务/产品/管理/研究类领域，能力库更新为 439 技能 / 24 大类 — 2026-06-28（详情可见 LOG.md）
 - [x] 新增 `tools/project-init/` 初始化、入口刷新和工作流自检脚本；启动四态模板改为显式待确认结构 — 2026-06-27（详情可见 LOG.md）
@@ -58,3 +60,15 @@
 - Commit: 本轮提交使用 `feat: expand skill domains beyond fifty`。
 - Next Goal: 后续继续补数据科学、法务、HR、教育、创意制作、行业知识和本地化等薄弱领域，并考虑建立 skill eval/触发测试样例。
 - Stop Reason: 本轮目标是先达到 50+ 大类并完成可验证导入；更大规模导入需要下一轮按许可和触发质量继续筛选。
+
+## Loop Record · 2026-06-28 · frontend-backend-foundation-skills
+
+- Goal: 补强前端 UI 与后端 API 的高频基础工程技能，让真实项目开发时能路由到设计系统、状态数据流、性能、认证授权、事务一致性和 API 可观测性。
+- Acceptance Criteria: 新技能是通用 `ours`；frontmatter 只有 `name` / `description`；manifest、README、skills README、TIERS、路由矩阵和四态系统计数一致；不引入项目定制、私有路径或敏感信息。
+- Validation Evidence: 已通过新增 skill frontmatter 校验、manifest 计数校验（523 winners / 通用 474 / 半通用 49 / 58 domains / frontend-ui 30 / backend-api 28）、README 表格求和校验（523）、密钥模式扫描和 `git diff --check`；旧口径扫描只命中历史日志/历史 Loop Record 与合并历史说明。
+- Self-Audit: 本轮不继续扩大新领域数量，而是补核心开发链路短板；新增 6 个技能均不绑定具体框架，适合作为真实项目的基础路由。
+- Repairs: 收敛 manifest 噪音，只保留 6 个新增 WIN 行，避免生成器顺序漂移和 C_Skills 路径问题污染 diff。
+- State/Docs Sync: 已同步 README、skills README、routing、TIERS、REQ/LOG/MEMORY/PROGRESS。
+- Commit: 待验证通过后使用 `feat: enrich frontend and backend skills`。
+- Next Goal: 在真实前后端项目中 dogfood 新 skill 的触发质量，并继续补数据科学、法务、HR、教育、创意制作、行业知识和本地化等薄弱领域。
+- Stop Reason: 本轮是单一范围的能力库补强；验证和 commit 后停止，不自动 push。
