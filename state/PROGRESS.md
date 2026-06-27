@@ -6,11 +6,11 @@
 
 ## 当前焦点
 
-把通用工作流从“线性 checklist”推进到“先恢复状态、先规划、再按工作包自主循环”，并让每轮留下可跨 agent 恢复的记录。
+把通用工作流从“线性 checklist”推进到“先恢复状态、先规划、再按工作包自主循环”，并把项目初始化、入口刷新和自检做成可复现工具。
 
 ## 进行中
 
-- 验证并提交状态恢复契约与循环记录改造。
+- 验证并提交项目初始化器开源化与启动模板去占位改造。
 
 ## 待办
 
@@ -18,6 +18,7 @@
 - [ ] 在真实项目中 dogfood `07-artifact-contracts.md`，检查 `audit` / `fix` / `docs-sync` 是否稳定生成报告、索引和四态回写 — 关联 `REQ-009`
 - [ ] 在真实项目中 dogfood `08-autonomous-project-loop.md`，检查“继续推进项目”是否会先规划、再循环执行/自审/修复/commit — 关联 `REQ-010`
 - [ ] 在真实项目中 dogfood `State Restore` 与 `Loop Record`，检查 agent 是否会主动替换占位状态并写回下一目标 — 关联 `REQ-011`
+- [ ] 把桌面 HTA 面板做成仓库可选包装，或明确作为本机私有便利入口 — 关联 `REQ-012`
 
 ## 阻塞
 
@@ -25,6 +26,7 @@
 
 ## 已完成（近期）
 
+- [x] 新增 `tools/project-init/` 初始化、入口刷新和工作流自检脚本；启动四态模板改为显式待确认结构 — 2026-06-27（详情可见 LOG.md）
 - [x] 加强 `State Restore` 与 `Loop Record` 契约，让入口模板、核心和 `project-workflow` 都要求开工恢复、收工回写 — 2026-06-27（详情可见 LOG.md）
 - [x] 新增 `08-autonomous-project-loop.md`，并接入核心、适配入口、project-workflow 与项目初始化模板 — 2026-06-27（详情可见 LOG.md）
 - [x] README 增加“自动产物契约”独立小节，明确 audit、implement/fix、docs-sync、validation 的默认落点 — 2026-06-27（详情可见 LOG.md）

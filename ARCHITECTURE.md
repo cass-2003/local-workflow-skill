@@ -98,4 +98,4 @@ local-skills-workspace/
 ## 路线图位置
 
 已完成：中立核心 → 四态模板 → CC 适配器 → Codex 适配器 → 三源能力库合并 → 项目定制项清理。
-待办：抽公共适配层与全局安装说明。详见 `framework/FRAMEWORK.md` 与 `README.md` 路线图。
+`tools/project-init/` 提供可复现的项目初始化、入口刷新与工作流自检脚本；后续仍需抽公共适配层与全局安装说明。详见 `framework/FRAMEWORK.md` 与 `README.md` 路线图。

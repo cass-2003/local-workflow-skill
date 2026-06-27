@@ -74,6 +74,13 @@
 - **影响**：核心、适配器、启动模板和 `project-workflow` 技能都要求识别占位/陈旧状态，并把自主循环的目标、验收、验证、自审、修复、同步、commit 和停止原因写回项目状态。
 - **时间**：2026-06-27
 
+### D-010 · 项目初始化器进入开源仓库
+
+- **决定**：把本机项目初始化/入口刷新能力沉淀到 `tools/project-init/`，并提供 `Validate-PortableAgentWorkflow.ps1` 自检脚本。
+- **为什么**：桌面面板和本机脚本已成为真实项目接入 workflow 的关键路径；若不进入仓库，其他环境无法复现，也无法用 Git 审计和测试防回归。
+- **影响**：后续项目接入优先使用仓库内脚本；本机桌面面板只是包装层。入口刷新默认替换托管块并保留项目专属内容。
+- **时间**：2026-06-27
+
 ## 已知坑
 
 - `quick_validate.py` 不接受 `disable-model-invocation`、`user-invocable` 等旧 frontmatter 字段；新增或更新 skill 时只保留允许字段。
@@ -81,3 +88,4 @@
 - `assets/templates/startup-docs/` 是输出资产，可以包含要复制到目标项目的 `README.md`；这不违反 skill 根目录不放杂项 README 的约束。
 - `coffee-skill` 上游 `SKILL.md` 的 frontmatter `name` 是 `coff0xc-*`；导入到本仓库时必须归一化为本地目录 slug，否则 `quick_validate.py` 会失败。
 - 对已有 Git 仓库只读状态并补缺口；不要把已有项目重新 `git init`，也不要覆盖 remote、分支或历史。
+- `tools/project-init/Initialize-PortableAgentProject.ps1 -AgentEntriesOnly` 只刷新 `AGENTS.md` / `CLAUDE.md` 托管块，不初始化 Git、不写 `.gitignore`、不覆盖 README/docs/state。

@@ -6,6 +6,10 @@
 
 ## 2026-06-27
 
+- `change` 开源化项目初始化与工作流自检工具，并降低启动四态模板的占位债。
+  - 触发：审计发现关键初始化/刷新能力仍停留在本机脚本，启动模板 `state/` 仍有大量 `<...>` 占位，和“占位不能当记忆”的新契约冲突。
+  - 验证：新增 `tools/project-init/Initialize-PortableAgentProject.ps1` 与 `Validate-PortableAgentWorkflow.ps1`；运行完整自检与初始化器烟测通过，确认 `AgentEntriesOnly` 会保留项目专属段且不初始化 Git / `.gitignore`。
+
 - `change` 加强状态恢复与循环记录契约，避免项目初始化后仍然跨 agent 失忆。
   - 触发：用户在 `J:\协作`、`J:\novels\novel-factory`、`J:\无界画布-AI视觉工作台`、`J:\视频工作流` 等已初始化项目中测试发现，入口文件存在但日志/记忆/进度不总是自动触发。
   - 验证：核心 `01/02/08`、Codex/Claude 适配器、启动模板 `AGENTS.md` / `CLAUDE.md`、`project-workflow` 和 README 均补入 `State Restore` 摘要与 `Loop Record` 要求；后续用刷新脚本同步到本机和样例项目。

@@ -171,6 +171,27 @@
 6. 验证通过且本轮是单一逻辑改动时，默认允许 Agent 自动创建原子 commit
 ```
 
+也可以直接使用仓库内初始化器：
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass `
+  -File .\tools\project-init\Initialize-PortableAgentProject.ps1 `
+  -ProjectPath "C:\path\to\project" `
+  -ProjectName "My Project" `
+  -Idea "One-sentence goal" `
+  -RefreshAgentEntries `
+  -EnsureIndexes
+```
+
+只刷新已有项目的 `AGENTS.md` / `CLAUDE.md` 工作流托管块，并保留项目专属说明：
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass `
+  -File .\tools\project-init\Initialize-PortableAgentProject.ps1 `
+  -ProjectPath "C:\path\to\project" `
+  -AgentEntriesOnly
+```
+
 ### 新项目地基门禁
 
 每个新项目、空目录或首次接入 workflow 的项目，默认先补这几块地基：
@@ -198,6 +219,13 @@
 ```
 
 > 🧪 想看完整跑一遍的样子？[`framework/validation/sample-project/`](framework/validation/sample-project/) 是个可直接重跑的最小样板，附 dogfood 验证报告。
+
+仓库维护者可运行工作流自检：
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass `
+  -File .\tools\project-init\Validate-PortableAgentWorkflow.ps1
+```
 
 ---
 
@@ -235,7 +263,9 @@
 │   ├─ TIERS.md              分级（通用/半通用；项目定制不进入开源库）
 │   ├─ _merge-manifest.csv   三源合并对照表
 │   └─ <大类>/<来源>/<skill>/
-└─ 🔧 tools/skill-merge/    可复现的能力库合并脚本
+└─ 🔧 tools/               可复现工具
+    ├─ skill-merge/         能力库合并脚本
+    └─ project-init/        项目初始化、入口刷新与工作流自检脚本
 ```
 
 ---
@@ -250,6 +280,7 @@
 - [x] 🏷️ 能力库分级标记 + 项目定制项清理
 - [x] 🧪 Claude Code 侧端到端 dogfood 跑通
 - [x] 🧪 Codex 侧端到端实测
+- [x] 🔧 开源化项目初始化与入口刷新脚本
 - [~] 🔌 抽取公共适配层 / 全局安装说明
 
 ---
