@@ -50,6 +50,17 @@
 
 ## 读：状态恢复输出模板
 
+实质性工作开始前，状态恢复不是“确认文件存在”即可。至少要读取并摘要当前项目的四态主来源；若发现主来源仍是占位模板，必须标记为 `stale/placeholder`，并在本轮先补最小有效事实。
+
+推荐读取顺序：
+
+1. `project-progress`：当前焦点、活跃目标、下一步、阻塞。
+2. `project-log`：最近变更、验证、部署、审计记录。
+3. `project-memory`：架构事实、关键决策、已知坑、外部资源。
+4. `project-requirements`：当前目标、验收标准、P0/P1、合规边界。
+
+若项目同时有 `docs/INDEX.md` 或审计索引，也应读取它们来定位真相文档，而不是凭文件名随机打开。
+
 ```md
 ## State Restore
 
@@ -57,7 +68,11 @@
 - Project requirements: <承载文件 / missing>
 - Project memory:     <承载文件 / missing>
 - Project progress:   <承载文件 / missing>
+- Stale or placeholder systems:
 - Missing systems:
+- Latest known goal:
+- Latest known validation:
+- Latest known blocker:
 - Notes:
 ```
 
@@ -73,6 +88,18 @@
 | 任务推进、阻塞、下一步变化 | 进度系统 |
 
 回写时保持**追加而非覆盖**（日志/进度尤其如此），让历史可回看。
+
+## 写：强触发条件
+
+以下情况必须写回状态，不要只在对话里说明：
+
+- 实现 / 修复 / 部署 / 验证 / 审计 / 文档同步完成。
+- 当前目标、验收标准、下一步、阻塞、停止原因变化。
+- 学到可复用的运行命令、环境坑、部署路径、凭据边界、外部依赖。
+- 需求范围、优先级、合规约束或 done/open 状态变化。
+- 自主推进循环结束一轮，或因为 stop condition 停止。
+
+若判断无需写入，交付时要说明“未写状态的原因”。
 
 ## 首次初始化建议
 

@@ -1,5 +1,7 @@
 # AGENTS.md
 
+<!-- BEGIN PORTABLE AGENT WORKFLOW -->
+
 ## Project Workflow
 
 - Start substantial work with: scan -> state restore -> intent -> authority -> route -> execute -> validate -> sync -> deliver -> evolve.
@@ -22,6 +24,21 @@
 - Memory: `state/MEMORY.md`
 - Progress: `state/PROGRESS.md`
 
+## State Restore Contract
+
+- At the start of substantial work, read `state/PROGRESS.md`, then `state/LOG.md`, then `state/MEMORY.md`, then `state/REQUIREMENTS.md`; if any are missing, create or map an equivalent before coding.
+- Also read `docs/INDEX.md` to find the project truth docs, and `docs/audit/INDEX.md` when audit reports exist.
+- Do not treat placeholder text such as `<任务>` or `<项目由哪些部分组成>` as valid state. Replace placeholders with current project facts as soon as the project has real information.
+- Prefer the newest project-local state and docs over chat memory or global rules.
+
+## State Write Contract
+
+- After every implementation, fix, validation, audit, docs-sync, deploy, or project-planning loop, append a dated entry to `state/LOG.md`.
+- When current focus, active goal, next action, blocker, validation result, or stop reason changes, update `state/PROGRESS.md`.
+- When a durable decision, architecture fact, operational gotcha, external dependency, command, credential boundary, or recovery note is learned, update `state/MEMORY.md`.
+- When scope, acceptance criteria, P0/P1 priority, compliance boundary, or done/open status changes, update `state/REQUIREMENTS.md`.
+- Before commit, verify state sync happened or explicitly record why no state file needed a change.
+
 ## Documentation Entry
 
 - Project overview: `README.md`
@@ -39,3 +56,5 @@
 - For implementation or fixes, update `state/LOG.md` and `state/PROGRESS.md`; update docs when behavior, usage, architecture, validation, or risk changes.
 - For docs changes, update `docs/INDEX.md` and the relevant directory index so new files are discoverable.
 - Before commit, confirm validation evidence, state sync, index sync, and `git status`; then create an atomic commit for a single-scope change.
+
+<!-- END PORTABLE AGENT WORKFLOW -->
