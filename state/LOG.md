@@ -6,6 +6,10 @@
 
 ## 2026-06-27
 
+- `change` 加硬仓库根与适配模板入口的 Artifact Contracts 规则。
+  - 触发：用户指出仅有核心 `07-artifact-contracts.md` 不够，`AGENTS.md` / `CLAUDE.md` 等入口也应直接约束智能体自动产物行为。
+  - 验证：检查仓库根 `AGENTS.md` / `CLAUDE.md`、Codex / Claude 适配模板和本机全局入口均包含 Artifact Contracts 段，明确审计写 `docs/audit/`、实现/修复回写 `state/LOG.md` 与 `state/PROGRESS.md`、文档变更更新索引。
+
 - `change` 新增工作流产物契约，要求审计、验收、实现、修复、验证和文档同步留下可发现文件产物。
   - 触发：用户指出当前工作流不会像 J-SOP 样板项目一样自动审计、自动产出报告和同步日志/索引。
   - 验证：新增 `framework/core/07-artifact-contracts.md`，更新核心入口、适配模板、`project-workflow`、`project-inception-docs` 和启动模板；用临时项目烟测确认初始化会生成 `docs/audit/INDEX.md` 与 `docs/audit/TEMPLATE-GLOBAL-AUDIT.md`。

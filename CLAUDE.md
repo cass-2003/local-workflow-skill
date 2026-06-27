@@ -28,6 +28,22 @@ Read:
 Update `state/LOG.md`, `state/REQUIREMENTS.md`, `state/MEMORY.md`, and
 `state/PROGRESS.md` when repository truth changes.
 
+## Artifact Contracts
+
+Do not leave substantial audit, acceptance, implementation, fix, validation, or
+docs-sync work only in chat.
+
+- For `audit` / `acceptance` / `验收预检`, create or update a report under
+  `docs/audit/` when the target project has that directory, and update
+  `docs/audit/INDEX.md`.
+- For implementation or fixes, update the relevant state files, especially
+  `state/LOG.md` and `state/PROGRESS.md`; update docs when behavior, usage,
+  architecture, validation, or risk changes.
+- For docs changes, update `docs/INDEX.md` or the relevant directory index so
+  new files are discoverable.
+- Before commit, confirm validation evidence, state sync, index sync, and
+  `git status`.
+
 ## Skill Library Policy
 
 Keep this repository generic and open-source friendly. Do not add skills tied
