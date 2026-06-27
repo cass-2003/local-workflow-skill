@@ -4,6 +4,7 @@ description: Use when a Head of Ops, Knowledge Manager, or TPM-Internal needs to
 ---
 
 
+
 # knowledge-ops
 
 Company SOP + internal runbook authoring, 5W2H completeness validation, and KB hygiene reporting for Head-of-Ops / Knowledge-Manager / TPM-Internal personas.

@@ -4,6 +4,7 @@ description: Use when reviewing a specific inbound deal before close — when sa
 ---
 
 
+
 # deal-desk
 
 Per-deal review and discount-approval routing. Scores deal margin + risk, routes discount approval to the right human, redlines T&Cs against commercial policy. **Never auto-approves.** Every output is a score plus a routing recommendation to a named human approver.

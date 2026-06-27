@@ -4,6 +4,7 @@ description: "Use when designing or revisiting product pricing — selecting a p
 ---
 
 
+
 # pricing-strategist
 
 ## Purpose

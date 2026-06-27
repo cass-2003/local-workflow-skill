@@ -25,6 +25,7 @@
 | REQ-011 | 状态系统必须可恢复而非仅存在 | 核心和入口模板要求开工前输出 `State Restore` 摘要，识别占位/陈旧状态，并在每轮结束写入 `Loop Record`，包含目标、验收、验证、自审、修复、同步、commit、下一目标或停止原因 | done | PROGRESS#已完成 |
 | REQ-012 | 项目初始化和入口刷新能力应可复现 | 仓库内提供 `tools/project-init/Initialize-PortableAgentProject.ps1` 与 `Validate-PortableAgentWorkflow.ps1`；支持完整初始化、只刷新托管入口、保留项目专属内容，并有 smoke test | done | PROGRESS#已完成 |
 | REQ-013 | 能力库领域覆盖应减少安全/逆向/工程偏重 | 首批导入许可清晰、可追溯、通用的 community 技能，新增业务运营、商业策略、财务指标、产品管理、项目管理、研究运营领域；索引、路由、分级和来源记录同步 | done | PROGRESS#已完成 |
+| REQ-014 | 能力库至少覆盖 50 个领域大类 | 第二批导入许可清晰、可追溯、通用的 community 技能；README、skills README、路由、分级和 manifest 显示不少于 50 个大类，且项目定制项仍为 0 | done | PROGRESS#已完成 |
 
 ## 约束与非目标
 

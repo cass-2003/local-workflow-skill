@@ -4,6 +4,7 @@ description: "Analyzes competitor products and companies by synthesizing data fr
 ---
 
 
+
 # Competitive Teardown
 
 **Tier:** POWERFUL  

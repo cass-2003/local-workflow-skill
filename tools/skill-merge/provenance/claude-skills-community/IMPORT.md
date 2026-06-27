@@ -19,8 +19,7 @@ distinct from ours skills authored in this repository.
 - Prefer generic business, operations, finance, product, project-management, and research-ops capabilities.
 - Exclude router/index skills, one-off project wrappers, private/local context, and role-play-heavy executive personas.
 - Keep source license and commit provenance.
-- Normalize SKILL.md frontmatter to repository-compatible 
-ame and description fields.
+- Normalize SKILL.md frontmatter to repository-compatible `name` and `description` fields.
 
 ## Imported Skills
 
@@ -56,3 +55,20 @@ ame and description fields.
 | research-ops | market-research | research-ops/skills/market-research |
 | research-ops | product-research | research-ops/skills/product-research |
 | research-ops | clinical-research | research-ops/skills/clinical-research |
+
+## Second Import Batch · 2026-06-28
+
+Imported commit: 4a3c05b69e64f4925f7fc65c88890f614f79caf0
+
+Second batch goal: expand top-level coverage to at least 50 domains while keeping skills generic, licensed, and traceable.
+
+Added 78 more MIT community skills across marketing, compliance, research, productivity, business growth, executive strategy, and markdown publishing domains.
+
+Selection notes:
+
+- Used OpenAI's Codex skills documentation and openai/skills repository as Codex skill ecosystem references; most curated OpenAI skills were already represented through the existing Codex source, and the openai/skills repository is now marked deprecated, so they were not duplicated.
+- Continued using MIT `alirezarezvani/claude-skills` as the main import source for under-covered non-engineering domains.
+- Excluded router/index skills, one-off command wrappers, private context, and most persona-heavy C-level advisor variants.
+- Normalized imported SKILL.md frontmatter to `name` and `description`; license remains tracked by this provenance directory.
+
+New domains added include SEO, content strategy, copywriting/editing, paid acquisition, email marketing, conversion optimization, growth experiments, brand strategy, app-store growth, launch management, marketing analytics, social media, video/webinar marketing, answer-engine optimization, AI governance compliance, privacy compliance, security compliance, medical regulatory, quality management, compliance programs, grant funding, patent intelligence, literature review, entity research, learning design, personal productivity, email productivity, handoff knowledge, customer success, revenue operations, sales enablement, executive strategy, change/org management, and markdown publishing.

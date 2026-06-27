@@ -1,13 +1,13 @@
 # 技能分级与变体（阶段 6）
 
-> 给 439 技能打「通用 / 半通用」标记；项目定制项不进入开源通用库。
+> 给 517 技能打「通用 / 半通用」标记；项目定制项不进入开源通用库。
 > 标记只落在 `_merge-manifest.csv` 的 `tier` 列与本文件，**不写进各 SKILL.md frontmatter**（沿用「不标记直接融合」偏好）。
 
 ## tier 分布
 
 | 分级 | 数量 | 含义 | 代表 |
 |---|---|---|---|
-| 通用 | 390 | 纯工程/领域模式，跨项目可直接复用 | engineering-core、programming-languages、reverse-engineering、多数 security、business-operations、product-management、project-inception-docs |
+| 通用 | 468 | 纯工程/领域模式，跨项目可直接复用 | engineering-core、programming-languages、reverse-engineering、多数 security、business-operations、product-management、project-inception-docs |
 | 半通用 | 49 | 厂商/产品绑定但可跨项目复用，或需轻度去项目化 | payments(stripe…)、maps(高德…)、figma-*、notion-*、各 deploy |
 | 项目定制 | 0 | 强绑单一项目、产品、旧命令封装或私有上下文的技能不进入本仓库 | 已移除 source-command-*、具体项目 UI/扩展、运行时命令封装、迁移/宠物样本 |
 
@@ -22,7 +22,7 @@
 
 ## community 开源导入
 
-首批 `community` 来源导入 30 个 MIT 许可技能，补齐业务运营、商业策略、财务指标、产品管理、项目管理和研究运营领域。导入原则：
+`community` 来源已导入 108 个 MIT 许可技能，补齐业务、营销、合规、研究、生产力、管理和发布等领域。导入原则：
 
 - 只收通用或可跨项目复用的技能。
 - 不收 router/index、项目包装、私有上下文或偏角色扮演的 executive persona。
@@ -30,4 +30,4 @@
 
 来源记录：`../tools/skill-merge/provenance/claude-skills-community/`。
 
-完成首批 community 扩容后，技能总数现为 **439**。
+完成第二批 community 扩容后，技能总数现为 **517**。

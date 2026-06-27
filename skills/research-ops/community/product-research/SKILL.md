@@ -4,6 +4,7 @@ description: Use when planning and synthesizing product/user research as a metho
 ---
 
 
+
 # product-research
 
 Product / user research as an operational discipline: choosing the right method, sizing it honestly, and synthesizing findings into governed insights. The core rule: **method must match the goal**, and **an insight requires recurrence across independent participants** — a single quote is an anecdote.

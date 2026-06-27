@@ -21,7 +21,7 @@
 
 ## 二级路由：执行能力 → 能力库（`skills/`）
 
-`implement` / `fix` 真正动手时，按问题域委托到能力库对应领域大类。能力库为**双层结构** `skills/<领域大类>/<来源>/<skill>/`（来源 = ours｜codex｜community｜cskills，去重优先级 ours>codex>community>cskills），共 **439 个技能 / 24 大类**：
+`implement` / `fix` 真正动手时，按问题域委托到能力库对应领域大类。能力库为**双层结构** `skills/<领域大类>/<来源>/<skill>/`（来源 = ours｜codex｜community｜cskills，去重优先级 ours>codex>community>cskills），共 **517 个技能 / 58 大类**：
 
 | 问题域 | 领域大类 | 数量 | 代表技能 |
 |---|---|---|---|
@@ -39,6 +39,12 @@
 | 产品管理 | `product-management/` | 8 | product-discovery、product-analytics、experiment-designer、code-to-prd |
 | 项目管理 | `project-management/` | 4 | meeting-analyzer、scrum-master、senior-pm、team-communications |
 | 研究运营 | `research-ops/` | 3 | market-research、product-research、clinical-research |
+| 营销增长与内容 | `seo/`、`content-strategy/`、`copywriting-editing/`、`paid-acquisition/`、`email-marketing/`、`social-media/` 等 | 39 | seo-audit、content-strategy、copywriting、paid-ads、campaign-analytics |
+| 合规与质量体系 | `ai-governance-compliance/`、`privacy-compliance/`、`security-compliance/`、`medical-regulatory/`、`quality-management/` 等 | 12 | ai-act-readiness、gdpr-audit-prep、soc2-audit-prep、qms-audit-expert |
+| 研究、学习与知识 | `grant-funding/`、`patent-intelligence/`、`literature-review/`、`entity-research/`、`learning-design/` | 6 | grants、patent、litreview、dossier、syllabus |
+| 个人生产力与交接 | `personal-productivity/`、`email-productivity/`、`handoff-knowledge/` | 5 | capture、reflect、inbox-triage、handoff |
+| 经营、销售与组织管理 | `customer-success/`、`revenue-operations/`、`sales-enablement/`、`executive-strategy/`、`change-org-management/` | 12 | customer-success-manager、revenue-operations、sales-engineer、strategic-alignment |
+| 发布与格式化输出 | `markdown-publishing/`、`launch-management/`、`app-store-growth/`、`video-webinar-marketing/` | 9 | md-document、md-slides、launch-strategy、app-store-optimization |
 | 逆向工程 | `reverse-engineering/` | 63 | binrev、asmrev、javarev、fwrev、malrev（cskills 全家桶） |
 | 安全工程 | `security-engineering/` | 85 | full-pentest、ad-pentest、forensics、threat-hunting |
 | 支付与电商 | `payments-commerce/` | 12 | stripe、paypal、alipay-pay、wechat-pay、wallet-* |

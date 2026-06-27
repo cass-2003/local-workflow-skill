@@ -4,6 +4,7 @@ description: Use when preparing roadmap narratives, release notes, changelogs, o
 ---
 
 
+
 # Roadmap Communicator
 
 Create clear roadmap communication artifacts for internal and external stakeholders.

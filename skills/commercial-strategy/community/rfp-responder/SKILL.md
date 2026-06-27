@@ -4,6 +4,7 @@ description: "Use when an RFP, RFI, RFQ, security questionnaire, vendor question
 ---
 
 
+
 # rfp-responder
 
 ## Purpose

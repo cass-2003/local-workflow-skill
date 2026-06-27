@@ -4,6 +4,7 @@ description: "Use when an ops leader (Director of CX, Head of Support, VP Ops, H
 ---
 
 
+
 # capacity-planner
 
 Sizing tool for **ops teams that handle queued work** — Support, CX,

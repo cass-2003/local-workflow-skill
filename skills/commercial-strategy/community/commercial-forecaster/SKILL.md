@@ -4,6 +4,7 @@ description: "Use when building a quarterly bookings forecast, ARR projection, p
 ---
 
 
+
 # commercial-forecaster
 
 ## Purpose

@@ -4,6 +4,7 @@ description: Use when designing a prospective clinical study before submission â
 ---
 
 
+
 # clinical-research
 
 Prospective clinical study DESIGN: endpoints, sample size / power, and phase-gate feasibility. Every output is an **estimate with stated assumptions** routed to a **named human owner**. This skill never gives clinical advice as fact and never substitutes for a biostatistician or regulatory affairs.

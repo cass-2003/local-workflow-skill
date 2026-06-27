@@ -1,6 +1,6 @@
 # 能力库合并工具（一次性 · provenance 记录）
 
-记录 `skills/` 从 42 → 409 → 439 技能是怎么合并和扩容出来的。脚本默认使用仓库相对路径和 `~/.codex/skills`，也可以通过环境变量改写来源位置，保留是为了**可复现与可审计**。
+记录 `skills/` 从 42 → 409 → 439 → 517 技能是怎么合并和扩容出来的。脚本默认使用仓库相对路径和 `~/.codex/skills`，也可以通过环境变量改写来源位置，保留是为了**可复现与可审计**。
 
 ## 三步流水线
 
@@ -30,4 +30,4 @@ py -3 tools/skill-merge/do_copy.py        # 复制到 .merged 暂存
 py -3 tools/skill-merge/do_swap.py        # 切换为正式结构
 ```
 
-体检基线：439 赢家 · frontmatter 0 缺失 · 0 空目录 · 0 跨域重复 slug · README 计数 0 不符。
+体检基线：517 赢家 · frontmatter 0 缺失 · 0 空目录 · 0 跨域重复 slug · README 计数 0 不符。

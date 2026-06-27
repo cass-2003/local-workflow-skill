@@ -4,6 +4,7 @@ description: Use when validating product opportunities, mapping assumptions, pla
 ---
 
 
+
 # Product Discovery
 
 Run structured discovery to identify high-value opportunities and de-risk product bets.

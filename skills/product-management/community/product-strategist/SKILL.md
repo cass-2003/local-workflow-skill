@@ -4,6 +4,7 @@ description: Strategic product leadership toolkit for Head of Product covering O
 ---
 
 
+
 # Product Strategist
 
 Strategic toolkit for Head of Product to drive vision, alignment, and organizational excellence.

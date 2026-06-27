@@ -6,6 +6,11 @@
 
 ## 2026-06-28
 
+- `change` 第二批扩容 community 技能，把能力库推进到 517 技能 / 58 大类。
+  - 触发：用户要求 README 与能力库继续丰富，并明确至少覆盖 50 个领域大类；同时参考 Codex/OpenAI skill 规范和开源 skill 库。
+  - 范围：继续从 MIT 许可 `alirezarezvani/claude-skills` 筛选 78 个通用技能，新增 SEO、内容策略、文案编辑、付费获客、邮件营销、增长实验、品牌策略、合规质量、研究学习、个人生产力、客户成功、收入运营、销售赋能、组织管理、Markdown 发布等领域。
+  - 验证：README、skills README、TIERS、路由矩阵、manifest 和 provenance 已同步到 517 / 58；community frontmatter 统一为 `name` / `description`；已执行计数、大类、frontmatter、密钥模式和 `git diff --check` 校验。
+
 - `change` 首批扩容 community 技能，降低能力库领域偏重。
   - 触发：用户指出当前能力库领域不够丰富，安全/逆向/工程偏重明显，需要从开源 skill 库补充其他领域。
   - 范围：从 MIT 许可 `alirezarezvani/claude-skills` 筛选 30 个通用技能，新增业务运营、商业策略、财务指标、产品管理、项目管理、研究运营 6 个领域；跳过 router/index、私有上下文和偏角色扮演的 executive persona。

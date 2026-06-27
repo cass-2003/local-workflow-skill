@@ -4,6 +4,7 @@ description: "Use when a startup is approached by a prospective partner and some
 ---
 
 
+
 # partnerships-architect
 
 ## Purpose

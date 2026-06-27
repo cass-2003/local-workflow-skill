@@ -4,6 +4,7 @@ description: "Advanced Scrum Master skill for data-driven agile team analysis an
 ---
 
 
+
 # Scrum Master Expert
 
 Data-driven Scrum Master skill combining sprint analytics, probabilistic forecasting, and team development coaching. The unique value is in the three Python analysis scripts and their workflows — refer to `references/` and `assets/` for deeper framework detail.

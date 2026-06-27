@@ -4,6 +4,7 @@ description: "Structured research summarization agent skill for non-dev users. H
 ---
 
 
+
 # Research Summarizer
 
 > Read less. Understand more. Cite correctly.

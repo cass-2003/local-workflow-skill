@@ -4,6 +4,7 @@ description: Use when doing upstream market-research methodology — sizing a ma
 ---
 
 
+
 # market-research
 
 Upstream market-research methodology: market sizing, survey/sampling design, and segmentation. The discipline here is **method + assumptions**: a TAM is never a single number, a survey is never powered only in aggregate, and a segment is never a demographic slice.
