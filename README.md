@@ -111,6 +111,21 @@
 
 ---
 
+## 🧾 自动产物契约
+
+工作流不是只让 Agent “想得更有顺序”，还要求关键动作留下可恢复、可审计的文件产物。默认契约见 [`framework/core/07-artifact-contracts.md`](framework/core/07-artifact-contracts.md)。
+
+| 任务类型 | 默认产物 | 同步要求 |
+|:--|:--|:--|
+| `audit` / 验收预检 | `docs/audit/<日期>-<范围>-audit.md` | 更新 `docs/audit/INDEX.md`、`state/LOG.md`、`state/PROGRESS.md` |
+| `implement` / `fix` | 代码变更 + 必要文档 | 更新 `state/LOG.md`、`state/PROGRESS.md`；行为、架构、验证或风险变化时同步 docs |
+| `docs-sync` | 被同步的文档与索引 | 更新 `docs/INDEX.md` 或相关目录索引，避免新文件变成孤岛 |
+| `validation` / 回归验证 | 验证命令、结果、证据摘要 | 必要时写入 `docs/testing/`，并在 `state/LOG.md` 记录验证范围 |
+
+新项目通过 `project-inception-docs` 初始化时，会默认带上 `docs/audit/INDEX.md`、`docs/audit/TEMPLATE-GLOBAL-AUDIT.md`，并在 `AGENTS.md` / `CLAUDE.md` 中写入 Artifact Contracts。这样你说“审计一下”“验收预检”“修复这个缺口”时，Agent 不应只在聊天里给结论，而要把报告、索引、日志和进度同步好。
+
+---
+
 ## 🛠️ 能力库（409 技能 · 18 大类）
 
 执行阶段委托的具体技能，三源合并去重，双层结构 `<领域大类>/<来源>/<skill>/`：

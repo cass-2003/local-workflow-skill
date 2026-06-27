@@ -6,6 +6,10 @@
 
 ## 2026-06-27
 
+- `docs` 在 README 增加“自动产物契约”独立小节。
+  - 触发：用户确认 README 需要把审计报告、状态回写和文档索引同步规则写得更明显。
+  - 验证：新增小节链接 `framework/core/07-artifact-contracts.md`，并列出 audit、implement/fix、docs-sync、validation 的默认产物与同步要求。
+
 - `change` 加硬仓库根与适配模板入口的 Artifact Contracts 规则。
   - 触发：用户指出仅有核心 `07-artifact-contracts.md` 不够，`AGENTS.md` / `CLAUDE.md` 等入口也应直接约束智能体自动产物行为。
   - 验证：检查仓库根 `AGENTS.md` / `CLAUDE.md`、Codex / Claude 适配模板和本机全局入口均包含 Artifact Contracts 段，明确审计写 `docs/audit/`、实现/修复回写 `state/LOG.md` 与 `state/PROGRESS.md`、文档变更更新索引。
