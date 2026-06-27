@@ -4,6 +4,12 @@
 
 ---
 
+## 2026-06-27
+
+- `change` 新增工作流产物契约，要求审计、验收、实现、修复、验证和文档同步留下可发现文件产物。
+  - 触发：用户指出当前工作流不会像 J-SOP 样板项目一样自动审计、自动产出报告和同步日志/索引。
+  - 验证：新增 `framework/core/07-artifact-contracts.md`，更新核心入口、适配模板、`project-workflow`、`project-inception-docs` 和启动模板；用临时项目烟测确认初始化会生成 `docs/audit/INDEX.md` 与 `docs/audit/TEMPLATE-GLOBAL-AUDIT.md`。
+
 ## 2026-06-26
 
 - `change` 清理项目定制 skill，并把能力库同步为开源通用口径：409 技能、18 大类、项目定制 0。

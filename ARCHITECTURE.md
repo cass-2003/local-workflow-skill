@@ -10,10 +10,10 @@
 │  适配层 adapters/   各家 Agent 的原生入口（薄，只负责被触发+指路）│
 │    Claude Code → SKILL.md      Codex → AGENTS.md + agents/*.yaml │
 └───────────────┬─────────────────────────────────────────────┘
-                │ 触发，指向 ↓
+│ 触发，指向 ↓
 ┌───────────────▼─────────────────────────────────────────────┐
 │  大脑 framework/core/   工具中立的工作流核心（单一真相）         │
-│    10 阶段骨架 · 路由 · 权威解析 · 验证闸门 · 保守演进           │
+│    10 阶段骨架 · 路由 · 权威解析 · 验证闸门 · 产物契约 · 保守演进 │
 │                         ↑ 读/写                                │
 │  核心状态 framework/state-systems/   ★ 四态系统                │
 │    日志 LOG · 需求 REQUIREMENTS · 记忆 MEMORY · 进度 PROGRESS   │
@@ -47,9 +47,9 @@
    → Phase 1 state restore：从四态系统恢复「最近/要满足/为什么/到哪了」
    → Phase 2-3 intent + authority：判断任务类型、解析该信任哪一层
    → Phase 4 route：core/03-routing 把问题域映射到 skills/<大类>
-   → Phase 5 execute：委托对应技能（如 reverse-engineering/cskills/binrev）干活
+   → Phase 5 execute：委托对应技能干活，并按产物契约留下报告/日志/状态
    → Phase 6 validate：完成必须有与范围匹配的证据
-   → Phase 7 sync：把成果分类回写四态系统
+   → Phase 7 sync：把成果分类回写四态系统，并同步文档入口/审计索引
    → Phase 8 deliver：commit/PR 前过三道闸门
    → Phase 9 evolve：重复模式转成保守的沉淀建议
 ```
@@ -63,7 +63,7 @@ local-skills-workspace/
 ├─ state/               本仓库当前四态：日志/需求/记忆/进度
 ├─ framework/           大脑 + 核心状态
 │  ├─ FRAMEWORK.md       总设计与路线图
-│  ├─ core/              ★ 单一真相：10 阶段/状态/路由/权威/验证/演进
+│  ├─ core/              ★ 单一真相：10 阶段/状态/路由/权威/验证/产物/演进
 │  ├─ state-systems/     ★ 四态系统说明 + drop-in 模板
 │  └─ adapters/          各家 Agent 适配登记 + 模板
 │     ├─ claude-code.md   CC 适配器 → skills/.../project-workflow

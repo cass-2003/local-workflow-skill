@@ -6,7 +6,7 @@
 
 ## 当前焦点
 
-把仓库整理成可公开发布的通用工作流与技能库，并持续避免项目定制内容回流。
+把通用工作流从“有流程骨架”推进到“默认留下审计、验证、文档和状态产物”，并持续避免项目定制内容回流。
 
 ## 进行中
 
@@ -15,7 +15,7 @@
 ## 待办
 
 - [ ] 在后续真实项目中 dogfood `project-inception-docs`，检查是否能稳定生成 `docs/INDEX.md` 和完整文档包 — 关联 `REQ-002`
-- [ ] 需要时把四态骨架模板与 `project-inception-docs` 进一步打通成可复制资产 — 关联 `REQ-003`
+- [ ] 在真实项目中 dogfood `07-artifact-contracts.md`，检查 `audit` / `fix` / `docs-sync` 是否稳定生成报告、索引和四态回写 — 关联 `REQ-009`
 
 ## 阻塞
 
@@ -23,6 +23,7 @@
 
 ## 已完成（近期）
 
+- [x] 新增 `07-artifact-contracts.md`，并让新项目模板默认携带 `docs/audit/INDEX.md` 与通用审计模板 — 2026-06-27（详情可见 LOG.md）
 - [x] 清理项目定制 skill，同步能力库为 409 技能 / 18 大类 / 项目定制 0 — 2026-06-26（详情可见 LOG.md）
 - [x] 补齐开源治理文件：LICENSE、NOTICE、CONTRIBUTING、SECURITY、CODE_OF_CONDUCT、GitHub issue/PR 模板 — 2026-06-26（详情可见 LOG.md）
 - [x] 补齐根 README 与启动模板 README 的项目地基说明 — 2026-06-26（详情可见 LOG.md）

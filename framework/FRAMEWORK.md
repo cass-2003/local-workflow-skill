@@ -36,7 +36,8 @@ framework/
 │  ├─ 03-routing.md        #   意图 → 执行能力 的路由矩阵
 │  ├─ 04-authority.md      #   多层规则的权威解析
 │  ├─ 05-validation.md     #   验证闸门 / 文档闸门 / 交付闸门
-│  └─ 06-evolution.md      #   重复模式的保守沉淀机制
+│  ├─ 06-evolution.md      #   重复模式的保守沉淀机制
+│  └─ 07-artifact-contracts.md # 审计、验证、文档和状态产物契约
 ├─ state-systems/          # 四态系统的可直接落地模板
 │  ├─ README.md            #   四态系统说明
 │  └─ templates/           #   drop-in Markdown 模板
@@ -80,9 +81,9 @@ skills/                    # 能力库：执行阶段委托的具体技能
 2. intent classify     判断任务类型（status/audit/implement/fix/review/sync/git/evolve）
 3. authority resolve   解析该信任哪一层规则、技能、文档
 4. route & delegate    路由到合适的执行能力
-5. execute             先读后改，只做必要改动，区分事实/推断/假设
+5. execute             先读后改，只做必要改动，区分事实/推断/假设，并留下必要产物
 6. validation gate     完成必须有与范围匹配的证据，不靠口头声明
-7. docs & state sync    把成果同步回四态系统
+7. docs & state sync    把成果同步回四态系统、文档入口和审计索引
 8. git & delivery gate  commit/push/PR 前确认 ready
 9. evolution           重复模式转成保守的沉淀建议
 ```
@@ -106,7 +107,8 @@ skills/                    # 能力库：执行阶段委托的具体技能
 1. 复制 `state-systems/templates/` 下的四个文件到目标项目（或映射到项目已有的等价文档）。
 2. 让 Agent 第一次只做 `workspace scan` + `state restore` + 路由分析，先不改代码。
 3. 等状态恢复与路由稳定后，再带验证闸门和文档同步跑完整任务。
-4. 重复模式出现时，走 `core/06-evolution.md` 的保守沉淀流程。
+4. 审计、验收、验证或文档同步需要留下长期证据时，按 `core/07-artifact-contracts.md` 写入报告、索引和状态文件。
+5. 重复模式出现时，走 `core/06-evolution.md` 的保守沉淀流程。
 
 ## 与现有 skill 的关系
 

@@ -23,6 +23,7 @@ Read:
 - `framework/core/04-authority.md`
 - `framework/core/05-validation.md`
 - `framework/core/06-evolution.md`
+- `framework/core/07-artifact-contracts.md`
 
 Update `state/LOG.md`, `state/REQUIREMENTS.md`, `state/MEMORY.md`, and
 `state/PROGRESS.md` when repository truth changes.

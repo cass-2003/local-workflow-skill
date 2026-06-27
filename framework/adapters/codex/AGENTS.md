@@ -34,6 +34,7 @@ scan → state restore → intent → authority → route → execute → valida
 | 多层规则权威解析 | `.agent-os/framework/core/04-authority.md` |
 | 验证/文档/交付闸门 | `.agent-os/framework/core/05-validation.md` |
 | 重复模式保守沉淀 | `.agent-os/framework/core/06-evolution.md` |
+| 审计/验证/文档/状态产物契约 | `.agent-os/framework/core/07-artifact-contracts.md` |
 
 ## 触发示例
 

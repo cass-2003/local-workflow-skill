@@ -58,7 +58,7 @@
                             │ 触发，指向 ↓
 ┌───────────────────────────▼─────────────────────────────────┐
 │  🧠 framework/core/   工具中立的工作流核心（单一真相）           │
-│       10 阶段骨架 · 路由 · 权威解析 · 验证闸门 · 保守演进         │
+│       10 阶段骨架 · 路由 · 权威解析 · 验证闸门 · 产物契约 · 保守演进 │
 │                            ↑ 读 / 写                           │
 │  ★ framework/state-systems/   四态系统（地基）                  │
 │       🗒️ 日志 · 📋 需求 · 🧠 记忆 · 📊 进度                      │
@@ -73,7 +73,7 @@
 | 层 | 职责 | 关键不变量 |
 |:--|:--|:--|
 | 🔌 `adapters/` | 把核心挂载到各家 Agent 入口 | 保持薄，只触发 + 指路，不复制规范 |
-| 🧠 `framework/core/` | 流程的唯一真相 | 改流程只改 core，适配器跟着指 |
+| 🧠 `framework/core/` | 流程与产物契约的唯一真相 | 改流程只改 core，适配器跟着指 |
 | ★ `state-systems/` | 项目状态的持久落点 | 状态先于动作，开工先恢复 |
 | 🛠️ `skills/` | 执行阶段委托的具体能力 | 去重优先级 `ours > codex > cskills` |
 
@@ -99,9 +99,9 @@
 | 2 | **intent classify** | 判断任务类型：status / audit / implement / fix / review / sync / evolve |
 | 3 | **authority resolve** | 解析该信任哪一层规则、技能、文档 |
 | 4 | **route & delegate** | 按问题域路由到 `skills/` 对应能力 |
-| 5 | **execute** | 先读后改，只做必要改动，区分事实/推断/假设 |
+| 5 | **execute** | 先读后改，只做必要改动，区分事实/推断/假设；审计/验收/同步等动作留下文件产物 |
 | 6 | **validation gate** | 完成必须有与范围匹配的证据，不靠口头声明 |
-| 7 | **docs & state sync** | 把成果分类回写四态系统 |
+| 7 | **docs & state sync** | 把成果分类回写四态系统，并同步审计/文档索引 |
 | 8 | **git & delivery gate** | commit / push / PR 前过 readiness 检查 |
 | 9 | **evolution** | 重复模式转成保守的沉淀建议（observe → suggest → approve → apply）|
 
@@ -199,7 +199,7 @@
 ├─ 📊 state/               本仓库当前四态：日志/需求/记忆/进度
 ├─ 🧠 framework/           框架本体
 │   ├─ FRAMEWORK.md         总设计 + 路线图
-│   ├─ core/                ★ 单一真相：10 阶段/状态/路由/权威/验证/演进
+│   ├─ core/                ★ 单一真相：10 阶段/状态/路由/权威/验证/产物/演进
 │   ├─ state-systems/       ★ 四态系统说明 + drop-in 模板
 │   ├─ adapters/            各家 Agent 适配登记（CC / Codex）
 │   └─ validation/          dogfood 样板 + 端到端验证报告

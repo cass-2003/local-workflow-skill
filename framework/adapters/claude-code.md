@@ -31,6 +31,7 @@ Claude Code 侧现在有两类入口：
 | `../core/04-authority.md` | `references/authority-resolution.md` |
 | `../core/05-validation.md` | `references/validation-gates.md` |
 | `../core/06-evolution.md` | `references/skill-evolution.md` |
+| `../core/07-artifact-contracts.md` | 项目根入口与 `project-workflow` 直接指向 core |
 
 ## 单一真相原则
 

@@ -53,6 +53,13 @@
 - **影响**：项目专属 skill 应保存在目标项目本地 `.codex/skills`、`.claude/skills`、`.agents/skills` 或私有仓库；本仓库只保留可迁移模板和通用 workflow。
 - **时间**：2026-06-26
 
+### D-007 · 审计与同步必须留下可发现产物
+
+- **决定**：新增 `framework/core/07-artifact-contracts.md` 作为审计、验收、验证、文档同步和状态同步的默认产物契约；新项目模板默认带 `docs/audit/INDEX.md` 与 `docs/audit/TEMPLATE-GLOBAL-AUDIT.md`。
+- **为什么**：真实项目中稳定的审计报告、索引、日志和计划文件能让 agent 自动恢复上下文，而只停留在对话里的结论无法跨会话复用。
+- **影响**：后续 `audit` / `acceptance` 默认写报告并更新索引；`implement` / `fix` 默认同步 `state/LOG.md` 与 `state/PROGRESS.md`；文档结构变化默认同步 `docs/INDEX.md`。
+- **时间**：2026-06-27
+
 ## 已知坑
 
 - `quick_validate.py` 不接受 `disable-model-invocation`、`user-invocable` 等旧 frontmatter 字段；新增或更新 skill 时只保留允许字段。

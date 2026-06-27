@@ -12,6 +12,7 @@
 | `04-authority.md` | 多层规则的权威解析 | 项目结构复杂、存在多个规则层时 |
 | `05-validation.md` | 验证 / 文档 / 交付 三道闸门 | 准备声明完成、提交、交付时 |
 | `06-evolution.md` | 重复模式的保守沉淀机制 | 发现旧路径、漂移、重复解释时 |
+| `07-artifact-contracts.md` | 审计、验证、文档和状态产物契约 | 需要自动生成报告、索引、日志或同步状态时 |
 
 ## 中立性约束
 
@@ -24,4 +25,4 @@
 
 ## 一句话心智模型
 
-> 先看清项目（scan）→ 恢复状态（state）→ 判断意图（intent）→ 解析权威（authority）→ 路由委托（route）→ 干活（execute）→ 验证（validate）→ 回写状态（sync）→ 交付闸门（deliver）→ 沉淀（evolve）。
+> 先看清项目（scan）→ 恢复状态（state）→ 判断意图（intent）→ 解析权威（authority）→ 路由委托（route）→ 干活并留下产物（execute）→ 验证（validate）→ 回写状态与索引（sync）→ 交付闸门（deliver）→ 沉淀（evolve）。

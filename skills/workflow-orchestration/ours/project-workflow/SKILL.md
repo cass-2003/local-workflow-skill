@@ -95,6 +95,7 @@ description: Orchestrate a generic project workflow by scanning repository autho
 - 任务跨扫描/实现/验证/同步/交付多阶段时 → `../../../../framework/core/01-workflow.md`
 - 需确认日志/需求/记忆/进度从哪里恢复时 → `../../../../framework/core/02-state-systems.md`
 - 准备声明完成、提交、交付或 handoff 时 → `../../../../framework/core/05-validation.md` + `01-workflow.md`(Phase 8)
+- 审计、验收、验证、文档同步或状态同步需要留下文件产物时 → `../../../../framework/core/07-artifact-contracts.md`
 - 发现旧路径、漂移、重复解释、重复手工决策时 → `../../../../framework/core/06-evolution.md`
 
 ## Output Discipline
