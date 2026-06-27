@@ -8,8 +8,8 @@
 
 ![status](https://img.shields.io/badge/status-alpha-orange)
 ![agents](https://img.shields.io/badge/agents-Claude_Code_·_Codex-5b6cf9)
-![skills](https://img.shields.io/badge/skills-409-2ea44f)
-![domains](https://img.shields.io/badge/domains-18-2ea44f)
+![skills](https://img.shields.io/badge/skills-439-2ea44f)
+![domains](https://img.shields.io/badge/domains-24-2ea44f)
 ![format](https://img.shields.io/badge/core-pure_Markdown-lightgrey)
 ![deps](https://img.shields.io/badge/runtime_deps-0-blue)
 
@@ -66,8 +66,8 @@
 └───────────────────────────┬─────────────────────────────────┘
                             │ Phase 4/5 委托 ↓
 ┌───────────────────────────▼─────────────────────────────────┐
-│  🛠️ skills/   409 技能 / 18 领域大类（双层 <大类>/<来源>/）      │
-│       安全 85 · 逆向 63 · 前端 27 · 编排 15 · 后端 25 · …       │
+│  🛠️ skills/   439 技能 / 24 领域大类（双层 <大类>/<来源>/）      │
+│       安全 85 · 逆向 63 · 前端 27 · 产品管理 8 · 商业策略 7 · … │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -76,7 +76,7 @@
 | 🔌 `adapters/` | 把核心挂载到各家 Agent 入口 | 保持薄，只触发 + 指路，不复制规范 |
 | 🧠 `framework/core/` | 流程与产物契约的唯一真相 | 改流程只改 core，适配器跟着指 |
 | ★ `state-systems/` | 项目状态的持久落点 | 状态先于动作，开工先恢复 |
-| 🛠️ `skills/` | 执行阶段委托的具体能力 | 去重优先级 `ours > codex > cskills` |
+| 🛠️ `skills/` | 执行阶段委托的具体能力 | 去重优先级 `ours > codex > community > cskills` |
 
 ---
 
@@ -138,22 +138,23 @@
 
 ---
 
-## 🛠️ 能力库（409 技能 · 18 大类）
+## 🛠️ 能力库（439 技能 · 24 大类）
 
-执行阶段委托的具体技能，三源合并去重，双层结构 `<领域大类>/<来源>/<skill>/`：
+执行阶段委托的具体技能，四源合并去重，双层结构 `<领域大类>/<来源>/<skill>/`：
 
 | 🏷️ 领域 | 数量 | 🏷️ 领域 | 数量 | 🏷️ 领域 | 数量 |
 |:--|:-:|:--|:-:|:--|:-:|
-| 安全工程 | 85 | 移动跨端 | 18 | 数据分析 | 7 |
-| 逆向工程 | 63 | 云基础设施 | 17 | 硬件系统 | 8 |
-| 前端 UI | 27 | AI 自动化 | 18 | 产品增长 | 8 |
-| 工作流编排 | 15 | 内容创作 | 14 | | |
-| 后端 API | 25 | 支付电商 | 12 | | |
-| 通用工程 | 26 | 地图位置 | 11 | | |
-| 质量交付 | 24 | 研究知识 | 10 | | |
-| 编程语言 | 21 | | | | |
+| 安全工程 | 85 | 移动跨端 | 18 | 商业策略 | 7 |
+| 逆向工程 | 63 | 云基础设施 | 17 | 数据分析 | 7 |
+| 前端 UI | 27 | 工作流编排 | 15 | 业务运营 | 6 |
+| 后端 API | 25 | 内容创作 | 14 | 项目管理 | 4 |
+| 通用工程 | 26 | 支付电商 | 12 | 研究运营 | 3 |
+| 质量交付 | 24 | 地图位置 | 11 | 财务指标 | 2 |
+| 编程语言 | 21 | 研究知识 | 10 | | |
+| AI 自动化 | 18 | 硬件系统 | 8 | | |
+| 产品管理 | 8 | 产品增长 | 8 | | |
 
-技能按通用性分级：**🟢 通用 360 · 🟡 半通用 49 · 🔵 项目定制 0**（见 [`skills/TIERS.md`](skills/TIERS.md)）。完整索引见 [`skills/README.md`](skills/README.md)。
+技能按通用性分级：**🟢 通用 390 · 🟡 半通用 49 · 🔵 项目定制 0**（见 [`skills/TIERS.md`](skills/TIERS.md)）。完整索引见 [`skills/README.md`](skills/README.md)。
 
 ---
 
@@ -258,10 +259,10 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass `
 │   ├─ state-systems/       ★ 四态系统说明 + drop-in 模板
 │   ├─ adapters/            各家 Agent 适配登记（CC / Codex）
 │   └─ validation/          dogfood 样板 + 端到端验证报告
-├─ 🛠️ skills/              能力库：409 技能 / 18 大类
+├─ 🛠️ skills/              能力库：439 技能 / 24 大类
 │   ├─ README.md             领域索引
 │   ├─ TIERS.md              分级（通用/半通用；项目定制不进入开源库）
-│   ├─ _merge-manifest.csv   三源合并对照表
+│   ├─ _merge-manifest.csv   四源合并对照表
 │   └─ <大类>/<来源>/<skill>/
 └─ 🔧 tools/               可复现工具
     ├─ skill-merge/         能力库合并脚本
@@ -276,7 +277,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass `
 - [x] 📑 四态系统 drop-in 模板
 - [x] 🤖 Claude Code 适配器
 - [x] 🤖 Codex 适配器
-- [x] 🛠️ 三源合并丰富能力库（409 技能 / 18 大类）
+- [x] 🛠️ 四源合并丰富能力库（439 技能 / 24 大类）
 - [x] 🏷️ 能力库分级标记 + 项目定制项清理
 - [x] 🧪 Claude Code 侧端到端 dogfood 跑通
 - [x] 🧪 Codex 侧端到端实测

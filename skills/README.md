@@ -6,17 +6,20 @@
 
 ## 规模与结构
 
-**409 个技能 · 18 个领域大类**，由三个来源合并去重并剔除项目定制项而成：
+**439 个技能 · 24 个领域大类**，由四个来源合并去重并剔除项目定制项而成：
 
 | 来源 | 含义 | 去重优先级 |
 |---|---|---|
 | `ours` | 本仓库沉淀的通用工作流与可复用技能 | 最高（同能力时保留） |
 | `codex` | `~/.codex/skills`（含 `~/.claude/skills` 全部） | 次之 |
-| `cskills` | C_Skills 收费技能库（逆向为主） | 再次 |
+| `community` | 许可清晰的第三方开源 skill 库导入 | 再次 |
+| `cskills` | C_Skills 收费技能库（逆向为主） | 最后 |
 
 目录采用**双层**结构：`<领域大类>/<来源>/<skill-slug>/SKILL.md`。同一能力在多源出现时按上表优先级保留一个赢家；**根名不同的近义变体**（如 `python-dev` 与 `java-jvm-development`）作为不同技能保留。合并对照表见 `_merge-manifest.csv`。
 
 > **Coffee/Coff0xc 授权导入**：18 个 `coff0xc-*` 技能已在保留本仓库规范化 slug 的前提下更新到 `Coff0xc/coffee-skill` 授权版本；来源、许可与映射记录见 `../tools/skill-merge/provenance/coffee-skill/`。
+
+> **Community 开源导入**：首批 30 个业务/商业/财务/产品/项目管理/研究运营技能来自 MIT 许可的 `alirezarezvani/claude-skills`，导入记录见 `../tools/skill-merge/provenance/claude-skills-community/`。
 
 > **`-2` 后缀**：少数同域同源里有两个同主题但内容不同的技能（合并自不同作者），后到的取 `<名>-2`（如 `python-dev` / `python-dev-2`）。两者都保留，路由时按 `description` 择一。
 
@@ -25,21 +28,29 @@
 ## 领域索引
 
 ### ai-automation — AI 与自动化（18）
-> 来源：ours 1 · codex 11 · cskills 6
-- **ours**：llm-guardrails
+> 来源：codex 11 · cskills 6 · ours 1
 - **codex**：ai-agent-dev、ai-agent-rag、ai-orchestrator、mlops、playwright、playwright-e2e、playwright-interactive、prompt-engineering、rag-engineering、speech、transcribe
 - **cskills**：agent-briefing、ai-engineering、ai-image-prompt、autojs-automation、llm-eval、mcp-tool-use
+- **ours**：llm-guardrails
 
 ### backend-api — 后端与 API（25）
-> 来源：ours 3 · codex 18 · cskills 4
-- **ours**：background-jobs、dockerfile-best、websocket-impl
+> 来源：codex 18 · cskills 4 · ours 3
 - **codex**：api-data-platform、api-design、api-design-2、api-discovery、aspnet-core、backend-engineering、cms-headless、django-dev、event-driven、fastapi-dev、graphql-dev、laravel-dev、microservices、nestjs-dev、rails-dev、realtime-communication、service-mesh、spring-boot-dev
 - **cskills**：api-engineering、backend-engineering、graphql-grpc-events、sdk-integration
+- **ours**：background-jobs、dockerfile-best、websocket-impl
+
+### business-operations — 业务运营（6）
+> 来源：community 6
+- **community**：capacity-planner、internal-comms、knowledge-ops、process-mapper、procurement-optimizer、vendor-management
 
 ### cloud-infra — 云与基础设施（17）
 > 来源：codex 11 · cskills 6
 - **codex**：chaos-engineering、cloudflare-deploy、disaster-recovery、docker-k8s、edge-computing、finops、monitoring-observability、netlify-deploy、render-deploy、sre-practices、vercel-deploy
 - **cskills**：cloud-native、k8sops、platform-engineering、release-engineering、terraform、terraform-iac
+
+### commercial-strategy — 商业策略（7）
+> 来源：community 7
+- **community**：channel-economics、commercial-forecaster、commercial-policy、deal-desk、partnerships-architect、pricing-strategist、rfp-responder
 
 ### content-authoring — 内容创作与文档（14）
 > 来源：codex 12 · cskills 2
@@ -47,22 +58,26 @@
 - **cskills**：document-authoring、presentation-authoring
 
 ### data-analysis — 数据与分析（7）
-> 来源：ours 1 · codex 5 · cskills 1
-- **ours**：validation-schema
+> 来源：codex 5 · cskills 1 · ours 1
 - **codex**：data-engineering、data-visualization、database、db-design、sql-optimization
 - **cskills**：spreadsheet-analysis
+- **ours**：validation-schema
 
 ### engineering-core — 通用工程模式（26）
-> 来源：ours 19 · codex 6 · cskills 1
-- **ours**：api-versioning、concurrency-patterns、datetime-timezones、dependency-injection、environment-config、error-handling-patterns、feature-flags、graceful-shutdown、http-caching、idempotency-design、memory-leaks、migration-zero-downtime、monorepo、pagination、rate-limiting-algorithms、regex-patterns、string-encoding、structured-logging、typescript-advanced
+> 来源：codex 6 · cskills 1 · ours 19
 - **codex**：domains、perf-engineering、shell-scripting、shell-scripting-2、software-engineering、system-design
 - **cskills**：ponytail
+- **ours**：api-versioning、concurrency-patterns、datetime-timezones、dependency-injection、environment-config、error-handling-patterns、feature-flags、graceful-shutdown、http-caching、idempotency-design、memory-leaks、migration-zero-downtime、monorepo、pagination、rate-limiting-algorithms、regex-patterns、string-encoding、structured-logging、typescript-advanced
+
+### finance — 财务与指标（2）
+> 来源：community 2
+- **community**：financial-analyst、saas-metrics-coach
 
 ### frontend-ui — 前端与 UI（27）
-> 来源：ours 1 · codex 22 · cskills 4
-- **ours**：css-modern-2025
+> 来源：codex 22 · cskills 4 · ours 1
 - **codex**：UIdesign、accessibility、angular-dev、chatgpt-apps、figma、figma-code-connect-components、figma-create-design-system-rules、figma-create-new-file、figma-generate-design、figma-generate-library、figma-implement-design、figma-use、frontend-dev、graphics-rendering、i18n-l10n、nextjs-dev、screenshot、svelte-dev、ui-design、ui-doc-output、vue-dev、winui-app
 - **cskills**：nextdev、react-development、screenshot-to-ui、ui-design
+- **ours**：css-modern-2025
 
 ### hardware-systems — 硬件与系统（8）
 > 来源：codex 3 · cskills 5
@@ -88,10 +103,18 @@
 - **codex**：linear、product-manager、sentry
 - **cskills**：ai-content-marketing、product-manager、product-marketing、project-promo-writer、social-media-ops
 
+### product-management — 产品管理（8）
+> 来源：community 8
+- **community**：code-to-prd、competitive-teardown、experiment-designer、product-analytics、product-discovery、product-strategist、research-summarizer、roadmap-communicator
+
 ### programming-languages — 编程语言（21）
 > 来源：codex 12 · cskills 9
 - **codex**：c-cpp-dev、csharp-dotnet-dev、go-dev、go-dev-2、java-dev、js-ts-dev、js-ts-dev-2、php-dev、python-dev、python-dev-2、ruby-dev、rust-dev
 - **cskills**：cpp-development、dotnet-development、elixir-erlang-development、java-jvm-development、kotlin-development、lua-openresty-development、r-development、scala-development、typescript-development
+
+### project-management — 项目管理（4）
+> 来源：community 4
+- **community**：meeting-analyzer、scrum-master、senior-pm、team-communications
 
 ### quality-delivery — 质量与交付（24）
 > 来源：codex 19 · cskills 5
@@ -102,6 +125,10 @@
 > 来源：codex 6 · cskills 4
 - **codex**：context7、game-dev、research-scientific-research、search-engine、web-fetch、web3-dapp
 - **cskills**：academic-writing、legal-counsel、project-learning、research
+
+### research-ops — 研究运营（3）
+> 来源：community 3
+- **community**：clinical-research、market-research、product-research
 
 ### reverse-engineering — 逆向工程（63）
 > 来源：codex 6 · cskills 57
@@ -114,12 +141,12 @@
 - **cskills**：protocol-analysis、web-security
 
 ### workflow-orchestration — 工作流与编排（15）
-> 来源：ours 3 · codex 12
-- **ours**：local-workflow、project-inception-docs、project-workflow
+> 来源：codex 12 · ours 3
 - **codex**：attack-chain-orchestrator、autoredteam-orchestrator、deep-thinking、dev、mcp-builder、memory、orchestration、skill-creator、skill-router、spec、spec-check、spec-do
+- **ours**：local-workflow、project-inception-docs、project-workflow
 
 ## 分级与变体（框架路线图阶段 6）
 
-- ✅ 已打"通用 / 半通用"标记，并剔除项目定制项：**通用 360 · 半通用 49 · 项目定制 0**，详见 `TIERS.md`。
+- ✅ 已打"通用 / 半通用"标记，并剔除项目定制项：**通用 390 · 半通用 49 · 项目定制 0**，详见 `TIERS.md`。
 - ✅ 已去掉全部 `anna-*`/`coff0xc-*` 前缀（36 个，技能全保留）；同域同源真撞名的 10 个取 `-2` 后缀。
 - `_merge-manifest.csv`（已含 `tier` 列）是后续筛选的工作底稿。

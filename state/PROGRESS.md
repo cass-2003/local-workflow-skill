@@ -6,11 +6,11 @@
 
 ## 当前焦点
 
-把通用工作流从“线性 checklist”推进到“先恢复状态、先规划、再按工作包自主循环”，并把项目初始化、入口刷新和自检做成可复现工具。
+把能力库从偏工程/安全/逆向的结构扩展为更均衡的通用工作流技能库，同时保持来源、许可、索引和路由可追溯。
 
 ## 进行中
 
-- 验证并提交项目初始化器开源化与启动模板去占位改造。
+- 验证并提交首批 community 技能扩容。
 
 ## 待办
 
@@ -19,6 +19,7 @@
 - [ ] 在真实项目中 dogfood `08-autonomous-project-loop.md`，检查“继续推进项目”是否会先规划、再循环执行/自审/修复/commit — 关联 `REQ-010`
 - [ ] 在真实项目中 dogfood `State Restore` 与 `Loop Record`，检查 agent 是否会主动替换占位状态并写回下一目标 — 关联 `REQ-011`
 - [ ] 把桌面 HTA 面板做成仓库可选包装，或明确作为本机私有便利入口 — 关联 `REQ-012`
+- [ ] 继续筛选许可清晰的开源 skill 源，补充教育学习、个人生产力、法务合规、内容运营、数据科学和行业知识等低覆盖领域 — 关联 `REQ-013`
 
 ## 阻塞
 
@@ -26,6 +27,7 @@
 
 ## 已完成（近期）
 
+- [x] 首批导入 30 个 MIT community 技能，新增 6 个业务/产品/管理/研究类领域，能力库更新为 439 技能 / 24 大类 — 2026-06-28（详情可见 LOG.md）
 - [x] 新增 `tools/project-init/` 初始化、入口刷新和工作流自检脚本；启动四态模板改为显式待确认结构 — 2026-06-27（详情可见 LOG.md）
 - [x] 加强 `State Restore` 与 `Loop Record` 契约，让入口模板、核心和 `project-workflow` 都要求开工恢复、收工回写 — 2026-06-27（详情可见 LOG.md）
 - [x] 新增 `08-autonomous-project-loop.md`，并接入核心、适配入口、project-workflow 与项目初始化模板 — 2026-06-27（详情可见 LOG.md）
@@ -43,3 +45,15 @@
 - [x] 完成本轮验证并准备原子 commit — 2026-06-26（详情可见 LOG.md）
 - [x] 明确 `project-workflow` 的全局工作流入口职责 — 2026-06-26（详情可见 LOG.md）
 - [x] 增加 Codex `AGENTS.md` 与 Claude Code `CLAUDE.md` 适配模板 — 2026-06-26（详情可见 Git 历史）
+
+## Loop Record · 2026-06-28 · community-skill-expansion
+
+- Goal: 降低能力库领域偏重，首批导入通用非工程类开源技能。
+- Acceptance Criteria: 新技能许可清晰；不包含项目定制或私有路径；目录结构符合 `<domain>/community/<skill>/`；README、路由、分级、manifest、provenance 和状态文件同步。
+- Validation Evidence: 已通过 manifest 计数校验（439 winners / 30 community / 通用 390 / 半通用 49）、community frontmatter 校验、旧索引残留扫描、密钥模式扫描、`git diff --check`、临时 manifest 生成 smoke test。
+- Self-Audit: 初筛跳过 Anthropic 无根许可全量导入与 wshobson agent 角色库；只导入 MIT `alirezarezvani/claude-skills` 中通用业务/产品/管理/研究运营能力。
+- Repairs: 新增 `community` 来源层并更新合并工具，避免后续 manifest 重建遗忘第三方导入。
+- State/Docs Sync: 已同步 README、skills README、routing、TIERS、NOTICE、REQ/LOG/MEMORY/PROGRESS。
+- Commit: 待创建原子 commit。
+- Next Goal: 继续补教育学习、个人生产力、法务合规、内容运营、数据科学和行业知识等低覆盖领域。
+- Stop Reason: 本轮先收敛为首批可验证导入，避免一次性搬运过多第三方内容。

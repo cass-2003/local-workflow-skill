@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""合并 manifest 生成器：枚举三源 → 归一化去重(ours>codex>cskills) → 领域归类 → CSV。"""
+"""合并 manifest 生成器：枚举四源 → 归一化去重 → 领域归类 → CSV。"""
 import os, re, csv, sys
 
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
@@ -81,27 +81,37 @@ def is_skill_dir(path):
     return os.path.isfile(os.path.join(path, "SKILL.md"))
 
 # ---------- enumerate sources ----------
-def list_ours():
+def list_repo_source(source):
     out = []  # (slug, src, domain_hint, multifile, relpath)
     for domain in sorted(os.listdir(OURS)):
         domainp = os.path.join(OURS, domain)
         if not os.path.isdir(domainp) or domain.startswith("_"):
             continue
-        oursp = os.path.join(domainp, "ours")
-        if not os.path.isdir(oursp):
+        sourcep = os.path.join(domainp, source)
+        if not os.path.isdir(sourcep):
             continue
-        for slug in sorted(os.listdir(oursp)):
-            sp = os.path.join(oursp, slug)
+        for slug in sorted(os.listdir(sourcep)):
+            sp = os.path.join(sourcep, slug)
             if is_skill_dir(sp):
                 nfiles = sum(1 for _, _, fs in os.walk(sp) for _ in fs)
-                out.append((slug, "ours", domain, nfiles > 1, f"{domain}/ours/{slug}"))
+                out.append((slug, source, domain, nfiles > 1, f"{domain}/{source}/{slug}"))
     return out
+
+def list_ours():
+    return list_repo_source("ours")
+
+def list_community():
+    return list_repo_source("community")
 
 def list_codex():
     out = []
     for slug in sorted(os.listdir(CODEX)):
         sp = os.path.join(CODEX, slug)
         if not os.path.isdir(sp) or JUNK_RE.search(slug) or slug in EXCLUDE:
+            continue
+        # The repo-local source tree is also the default CODEX path in some
+        # reproducibility tests; do not treat domain directories as Codex skills.
+        if any(os.path.isdir(os.path.join(sp, source)) for source in ("ours", "codex", "community", "cskills")):
             continue
         if not is_skill_dir(sp):
             # some like orchestration have SKILL.md nested deeper
@@ -114,6 +124,8 @@ def list_codex():
 
 def parse_csk_categories():
     m = {}
+    if not os.path.isfile(CSK_README):
+        return m
     with open(CSK_README, encoding="utf-8") as f:
         for line in f:
             mt = re.match(r'^\|\s*\d+\s*\|\s*`([^`]+)`\s*\|[^|]*\|[^|]*\|\s*([^|]+?)\s*\|', line)
@@ -123,6 +135,8 @@ def parse_csk_categories():
 
 def list_csk(cats):
     out = []
+    if not os.path.isdir(CSK):
+        return out
     for slug in sorted(os.listdir(CSK)):
         sp = os.path.join(CSK, slug)
         if is_skill_dir(sp):
@@ -199,18 +213,26 @@ def classify_codex(slug):
     return "UNCLASSIFIED", "?"
 
 # ---------- build ----------
+missing_sources = []
+if not os.path.isdir(CSK):
+    missing_sources.append(f"cskills dir missing: {CSK}")
+if not os.path.isfile(CSK_README):
+    missing_sources.append(f"cskills README missing: {CSK_README}")
+
 cats = parse_csk_categories()
 rows = []
 for slug, src, hint, mf, rel in list_ours():
     rows.append([src, slug, norm_key(slug), hint, "rule:ours-path", "yes" if mf else "no", rel])
+for slug, src, hint, mf, rel in list_community():
+    rows.append([src, slug, norm_key(slug), hint, "rule:community-path", "yes" if mf else "no", rel])
 for slug, src, hint, mf, rel in list_codex():
     dom, why = classify_codex(slug)
     rows.append([src, CODEX_FINAL_SLUG.get(slug, slug), norm_key(slug), dom, why, "yes" if mf else "no", rel])
 for slug, src, hint, mf, rel in list_csk(cats):
     rows.append([src, slug, norm_key(slug), CSK_MAP.get(hint, hint or "UNCLASSIFIED"), "rule:csk-readme", "no", rel])
 
-# dedup: ours>codex>cskills by norm_key
-prio = {"ours":0, "codex":1, "cskills":2}
+# dedup: ours>codex>community>cskills by norm_key
+prio = {"ours":0, "codex":1, "community":2, "cskills":3}
 best = {}
 for r in rows:
     k = r[2]
@@ -231,8 +253,12 @@ with open(OUT, "w", newline="", encoding="utf-8-sig") as f:
 # summary
 from collections import Counter
 win_rows = [r for r in rows if r[-1]=="WIN"]
-print(f"total skills enumerated: {len(rows)}  (ours/codex/cskills = "
-      f"{sum(1 for r in rows if r[0]=='ours')}/{sum(1 for r in rows if r[0]=='codex')}/{sum(1 for r in rows if r[0]=='cskills')})")
+print(f"total skills enumerated: {len(rows)}  (ours/codex/community/cskills = "
+      f"{sum(1 for r in rows if r[0]=='ours')}/{sum(1 for r in rows if r[0]=='codex')}/{sum(1 for r in rows if r[0]=='community')}/{sum(1 for r in rows if r[0]=='cskills')})")
+if missing_sources:
+    print("\n=== skipped optional sources ===")
+    for msg in missing_sources:
+        print(f"  {msg}")
 print(f"winners (deduped): {len(win_rows)}   dropped dups: {len(rows)-len(win_rows)}")
 print("\n=== winners by domain ===")
 for dom,c in sorted(Counter(r[3] for r in win_rows).items(), key=lambda x:-x[1]):

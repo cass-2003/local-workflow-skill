@@ -13,7 +13,7 @@ CSK = os.environ.get("PAW_CSKILLS_DIR", os.path.join(WORKSPACE_ROOT, "C_Skills",
 MANIFEST = os.path.join(SKILLS, "_merge-manifest.csv")
 MERGED = os.path.join(SKILLS, ".merged")
 
-SRC_BASE = {"ours": OURS, "codex": CODEX, "cskills": CSK}
+SRC_BASE = {"ours": OURS, "community": OURS, "codex": CODEX, "cskills": CSK}
 
 if os.path.exists(MERGED):
     shutil.rmtree(MERGED)

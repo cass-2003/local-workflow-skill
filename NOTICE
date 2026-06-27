@@ -15,5 +15,9 @@ The Coff0xc/coffee-skill import is tracked in:
 
 - tools/skill-merge/provenance/coffee-skill/
 
+The alirezarezvani/claude-skills community import is tracked in:
+
+- tools/skill-merge/provenance/claude-skills-community/
+
 Before redistributing a subset of this repository, preserve the applicable
 LICENSE, NOTICE, and provenance files for any included third-party skill.

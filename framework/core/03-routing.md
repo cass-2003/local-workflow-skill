@@ -21,11 +21,11 @@
 
 ## 二级路由：执行能力 → 能力库（`skills/`）
 
-`implement` / `fix` 真正动手时，按问题域委托到能力库对应领域大类。能力库为**双层结构** `skills/<领域大类>/<来源>/<skill>/`（来源 = ours｜codex｜cskills，去重优先级 ours>codex>cskills），共 **409 个技能 / 18 大类**：
+`implement` / `fix` 真正动手时，按问题域委托到能力库对应领域大类。能力库为**双层结构** `skills/<领域大类>/<来源>/<skill>/`（来源 = ours｜codex｜community｜cskills，去重优先级 ours>codex>community>cskills），共 **439 个技能 / 24 大类**：
 
 | 问题域 | 领域大类 | 数量 | 代表技能 |
 |---|---|---|---|
-| 通用工程模式 | `engineering-core/` | 26 | api-versioning、rate-limiting、idempotency、system-design |
+| 通用工程模式 | `engineering-core/` | 26 | api-versioning、rate-limiting、idempotency、system-design、domains |
 | 编程语言 | `programming-languages/` | 21 | python-dev、go-dev、rust-dev、java-jvm-development |
 | 后端与 API | `backend-api/` | 25 | fastapi-dev、nestjs-dev、microservices、graphql-dev |
 | 前端与 UI | `frontend-ui/` | 27 | nextjs-dev、vue-dev、figma-*、UIdesign、accessibility |
@@ -33,6 +33,12 @@
 | 数据与分析 | `data-analysis/` | 7 | data-engineering、sql-optimization、spreadsheet-analysis |
 | 云与基础设施 | `cloud-infra/` | 17 | docker-k8s、terraform、sre-practices、各 deploy |
 | AI 与自动化 | `ai-automation/` | 18 | llm-guardrails、rag-engineering、prompt-engineering、playwright |
+| 业务运营 | `business-operations/` | 6 | capacity-planner、process-mapper、knowledge-ops、vendor-management |
+| 商业策略 | `commercial-strategy/` | 7 | pricing-strategist、deal-desk、rfp-responder、commercial-forecaster |
+| 财务与指标 | `finance/` | 2 | financial-analyst、saas-metrics-coach |
+| 产品管理 | `product-management/` | 8 | product-discovery、product-analytics、experiment-designer、code-to-prd |
+| 项目管理 | `project-management/` | 4 | meeting-analyzer、scrum-master、senior-pm、team-communications |
+| 研究运营 | `research-ops/` | 3 | market-research、product-research、clinical-research |
 | 逆向工程 | `reverse-engineering/` | 63 | binrev、asmrev、javarev、fwrev、malrev（cskills 全家桶） |
 | 安全工程 | `security-engineering/` | 85 | full-pentest、ad-pentest、forensics、threat-hunting |
 | 支付与电商 | `payments-commerce/` | 12 | stripe、paypal、alipay-pay、wechat-pay、wallet-* |
@@ -48,7 +54,7 @@
 
 **大类内如何选具体技能**：上表只定到"大类"。进了大类后（如 `programming-languages/` 21 个），用各技能 `SKILL.md` 的 `description`（frontmatter）做终选——挑触发语义最贴合当前任务的那个。两条捷径：
 - **trivial 改动**（如加一个小函数、改一行）可**不委托**，直接内联完成（呼应 `01-workflow.md` 的轻量任务裁剪）。
-- 大类内多个近义技能都像候选时，优先 `ours` > `codex` > `cskills`（与去重优先级一致），或并列时取 `description` 命中更精确者。
+- 大类内多个近义技能都像候选时，优先 `ours` > `codex` > `community` > `cskills`（与去重优先级一致），或并列时取 `description` 命中更精确者。
 
 ## 消歧规则
 

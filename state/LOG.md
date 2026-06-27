@@ -4,6 +4,13 @@
 
 ---
 
+## 2026-06-28
+
+- `change` 首批扩容 community 技能，降低能力库领域偏重。
+  - 触发：用户指出当前能力库领域不够丰富，安全/逆向/工程偏重明显，需要从开源 skill 库补充其他领域。
+  - 范围：从 MIT 许可 `alirezarezvani/claude-skills` 筛选 30 个通用技能，新增业务运营、商业策略、财务指标、产品管理、项目管理、研究运营 6 个领域；跳过 router/index、私有上下文和偏角色扮演的 executive persona。
+  - 验证：新增 provenance 记录，规范 community `SKILL.md` frontmatter，更新 README、skills README、路由矩阵、TIERS、NOTICE、manifest，并执行结构/许可/计数校验。
+
 ## 2026-06-27
 
 - `change` 开源化项目初始化与工作流自检工具，并降低启动四态模板的占位债。

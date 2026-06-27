@@ -81,6 +81,13 @@
 - **影响**：后续项目接入优先使用仓库内脚本；本机桌面面板只是包装层。入口刷新默认替换托管块并保留项目专属内容。
 - **时间**：2026-06-27
 
+### D-011 · 第三方开源 skill 使用 community 来源层
+
+- **决定**：许可清晰的第三方开源 skill 不放入 `ours`，统一放入 `skills/<domain>/community/<skill>/`，并保存 provenance。
+- **为什么**：`ours` 应表示本仓库原创或维护的技能；community 能清晰表达第三方导入，避免来源、版权和后续更新责任混淆。
+- **影响**：去重优先级为 `ours > codex > community > cskills`；community 用来补覆盖缺口，不覆盖已有更权威的本地技能。
+- **时间**：2026-06-28
+
 ## 已知坑
 
 - `quick_validate.py` 不接受 `disable-model-invocation`、`user-invocable` 等旧 frontmatter 字段；新增或更新 skill 时只保留允许字段。
@@ -89,3 +96,4 @@
 - `coffee-skill` 上游 `SKILL.md` 的 frontmatter `name` 是 `coff0xc-*`；导入到本仓库时必须归一化为本地目录 slug，否则 `quick_validate.py` 会失败。
 - 对已有 Git 仓库只读状态并补缺口；不要把已有项目重新 `git init`，也不要覆盖 remote、分支或历史。
 - `tools/project-init/Initialize-PortableAgentProject.ps1 -AgentEntriesOnly` 只刷新 `AGENTS.md` / `CLAUDE.md` 托管块，不初始化 Git、不写 `.gitignore`、不覆盖 README/docs/state。
+- community 导入需要同时更新 `tools/skill-merge/provenance/<source>/`、`skills/_merge-manifest.csv`、`skills/README.md`、`skills/TIERS.md` 和路由矩阵，否则后续 agent 会看到不一致的能力库地图。
