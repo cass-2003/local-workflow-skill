@@ -6,6 +6,11 @@
 
 ## 2026-06-28
 
+- `change` 补强 App 开发与小程序通用工程技能，能力库推进到 565 技能 / 58 大类。
+  - 触发：用户希望多加一些 app 开发、小程序之类的 skill。
+  - 范围：新增 8 个 `mobile-crossplatform/ours` 技能，覆盖 App 架构、离线同步、推送通知、发布运营、小程序架构、微信小程序工程、登录支付闭环、Taro/uniapp 跨端工程。
+  - 验证：同步 manifest、README、skills README、TIERS、路由矩阵和四态系统；执行 frontmatter、quick_validate、计数、README 表格求和、密钥模式和 `git diff --check` 校验。
+
 - `change` 合并一批 OpenAI 官方 plugins 中许可证明确的 Codex skill，能力库推进到 557 技能 / 58 大类。
   - 触发：用户要求定 goal，合并官方的一些 Codex skill。
   - 范围：从 `openai/plugins` 筛选 34 个明确 MIT 许可的 skill，导入 Render、Expo、Airtable 与 Supabase/Postgres；跳过已存在的 `render-deploy` 和根仓库未声明许可的插件内容。

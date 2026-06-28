@@ -1,13 +1,13 @@
 # 技能分级与变体（阶段 6）
 
-> 给 557 技能打「通用 / 半通用」标记；项目定制项不进入开源通用库。
+> 给 565 技能打「通用 / 半通用」标记；项目定制项不进入开源通用库。
 > 标记只落在 `_merge-manifest.csv` 的 `tier` 列与本文件，**不写进各 SKILL.md frontmatter**（沿用「不标记直接融合」偏好）。
 
 ## tier 分布
 
 | 分级 | 数量 | 含义 | 代表 |
 |---|---|---|---|
-| 通用 | 474 | 纯工程/领域模式，跨项目可直接复用 | engineering-core、frontend-ui、backend-api、programming-languages、reverse-engineering、多数 security、business-operations、product-management、project-inception-docs |
+| 通用 | 482 | 纯工程/领域模式，跨项目可直接复用 | engineering-core、frontend-ui、backend-api、mobile-crossplatform、programming-languages、reverse-engineering、多数 security、business-operations、product-management、project-inception-docs |
 | 半通用 | 83 | 厂商/产品绑定但可跨项目复用，或需轻度去项目化 | payments(stripe…)、maps(高德…)、figma-*、notion-*、Render、Expo、Airtable、各 deploy |
 | 项目定制 | 0 | 强绑单一项目、产品、旧命令封装或私有上下文的技能不进入本仓库 | 已移除 source-command-*、具体项目 UI/扩展、运行时命令封装、迁移/宠物样本 |
 
@@ -41,4 +41,8 @@
 
 来源记录：`../tools/skill-merge/provenance/openai-plugins/`。
 
-完成 OpenAI plugins 扩容后，技能总数现为 **557**。
+## App 与小程序通用技能补强
+
+本仓库新增 8 个 `mobile-crossplatform/ours` 技能，补齐真实 App / 小程序项目常见地基能力：App 架构、离线同步、推送、发布运营、小程序架构、微信小程序工程、登录支付闭环、Taro/uniapp 跨端适配。
+
+完成 App / 小程序补强后，技能总数现为 **565**。

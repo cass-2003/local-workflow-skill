@@ -6,7 +6,7 @@
 
 ## 规模与结构
 
-**557 个技能 · 58 个领域大类**，由四个来源合并去重并剔除项目定制项而成：
+**565 个技能 · 58 个领域大类**，由四个来源合并去重并剔除项目定制项而成：
 
 | 来源 | 含义 | 去重优先级 |
 |---|---|---|
@@ -180,10 +180,11 @@
 > 来源：community 3
 - **community**：fda-qsr-audit-prep、iso13485-audit-prep、mdr-745-specialist
 
-### mobile-crossplatform — 移动与跨端（29）
-> 来源：codex 18 · cskills 11
+### mobile-crossplatform — 移动与跨端（37）
+> 来源：codex 18 · cskills 11 · ours 8
 - **codex**：apple-development、building-native-ui、codex-expo-run-actions、expo-api-routes、expo-cicd-workflows、expo-deployment、expo-dev-client、expo-module、expo-tailwind-setup、flutter-dart-dev、flutter-development、kotlin-android-dev、native-data-fetching、react-native-dev、swift-ios-dev、uniapp-dev、upgrading-expo、use-dom
 - **cskills**：alipay-miniprogram、android-development、apple-development、douyin-miniprogram、electron-development、flutter-development、harmonyos-arkts、harmonyos-arkui、tauri-development、uniapp-development、wechat-miniprogram
+- **ours**：mini-program-architecture、mini-program-login-payment、mobile-app-architecture、mobile-app-release-ops、mobile-offline-sync、mobile-push-notifications、taro-uniapp-crossplatform、wechat-miniprogram-engineering
 
 ### paid-acquisition — 付费获客（3）
 > 来源：community 3
@@ -283,6 +284,6 @@
 
 ## 分级与变体（框架路线图阶段 6）
 
-- ✅ 已打"通用 / 半通用"标记，并剔除项目定制项：**通用 474 · 半通用 83 · 项目定制 0**，详见 `TIERS.md`。
+- ✅ 已打"通用 / 半通用"标记，并剔除项目定制项：**通用 482 · 半通用 83 · 项目定制 0**，详见 `TIERS.md`。
 - ✅ 已去掉全部 `anna-*`/`coff0xc-*` 前缀（36 个，技能全保留）；同域同源真撞名的 10 个取 `-2` 后缀。
 - `_merge-manifest.csv`（已含 `tier` 列）是后续筛选的工作底稿。

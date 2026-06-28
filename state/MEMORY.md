@@ -109,6 +109,13 @@
 - **影响**：OpenAI plugin skill 统一进入 `codex` 来源层，保留 provenance；未声明许可、过度垂直或已存在的 skill 只作为参考，不原样导入。
 - **时间**：2026-06-28
 
+### D-015 · 移动端补项目级骨架优先于继续堆框架名
+
+- **决定**：App / 小程序能力扩容优先补 `ours` 通用工程骨架，如架构、离线同步、推送、发布运营、登录支付和跨端适配，而不是继续重复 Flutter、React Native、uniapp、微信小程序等框架名技能。
+- **为什么**：现有库已有多种框架/平台入口；真实项目更缺的是能把需求落到可维护工程结构、发布流程和平台约束的项目级技能。
+- **影响**：后续移动端扩容应先看 `mobile-crossplatform/ours` 是否已有横切能力，再补厂商/框架细节；新增 skill 仍保持 `SKILL.md` 精简、frontmatter 只有 `name` / `description`。
+- **时间**：2026-06-28
+
 ## 已知坑
 
 - `quick_validate.py` 不接受 `disable-model-invocation`、`user-invocable` 等旧 frontmatter 字段；新增或更新 skill 时只保留允许字段。

@@ -284,6 +284,14 @@ cskills,harmonyos-arkui,harmonyos-arkui,mobile-crossplatform,rule:csk-readme,no,
 cskills,tauri-development,tauri,mobile-crossplatform,rule:csk-readme,no,tauri-development,WIN,通用
 cskills,uniapp-development,uniapp,mobile-crossplatform,rule:csk-readme,no,uniapp-development,WIN,通用
 cskills,wechat-miniprogram,wechat-miniprogram,mobile-crossplatform,rule:csk-readme,no,wechat-miniprogram,WIN,半通用
+ours,mobile-app-architecture,mobile-app-architecture,mobile-crossplatform,rule:ours-path,no,mobile-crossplatform/ours/mobile-app-architecture,WIN,通用
+ours,mobile-app-release-ops,mobile-app-release-ops,mobile-crossplatform,rule:ours-path,no,mobile-crossplatform/ours/mobile-app-release-ops,WIN,通用
+ours,mobile-offline-sync,mobile-offline-sync,mobile-crossplatform,rule:ours-path,no,mobile-crossplatform/ours/mobile-offline-sync,WIN,通用
+ours,mobile-push-notifications,mobile-push-notifications,mobile-crossplatform,rule:ours-path,no,mobile-crossplatform/ours/mobile-push-notifications,WIN,通用
+ours,mini-program-architecture,mini-program-architecture,mobile-crossplatform,rule:ours-path,no,mobile-crossplatform/ours/mini-program-architecture,WIN,通用
+ours,mini-program-login-payment,mini-program-login-payment,mobile-crossplatform,rule:ours-path,no,mobile-crossplatform/ours/mini-program-login-payment,WIN,通用
+ours,taro-uniapp-crossplatform,taro-uniapp-crossplatform,mobile-crossplatform,rule:ours-path,no,mobile-crossplatform/ours/taro-uniapp-crossplatform,WIN,通用
+ours,wechat-miniprogram-engineering,wechat-miniprogram-engineering,mobile-crossplatform,rule:ours-path,no,mobile-crossplatform/ours/wechat-miniprogram-engineering,WIN,通用
 community,ad-creative,ad-creative,paid-acquisition,rule:community-path,yes,paid-acquisition/community/ad-creative,WIN,通用
 community,marketing-demand-acquisition,marketing-demand-acquisition,paid-acquisition,rule:community-path,yes,paid-acquisition/community/marketing-demand-acquisition,WIN,通用
 community,paid-ads,paid-ads,paid-acquisition,rule:community-path,yes,paid-acquisition/community/paid-ads,WIN,通用

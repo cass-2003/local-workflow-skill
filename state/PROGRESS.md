@@ -6,11 +6,11 @@
 
 ## 当前焦点
 
-把能力库从偏工程/安全/逆向的结构扩展为更均衡的通用工作流技能库，并吸收许可证清晰的官方 Codex plugin skill，同时保持来源、许可、索引和路由可追溯。
+把能力库从偏工程/安全/逆向的结构扩展为更均衡的通用工作流技能库，并补齐 App / 小程序等真实项目常见开发能力，同时保持来源、许可、索引和路由可追溯。
 
 ## 进行中
 
-- 无；OpenAI 官方 plugins 子集导入已完成，等待真实项目 dogfood。
+- 无；App / 小程序通用工程技能补强已完成，等待真实项目 dogfood。
 
 ## 待办
 
@@ -22,6 +22,7 @@
 - [ ] 继续筛选许可清晰的开源 skill 源，重点补数据科学、法务、HR、教育、创意制作、行业知识和本地化等仍较薄领域 — 关联 `REQ-014`
 - [ ] 在真实前后端项目中 dogfood 新增的设计系统、前端性能、状态数据流、认证授权、事务一致性、API 错误可观测性技能，检查触发质量和执行粒度 — 关联 `REQ-015`
 - [ ] 继续审计 `openai/plugins` 中其它有明确许可的官方 skill，重点看 GitHub、Notion、Cloudflare、Vercel、Netlify 等是否能无重复补强 — 关联 `REQ-016`
+- [ ] 在真实 App / 小程序项目中 dogfood 新增的移动端架构、离线同步、推送、发布运营、小程序登录支付和跨端适配技能 — 关联 `REQ-017`
 
 ## 阻塞
 
@@ -29,6 +30,7 @@
 
 ## 已完成（近期）
 
+- [x] 新增 8 个 App / 小程序通用 `ours` 技能，能力库扩展到 565 技能 / 58 大类 — 2026-06-28（详情可见 LOG.md）
 - [x] 导入 34 个许可证明确的 OpenAI 官方 plugin skill，能力库扩展到 557 技能 / 58 大类 — 2026-06-28（详情可见 LOG.md）
 - [x] 新增 6 个前端 UI / 后端 API 通用 `ours` 技能，能力库扩展到 523 技能 / 58 大类 — 2026-06-28（详情可见 LOG.md）
 - [x] 第二批导入 78 个 MIT community 技能，能力库扩展到 517 技能 / 58 大类，覆盖至少 50 个领域大类 — 2026-06-28（详情可见 LOG.md）
@@ -86,3 +88,15 @@
 - Commit: 待验证通过后使用 `feat: import licensed openai plugin skills`。
 - Next Goal: 继续审计 GitHub、Notion、Cloudflare、Vercel、Netlify 等官方插件是否有明确可再分发许可，并在真实项目中 dogfood Render/Expo skill 触发质量。
 - Stop Reason: 本轮只做许可明确的官方子集导入；更大规模导入需要逐插件许可审计。
+
+## Loop Record · 2026-06-28 · app-miniprogram-skill-expansion
+
+- Goal: 补强 App 开发与小程序项目级通用技能，让真实移动端项目能路由到架构、离线同步、推送、发布、小程序登录支付和跨端适配能力。
+- Acceptance Criteria: 新技能是通用 `ours`；frontmatter 只有 `name` / `description`；不重复已有框架/厂商技能；manifest、README、skills README、TIERS、routing 和四态计数一致；不引入项目定制、私有路径或敏感信息。
+- Validation Evidence: 已通过 manifest 计数校验（565 winners / 通用 482 / 半通用 83 / 58 domains / mobile-crossplatform 37 / ours 42）、新增 8 个 skill quick_validate 校验、README 表格求和校验（565）、密钥模式扫描和 `git diff --check`。
+- Self-Audit: 本轮没有继续堆 Flutter/React Native/uniapp 入口，而是补 App / 小程序真实项目更常见的横切工程能力；这些能力可和已有框架技能组合使用。
+- Repairs: 新增 8 个 `mobile-crossplatform/ours` 技能，并把路由代表技能改为优先显示项目级骨架能力。
+- State/Docs Sync: 已同步 README、skills README、routing、TIERS、REQ/LOG/MEMORY/PROGRESS。
+- Commit: 待验证通过后使用 `feat: add app and miniprogram skills`。
+- Next Goal: 在真实 App / 小程序项目中 dogfood 新 skill 的触发质量，并继续补移动端测试、埋点分析、地图定位、媒体上传等细分能力。
+- Stop Reason: 本轮是单一范围的移动端/小程序能力补强；验证和 commit 后停止，不自动 push。

@@ -21,7 +21,7 @@
 
 ## 二级路由：执行能力 → 能力库（`skills/`）
 
-`implement` / `fix` 真正动手时，按问题域委托到能力库对应领域大类。能力库为**双层结构** `skills/<领域大类>/<来源>/<skill>/`（来源 = ours｜codex｜community｜cskills，去重优先级 ours>codex>community>cskills），共 **557 个技能 / 58 大类**：
+`implement` / `fix` 真正动手时，按问题域委托到能力库对应领域大类。能力库为**双层结构** `skills/<领域大类>/<来源>/<skill>/`（来源 = ours｜codex｜community｜cskills，去重优先级 ours>codex>community>cskills），共 **565 个技能 / 58 大类**：
 
 | 问题域 | 领域大类 | 数量 | 代表技能 |
 |---|---|---|---|
@@ -29,7 +29,7 @@
 | 编程语言 | `programming-languages/` | 21 | python-dev、go-dev、rust-dev、java-jvm-development |
 | 后端与 API | `backend-api/` | 29 | auth-access-control、api-error-observability、database-transaction-consistency、supabase-postgres-best-practices、fastapi-dev、nestjs-dev、graphql-dev |
 | 前端与 UI | `frontend-ui/` | 30 | design-system-implementation、frontend-performance、frontend-state-data-flow、nextjs-dev、vue-dev、figma-*、accessibility |
-| 移动与跨端 | `mobile-crossplatform/` | 29 | Expo 系列、flutter-dart-dev、swift-ios-dev、harmonyos-arkts、各小程序 |
+| 移动与跨端 | `mobile-crossplatform/` | 37 | mobile-app-architecture、mini-program-architecture、wechat-miniprogram-engineering、Taro/uniapp、Expo 系列、Flutter、React Native、各小程序 |
 | 数据与分析 | `data-analysis/` | 9 | airtable-overview、airtable-filters、data-engineering、sql-optimization、spreadsheet-analysis |
 | 云与基础设施 | `cloud-infra/` | 37 | Render 系列、docker-k8s、terraform、sre-practices、各 deploy |
 | AI 与自动化 | `ai-automation/` | 18 | llm-guardrails、rag-engineering、prompt-engineering、playwright |
