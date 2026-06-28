@@ -6,7 +6,7 @@
 
 ## 规模与结构
 
-**523 个技能 · 58 个领域大类**，由四个来源合并去重并剔除项目定制项而成：
+**557 个技能 · 58 个领域大类**，由四个来源合并去重并剔除项目定制项而成：
 
 | 来源 | 含义 | 去重优先级 |
 |---|---|---|
@@ -45,9 +45,9 @@
 > 来源：community 1
 - **community**：app-store-optimization
 
-### backend-api — 后端与 API（28）
-> 来源：codex 18 · cskills 4 · ours 6
-- **codex**：api-data-platform、api-design、api-design-2、api-discovery、aspnet-core、backend-engineering、cms-headless、django-dev、event-driven、fastapi-dev、graphql-dev、laravel-dev、microservices、nestjs-dev、rails-dev、realtime-communication、service-mesh、spring-boot-dev
+### backend-api — 后端与 API（29）
+> 来源：codex 19 · cskills 4 · ours 6
+- **codex**：api-data-platform、api-design、api-design-2、api-discovery、aspnet-core、backend-engineering、cms-headless、django-dev、event-driven、fastapi-dev、graphql-dev、laravel-dev、microservices、nestjs-dev、rails-dev、realtime-communication、service-mesh、spring-boot-dev、supabase-postgres-best-practices
 - **cskills**：api-engineering、backend-engineering、graphql-grpc-events、sdk-integration
 - **ours**：api-error-observability、auth-access-control、background-jobs、database-transaction-consistency、dockerfile-best、websocket-impl
 
@@ -63,9 +63,9 @@
 > 来源：community 4
 - **community**：change-management、chief-of-staff、culture-architect、org-health-diagnostic
 
-### cloud-infra — 云与基础设施（17）
-> 来源：codex 11 · cskills 6
-- **codex**：chaos-engineering、cloudflare-deploy、disaster-recovery、docker-k8s、edge-computing、finops、monitoring-observability、netlify-deploy、render-deploy、sre-practices、vercel-deploy
+### cloud-infra — 云与基础设施（37）
+> 来源：codex 31 · cskills 6
+- **codex**：chaos-engineering、cloudflare-deploy、disaster-recovery、docker-k8s、edge-computing、finops、monitoring-observability、netlify-deploy、render-background-workers、render-blueprints、render-cli、render-cron-jobs、render-debug、render-deploy、render-disks、render-docker、render-domains、render-env-vars、render-keyvalue、render-mcp、render-migrate-from-heroku、render-monitor、render-networking、render-postgres、render-private-services、render-scaling、render-static-sites、render-web-services、render-workflows、sre-practices、vercel-deploy
 - **cskills**：cloud-native、k8sops、platform-engineering、release-engineering、terraform、terraform-iac
 
 ### commercial-strategy — 商业策略（7）
@@ -97,9 +97,9 @@
 > 来源：community 1
 - **community**：customer-success-manager
 
-### data-analysis — 数据与分析（7）
-> 来源：codex 5 · cskills 1 · ours 1
-- **codex**：data-engineering、data-visualization、database、db-design、sql-optimization
+### data-analysis — 数据与分析（9）
+> 来源：codex 7 · cskills 1 · ours 1
+- **codex**：airtable-filters、airtable-overview、data-engineering、data-visualization、database、db-design、sql-optimization
 - **cskills**：spreadsheet-analysis
 - **ours**：validation-schema
 
@@ -180,9 +180,9 @@
 > 来源：community 3
 - **community**：fda-qsr-audit-prep、iso13485-audit-prep、mdr-745-specialist
 
-### mobile-crossplatform — 移动与跨端（18）
-> 来源：codex 7 · cskills 11
-- **codex**：apple-development、flutter-dart-dev、flutter-development、kotlin-android-dev、react-native-dev、swift-ios-dev、uniapp-dev
+### mobile-crossplatform — 移动与跨端（29）
+> 来源：codex 18 · cskills 11
+- **codex**：apple-development、building-native-ui、codex-expo-run-actions、expo-api-routes、expo-cicd-workflows、expo-deployment、expo-dev-client、expo-module、expo-tailwind-setup、flutter-dart-dev、flutter-development、kotlin-android-dev、native-data-fetching、react-native-dev、swift-ios-dev、uniapp-dev、upgrading-expo、use-dom
 - **cskills**：alipay-miniprogram、android-development、apple-development、douyin-miniprogram、electron-development、flutter-development、harmonyos-arkts、harmonyos-arkui、tauri-development、uniapp-development、wechat-miniprogram
 
 ### paid-acquisition — 付费获客（3）
@@ -283,6 +283,6 @@
 
 ## 分级与变体（框架路线图阶段 6）
 
-- ✅ 已打"通用 / 半通用"标记，并剔除项目定制项：**通用 474 · 半通用 49 · 项目定制 0**，详见 `TIERS.md`。
+- ✅ 已打"通用 / 半通用"标记，并剔除项目定制项：**通用 474 · 半通用 83 · 项目定制 0**，详见 `TIERS.md`。
 - ✅ 已去掉全部 `anna-*`/`coff0xc-*` 前缀（36 个，技能全保留）；同域同源真撞名的 10 个取 `-2` 后缀。
 - `_merge-manifest.csv`（已含 `tier` 列）是后续筛选的工作底稿。

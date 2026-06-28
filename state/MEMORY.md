@@ -102,6 +102,13 @@
 - **影响**：新增核心技能时保持 `SKILL.md` 精简、frontmatter 只有 `name` / `description`，并同步 manifest、索引、路由、分级和四态系统。
 - **时间**：2026-06-28
 
+### D-014 · 官方插件技能也必须逐项验许可
+
+- **决定**：从 OpenAI 官方 `openai/plugins` 导入 skill 时，不按根仓库整体默认许可处理；只导入 skill frontmatter、插件 README 或插件 LICENSE 明确 MIT/Apache 等可再分发许可的子集。
+- **为什么**：`openai/plugins` 根目录没有仓库级 LICENSE；官方来源能证明出处，但不能替代开源再分发许可判断。
+- **影响**：OpenAI plugin skill 统一进入 `codex` 来源层，保留 provenance；未声明许可、过度垂直或已存在的 skill 只作为参考，不原样导入。
+- **时间**：2026-06-28
+
 ## 已知坑
 
 - `quick_validate.py` 不接受 `disable-model-invocation`、`user-invocable` 等旧 frontmatter 字段；新增或更新 skill 时只保留允许字段。
@@ -112,3 +119,4 @@
 - `tools/project-init/Initialize-PortableAgentProject.ps1 -AgentEntriesOnly` 只刷新 `AGENTS.md` / `CLAUDE.md` 托管块，不初始化 Git、不写 `.gitignore`、不覆盖 README/docs/state。
 - community 导入需要同时更新 `tools/skill-merge/provenance/<source>/`、`skills/_merge-manifest.csv`、`skills/README.md`、`skills/TIERS.md` 和路由矩阵，否则后续 agent 会看到不一致的能力库地图。
 - `tools/skill-merge/gen_manifest.py` 依赖 C_Skills 的真实解压路径；如果未设置 `PAW_CSKILLS_DIR` 且默认 `_unzipped/all-skills` 不存在，重生 manifest 会跳过 cskills 并造成赢家数量异常缩水。
+- `openai/plugins` 当前包含大量官方示例 plugin skill，但根仓库未提供统一 LICENSE；导入时要优先找插件目录 LICENSE、插件 README 许可段或 skill frontmatter `license` 字段。

@@ -6,11 +6,11 @@
 
 ## 当前焦点
 
-把能力库从偏工程/安全/逆向的结构扩展为更均衡的通用工作流技能库，并补强前端 UI、后端 API 等真实项目高频开发基础能力，同时保持来源、许可、索引和路由可追溯。
+把能力库从偏工程/安全/逆向的结构扩展为更均衡的通用工作流技能库，并吸收许可证清晰的官方 Codex plugin skill，同时保持来源、许可、索引和路由可追溯。
 
 ## 进行中
 
-- 无；前端 UI / 后端 API 基础技能补强已完成，等待真实项目 dogfood。
+- 无；OpenAI 官方 plugins 子集导入已完成，等待真实项目 dogfood。
 
 ## 待办
 
@@ -21,6 +21,7 @@
 - [ ] 把桌面 HTA 面板做成仓库可选包装，或明确作为本机私有便利入口 — 关联 `REQ-012`
 - [ ] 继续筛选许可清晰的开源 skill 源，重点补数据科学、法务、HR、教育、创意制作、行业知识和本地化等仍较薄领域 — 关联 `REQ-014`
 - [ ] 在真实前后端项目中 dogfood 新增的设计系统、前端性能、状态数据流、认证授权、事务一致性、API 错误可观测性技能，检查触发质量和执行粒度 — 关联 `REQ-015`
+- [ ] 继续审计 `openai/plugins` 中其它有明确许可的官方 skill，重点看 GitHub、Notion、Cloudflare、Vercel、Netlify 等是否能无重复补强 — 关联 `REQ-016`
 
 ## 阻塞
 
@@ -28,6 +29,7 @@
 
 ## 已完成（近期）
 
+- [x] 导入 34 个许可证明确的 OpenAI 官方 plugin skill，能力库扩展到 557 技能 / 58 大类 — 2026-06-28（详情可见 LOG.md）
 - [x] 新增 6 个前端 UI / 后端 API 通用 `ours` 技能，能力库扩展到 523 技能 / 58 大类 — 2026-06-28（详情可见 LOG.md）
 - [x] 第二批导入 78 个 MIT community 技能，能力库扩展到 517 技能 / 58 大类，覆盖至少 50 个领域大类 — 2026-06-28（详情可见 LOG.md）
 - [x] 首批导入 30 个 MIT community 技能，新增 6 个业务/产品/管理/研究类领域，能力库更新为 439 技能 / 24 大类 — 2026-06-28（详情可见 LOG.md）
@@ -72,3 +74,15 @@
 - Commit: 待验证通过后使用 `feat: enrich frontend and backend skills`。
 - Next Goal: 在真实前后端项目中 dogfood 新 skill 的触发质量，并继续补数据科学、法务、HR、教育、创意制作、行业知识和本地化等薄弱领域。
 - Stop Reason: 本轮是单一范围的能力库补强；验证和 commit 后停止，不自动 push。
+
+## Loop Record · 2026-06-28 · openai-plugin-skill-import
+
+- Goal: 从 OpenAI 官方 `openai/plugins` 中合并一批可开源再分发、真实项目高频可用的 Codex plugin skill。
+- Acceptance Criteria: 只导入许可明确的 skill；不重复导入已有 slug；归入 `codex` 来源层；保留 bundled resources 与 provenance；frontmatter 归一化为 `name` / `description`；manifest、README、skills README、TIERS、routing 和四态计数一致。
+- Validation Evidence: 已通过 manifest 计数校验（557 winners / 通用 474 / 半通用 83 / 58 domains / codex 271）、新增 34 个 skill frontmatter 与 quick_validate 校验、README 表格求和校验（557）、高置信密钥扫描和 `git diff --check`；宽松密钥扫描只命中占位符、变量名和已有 Cloudflare/Netlify 示例。
+- Self-Audit: `openai/plugins` 根目录没有统一 LICENSE，因此只导入 Render、Expo、Airtable、Supabase/Postgres 中有明确 MIT 许可声明的 34 个 skill；跳过已存在的 `render-deploy` 和许可不明确的大量官方 plugin skill。
+- Repairs: 移除官方 skill frontmatter 中 validator 不接受的 `license`、`version`、`metadata`、`compatibility` 等字段，把许可与来源移入 provenance。
+- State/Docs Sync: 已同步 README、skills README、routing、TIERS、provenance、REQ/LOG/MEMORY/PROGRESS。
+- Commit: 待验证通过后使用 `feat: import licensed openai plugin skills`。
+- Next Goal: 继续审计 GitHub、Notion、Cloudflare、Vercel、Netlify 等官方插件是否有明确可再分发许可，并在真实项目中 dogfood Render/Expo skill 触发质量。
+- Stop Reason: 本轮只做许可明确的官方子集导入；更大规模导入需要逐插件许可审计。

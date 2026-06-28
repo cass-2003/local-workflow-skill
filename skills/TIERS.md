@@ -1,6 +1,6 @@
 # 技能分级与变体（阶段 6）
 
-> 给 523 技能打「通用 / 半通用」标记；项目定制项不进入开源通用库。
+> 给 557 技能打「通用 / 半通用」标记；项目定制项不进入开源通用库。
 > 标记只落在 `_merge-manifest.csv` 的 `tier` 列与本文件，**不写进各 SKILL.md frontmatter**（沿用「不标记直接融合」偏好）。
 
 ## tier 分布
@@ -8,7 +8,7 @@
 | 分级 | 数量 | 含义 | 代表 |
 |---|---|---|---|
 | 通用 | 474 | 纯工程/领域模式，跨项目可直接复用 | engineering-core、frontend-ui、backend-api、programming-languages、reverse-engineering、多数 security、business-operations、product-management、project-inception-docs |
-| 半通用 | 49 | 厂商/产品绑定但可跨项目复用，或需轻度去项目化 | payments(stripe…)、maps(高德…)、figma-*、notion-*、各 deploy |
+| 半通用 | 83 | 厂商/产品绑定但可跨项目复用，或需轻度去项目化 | payments(stripe…)、maps(高德…)、figma-*、notion-*、Render、Expo、Airtable、各 deploy |
 | 项目定制 | 0 | 强绑单一项目、产品、旧命令封装或私有上下文的技能不进入本仓库 | 已移除 source-command-*、具体项目 UI/扩展、运行时命令封装、迁移/宠物样本 |
 
 分级规则见 `../tools/skill-merge/tier_tag.py`。
@@ -30,4 +30,15 @@
 
 来源记录：`../tools/skill-merge/provenance/claude-skills-community/`。
 
-完成前后端基础技能补强后，技能总数现为 **523**。
+## OpenAI plugins 官方技能导入
+
+从 OpenAI 官方 `openai/plugins` 仓库筛选导入 34 个许可证明确的 plugin skills，补强 Render、Expo、Airtable 与 Supabase/Postgres 场景。导入原则：
+
+- 只导入 skill 或插件目录明确 MIT 许可的内容。
+- 不导入根仓库未声明许可、许可不明确或过度垂直的插件技能。
+- 统一放入 `codex` 来源层；保留 bundled `references/`、`scripts/`、`assets/`，但 `SKILL.md` frontmatter 归一化为 `name` / `description`。
+- 已存在的 `render-deploy` 不重复导入。
+
+来源记录：`../tools/skill-merge/provenance/openai-plugins/`。
+
+完成 OpenAI plugins 扩容后，技能总数现为 **557**。
