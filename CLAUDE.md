@@ -48,7 +48,7 @@ docs-sync work only in chat.
 - For docs changes, update `docs/INDEX.md` or the relevant directory index so
   new files are discoverable.
 - Before commit, confirm validation evidence, state sync, index sync, and
-  `git status`.
+  `git status`; split multiple logical changes into multiple atomic commits.
 
 ## Autonomous Project Progress
 
@@ -72,5 +72,9 @@ Keep this repository generic and open-source friendly. Do not add skills tied
 to private projects, local paths, servers, accounts, or one-off command
 wrappers. Put project-specific skills in the target project or a private repo.
 
-After a validated single-scope change, prefer an atomic commit. Do not
-auto-push, merge, or open a PR unless explicitly requested.
+In a Git repository, every completed and validated change must enter the
+commit closure unless the user explicitly says not to commit. Each commit must
+represent one complete work package, including required tests, docs, and state
+updates. Split multiple logical changes into multiple atomic commits, stage by
+explicit paths, and do not use `git add .` or `git add -A` as a shortcut.
+Do not auto-push, merge, or open a PR unless explicitly requested.

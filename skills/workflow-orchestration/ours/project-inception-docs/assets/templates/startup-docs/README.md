@@ -19,7 +19,7 @@
 | 四态系统 | <完整/部分/缺失> | <state/LOG、REQUIREMENTS、MEMORY、PROGRESS> |
 | 文档索引 | <已就绪/待补> | <docs/INDEX.md 是否能作为阅读地图> |
 | 验证命令 | <已确认/待确认> | <install/dev/test/lint/build> |
-| 首次提交 | <已提交/待提交/不适用> | <地基验证后原子 commit；不默认 push> |
+| 首次提交 | <已提交/待提交/不适用> | <地基验证后进入原子 commit 闭环；不默认 push> |
 
 ## 快速开始
 
@@ -53,7 +53,7 @@
 
 - Agent 入口：<AGENTS.md / CLAUDE.md / 待补>
 - 状态系统：<state/LOG.md、REQUIREMENTS.md、MEMORY.md、PROGRESS.md>
-- 提交策略：<完成单一范围变更并验证后原子 commit；不默认 push>
+- 提交策略：<完成并验证修改后进入原子 commit 闭环；多逻辑变更拆成多个 commit；不默认 push>
 
 ## 下一步
 

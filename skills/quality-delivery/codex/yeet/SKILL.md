@@ -18,7 +18,7 @@ description: "Use only when the user explicitly asks to stage, commit, push, and
 
 - If on main/master/default, create a branch: `git checkout -b "{description}"`
 - Otherwise stay on the current branch.
-- Confirm status, then stage everything: `git status -sb` then `git add -A`.
+- Confirm status, then stage only the intended files with explicit paths: `git status -sb` then `git add <paths>`.
 - Commit tersely with the description: `git commit -m "{description}"`
 - Run checks if not already. If checks fail due to missing deps/tools, install dependencies and rerun once.
 - Push with tracking: `git push -u origin $(git branch --show-current)`

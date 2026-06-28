@@ -127,7 +127,7 @@
 
 ## 🔁 自主推进模式
 
-当用户说“继续推进项目”“按计划开发”“自动审计修复”这类话时，Agent 不应只做一个临时任务就停下。默认流程是：先检查或生成项目路线图和下一步工作包，再选择一个小而完整的目标，完成实现、验证、自审、修复、状态同步和原子 commit；之后回到路线图选择下一个目标，直到遇到需要用户决策、验证环境缺失、高风险操作或预算边界。
+当用户说“继续推进项目”“按计划开发”“自动审计修复”这类话时，Agent 不应只做一个临时任务就停下。默认流程是：先检查或生成项目路线图和下一步工作包，再选择一个小而完整的目标，完成实现、验证、自审、修复、状态同步和原子 commit 闭环；之后回到路线图选择下一个目标，直到遇到需要用户决策、验证环境缺失、高风险操作或预算边界。
 
 核心规则见 [`framework/core/08-autonomous-project-loop.md`](framework/core/08-autonomous-project-loop.md)。默认推荐产物包括路线图、下一步工作包、初始审计报告和 `state/PROGRESS.md` 中的当前循环状态；本仓库启动模板使用 `docs/planning/开发路线图.md` 与 `docs/planning/下一步工作包.md`，已有项目可映射到自己的等价文档。
 
@@ -167,7 +167,7 @@
    （或映射到项目已有的等价文档），并写入当前目标/约束/焦点
 4. 让 Agent 第一次只做：scan + state restore + 路由分析，先不改业务代码
 5. 状态恢复与路由稳定后，再带验证闸门和文档同步跑完整任务
-6. 验证通过且本轮是单一逻辑改动时，默认允许 Agent 自动创建原子 commit
+6. 验证通过且状态同步后，默认要求 Agent 创建原子 commit；多逻辑变更先拆成多个 commit
 ```
 
 也可以直接使用仓库内初始化器：
@@ -203,7 +203,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass `
 | 四态系统 | 初始化或映射日志、需求、记忆、进度，并写入当前目标、约束、焦点和下一步 |
 | 文档入口 | 保证 `README.md` 与 `docs/INDEX.md` 能说明项目状态、文档地图和验证入口 |
 | 验证入口 | 记录 install / dev / test / lint / build 命令；未知就标 `待确认`，不伪造 |
-| 首次提交 | 地基补齐并验证后创建原子 commit；不默认 push、merge、PR 或配置远端 |
+| 首次提交 | 地基补齐并验证后进入原子 commit 闭环；多逻辑变更拆成多个 commit；不默认 push、merge、PR 或配置远端 |
 
 > 🧱 想从一个想法直接开新项目，用 `project-inception-docs`：它会把 Git、忽略文件、Agent 入口、四态系统、README、PRD、架构、测试验收和运维文档一起打成启动包。
 
@@ -214,7 +214,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass `
 🗣️ 如果当前项目还没有 Git、.gitignore、AGENTS/CLAUDE、README、docs/INDEX 或四态系统，先补齐项目地基。
 🗣️ 使用 project-inception-docs，把这个想法初始化成可开发项目，并生成启动文档包。
 🗣️ 判断这个需求该走 audit / implement / fix / review，并说明验证与文档同步策略。
-🗣️ 检查当前改动在 commit 前是否已满足验证、文档同步和交付三道闸门；满足时直接原子 commit。
+🗣️ 检查当前改动在 commit 前是否已满足验证、文档同步和交付三道闸门；满足时按工作包拆分并直接原子 commit。
 ```
 
 > 🧪 想看完整跑一遍的样子？[`framework/validation/sample-project/`](framework/validation/sample-project/) 是个可直接重跑的最小样板，附 dogfood 验证报告。

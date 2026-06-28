@@ -100,7 +100,7 @@ git rebase origin/main
 # 编辑冲突文件，删除 <<<< ==== >>>> 标记
 
 # 3. 继续
-git add .
+git add <paths>
 git rebase --continue
 
 # 放弃

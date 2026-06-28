@@ -23,7 +23,7 @@ scan → state restore → intent → authority → route → execute → valida
 - 若项目还没有稳定的四态承载文件，先用框架模板初始化最小骨架，并补齐当前目标/约束/焦点/最近变更。
 - 完成必须有与范围匹配的验证证据，不靠口头声明。
 - 变更后把成果分类回写四态系统。
-- 若验证通过、四态已同步、且本轮是单一逻辑改动，则默认创建原子 commit。
+- 在 Git 仓库中完成可验证修改后，默认必须创建原子 commit；多逻辑变更先拆成多个 commit。
 - commit / push / PR 前过验证、文档、交付三道闸门；不要默认 auto-push 或 auto-merge。
 
 ## 规范指针（单一真相在中立核心）
@@ -46,7 +46,7 @@ scan → state restore → intent → authority → route → execute → valida
 - 审计、验收预检、重要 review 不能只在对话里给结论；默认写入项目约定的 `docs/audit/` 报告并更新索引。
 - 实现或修复完成后，默认回写日志和进度系统；行为、用法、架构、验证或风险变化时同步对应文档。
 - 文档新增或重组后，默认更新 `docs/INDEX.md` 或相关目录索引。
-- commit 前确认验证证据、状态同步、索引同步和 `git status`。
+- commit 前确认验证证据、状态同步、索引同步和 `git status`；按明确路径 stage，不用 `git add .` 或 `git add -A` 作为捷径。
 
 ## 运行时记录
 
@@ -58,7 +58,7 @@ scan → state restore → intent → authority → route → execute → valida
 
 - 当用户要求“继续推进项目”“按计划开发”“自动审计修复”或等价表达时，先检查是否已有路线图和下一步工作包；没有则先生成或更新。
 - 每轮只选择一个小目标，确认验收标准后执行、验证、自审、修复本轮范围内问题、同步状态和文档。
-- 满足单一逻辑改动、验证通过、状态同步和 diff 检查后，默认创建原子 commit；不要默认 push。
+- 满足验证通过、状态同步和 diff 检查后，默认进入原子 commit 闭环；多逻辑变更先拆成多个 commit，不要默认 push。
 - 遇到需要用户决策、外部凭据、高风险操作、验证环境缺失或连续失败时停止，并写明下一步最小目标。
 
 ## 与 Claude Code Skill 的关系

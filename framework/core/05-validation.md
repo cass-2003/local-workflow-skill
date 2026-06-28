@@ -45,17 +45,17 @@
 2. **文档闸门**（`01-workflow.md` Phase 7 + `02-state-systems.md`）：四态系统已回写。
 3. **交付闸门**（`01-workflow.md` Phase 8）：diff 已查、无意外破坏性 Git 动作。
 
-## Auto-commit 前提
+## Commit Closure 前提
 
-若工作流或适配器希望默认在完成后自动 commit，至少确认：
+若工作流或适配器在 Git 仓库中完成了可验证修改，默认必须进入 commit 闭环。提交前至少确认：
 
-- 本轮变更是单一逻辑改动，可用一个 commit 表达
+- 本轮变更可拆分为一个或多个清晰原子 commit
 - 已完成与范围匹配的验证
 - 四态系统已同步到最新状态
 - 已检查 `git status` 与 `git diff --staged`
 - 未发现敏感信息、调试残留、无关文件
 
-任一条件不满足时，结论应退回到 `not ready for delivery` 或 `ready for handoff without Git action`，而不是勉强自动提交。
+提交时必须按明确路径 stage；不要用 `git add .` 或 `git add -A` 作为捷径。任一条件不满足时，结论应退回到 `not ready for delivery` 或 `ready for handoff without Git action`，并记录为什么未提交以及下一步，而不是勉强自动提交。
 
 ## 自主循环验证边界
 

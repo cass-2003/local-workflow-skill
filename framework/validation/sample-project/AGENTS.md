@@ -14,7 +14,7 @@ scan → state restore → intent → authority → route → execute → valida
 - 若未来迁移到没有 `state/` 的新项目，先初始化最小四态骨架，再继续实现。
 - 完成必须有与范围匹配的验证证据（本项目：`py -3 -m pytest -q tests/`），不靠口头声明。
 - 变更后把成果分类回写四态系统。
-- 若验证通过且改动属于单一逻辑变更，默认创建原子 commit。
+- 在 Git 仓库中完成可验证修改后，默认创建原子 commit；多逻辑变更先拆成多个 commit。
 
 ## 规范指针（单一真相在中立核心）
 

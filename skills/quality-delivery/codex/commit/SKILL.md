@@ -14,8 +14,8 @@ user-invocable: false
 ## 行为指令
 
 1. **预检查** (除非 `--no-verify`): lint → build → generate:docs
-2. **暂存**: 检查 `git status` → 无暂存文件则 `git add` 所有变更
-3. **分析**: `git diff` → 检测多逻辑变更 → 建议拆分原子提交
+2. **暂存**: 检查 `git status` → 按明确路径暂存本轮相关文件，禁止粗暴暂存所有变更
+3. **分析**: `git diff` / `git diff --cached` → 检测多逻辑变更 → 拆分原子提交
 4. **提交**: 生成 Conventional Commits 消息 → 执行 `git commit`
 
 ## 选项
@@ -97,7 +97,7 @@ user-invocable: false
 │   ├── --no-verify → 跳过预检查
 │   └── 正常流程 → lint → build → docs(如有)
 ├── 变更分析
-│   ├── 无暂存文件 → git add 相关文件
+│   ├── 无暂存文件 → 按明确路径 git add 本轮相关文件
 │   ├── 单一逻辑 → 直接提交
 │   └── 多逻辑混合
 │       ├── feat + fix → 建议拆分为 2 个提交
@@ -186,7 +186,7 @@ git checkout -b hotfix/fix-login-crash main
 git fetch origin
 git rebase origin/main
 # 冲突解决后
-git add . && git rebase --continue
+git add <resolved-files> && git rebase --continue
 
 # === Squash Merge ===
 git merge --squash feat/my-feature

@@ -32,7 +32,7 @@
 - Self-Audit: 待确认模板占位是否已被项目事实替换。
 - Repairs: 无。
 - State/Docs Sync: 已创建基础 docs/state 结构。
-- Commit: 未提交；地基验证后再创建原子 commit。
+- Commit: 未提交；地基验证后进入原子 commit 闭环。
 - Next Goal: 用项目事实补齐 README、当前工程状态、开发路线图和下一步工作包。
 - Stop Reason: 无。
 

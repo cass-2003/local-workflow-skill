@@ -6,11 +6,11 @@
 
 ## 当前焦点
 
-把能力库从偏工程/安全/逆向的结构扩展为更均衡的通用工作流技能库，并补齐 App / 小程序等真实项目常见开发能力，同时保持来源、许可、索引和路由可追溯。
+把能力库从偏工程/安全/逆向的结构扩展为更均衡的通用工作流技能库，并补齐 App / 小程序等真实项目常见开发能力；同时把跨 agent 工作流纪律（状态恢复、产物同步、原子 commit 闭环）同步到所有入口和模板。
 
 ## 进行中
 
-- 无；App / 小程序通用工程技能补强已完成，等待真实项目 dogfood。
+- 加硬跨 agent commit 闭环纪律已完成修改，正在验证和提交。
 
 ## 待办
 
@@ -31,6 +31,7 @@
 ## 已完成（近期）
 
 - [x] 新增 8 个 App / 小程序通用 `ours` 技能，能力库扩展到 565 技能 / 58 大类 — 2026-06-28（详情可见 LOG.md）
+- [x] 同步 Codex、Claude Code、`.agents`、workflow core、adapters、启动模板和 git/commit skills 的 commit 闭环纪律 — 2026-06-28（详情可见 LOG.md）
 - [x] 导入 34 个许可证明确的 OpenAI 官方 plugin skill，能力库扩展到 557 技能 / 58 大类 — 2026-06-28（详情可见 LOG.md）
 - [x] 新增 6 个前端 UI / 后端 API 通用 `ours` 技能，能力库扩展到 523 技能 / 58 大类 — 2026-06-28（详情可见 LOG.md）
 - [x] 第二批导入 78 个 MIT community 技能，能力库扩展到 517 技能 / 58 大类，覆盖至少 50 个领域大类 — 2026-06-28（详情可见 LOG.md）
@@ -100,3 +101,15 @@
 - Commit: 待验证通过后使用 `feat: add app and miniprogram skills`。
 - Next Goal: 在真实 App / 小程序项目中 dogfood 新 skill 的触发质量，并继续补移动端测试、埋点分析、地图定位、媒体上传等细分能力。
 - Stop Reason: 本轮是单一范围的移动端/小程序能力补强；验证和 commit 后停止，不自动 push。
+
+## Loop Record · 2026-06-28 · global-commit-closure
+
+- Goal: 把“完成可验证修改后默认进入原子 commit 闭环”同步到所有 agent 入口、初始化模板、workflow core 和相关 git/commit skills。
+- Acceptance Criteria: Codex、Claude Code、`.agents` 全局入口和母仓源文件都不再只写“倾向/允许 commit”；启动模板和 adapters 要求多逻辑变更拆成多个 commit；commit/git skills 不再鼓励 `git add .` / `git add -A` 粗暴暂存；push/merge/PR 仍需用户明确要求。
+- Validation Evidence: 已执行旧弱规则扫描（无 `默认倾向` / `prefer an atomic commit` / `After a validated single-scope change` 残留）、危险 stage 示例扫描（`git add .` / `git add -A` 仅保留在禁止/反例语境）、commit closure 关键词扫描、`git diff --check`（仅 Windows LF/CRLF 提示）和 Git diff/stat 检查。
+- Self-Audit: 本轮只调整通用工作流纪律和镜像同步，不引入项目定制 skill；第三方来源技能尽量不扩大改动，只修会误导提交纪律的通用技能文档。
+- Repairs: 已把弱表述“prefer / 符合条件时 / 单一逻辑才默认”替换为“完成可验证修改后进入 commit 闭环；多逻辑变更拆分”；同步本机 `.agents` 与 `.codex` 技能镜像。
+- State/Docs Sync: 已同步 README、REQ、MEMORY、LOG、PROGRESS，并更新本 Loop Record。
+- Commit: 待验证通过后使用 `docs: enforce atomic commit closure`。
+- Next Goal: 在真实项目初始化和持续推进场景中 dogfood，确认 Codex/CC 是否会自动拆分提交并记录无法提交原因。
+- Stop Reason: 本轮目标是规则源头与本机镜像同步；验证和 commit 后停止，不自动 push。

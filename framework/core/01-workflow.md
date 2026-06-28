@@ -59,8 +59,11 @@
 - **目的**：在 commit / push / PR / handoff 前确认 ready。
 - **检查项**：diff 是否已检查、validation 是否匹配范围、docs sync 是否已考虑、是否存在不应隐式执行的破坏性 Git 动作。
 - **Git 纪律**：至少确认当前分支、`git status`、`git diff --staged`（若准备 commit）；禁止把未审查的暂存内容、无关改动或敏感信息带入提交。
-- **默认提交策略**：若当前仓库受 Git 管理、已完成一个单一逻辑变更、验证与四态回写都已完成，且用户或项目规则未禁止，则默认创建一个原子 commit。
-- **自动化边界**：可以默认 auto-commit；不要默认 auto-push、auto-merge、auto-PR，也不要在验证不足或变更混杂时自动提交。
+- **提交闭环策略**：若当前仓库受 Git 管理、已完成可验证修改、验证与四态回写都已完成，且用户或项目规则未禁止，则必须创建原子 commit。
+- **原子拆分**：一个 commit 只表达一个完整工作包及其必要测试、文档和状态同步；多逻辑变更必须拆成多个 commit 后再交付。
+- **暂存纪律**：按明确路径 stage，禁止为了省事使用 `git add .` 或 `git add -A` 把未审查内容带入提交。
+- **阻塞记录**：若因无 Git、验证失败、冲突、敏感信息或等待用户决策而不能 commit，交付时必须说明原因和下一步。
+- **自动化边界**：可以默认 auto-commit；不要默认 auto-push、auto-merge、auto-PR，也不要在验证不足或变更混杂时强行提交。
 
 **诚实交付状态**（只给当前证据支持得起的结论）：
 
@@ -93,7 +96,7 @@ project bootstrap planning
 -> self-audit
 -> repair findings
 -> sync
--> commit if eligible
+-> commit closure
 -> select next goal or stop with reason
 ```
 

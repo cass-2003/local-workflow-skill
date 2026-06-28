@@ -6,6 +6,11 @@
 
 ## 2026-06-28
 
+- `change` 加硬跨 agent commit 闭环纪律，要求可验证修改默认进入原子 commit。
+  - 触发：用户指出规则不应只改 Codex，所有 agent 入口和技能源头都要同步。
+  - 范围：同步 Codex/Claude/`.agents` 全局入口、母仓 `AGENTS.md` / `CLAUDE.md`、workflow core、Codex/Claude adapters、启动模板、`project-inception-docs`、commit/git 相关技能和本机技能镜像。
+  - 验证：检查关键规则命中、旧弱表述和 `git add .` / `git add -A` 残留；执行 `git diff --check` 与 Git 状态检查。
+
 - `change` 补强 App 开发与小程序通用工程技能，能力库推进到 565 技能 / 58 大类。
   - 触发：用户希望多加一些 app 开发、小程序之类的 skill。
   - 范围：新增 8 个 `mobile-crossplatform/ours` 技能，覆盖 App 架构、离线同步、推送通知、发布运营、小程序架构、微信小程序工程、登录支付闭环、Taro/uniapp 跨端工程。

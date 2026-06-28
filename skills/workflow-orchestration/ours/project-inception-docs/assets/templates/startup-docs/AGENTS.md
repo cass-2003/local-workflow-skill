@@ -8,13 +8,13 @@
 - Before business development, ensure the project foundation is ready: Git, `.gitignore`, README, docs index, Four-State files, validation commands, and this agent entry.
 - If this directory has no `.git/` and is not inside another Git worktree, initialize Git before continuing.
 - Prefer project-local truth docs over global memory.
-- After a validated single-scope change, create an atomic commit by default; do not push unless explicitly requested.
+- After completed and validated changes in a Git repository, create atomic commit(s) by default; split multiple logical changes and do not push unless explicitly requested.
 
 ## Autonomous Progress
 
 - When asked to continue the project, move forward by plan, auto-audit/fix, or make real project progress, first check `docs/planning/开发路线图.md`, `docs/planning/下一步工作包.md`, and `state/PROGRESS.md`.
 - If the roadmap or next work packages are missing or stale, update planning before implementation.
-- Each loop should select one small goal, confirm acceptance criteria, implement or fix, validate, self-audit, repair in-scope findings, sync docs/state, and commit when eligible.
+- Each loop should select one small goal, confirm acceptance criteria, implement or fix, validate, self-audit, repair in-scope findings, sync docs/state, and enter commit closure when eligible.
 - Stop only for user decisions, external credentials, high-risk operations, missing validation environment, repeated failure, or budget/scope limits; write the stop reason and next smallest executable goal.
 
 ## State System
@@ -58,6 +58,6 @@
 - Audit reports must include: 审计范围与基线, TL;DR, 应有能力清单, 缺失项清单, 偏差与误判修正, 下一步计划, 待确认事项, 验证证据.
 - For implementation or fixes, update `state/LOG.md` and `state/PROGRESS.md`; update docs when behavior, usage, architecture, validation, or risk changes.
 - For docs changes, update `docs/INDEX.md` and the relevant directory index so new files are discoverable.
-- Before commit, confirm validation evidence, state sync, index sync, and `git status`; then create an atomic commit for a single-scope change.
+- Before commit, confirm validation evidence, state sync, index sync, and `git status`; then create atomic commit(s), one complete work package per commit. Stage by explicit paths, not `git add .` or `git add -A`.
 
 <!-- END PORTABLE AGENT WORKFLOW -->

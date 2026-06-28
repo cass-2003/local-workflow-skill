@@ -116,6 +116,13 @@
 - **影响**：后续移动端扩容应先看 `mobile-crossplatform/ours` 是否已有横切能力，再补厂商/框架细节；新增 skill 仍保持 `SKILL.md` 精简、frontmatter 只有 `name` / `description`。
 - **时间**：2026-06-28
 
+### D-016 · Commit 闭环是跨 agent 默认交付纪律
+
+- **决定**：Codex、Claude Code、共享 `.agents` 入口、项目初始化模板、核心 workflow 和 git/commit skills 都采用同一条规则：在 Git 仓库内完成可验证修改后默认必须创建原子 commit；多逻辑变更拆成多个 commit。
+- **为什么**：仅写“倾向/允许原子 commit”会让不同 agent 在完成修改后停在未提交状态，破坏跨会话恢复、审计和多人协作。
+- **影响**：后续入口和技能不得把 commit 写成可选建议；阻塞 commit 时必须说明原因和下一步。push、merge、PR 和历史改写仍需要用户明确要求。
+- **时间**：2026-06-28
+
 ## 已知坑
 
 - `quick_validate.py` 不接受 `disable-model-invocation`、`user-invocable` 等旧 frontmatter 字段；新增或更新 skill 时只保留允许字段。

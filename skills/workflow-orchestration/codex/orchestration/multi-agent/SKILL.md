@@ -463,7 +463,7 @@ pending → in_progress → completed
 
 ```bash
 # 主修负责最终 commit，道侣不单独 commit
-git add -A
+git add <paths>
 git commit -m "feat: {任务描述}
 
 Co-authored-by: Agent-A

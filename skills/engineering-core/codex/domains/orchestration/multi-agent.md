@@ -186,7 +186,7 @@ pending → in_progress → completed
 ### 统一Commit规范
 ```bash
 # 主修负责最终commit，道侣不单独commit
-git add -A
+git add <paths>
 git commit -m "feat: {任务描述}
 
 Co-authored-by: Agent-A

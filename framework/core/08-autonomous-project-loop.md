@@ -60,7 +60,7 @@ select goal
 -> repair findings
 -> revalidate when repaired
 -> sync docs and state
--> commit when eligible
+-> commit closure
 -> select next goal or stop with reason
 ```
 
@@ -120,13 +120,15 @@ select goal
 - `state/MEMORY.md` 或等价记忆：本轮学到的持久架构事实、命令、坑、边界。
 - `state/REQUIREMENTS.md` 或等价需求：验收标准、范围、done/open 状态发生变化时更新。
 
-满足以下条件时默认原子提交：
+满足以下条件时必须进入原子 commit 闭环：
 
 - 当前仓库受 Git 管理。
-- 本轮是单一逻辑变更。
+- 本轮可拆分为一个或多个清晰工作包。
 - 验证、自审、状态同步和索引同步已完成。
 - `git status` / diff 已检查，没有无关或敏感文件。
 - 用户或项目规则没有禁止自动提交。
+
+每个 commit 只包含一个工作包及其必要测试、文档和状态同步；多逻辑变更先拆 commit 计划，再按明确路径 stage。若本轮不能提交，必须在 `Loop Record` 中记录原因、阻塞和下一步。
 
 不要默认 push、merge 或 PR。
 

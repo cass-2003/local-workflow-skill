@@ -55,7 +55,7 @@ docs-sync work only in chat.
 - For docs changes, update `docs/INDEX.md` or the relevant directory index so
   new files are discoverable.
 - Before commit, confirm validation evidence, state sync, index sync, and
-  `git status`.
+  `git status`; split multiple logical changes into multiple atomic commits.
 
 ## Autonomous Project Progress
 
@@ -65,7 +65,7 @@ has a usable roadmap and next-action plan. If not, create or update those
 planning artifacts before implementation. Then follow
 `framework/core/08-autonomous-project-loop.md`: select one small goal, confirm
 acceptance criteria, implement, validate, self-audit, repair in-scope findings,
-sync state/docs, commit when eligible, and either select the next goal or stop
+  sync state/docs, commit when eligible, and either select the next goal or stop
 with a clear reason.
 
 Every autonomous loop, audit/fix loop, important implementation, or handoff
@@ -89,5 +89,12 @@ This is a generic open-source skill/workflow repository.
 - Inspect status and diffs before staging or committing.
 - Do not stage unrelated local changes.
 - Run validation appropriate to the scope.
-- After a validated single-scope change, prefer an atomic commit.
+- In a Git repository, every completed and validated change must enter the
+  commit closure unless the user explicitly says not to commit.
+- Each commit must represent one complete work package, including required
+  tests, docs, and state updates.
+- Split multiple logical changes into multiple atomic commits before delivery.
+- Stage by explicit paths; do not use `git add .` or `git add -A` as a shortcut.
+- If commit is blocked by missing Git, failed validation, conflicts, sensitive
+  files, or a user decision, record the reason and next step.
 - Do not auto-push, merge, or open a PR unless explicitly requested.
