@@ -21,7 +21,7 @@
 
 ## 二级路由：执行能力 → 能力库（`skills/`）
 
-`implement` / `fix` 真正动手时，按问题域委托到能力库对应领域大类。能力库为**双层结构** `skills/<领域大类>/<来源>/<skill>/`（来源 = ours｜codex｜community｜cskills，去重优先级 ours>codex>community>cskills），共 **565 个技能 / 58 大类**：
+`implement` / `fix` 真正动手时，按问题域委托到能力库对应领域大类。能力库为**双层结构** `skills/<领域大类>/<来源>/<skill>/`（来源 = ours｜codex｜community，去重优先级 ours>codex>community），共 **565 个技能 / 58 大类**：
 
 | 问题域 | 领域大类 | 数量 | 代表技能 |
 |---|---|---|---|
@@ -45,7 +45,7 @@
 | 个人生产力与交接 | `personal-productivity/`、`email-productivity/`、`handoff-knowledge/` | 5 | capture、reflect、inbox-triage、handoff |
 | 经营、销售与组织管理 | `customer-success/`、`revenue-operations/`、`sales-enablement/`、`executive-strategy/`、`change-org-management/` | 12 | customer-success-manager、revenue-operations、sales-engineer、strategic-alignment |
 | 发布与格式化输出 | `markdown-publishing/`、`launch-management/`、`app-store-growth/`、`video-webinar-marketing/` | 9 | md-document、md-slides、launch-strategy、app-store-optimization |
-| 逆向工程 | `reverse-engineering/` | 63 | binrev、asmrev、javarev、fwrev、malrev（cskills 全家桶） |
+| 逆向工程 | `reverse-engineering/` | 63 | binrev、asmrev、javarev、fwrev、malrev |
 | 安全工程 | `security-engineering/` | 85 | full-pentest、ad-pentest、forensics、threat-hunting |
 | 支付与电商 | `payments-commerce/` | 12 | stripe、paypal、alipay-pay、wechat-pay、wallet-* |
 | 地图与位置 | `maps-location/` | 11 | amap-gaode、google-maps-platform、mapbox-maplibre |
@@ -60,7 +60,7 @@
 
 **大类内如何选具体技能**：上表只定到"大类"。进了大类后（如 `programming-languages/` 21 个），用各技能 `SKILL.md` 的 `description`（frontmatter）做终选——挑触发语义最贴合当前任务的那个。两条捷径：
 - **trivial 改动**（如加一个小函数、改一行）可**不委托**，直接内联完成（呼应 `01-workflow.md` 的轻量任务裁剪）。
-- 大类内多个近义技能都像候选时，优先 `ours` > `codex` > `community` > `cskills`（与去重优先级一致），或并列时取 `description` 命中更精确者。
+- 大类内多个近义技能都像候选时，优先 `ours` > `codex` > `community`（与去重优先级一致），或并列时取 `description` 命中更精确者。
 
 ## 消歧规则
 

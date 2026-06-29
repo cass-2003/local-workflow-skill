@@ -51,7 +51,7 @@ framework/
 
 skills/                    # 能力库：执行阶段委托的具体技能
                            #   双层结构 <领域大类>/<来源>/<skill>/，409 技能 / 18 大类
-                           #   来源 ours｜codex｜cskills，去重优先级 ours>codex>cskills
+                           #   来源 ours｜codex｜community，去重优先级 ours>codex>community
 ```
 
 两层职责分工：

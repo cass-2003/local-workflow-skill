@@ -6,30 +6,30 @@
 
 | 脚本 | 作用 |
 |---|---|
-| `gen_manifest.py` | 枚举四源（ours / `~/.codex/skills` / community / C_Skills）→ 归一化键去重（ours>codex>community>cskills）→ 领域归类 → 产出 `skills/_merge-manifest.csv` |
+| `gen_manifest.py` | 枚举来源层（ours / codex / community，可选第三方授权包归入 community）→ 归一化键去重（ours>codex>community）→ 领域归类 → 产出 `skills/_merge-manifest.csv` |
 | `do_copy.py` | 按 manifest 把 winner 整目录复制到暂存 `skills/.merged/<大类>/<来源>/<slug>/`，展平 coff0xc 嵌套冗余 |
 | `do_swap.py` | 删旧 7 类目录 → 把 `.merged/*` 上移为正式结构 → 清理 |
 
 ## 关键约定（与 `framework/core/03-routing.md`、`skills/README.md` 一致）
 
 - **归一化键**：小写 + 剥 `-dev/-development/-engineering` 后缀 + 别名表（`js-ts`↔`javascript-typescript`）。不剥家族前缀（`anna-`/`coff0xc-`），故同语言的不同作者变体作为独立技能保留。
-- **去重**：同键按 ours>codex>community>cskills 留一个赢家。
+- **去重**：同键按 ours>codex>community 留一个赢家。
 - **排除**：`.system`、`codex-windows-fast-patch`、运行时命令封装、项目/产品定制样本等非通用项；`*.bak/.tmp`。
-- **领域**：cskills 取 C_Skills README 的「分类」列；ours 取原目录；codex 用 `CODEX_EXACT` 精确映射 + 关键词规则。
+- **领域**：正式仓库结构优先取目录领域；可选第三方授权包可通过 README 分类映射；codex 原始导入可用 `CODEX_EXACT` 精确映射 + 关键词规则。
 
 ## 复现
 
 ```bash
 # 可选：按你的机器位置覆盖来源
 # export PAW_CODEX_SKILLS="$HOME/.codex/skills"
-# export PAW_CSKILLS_DIR="/path/to/C_Skills/_unzipped/all-skills"
-# export PAW_CSKILLS_README="/path/to/C_Skills/README.md"
+# export PAW_EXTERNAL_SKILLS_DIR="/path/to/authorized-skills"
+# export PAW_EXTERNAL_SKILLS_README="/path/to/authorized-skills/README.md"
 
 py -3 tools/skill-merge/gen_manifest.py   # 先看 _merge-manifest.csv
 py -3 tools/skill-merge/do_copy.py        # 复制到 .merged 暂存
 py -3 tools/skill-merge/do_swap.py        # 切换为正式结构
 ```
 
-> 注意：如果本机 C_Skills 解压目录不是默认的 `_unzipped/all-skills`，先设置 `PAW_CSKILLS_DIR` 再重生 manifest；否则可选 cskills 来源会被跳过，导致赢家数量异常缩水。
+> 注意：第三方授权包是可选导入源；正式仓库中统一落到 `community/` 来源层，不在公开索引里单独拆来源。
 
 体检基线：565 赢家 · frontmatter 0 缺失 · 0 空目录 · 0 跨域重复 slug · README 计数 0 不符。

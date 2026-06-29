@@ -23,20 +23,19 @@
 
 ## 规模与结构
 
-**565 个技能 · 58 个领域大类**，由四个来源合并去重并剔除项目定制项而成：
+**565 个技能 · 58 个领域大类**，由三个来源层合并去重并剔除项目定制项而成：
 
 | 来源 | 含义 | 去重优先级 |
 |---|---|---|
 | `ours` | 本仓库沉淀的通用工作流与可复用技能 | 最高（同能力时保留） |
 | `codex` | `~/.codex/skills`（含 `~/.claude/skills` 全部） | 次之 |
-| `community` | 许可清晰的第三方开源 skill 库导入 | 再次 |
-| `cskills` | C_Skills 收费技能库（逆向为主） | 最后 |
+| `community` | 许可清晰的第三方授权 skill 导入，含开源与已获授权来源 | 再次 |
 
 目录采用**双层**结构：`<领域大类>/<来源>/<skill-slug>/SKILL.md`。同一能力在多源出现时按上表优先级保留一个赢家；**根名不同的近义变体**（如 `python-dev` 与 `java-jvm-development`）作为不同技能保留。合并对照表见 `_merge-manifest.csv`。
 
 > **Coffee/Coff0xc 授权导入**：18 个 `coff0xc-*` 技能已在保留本仓库规范化 slug 的前提下更新到 `Coff0xc/coffee-skill` 授权版本；来源、许可与映射记录见 `../tools/skill-merge/provenance/coffee-skill/`。
 
-> **Community 开源导入**：首批两轮共 108 个 community 技能来自 MIT 许可的 `alirezarezvani/claude-skills`，覆盖业务、营销、合规、研究、生产力和管理等非工程领域；导入记录见 `../tools/skill-merge/provenance/claude-skills-community/`。
+> **Community 授权导入**：community 层统一承载许可清晰的第三方授权技能；其中 108 个来自 MIT 许可的 `alirezarezvani/claude-skills`，覆盖业务、营销、合规、研究、生产力和管理等非工程领域；导入记录见 `../tools/skill-merge/provenance/claude-skills-community/`。
 
 > **`-2` 后缀**：少数同域同源里有两个同主题但内容不同的技能（合并自不同作者），后到的取 `<名>-2`（如 `python-dev` / `python-dev-2`）。两者都保留，路由时按 `description` 择一。
 
@@ -45,9 +44,9 @@
 ## 领域索引
 
 ### ai-automation — AI 与自动化（18）
-> 来源：codex 11 · cskills 6 · ours 1
+> 来源：codex 11 · community 6 · ours 1
 - **codex**：ai-agent-dev、ai-agent-rag、ai-orchestrator、mlops、playwright、playwright-e2e、playwright-interactive、prompt-engineering、rag-engineering、speech、transcribe
-- **cskills**：agent-briefing、ai-engineering、ai-image-prompt、autojs-automation、llm-eval、mcp-tool-use
+- **community**：agent-briefing、ai-engineering、ai-image-prompt、autojs-automation、llm-eval、mcp-tool-use
 - **ours**：llm-guardrails
 
 ### ai-governance-compliance — AI 治理合规（2）
@@ -63,9 +62,9 @@
 - **community**：app-store-optimization
 
 ### backend-api — 后端与 API（29）
-> 来源：codex 19 · cskills 4 · ours 6
+> 来源：codex 19 · community 4 · ours 6
 - **codex**：api-data-platform、api-design、api-design-2、api-discovery、aspnet-core、backend-engineering、cms-headless、django-dev、event-driven、fastapi-dev、graphql-dev、laravel-dev、microservices、nestjs-dev、rails-dev、realtime-communication、service-mesh、spring-boot-dev、supabase-postgres-best-practices
-- **cskills**：api-engineering、backend-engineering、graphql-grpc-events、sdk-integration
+- **community**：api-engineering、backend-engineering、graphql-grpc-events、sdk-integration
 - **ours**：api-error-observability、auth-access-control、background-jobs、database-transaction-consistency、dockerfile-best、websocket-impl
 
 ### brand-strategy — 品牌策略（3）
@@ -81,9 +80,9 @@
 - **community**：change-management、chief-of-staff、culture-architect、org-health-diagnostic
 
 ### cloud-infra — 云与基础设施（37）
-> 来源：codex 31 · cskills 6
+> 来源：codex 31 · community 6
 - **codex**：chaos-engineering、cloudflare-deploy、disaster-recovery、docker-k8s、edge-computing、finops、monitoring-observability、netlify-deploy、render-background-workers、render-blueprints、render-cli、render-cron-jobs、render-debug、render-deploy、render-disks、render-docker、render-domains、render-env-vars、render-keyvalue、render-mcp、render-migrate-from-heroku、render-monitor、render-networking、render-postgres、render-private-services、render-scaling、render-static-sites、render-web-services、render-workflows、sre-practices、vercel-deploy
-- **cskills**：cloud-native、k8sops、platform-engineering、release-engineering、terraform、terraform-iac
+- **community**：cloud-native、k8sops、platform-engineering、release-engineering、terraform、terraform-iac
 
 ### commercial-strategy — 商业策略（7）
 > 来源：community 7
@@ -94,9 +93,9 @@
 - **community**：compliance-readiness
 
 ### content-authoring — 内容创作与文档（14）
-> 来源：codex 12 · cskills 2
+> 来源：codex 12 · community 2
 - **codex**：doc-office、jupyter-notebook、notion-knowledge-capture、notion-meeting-intelligence、notion-research-documentation、notion-spec-to-implementation、office-doc-tools、pdf、quick-translate、research-drawio-diagram、research-paper-writing、technical-writing
-- **cskills**：document-authoring、presentation-authoring
+- **community**：document-authoring、presentation-authoring
 
 ### content-strategy — 内容策略（3）
 > 来源：community 3
@@ -115,9 +114,9 @@
 - **community**：customer-success-manager
 
 ### data-analysis — 数据与分析（9）
-> 来源：codex 7 · cskills 1 · ours 1
+> 来源：codex 7 · community 1 · ours 1
 - **codex**：airtable-filters、airtable-overview、data-engineering、data-visualization、database、db-design、sql-optimization
-- **cskills**：spreadsheet-analysis
+- **community**：spreadsheet-analysis
 - **ours**：validation-schema
 
 ### email-marketing — 邮件营销（2）
@@ -129,9 +128,9 @@
 - **community**：inbox-setup、inbox-triage
 
 ### engineering-core — 通用工程模式（26）
-> 来源：codex 6 · cskills 1 · ours 19
+> 来源：codex 6 · community 1 · ours 19
 - **codex**：domains、perf-engineering、shell-scripting、shell-scripting-2、software-engineering、system-design
-- **cskills**：ponytail
+- **community**：ponytail
 - **ours**：api-versioning、concurrency-patterns、datetime-timezones、dependency-injection、environment-config、error-handling-patterns、feature-flags、graceful-shutdown、http-caching、idempotency-design、memory-leaks、migration-zero-downtime、monorepo、pagination、rate-limiting-algorithms、regex-patterns、string-encoding、structured-logging、typescript-advanced
 
 ### entity-research — 实体研究（2）
@@ -147,9 +146,9 @@
 - **community**：financial-analyst、saas-metrics-coach
 
 ### frontend-ui — 前端与 UI（30）
-> 来源：codex 22 · cskills 4 · ours 4
+> 来源：codex 22 · community 4 · ours 4
 - **codex**：UIdesign、accessibility、angular-dev、chatgpt-apps、figma、figma-code-connect-components、figma-create-design-system-rules、figma-create-new-file、figma-generate-design、figma-generate-library、figma-implement-design、figma-use、frontend-dev、graphics-rendering、i18n-l10n、nextjs-dev、screenshot、svelte-dev、ui-design、ui-doc-output、vue-dev、winui-app
-- **cskills**：nextdev、react-development、screenshot-to-ui、ui-design
+- **community**：nextdev、react-development、screenshot-to-ui、ui-design
 - **ours**：css-modern-2025、design-system-implementation、frontend-performance、frontend-state-data-flow
 
 ### grant-funding — 基金与资助（1）
@@ -165,9 +164,9 @@
 - **community**：handoff
 
 ### hardware-systems — 硬件与系统（8）
-> 来源：codex 3 · cskills 5
+> 来源：codex 3 · community 5
 - **codex**：STM32外设驱动开发、STM32嵌入式核心开发、STM32进阶开发
-- **cskills**：embedded-firmware、fpga-asic-hdl、linux-driver-development、uefi-development、windows-driver-development
+- **community**：embedded-firmware、fpga-asic-hdl、linux-driver-development、uefi-development、windows-driver-development
 
 ### launch-management — 发布管理（1）
 > 来源：community 1
@@ -182,8 +181,8 @@
 - **community**：litreview
 
 ### maps-location — 地图与位置（11）
-> 来源：cskills 11
-- **cskills**：amap-gaode、baidu-map、esri-arcgis、google-maps-platform、huawei-map-kit、leaflet-openlayers、map-gis-core、mapbox-maplibre、openstreetmap-routing、tencent-map、tianditu-map
+> 来源：community 11
+- **community**：amap-gaode、baidu-map、esri-arcgis、google-maps-platform、huawei-map-kit、leaflet-openlayers、map-gis-core、mapbox-maplibre、openstreetmap-routing、tencent-map、tianditu-map
 
 ### markdown-publishing — Markdown 发布（4）
 > 来源：community 4
@@ -198,9 +197,9 @@
 - **community**：fda-qsr-audit-prep、iso13485-audit-prep、mdr-745-specialist
 
 ### mobile-crossplatform — 移动与跨端（37）
-> 来源：codex 18 · cskills 11 · ours 8
+> 来源：codex 18 · community 11 · ours 8
 - **codex**：apple-development、building-native-ui、codex-expo-run-actions、expo-api-routes、expo-cicd-workflows、expo-deployment、expo-dev-client、expo-module、expo-tailwind-setup、flutter-dart-dev、flutter-development、kotlin-android-dev、native-data-fetching、react-native-dev、swift-ios-dev、uniapp-dev、upgrading-expo、use-dom
-- **cskills**：alipay-miniprogram、android-development、apple-development、douyin-miniprogram、electron-development、flutter-development、harmonyos-arkts、harmonyos-arkui、tauri-development、uniapp-development、wechat-miniprogram
+- **community**：alipay-miniprogram、android-development、apple-development、douyin-miniprogram、electron-development、flutter-development、harmonyos-arkts、harmonyos-arkui、tauri-development、uniapp-development、wechat-miniprogram
 - **ours**：mini-program-architecture、mini-program-login-payment、mobile-app-architecture、mobile-app-release-ops、mobile-offline-sync、mobile-push-notifications、taro-uniapp-crossplatform、wechat-miniprogram-engineering
 
 ### paid-acquisition — 付费获客（3）
@@ -212,9 +211,9 @@
 - **community**：patent
 
 ### payments-commerce — 支付与电商（12）
-> 来源：codex 1 · cskills 11
+> 来源：codex 1 · community 11
 - **codex**：payment-fintech
-- **cskills**：adyen、alipay-pay、apple-pay、checkout-com、google-pay、paypal、square、stripe、wallet-engineering、wallet-pass、wechat-pay
+- **community**：adyen、alipay-pay、apple-pay、checkout-com、google-pay、paypal、square、stripe、wallet-engineering、wallet-pass、wechat-pay
 
 ### personal-productivity — 个人生产力（2）
 > 来源：community 2
@@ -225,36 +224,36 @@
 - **community**：gdpr-audit-prep
 
 ### product-growth — 产品与增长（8）
-> 来源：codex 3 · cskills 5
+> 来源：codex 3 · community 5
 - **codex**：linear、product-manager、sentry
-- **cskills**：ai-content-marketing、product-manager、product-marketing、project-promo-writer、social-media-ops
+- **community**：ai-content-marketing、product-manager、product-marketing、project-promo-writer、social-media-ops
 
 ### product-management — 产品管理（8）
 > 来源：community 8
 - **community**：code-to-prd、competitive-teardown、experiment-designer、product-analytics、product-discovery、product-strategist、research-summarizer、roadmap-communicator
 
 ### programming-languages — 编程语言（21）
-> 来源：codex 12 · cskills 9
+> 来源：codex 12 · community 9
 - **codex**：c-cpp-dev、csharp-dotnet-dev、go-dev、go-dev-2、java-dev、js-ts-dev、js-ts-dev-2、php-dev、python-dev、python-dev-2、ruby-dev、rust-dev
-- **cskills**：cpp-development、dotnet-development、elixir-erlang-development、java-jvm-development、kotlin-development、lua-openresty-development、r-development、scala-development、typescript-development
+- **community**：cpp-development、dotnet-development、elixir-erlang-development、java-jvm-development、kotlin-development、lua-openresty-development、r-development、scala-development、typescript-development
 
 ### project-management — 项目管理（4）
 > 来源：community 4
 - **community**：meeting-analyzer、scrum-master、senior-pm、team-communications
 
 ### quality-delivery — 质量与交付（24）
-> 来源：codex 19 · cskills 5
+> 来源：codex 19 · community 5
 - **codex**：cli-creator、code-audit、code-audit-2、code-migration、code-simplifier、commit、devex-tooling、gh-address-comments、gh-fix-ci、git-workflow、git-workflow-2、low-code、performance-testing、qa、refactor、test-engineering、testing、tools、yeet
-- **cskills**：browser-automation、harmonyos-build-quality、observability、perf-engineering、test-engineering
+- **community**：browser-automation、harmonyos-build-quality、observability、perf-engineering、test-engineering
 
 ### quality-management — 质量管理（3）
 > 来源：community 3
 - **community**：capa-officer、qms-audit-expert、quality-documentation-manager
 
 ### research-knowledge — 研究与知识（10）
-> 来源：codex 6 · cskills 4
+> 来源：codex 6 · community 4
 - **codex**：context7、game-dev、research-scientific-research、search-engine、web-fetch、web3-dapp
-- **cskills**：academic-writing、legal-counsel、project-learning、research
+- **community**：academic-writing、legal-counsel、project-learning、research
 
 ### research-ops — 研究运营（3）
 > 来源：community 3
@@ -265,9 +264,9 @@
 - **community**：revenue-operations
 
 ### reverse-engineering — 逆向工程（63）
-> 来源：codex 6 · cskills 57
+> 来源：codex 6 · community 57
 - **codex**：android-reversing、binary-exploit、dotnet-reversing、reverse-analysis、reverse-engineering、reverse-engineering-2
-- **cskills**：abirev、asmrev、autorev、binrev、bootrev、carrev、cloudrev、containerrev、contractrev、crashrev、cryptrev、debugrev、diffrev、diskrev、docrev、dotnetrev、drmrev、ebpfrev、edrrev、fmtrev、fuzzrev、fwrev、gamerev、gorev、hvrev、hwrev、icsrev、iotrev、irrev、javarev、kernrev、linuxrev、macrev、malrev、memrev、mitirev、mlrev、mobile-reverse-engineering、opsecrev、packrev、protrev、rev-report、revauto、revlab、rktrev、rustrev、scriptrev、sdkrev、sigrev、supplyrev、swiftrev、ttdrev、vmrev、vulnrev、wasmrev、webrev、winrev
+- **community**：abirev、asmrev、autorev、binrev、bootrev、carrev、cloudrev、containerrev、contractrev、crashrev、cryptrev、debugrev、diffrev、diskrev、docrev、dotnetrev、drmrev、ebpfrev、edrrev、fmtrev、fuzzrev、fwrev、gamerev、gorev、hvrev、hwrev、icsrev、iotrev、irrev、javarev、kernrev、linuxrev、macrev、malrev、memrev、mitirev、mlrev、mobile-reverse-engineering、opsecrev、packrev、protrev、rev-report、revauto、revlab、rktrev、rustrev、scriptrev、sdkrev、sigrev、supplyrev、swiftrev、ttdrev、vmrev、vulnrev、wasmrev、webrev、winrev
 
 ### sales-enablement — 销售赋能（2）
 > 来源：community 2
@@ -278,9 +277,9 @@
 - **community**：iso27001-audit-prep、soc2-audit-prep
 
 ### security-engineering — 安全工程（85）
-> 来源：codex 83 · cskills 2
+> 来源：codex 83 · community 2
 - **codex**：ad-pentest、api-security-test、authorized-assessment、backdoor-detector、binary-mobile-iot、blockchain-security、blockchain-security-2、browser-security、bug-bounty、c2-framework、cdn-bypass、cloud-devsecops、cloud-security、compliance-architecture、compliance-audit、container-security、credential-access、crypto-security、ctf、data-exfiltration、data-security、detection-engineering、detection-response、devsecops、edr-endpoint、email-security、evasion-toolkit、fingerprint-engine、forensics-analysis、full-pentest、graphql-pentest、honeypot、iac-devops、ics-scada、identity-security、identity-zero-trust、incident-response、iot-security、kernel-security、lateral-movement、linux-hardening、llm-red-teaming、malware-analysis、mobile-security、mobile-security-2、network-monitoring、network-protocol、network-protocol-security、oauth-security、osint、pentest-report、phishing-simulation、post-exploitation、privacy-engineering、privilege-escalation、proxy-pool-manager、purple-deception、purple-team、quantum-security、recon-workflow、red-team-infra、red-team-poc、secrets-management、secure-code-appsec、security-architecture、security-best-practices、security-ownership-map、security-threat-model、security-tool-dev、serverless-security、soc-operations、social-engineering、spa-pentest、supply-chain-security、threat-hunting、threat-intelligence、vuln-research、vulnerability-lifecycle、vulnerability-management、web-pentest、windows-hardening、wireless-security、zero-trust
-- **cskills**：protocol-analysis、web-security
+- **community**：protocol-analysis、web-security
 
 ### seo — SEO（4）
 > 来源：community 4
@@ -298,7 +297,6 @@
 > 来源：codex 12 · ours 3
 - **codex**：attack-chain-orchestrator、autoredteam-orchestrator、deep-thinking、dev、mcp-builder、memory、orchestration、skill-creator、skill-router、spec、spec-check、spec-do
 - **ours**：local-workflow、project-inception-docs、project-workflow
-
 ## 分级与变体（框架路线图阶段 6）
 
 - ✅ 已打"通用 / 半通用"标记，并剔除项目定制项：**通用 482 · 半通用 83 · 项目定制 0**，详见 `TIERS.md`。

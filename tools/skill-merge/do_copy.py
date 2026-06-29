@@ -9,11 +9,13 @@ WORKSPACE_ROOT = os.path.abspath(os.path.join(REPO_ROOT, ".."))
 SKILLS = os.environ.get("PAW_SKILLS_DIR", os.path.join(REPO_ROOT, "skills"))
 OURS = os.environ.get("PAW_OURS_SKILLS", SKILLS)
 CODEX = os.environ.get("PAW_CODEX_SKILLS", os.path.expanduser("~/.codex/skills"))
-CSK = os.environ.get("PAW_CSKILLS_DIR", os.path.join(WORKSPACE_ROOT, "C_Skills", "_unzipped", "all-skills"))
+EXTERNAL = os.environ.get("PAW_EXTERNAL_SKILLS_DIR", "")
 MANIFEST = os.path.join(SKILLS, "_merge-manifest.csv")
 MERGED = os.path.join(SKILLS, ".merged")
 
-SRC_BASE = {"ours": OURS, "community": OURS, "codex": CODEX, "cskills": CSK}
+SRC_BASE = {"ours": OURS, "community": OURS, "codex": CODEX}
+if EXTERNAL:
+    SRC_BASE["external"] = EXTERNAL
 
 if os.path.exists(MERGED):
     shutil.rmtree(MERGED)
@@ -24,6 +26,8 @@ errors = []
 for r in rows:
     src_root = SRC_BASE[r["source"]]
     src = os.path.join(src_root, r["relpath"].replace("/", os.sep))
+    if r["source"] == "community" and not os.path.isdir(src) and EXTERNAL:
+        src = os.path.join(EXTERNAL, r["relpath"].replace("/", os.sep))
     if not os.path.isdir(src):
         errors.append(f"MISSING SRC: {r['source']} {r['relpath']}")
         continue

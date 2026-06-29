@@ -85,7 +85,7 @@
 
 - **决定**：许可清晰的第三方开源 skill 不放入 `ours`，统一放入 `skills/<domain>/community/<skill>/`，并保存 provenance。
 - **为什么**：`ours` 应表示本仓库原创或维护的技能；community 能清晰表达第三方导入，避免来源、版权和后续更新责任混淆。
-- **影响**：去重优先级为 `ours > codex > community > cskills`；community 用来补覆盖缺口，不覆盖已有更权威的本地技能。
+- **影响**：去重优先级为 `ours > codex > community`；community 用来补覆盖缺口，不覆盖已有更权威的本地技能。
 - **时间**：2026-06-28
 
 ### D-012 · 领域扩容采用细粒度大类而非继续堆工程类
@@ -137,6 +137,13 @@
 - **影响**：新增或调整大类时，后续要同步 `skills/CATALOG.md` 的场景导览、根 README 的速查表、`skills/README.md` 的完整索引和四态记录。
 - **时间**：2026-06-29
 
+### D-019 · 第三方授权来源统一并入 community 展示层
+
+- **决定**：不再在公开 README、领域索引和目录结构里单独展示第三方授权包的原始来源标签；已导入内容统一落到 `skills/<domain>/community/<skill>/`。
+- **为什么**：公开能力库应强调领域能力和授权清晰，而不是把某个授权来源的商业属性单独高亮；具体许可和来源仍通过 provenance / manifest 保持可审计。
+- **影响**：来源层收敛为 `ours / codex / community`；合并工具可选外部来源使用 `PAW_EXTERNAL_SKILLS_*`，输出仍归入 community；新增授权来源时不得在用户导览中制造新的来源孤岛。
+- **时间**：2026-06-29
+
 ## 已知坑
 
 - `quick_validate.py` 不接受 `disable-model-invocation`、`user-invocable` 等旧 frontmatter 字段；新增或更新 skill 时只保留允许字段。
@@ -146,5 +153,5 @@
 - 对已有 Git 仓库只读状态并补缺口；不要把已有项目重新 `git init`，也不要覆盖 remote、分支或历史。
 - `tools/project-init/Initialize-PortableAgentProject.ps1 -AgentEntriesOnly` 只刷新 `AGENTS.md` / `CLAUDE.md` 托管块，不初始化 Git、不写 `.gitignore`、不覆盖 README/docs/state。
 - community 导入需要同时更新 `tools/skill-merge/provenance/<source>/`、`skills/_merge-manifest.csv`、`skills/README.md`、`skills/TIERS.md` 和路由矩阵，否则后续 agent 会看到不一致的能力库地图。
-- `tools/skill-merge/gen_manifest.py` 依赖 C_Skills 的真实解压路径；如果未设置 `PAW_CSKILLS_DIR` 且默认 `_unzipped/all-skills` 不存在，重生 manifest 会跳过 cskills 并造成赢家数量异常缩水。
+- 第三方授权包的原始来源不要在公开导览里单独高亮；使用 `PAW_EXTERNAL_SKILLS_DIR` / `PAW_EXTERNAL_SKILLS_README` 作为可选导入入口，最终目录和索引统一归入 `community/`。
 - `openai/plugins` 当前包含大量官方示例 plugin skill，但根仓库未提供统一 LICENSE；导入时要优先找插件目录 LICENSE、插件 README 许可段或 skill frontmatter `license` 字段。

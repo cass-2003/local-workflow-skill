@@ -6,6 +6,11 @@
 
 ## 2026-06-29
 
+- `change` 将第三方授权来源统一并入 `community` 展示层，避免公开导览单独高亮商业来源。
+  - 触发：用户指出第三方授权来源在能力库 README 中写得过于明显，不应单独分离展示。
+  - 范围：移动 17 个领域下的旧来源目录到同领域 `community/`；更新 manifest、skills README、根 README、架构、路由、合并工具说明与四态系统。
+  - 验证：待执行目录残留扫描、manifest 计数、公开口径扫描、README 来源统计和 `git diff --check` 检查。
+
 - `docs` 增强能力库可发现性，让用户按场景理解 565 个技能覆盖什么。
   - 触发：用户指出 README 的能力库段落只有数量表，不知道有哪些类型、分类和领域的 skill。
   - 范围：新增 `skills/CATALOG.md` 人类导览版目录；根 README 增加“按目标快速找”；`skills/README.md` 顶部增加导览入口和常用问法。

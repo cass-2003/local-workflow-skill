@@ -76,7 +76,7 @@
 | 🔌 `adapters/` | 把核心挂载到各家 Agent 入口 | 保持薄，只触发 + 指路，不复制规范 |
 | 🧠 `framework/core/` | 流程与产物契约的唯一真相 | 改流程只改 core，适配器跟着指 |
 | ★ `state-systems/` | 项目状态的持久落点 | 状态先于动作，开工先恢复 |
-| 🛠️ `skills/` | 执行阶段委托的具体能力 | 去重优先级 `ours > codex > community > cskills` |
+| 🛠️ `skills/` | 执行阶段委托的具体能力 | 去重优先级 `ours > codex > community` |
 
 ---
 

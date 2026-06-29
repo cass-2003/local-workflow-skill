@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""合并 manifest 生成器：枚举四源 → 归一化去重 → 领域归类 → CSV。"""
+"""合并 manifest 生成器：枚举来源 → 归一化去重 → 领域归类 → CSV。"""
 import os, re, csv, sys
 
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
@@ -8,8 +8,8 @@ WORKSPACE_ROOT = os.path.abspath(os.path.join(REPO_ROOT, ".."))
 
 OURS = os.environ.get("PAW_OURS_SKILLS", os.path.join(REPO_ROOT, "skills"))
 CODEX = os.environ.get("PAW_CODEX_SKILLS", os.path.expanduser("~/.codex/skills"))
-CSK = os.environ.get("PAW_CSKILLS_DIR", os.path.join(WORKSPACE_ROOT, "C_Skills", "_unzipped", "all-skills"))
-CSK_README = os.environ.get("PAW_CSKILLS_README", os.path.join(WORKSPACE_ROOT, "C_Skills", "README.md"))
+EXTERNAL = os.environ.get("PAW_EXTERNAL_SKILLS_DIR", "")
+EXTERNAL_README = os.environ.get("PAW_EXTERNAL_SKILLS_README", "")
 OUT = os.environ.get("PAW_MERGE_MANIFEST", os.path.join(REPO_ROOT, "skills", "_merge-manifest.csv"))
 
 JUNK_RE = re.compile(r'\.bak|backup|\.tmp', re.I)
@@ -80,6 +80,9 @@ def norm_key(slug):
 def is_skill_dir(path):
     return os.path.isfile(os.path.join(path, "SKILL.md"))
 
+def has_skill_md(path):
+    return any(f == "SKILL.md" for _, _, fs in os.walk(path) for f in fs)
+
 # ---------- enumerate sources ----------
 def list_repo_source(source):
     out = []  # (slug, src, domain_hint, multifile, relpath)
@@ -92,7 +95,7 @@ def list_repo_source(source):
             continue
         for slug in sorted(os.listdir(sourcep)):
             sp = os.path.join(sourcep, slug)
-            if is_skill_dir(sp):
+            if has_skill_md(sp):
                 nfiles = sum(1 for _, _, fs in os.walk(sp) for _ in fs)
                 out.append((slug, source, domain, nfiles > 1, f"{domain}/{source}/{slug}"))
     return out
@@ -103,7 +106,10 @@ def list_ours():
 def list_community():
     return list_repo_source("community")
 
-def list_codex():
+def list_external_codex():
+    # Fallback importer for building from a raw local Codex skill directory.
+    # Normal repo maintenance uses list_repo_source("codex") so regenerated
+    # manifests reflect the checked-in source layout.
     out = []
     for slug in sorted(os.listdir(CODEX)):
         sp = os.path.join(CODEX, slug)
@@ -111,7 +117,7 @@ def list_codex():
             continue
         # The repo-local source tree is also the default CODEX path in some
         # reproducibility tests; do not treat domain directories as Codex skills.
-        if any(os.path.isdir(os.path.join(sp, source)) for source in ("ours", "codex", "community", "cskills")):
+        if any(os.path.isdir(os.path.join(sp, source)) for source in ("ours", "codex", "community")):
             continue
         if not is_skill_dir(sp):
             # some like orchestration have SKILL.md nested deeper
@@ -122,30 +128,32 @@ def list_codex():
         out.append((slug, "codex", None, nfiles > 1, slug))
     return out
 
-def parse_csk_categories():
+def parse_external_categories():
     m = {}
-    if not os.path.isfile(CSK_README):
+    if not EXTERNAL_README or not os.path.isfile(EXTERNAL_README):
         return m
-    with open(CSK_README, encoding="utf-8") as f:
+    with open(EXTERNAL_README, encoding="utf-8") as f:
         for line in f:
             mt = re.match(r'^\|\s*\d+\s*\|\s*`([^`]+)`\s*\|[^|]*\|[^|]*\|\s*([^|]+?)\s*\|', line)
             if mt:
                 m[mt.group(1)] = mt.group(2).strip()
     return m
 
-def list_csk(cats):
+def list_external_bundle(cats):
     out = []
-    if not os.path.isdir(CSK):
+    if not EXTERNAL or not os.path.isdir(EXTERNAL):
         return out
-    for slug in sorted(os.listdir(CSK)):
-        sp = os.path.join(CSK, slug)
+    for slug in sorted(os.listdir(EXTERNAL)):
+        sp = os.path.join(EXTERNAL, slug)
         if is_skill_dir(sp):
-            out.append((slug, "cskills", cats.get(slug), False, slug))
+            # Optional third-party bundles are normalized into the public
+            # community layer so the final repo does not expose source silos.
+            out.append((slug, "community", cats.get(slug), False, slug))
     return out
 
 # ---------- domain classification ----------
-# C_Skills 分类 → 统一大类
-CSK_MAP = {
+# 可选第三方授权来源分类 → 统一大类
+EXTERNAL_DOMAIN_MAP = {
     "reverse-engineering":"reverse-engineering","programming-languages":"programming-languages",
     "payments-commerce":"payments-commerce","mobile-crossplatform":"mobile-crossplatform",
     "maps-location":"maps-location","quality-delivery":"quality-delivery","cloud-infra":"cloud-infra",
@@ -214,25 +222,30 @@ def classify_codex(slug):
 
 # ---------- build ----------
 missing_sources = []
-if not os.path.isdir(CSK):
-    missing_sources.append(f"cskills dir missing: {CSK}")
-if not os.path.isfile(CSK_README):
-    missing_sources.append(f"cskills README missing: {CSK_README}")
+if EXTERNAL and not os.path.isdir(EXTERNAL):
+    missing_sources.append(f"external skill dir missing: {EXTERNAL}")
+if EXTERNAL_README and not os.path.isfile(EXTERNAL_README):
+    missing_sources.append(f"external skill README missing: {EXTERNAL_README}")
 
-cats = parse_csk_categories()
+cats = parse_external_categories()
 rows = []
 for slug, src, hint, mf, rel in list_ours():
     rows.append([src, slug, norm_key(slug), hint, "rule:ours-path", "yes" if mf else "no", rel])
 for slug, src, hint, mf, rel in list_community():
     rows.append([src, slug, norm_key(slug), hint, "rule:community-path", "yes" if mf else "no", rel])
-for slug, src, hint, mf, rel in list_codex():
-    dom, why = classify_codex(slug)
-    rows.append([src, CODEX_FINAL_SLUG.get(slug, slug), norm_key(slug), dom, why, "yes" if mf else "no", rel])
-for slug, src, hint, mf, rel in list_csk(cats):
-    rows.append([src, slug, norm_key(slug), CSK_MAP.get(hint, hint or "UNCLASSIFIED"), "rule:csk-readme", "no", rel])
+repo_codex = list_repo_source("codex")
+if repo_codex:
+    for slug, src, hint, mf, rel in repo_codex:
+        rows.append([src, slug, norm_key(slug), hint, "rule:codex-path", "yes" if mf else "no", rel])
+else:
+    for slug, src, hint, mf, rel in list_external_codex():
+        dom, why = classify_codex(slug)
+        rows.append([src, CODEX_FINAL_SLUG.get(slug, slug), norm_key(slug), dom, why, "yes" if mf else "no", rel])
+for slug, src, hint, mf, rel in list_external_bundle(cats):
+    rows.append([src, slug, norm_key(slug), EXTERNAL_DOMAIN_MAP.get(hint, hint or "UNCLASSIFIED"), "rule:external-readme", "no", rel])
 
-# dedup: ours>codex>community>cskills by norm_key
-prio = {"ours":0, "codex":1, "community":2, "cskills":3}
+# dedup: ours>codex>community by norm_key
+prio = {"ours":0, "codex":1, "community":2}
 best = {}
 for r in rows:
     k = r[2]
@@ -253,8 +266,8 @@ with open(OUT, "w", newline="", encoding="utf-8-sig") as f:
 # summary
 from collections import Counter
 win_rows = [r for r in rows if r[-1]=="WIN"]
-print(f"total skills enumerated: {len(rows)}  (ours/codex/community/cskills = "
-      f"{sum(1 for r in rows if r[0]=='ours')}/{sum(1 for r in rows if r[0]=='codex')}/{sum(1 for r in rows if r[0]=='community')}/{sum(1 for r in rows if r[0]=='cskills')})")
+print(f"total skills enumerated: {len(rows)}  (ours/codex/community = "
+      f"{sum(1 for r in rows if r[0]=='ours')}/{sum(1 for r in rows if r[0]=='codex')}/{sum(1 for r in rows if r[0]=='community')})")
 if missing_sources:
     print("\n=== skipped optional sources ===")
     for msg in missing_sources:

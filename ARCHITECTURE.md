@@ -72,8 +72,8 @@ local-skills-workspace/
 │     └─ codex.md + codex/ Codex 模板（AGENTS.md + agents/workflow.yaml）
 ├─ skills/              双手：409 技能 / 18 大类
 │  ├─ README.md          能力库索引
-│  ├─ _merge-manifest.csv 三源合并对照表
-│  └─ <大类>/<来源>/<skill>/  来源 = ours｜codex｜cskills
+│  ├─ _merge-manifest.csv 来源层合并对照表
+│  └─ <大类>/<来源>/<skill>/  来源 = ours｜codex｜community
 └─ tools/               可复现工具（合并能力库的脚本与说明）
 ```
 
@@ -82,18 +82,18 @@ local-skills-workspace/
 1. **单一真相在 core**：流程规范只在 `framework/core/*` 维护。改流程 → 改 core，不改适配器里的指针。
 2. **适配器保持薄**：只负责「被触发 + 指路」，不复制规范。各家差异隔离在 `adapters/`。
 3. **状态先于动作**：任何实质性工作前先从四态系统恢复状态，不靠记忆与假设。
-4. **去重优先级 ours>codex>cskills**：同一能力保留一个赢家；根名不同的近义变体作为不同技能保留。
+4. **去重优先级 ours>codex>community**：同一能力保留一个赢家；根名不同的近义变体作为不同技能保留。
 5. **纯文本承载**：四态系统与全部约定都是 Markdown，零运行时依赖。
 
-## 三个池子如何收敛进双手
+## 来源层如何收敛进双手
 
 | 来源 | 数量 | 角色 |
 |---|---|---|
-| `ours` | 28 | 本仓库沉淀的通用工作流与可复用技能，去重最高优先 |
-| `codex`（`~/.codex/skills`） | 218 | 主池，已含 `~/.claude/skills` 全部 |
-| `cskills`（C_Skills） | 163 | 高度互补，逆向为主 |
+| `ours` | 42 | 本仓库沉淀的通用工作流与可复用技能，去重最高优先 |
+| `codex` | 271 | Codex / Claude Code 等本机技能整理层 |
+| `community` | 252 | 许可清晰的第三方授权导入层，含开源与已获授权来源 |
 
-合并去重并剔除项目定制项后 **409 技能 / 18 大类**。其中 `workflow-orchestration` 里的 `orchestration`（多 Agent 编排）、`skill-router`（skill 分诊）与 `project-inception-docs`（项目起始分析文档包）天然对应框架的**编排层**、**路由层**与**起始文档层**，可被 `core/03-routing` 直接复用。
+合并去重并剔除项目定制项后 **565 技能 / 58 大类**。其中 `workflow-orchestration` 里的 `orchestration`（多 Agent 编排）、`skill-router`（skill 分诊）与 `project-inception-docs`（项目起始分析文档包）天然对应框架的**编排层**、**路由层**与**起始文档层**，可被 `core/03-routing` 直接复用。
 
 ## 路线图位置
 

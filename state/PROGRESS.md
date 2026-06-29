@@ -10,7 +10,7 @@
 
 ## 进行中
 
-- 能力库可发现性文档已开始实现，正在补人类导览和 README 入口。
+- 第三方授权来源已并入 `community` 展示层，正在做一致性验证和提交。
 
 ## 待办
 
@@ -30,6 +30,7 @@
 
 ## 已完成（近期）
 
+- [x] 将第三方授权来源统一并入 `community` 展示层，公开导览不再单独高亮商业来源 — 2026-06-29（详情可见 LOG.md）
 - [x] 新增 8 个 App / 小程序通用 `ours` 技能，能力库扩展到 565 技能 / 58 大类 — 2026-06-28（详情可见 LOG.md）
 - [x] 同步 Codex、Claude Code、`.agents`、workflow core、adapters、启动模板和 git/commit skills 的 commit 闭环纪律 — 2026-06-28（详情可见 LOG.md）
 - [x] 为项目初始化加入 Project Classification Gate 与 Discovery Interview，空目录/新想法先多轮需求访谈 — 2026-06-29（详情可见 LOG.md）
@@ -74,7 +75,7 @@
 - Acceptance Criteria: 新技能是通用 `ours`；frontmatter 只有 `name` / `description`；manifest、README、skills README、TIERS、路由矩阵和四态系统计数一致；不引入项目定制、私有路径或敏感信息。
 - Validation Evidence: 已通过新增 skill frontmatter 校验、manifest 计数校验（523 winners / 通用 474 / 半通用 49 / 58 domains / frontend-ui 30 / backend-api 28）、README 表格求和校验（523）、密钥模式扫描和 `git diff --check`；旧口径扫描只命中历史日志/历史 Loop Record 与合并历史说明。
 - Self-Audit: 本轮不继续扩大新领域数量，而是补核心开发链路短板；新增 6 个技能均不绑定具体框架，适合作为真实项目的基础路由。
-- Repairs: 收敛 manifest 噪音，只保留 6 个新增 WIN 行，避免生成器顺序漂移和 C_Skills 路径问题污染 diff。
+- Repairs: 收敛 manifest 噪音，只保留 6 个新增 WIN 行，避免生成器顺序漂移和外部来源路径问题污染 diff。
 - State/Docs Sync: 已同步 README、skills README、routing、TIERS、REQ/LOG/MEMORY/PROGRESS。
 - Commit: 待验证通过后使用 `feat: enrich frontend and backend skills`。
 - Next Goal: 在真实前后端项目中 dogfood 新 skill 的触发质量，并继续补数据科学、法务、HR、教育、创意制作、行业知识和本地化等薄弱领域。
@@ -139,3 +140,15 @@
 - Commit: 待验证通过后使用 `docs: add skill catalog guide`。
 - Next Goal: 后续可考虑从 manifest 自动生成 CATALOG 的场景表，降低手工同步成本。
 - Stop Reason: 本轮目标是文档可发现性改造；验证和 commit 后停止，不自动 push。
+
+## Loop Record · 2026-06-29 · third-party-source-flattening
+
+- Goal: 不在公开能力库导览里单独高亮第三方授权包的商业来源，把已授权导入内容按领域并入通用 `community` 展示层。
+- Acceptance Criteria: `skills/` 下不再存在旧第三方来源目录；`skills/README.md` 来源表只展示 `ours / codex / community`；manifest 仍保持 565 winners / 58 domains；公开 README、架构、路由和工具说明不再出现旧来源标签或商业属性展示口径；provenance 和内部审计资料保留来源可追溯。
+- Validation Evidence: 已通过目录残留扫描（旧第三方来源目录为 0）、manifest 计数校验（565 winners / 58 domains / codex 271 / community 252 / ours 42）、公开口径扫描（README、skills README、ARCHITECTURE、framework、merge README 无旧来源标签或商业属性命中）、skills README 来源统计扫描和 `git diff --check`（仅 Windows LF/CRLF 提示）。
+- Self-Audit: 本轮只调整来源分层和公开展示，不删除技能内容、不改变 skill 触发语义；授权来源不在公开入口突出，但 provenance 仍保留用于审计。
+- Repairs: 将 17 个领域下的旧第三方来源目录移动到同领域 `community/`，并把合并工具的可选外部来源变量改为中性 `PAW_EXTERNAL_SKILLS_*`。
+- State/Docs Sync: 已同步 README、skills README、ARCHITECTURE、routing、merge tools、REQ/LOG/MEMORY/PROGRESS。
+- Commit: 待验证通过后使用 `chore: flatten third party skill sources`。
+- Next Goal: 后续可继续让 `skills/CATALOG.md` 从 manifest 自动生成，减少手工维护来源/领域表的成本。
+- Stop Reason: 本轮目标是来源展示收敛；验证和 commit 后停止，不自动 push。
