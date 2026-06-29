@@ -33,6 +33,7 @@
 | REQ-019 | 能力库应让用户看得懂有哪些领域和使用场景 | 根 README 提供按目标快速找能力；`skills/CATALOG.md` 提供人类导览版目录；`skills/README.md` 顶部指向导览、完整索引、分级和 manifest | done | PROGRESS#skill-catalog-discoverability |
 | REQ-020 | 第三方授权 skill 来源不应在公开导览中单独高亮 | 目录结构、README、skills README、路由和合并工具公开说明只展示 `ours / codex / community` 三层；原始来源与许可保留在 provenance / manifest 审计资料中 | done | PROGRESS#third-party-source-flattening |
 | REQ-021 | UI 规范禁止 emoji 充当生产图标 | `UIdesign`、UI quality checklist 和 `design-system-implementation` 明确要求使用 SVG/vector icon system 或统一矢量图标库；emoji 不作为导航、状态、工具栏、按钮或空状态图标 | done | PROGRESS#ui-vector-icon-policy |
+| REQ-022 | 能力库应提供全量中文对照 | `skills/DOMAIN-GLOSSARY.zh-CN.md` 覆盖 58 个领域大类和 565 个 winner skill slug，并从根 README、skills README、Catalog 可发现 | done | PROGRESS#skill-domain-glossary |
 
 ## 约束与非目标
 

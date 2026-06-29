@@ -7,6 +7,7 @@
 ## 先看哪里
 
 - 想知道“这个能力库覆盖哪些方向”：先看 [`CATALOG.md`](CATALOG.md)。
+- 想看英文目录和 skill slug 的中文含义：看 [`DOMAIN-GLOSSARY.zh-CN.md`](DOMAIN-GLOSSARY.zh-CN.md)。
 - 想按领域找所有 skill slug：继续看本文的“领域索引”。
 - 想看通用 / 半通用分级：看 [`TIERS.md`](TIERS.md)。
 - 想看来源、去重和赢家记录：看 [`_merge-manifest.csv`](_merge-manifest.csv)。

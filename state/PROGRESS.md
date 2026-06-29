@@ -10,7 +10,7 @@
 
 ## 进行中
 
-- UI 图标规范已加入主工作流和设计系统 skill，正在做验证和提交。
+- 无。下一步可基于中文对照审阅是否需要调整领域结构。
 
 ## 待办
 
@@ -31,6 +31,7 @@
 ## 已完成（近期）
 
 - [x] 加硬 UI 图标规范，禁止 emoji 充当生产图标并要求使用矢量 icon system — 2026-06-29（详情可见 LOG.md）
+- [x] 新增 `skills/DOMAIN-GLOSSARY.zh-CN.md`，提供 58 个领域和 565 个 skill slug 的全量中文对照 — 2026-06-29（详情可见 LOG.md）
 - [x] 将第三方授权来源统一并入 `community` 展示层，公开导览不再单独高亮商业来源 — 2026-06-29（详情可见 LOG.md）
 - [x] 新增 8 个 App / 小程序通用 `ours` 技能，能力库扩展到 565 技能 / 58 大类 — 2026-06-28（详情可见 LOG.md）
 - [x] 同步 Codex、Claude Code、`.agents`、workflow core、adapters、启动模板和 git/commit skills 的 commit 闭环纪律 — 2026-06-28（详情可见 LOG.md）
@@ -57,6 +58,18 @@
 - [x] 完成本轮验证并准备原子 commit — 2026-06-26（详情可见 LOG.md）
 - [x] 明确 `project-workflow` 的全局工作流入口职责 — 2026-06-26（详情可见 LOG.md）
 - [x] 增加 Codex `AGENTS.md` 与 Claude Code `CLAUDE.md` 适配模板 — 2026-06-26（详情可见 Git 历史）
+
+## Loop Record · 2026-06-29 · skill-domain-glossary
+
+- Goal: 让用户能直接看懂能力库里所有英文领域目录和 skill slug 的中文含义。
+- Acceptance Criteria: 对照表覆盖 565 个 winner skill 和 58 个领域；公开入口从根 README、skills README、Catalog 可发现；不改变 manifest、目录结构或路由。
+- Validation Evidence: 已通过 manifest 计数（565 winner skills / 58 domains / codex 271 / community 252 / ours 42 / 通用 482 / 半通用 83）、中文对照覆盖计数（565 skill rows / 58 domain sections）、入口链接关键词扫描和 `git diff --check`。
+- Self-Audit: 本轮只做文档可发现性增强；中文参考名用于人工检索，不替代 `SKILL.md` 的 description 和触发规则。
+- Repairs: 将最初仅覆盖 58 个大类的领域对照升级为领域 + skill slug 两级全量对照。
+- State/Docs Sync: 已同步 README、skills README、Catalog、REQ/LOG/PROGRESS。
+- Commit: 本轮提交使用 `docs: add Chinese skill glossary`。
+- Next Goal: 结构调整前可基于这份中文对照审阅是否需要合并长尾领域或拆分大领域。
+- Stop Reason: 本轮目标是补全中文对照，不执行目录重构。
 
 ## Loop Record · 2026-06-28 · community-skill-expansion
 

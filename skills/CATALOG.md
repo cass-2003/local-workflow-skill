@@ -1,6 +1,6 @@
 # 能力库导览 · Skill Catalog
 
-这份文件是给人看的能力地图。完整机器索引见 [`README.md`](README.md)，合并底稿见 [`_merge-manifest.csv`](_merge-manifest.csv)，通用性分级见 [`TIERS.md`](TIERS.md)。
+这份文件是给人看的能力地图。完整机器索引见 [`README.md`](README.md)，中英文对照见 [`DOMAIN-GLOSSARY.zh-CN.md`](DOMAIN-GLOSSARY.zh-CN.md)，合并底稿见 [`_merge-manifest.csv`](_merge-manifest.csv)，通用性分级见 [`TIERS.md`](TIERS.md)。
 
 ## 怎么使用
 
@@ -137,6 +137,7 @@
 ## 读完整索引
 
 - 完整领域与 skill slug：[`skills/README.md`](README.md)
+- 领域与 skill 中文对照：[`DOMAIN-GLOSSARY.zh-CN.md`](DOMAIN-GLOSSARY.zh-CN.md)
 - 通用 / 半通用分级：[`skills/TIERS.md`](TIERS.md)
 - 工作流路由矩阵：[`../framework/core/03-routing.md`](../framework/core/03-routing.md)
 - 合并来源与去重结果：[`_merge-manifest.csv`](_merge-manifest.csv)

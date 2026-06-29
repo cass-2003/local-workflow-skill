@@ -6,6 +6,11 @@
 
 ## 2026-06-29
 
+- `docs` 新增能力库全量中文对照表。
+  - 触发：用户要求“全量的中文对照”，不是只列领域大类。
+  - 范围：新增 `skills/DOMAIN-GLOSSARY.zh-CN.md`，覆盖 58 个领域大类与 565 个 winner skill slug；根 README、skills README 和 Catalog 增加入口链接。
+  - 验证：manifest 计数为 565 winner skills / 58 domains；中文对照精确覆盖 565 个 skill 行 / 58 个领域段；入口链接扫描和 `git diff --check` 已通过。
+
 - `change` 加硬 UI 图标规范，禁止用 emoji 充当生产图标。
   - 触发：用户要求在 UI 规范中加入“禁止 emoji 当图标，用矢量图标库”。
   - 范围：更新 `UIdesign` 主工作流、UI 质量清单、研究总结和 `design-system-implementation`，要求使用项目现有 SVG/vector icon system 或统一矢量图标库。

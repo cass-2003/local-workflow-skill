@@ -151,6 +151,13 @@
 - **影响**：`UIdesign`、UI quality checklist、research synthesis 和 `design-system-implementation` 都把 icon system 纳入实现与验收；后续 UI 交付要检查图标来源、风格、stroke/fill、尺寸、可访问名称和打包体积。
 - **时间**：2026-06-29
 
+### D-021 · 中文对照表作为能力库人类检索层
+
+- **决定**：`skills/DOMAIN-GLOSSARY.zh-CN.md` 承载 58 个领域大类与 565 个 winner skill slug 的中文参考名，作为用户审阅目录结构和查找技能的入口。
+- **为什么**：`skills/README.md` 和 `_merge-manifest.csv` 适合机器/维护者使用，但大量英文 slug 对中文用户不够直观；只列大类也不足以判断具体能力是否覆盖。
+- **影响**：后续新增、删除、合并或移动 skill 时，需要同步中文对照表；中文参考名只服务人工检索，不替代每个 `SKILL.md` 的 description、触发条件和执行边界。
+- **时间**：2026-06-29
+
 ## 已知坑
 
 - `quick_validate.py` 不接受 `disable-model-invocation`、`user-invocable` 等旧 frontmatter 字段；新增或更新 skill 时只保留允许字段。

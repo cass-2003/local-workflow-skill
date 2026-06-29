@@ -156,6 +156,7 @@
 执行阶段委托的具体技能，四源合并去重，双层结构 `<领域大类>/<来源>/<skill>/`。如果你只是想知道“这个库到底会什么”，先看人类导览版：
 
 - [`skills/CATALOG.md`](skills/CATALOG.md)：按场景、领域和常用说法找能力
+- [`skills/DOMAIN-GLOSSARY.zh-CN.md`](skills/DOMAIN-GLOSSARY.zh-CN.md)：58 个领域和 565 个 skill slug 的中文对照
 - [`skills/README.md`](skills/README.md)：完整领域索引和 skill slug
 - [`skills/TIERS.md`](skills/TIERS.md)：通用 / 半通用分级
 
@@ -188,7 +189,7 @@
 | 硬件系统 | 8 | 产品增长 | 8 | 产品管理 | 8 |
 | 商业策略 | 7 | 业务运营 | 6 | 其余长尾领域 | 102 |
 
-技能按通用性分级：**🟢 通用 482 · 🟡 半通用 83 · 🔵 项目定制 0**（见 [`skills/TIERS.md`](skills/TIERS.md)）。完整索引见 [`skills/README.md`](skills/README.md)。
+技能按通用性分级：**🟢 通用 482 · 🟡 半通用 83 · 🔵 项目定制 0**（见 [`skills/TIERS.md`](skills/TIERS.md)）。完整索引见 [`skills/README.md`](skills/README.md)，中文对照见 [`skills/DOMAIN-GLOSSARY.zh-CN.md`](skills/DOMAIN-GLOSSARY.zh-CN.md)。
 
 ---
 
