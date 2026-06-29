@@ -8,7 +8,7 @@
 
 ![status](https://img.shields.io/badge/status-alpha-orange)
 ![agents](https://img.shields.io/badge/agents-Claude_Code_·_Codex-5b6cf9)
-![skills](https://img.shields.io/badge/skills-565-2ea44f)
+![skills](https://img.shields.io/badge/skills-566-2ea44f)
 ![domains](https://img.shields.io/badge/domains-58-2ea44f)
 ![format](https://img.shields.io/badge/core-pure_Markdown-lightgrey)
 ![deps](https://img.shields.io/badge/runtime_deps-0-blue)
@@ -66,7 +66,7 @@
 └───────────────────────────┬─────────────────────────────────┘
                             │ Phase 4/5 委托 ↓
 ┌───────────────────────────▼─────────────────────────────────┐
-│  🛠️ skills/   565 技能 / 58 领域大类（双层 <大类>/<来源>/）      │
+│  🛠️ skills/   566 技能 / 58 领域大类（双层 <大类>/<来源>/）      │
 │       安全 85 · 逆向 63 · Render/Expo/前后端等领域持续扩展       │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -127,7 +127,7 @@
 
 ## 🔁 自主推进模式
 
-当用户说“继续推进项目”“按计划开发”“自动审计修复”这类话时，Agent 不应只做一个临时任务就停下。默认流程是：先检查或生成项目路线图和下一步工作包，再选择一个小而完整的目标，完成实现、验证、自审、修复、状态同步和原子 commit 闭环；之后回到路线图选择下一个目标，直到遇到需要用户决策、验证环境缺失、高风险操作或预算边界。
+当用户说“继续推进项目”“按计划开发”“自动审计修复”这类话时，Agent 不应只做一个临时任务就停下。默认流程是：先检查或生成项目路线图和下一步工作包，再通过 [`goal-driven-project-loop`](skills/workflow-orchestration/ours/goal-driven-project-loop/SKILL.md) 选择一个小而完整的目标，完成实现、验证、自审、修复、状态同步和原子 commit 闭环；之后回到路线图选择下一个目标，直到遇到需要用户决策、验证环境缺失、高风险操作或预算边界。
 
 核心规则见 [`framework/core/08-autonomous-project-loop.md`](framework/core/08-autonomous-project-loop.md)。默认推荐产物包括路线图、下一步工作包、初始审计报告和 `state/PROGRESS.md` 中的当前循环状态；本仓库启动模板使用 `docs/planning/开发路线图.md` 与 `docs/planning/下一步工作包.md`，已有项目可映射到自己的等价文档。
 
@@ -151,12 +151,12 @@
 
 ---
 
-## 🛠️ 能力库（565 技能 · 58 大类）
+## 🛠️ 能力库（566 技能 · 58 大类）
 
 执行阶段委托的具体技能，四源合并去重，双层结构 `<领域大类>/<来源>/<skill>/`。如果你只是想知道“这个库到底会什么”，先看人类导览版：
 
 - [`skills/CATALOG.md`](skills/CATALOG.md)：按场景、领域和常用说法找能力
-- [`skills/DOMAIN-GLOSSARY.zh-CN.md`](skills/DOMAIN-GLOSSARY.zh-CN.md)：58 个领域和 565 个 skill slug 的中文对照
+- [`skills/DOMAIN-GLOSSARY.zh-CN.md`](skills/DOMAIN-GLOSSARY.zh-CN.md)：58 个领域和 566 个 skill slug 的中文对照
 - [`skills/README.md`](skills/README.md)：完整领域索引和 skill slug
 - [`skills/TIERS.md`](skills/TIERS.md)：通用 / 半通用分级
 
@@ -189,7 +189,7 @@
 | 硬件系统 | 8 | 产品增长 | 8 | 产品管理 | 8 |
 | 商业策略 | 7 | 业务运营 | 6 | 其余长尾领域 | 102 |
 
-技能按通用性分级：**🟢 通用 482 · 🟡 半通用 83 · 🔵 项目定制 0**（见 [`skills/TIERS.md`](skills/TIERS.md)）。完整索引见 [`skills/README.md`](skills/README.md)，中文对照见 [`skills/DOMAIN-GLOSSARY.zh-CN.md`](skills/DOMAIN-GLOSSARY.zh-CN.md)。
+技能按通用性分级：**🟢 通用 483 · 🟡 半通用 83 · 🔵 项目定制 0**（见 [`skills/TIERS.md`](skills/TIERS.md)）。完整索引见 [`skills/README.md`](skills/README.md)，中文对照见 [`skills/DOMAIN-GLOSSARY.zh-CN.md`](skills/DOMAIN-GLOSSARY.zh-CN.md)。
 
 ---
 
@@ -299,7 +299,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass `
 │   ├─ state-systems/       ★ 四态系统说明 + drop-in 模板
 │   ├─ adapters/            各家 Agent 适配登记（CC / Codex）
 │   └─ validation/          dogfood 样板 + 端到端验证报告
-├─ 🛠️ skills/              能力库：565 技能 / 58 大类
+├─ 🛠️ skills/              能力库：566 技能 / 58 大类
 │   ├─ README.md             领域索引
 │   ├─ TIERS.md              分级（通用/半通用；项目定制不进入开源库）
 │   ├─ _merge-manifest.csv   四源合并对照表
@@ -317,7 +317,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass `
 - [x] 📑 四态系统 drop-in 模板
 - [x] 🤖 Claude Code 适配器
 - [x] 🤖 Codex 适配器
-- [x] 🛠️ 四源合并丰富能力库（565 技能 / 58 大类）
+- [x] 🛠️ 四源合并丰富能力库（566 技能 / 58 大类）
 - [x] 🏷️ 能力库分级标记 + 项目定制项清理
 - [x] 🧪 Claude Code 侧端到端 dogfood 跑通
 - [x] 🧪 Codex 侧端到端实测

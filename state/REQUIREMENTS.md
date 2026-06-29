@@ -21,7 +21,7 @@
 | REQ-007 | 新项目必须先补齐可持续开发地基 | 首次接入时检查 Git、`.gitignore`、agent 入口、四态系统、README、docs/INDEX 和验证命令；缺 Git 时默认初始化但不默认 push | done | PROGRESS#已完成 |
 | REQ-008 | 本仓库必须保持开源通用，不携带项目定制 skill | manifest、README、路由表和分级文档显示项目定制项为 0；强绑具体项目/产品/旧命令封装的 skill 不进入 `skills/` | done | PROGRESS#已完成 |
 | REQ-009 | 工作流应自动留下审计、验证、文档和状态产物 | 核心包含 `07-artifact-contracts.md`；新项目模板包含 `docs/audit/INDEX.md` 与审计模板；AGENTS/CLAUDE 入口声明审计、实现、修复和 docs-sync 不只停留在对话里 | done | PROGRESS#已完成 |
-| REQ-010 | 自主推进应先规划、再按工作包循环执行/自审/修复/提交 | 核心包含 `08-autonomous-project-loop.md`；入口模板要求路线图、下一步工作包、单目标循环、停止条件和默认原子 commit | done | PROGRESS#已完成 |
+| REQ-010 | 自主推进应先规划、再按工作包循环执行/自审/修复/提交 | 核心包含 `08-autonomous-project-loop.md`；`goal-driven-project-loop` 提供可调用 skill 入口；入口模板要求路线图、下一步工作包、单目标循环、停止条件和默认原子 commit | done | PROGRESS#已完成 |
 | REQ-011 | 状态系统必须可恢复而非仅存在 | 核心和入口模板要求开工前输出 `State Restore` 摘要，识别占位/陈旧状态，并在每轮结束写入 `Loop Record`，包含目标、验收、验证、自审、修复、同步、commit、下一目标或停止原因 | done | PROGRESS#已完成 |
 | REQ-012 | 项目初始化和入口刷新能力应可复现 | 仓库内提供 `tools/project-init/Initialize-PortableAgentProject.ps1` 与 `Validate-PortableAgentWorkflow.ps1`；支持完整初始化、只刷新托管入口、保留项目专属内容，并有 smoke test | done | PROGRESS#已完成 |
 | REQ-013 | 能力库领域覆盖应减少安全/逆向/工程偏重 | 首批导入许可清晰、可追溯、通用的 community 技能，新增业务运营、商业策略、财务指标、产品管理、项目管理、研究运营领域；索引、路由、分级和来源记录同步 | done | PROGRESS#已完成 |
@@ -33,7 +33,8 @@
 | REQ-019 | 能力库应让用户看得懂有哪些领域和使用场景 | 根 README 提供按目标快速找能力；`skills/CATALOG.md` 提供人类导览版目录；`skills/README.md` 顶部指向导览、完整索引、分级和 manifest | done | PROGRESS#skill-catalog-discoverability |
 | REQ-020 | 第三方授权 skill 来源不应在公开导览中单独高亮 | 目录结构、README、skills README、路由和合并工具公开说明只展示 `ours / codex / community` 三层；原始来源与许可保留在 provenance / manifest 审计资料中 | done | PROGRESS#third-party-source-flattening |
 | REQ-021 | UI 规范禁止 emoji 充当生产图标 | `UIdesign`、UI quality checklist 和 `design-system-implementation` 明确要求使用 SVG/vector icon system 或统一矢量图标库；emoji 不作为导航、状态、工具栏、按钮或空状态图标 | done | PROGRESS#ui-vector-icon-policy |
-| REQ-022 | 能力库应提供全量中文对照 | `skills/DOMAIN-GLOSSARY.zh-CN.md` 覆盖 58 个领域大类和 565 个 winner skill slug，并从根 README、skills README、Catalog 可发现 | done | PROGRESS#skill-domain-glossary |
+| REQ-022 | 能力库应提供全量中文对照 | `skills/DOMAIN-GLOSSARY.zh-CN.md` 覆盖 58 个领域大类和 566 个 winner skill slug，并从根 README、skills README、Catalog 可发现 | done | PROGRESS#skill-domain-glossary |
+| REQ-023 | “继续推进”应有多 agent 可复用的目标驱动循环 skill | `skills/workflow-orchestration/ours/goal-driven-project-loop/SKILL.md` 抽象 State Restore -> 小目标 -> 读文件 -> 实现 -> 验证 -> 自审/修复 -> docs/state/Loop Record -> 原子 commit -> 下一目标；`project-workflow` 和路由矩阵指向该 skill | done | PROGRESS#goal-driven-project-loop |
 
 ## 约束与非目标
 

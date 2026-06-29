@@ -6,10 +6,15 @@
 
 ## 2026-06-29
 
+- `feat` 新增目标驱动项目推进循环 skill。
+  - 触发：用户提供截图，希望把“State Restore -> 定一个详细小 goal -> 读文件 -> 实现 -> 验证 -> 同步 docs/state/Loop Record -> 原子 commit -> 继续选下一个 goal”抽象成多 agent 通用 skill，并合并到“你继续推进”语义里。
+  - 范围：新增 `goal-driven-project-loop`；`project-workflow`、核心路由和自主循环 core 指向该执行入口；同步能力库计数为 566 技能 / 58 大类。
+  - 验证：`quick_validate.py` 通过；manifest 计数为 566 winner skills / 58 domains / workflow-orchestration 16；中文对照覆盖 566 skill 行 / 58 领域段；索引命中和 `git diff --check` 已通过。
+
 - `docs` 新增能力库全量中文对照表。
   - 触发：用户要求“全量的中文对照”，不是只列领域大类。
-  - 范围：新增 `skills/DOMAIN-GLOSSARY.zh-CN.md`，覆盖 58 个领域大类与 565 个 winner skill slug；根 README、skills README 和 Catalog 增加入口链接。
-  - 验证：manifest 计数为 565 winner skills / 58 domains；中文对照精确覆盖 565 个 skill 行 / 58 个领域段；入口链接扫描和 `git diff --check` 已通过。
+  - 范围：新增 `skills/DOMAIN-GLOSSARY.zh-CN.md`，覆盖 58 个领域大类与 566 个 winner skill slug；根 README、skills README 和 Catalog 增加入口链接。
+  - 验证：manifest 计数为 566 winner skills / 58 domains；中文对照精确覆盖 566 个 skill 行 / 58 个领域段；入口链接扫描和 `git diff --check` 已通过。
 
 - `change` 加硬 UI 图标规范，禁止用 emoji 充当生产图标。
   - 触发：用户要求在 UI 规范中加入“禁止 emoji 当图标，用矢量图标库”。
@@ -21,7 +26,7 @@
   - 范围：移动 17 个领域下的旧来源目录到同领域 `community/`；更新 manifest、skills README、根 README、架构、路由、合并工具说明与四态系统。
   - 验证：待执行目录残留扫描、manifest 计数、公开口径扫描、README 来源统计和 `git diff --check` 检查。
 
-- `docs` 增强能力库可发现性，让用户按场景理解 565 个技能覆盖什么。
+- `docs` 增强能力库可发现性，让用户按场景理解 566 个技能覆盖什么。
   - 触发：用户指出 README 的能力库段落只有数量表，不知道有哪些类型、分类和领域的 skill。
   - 范围：新增 `skills/CATALOG.md` 人类导览版目录；根 README 增加“按目标快速找”；`skills/README.md` 顶部增加导览入口和常用问法。
   - 验证：待执行链接存在、关键词覆盖、README 表格和 `git diff --check` 检查。

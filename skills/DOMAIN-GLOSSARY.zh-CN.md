@@ -4,9 +4,9 @@
 
 ## 统计口径
 
-- 覆盖：565 个 winner skills / 58 个领域大类。
-- 来源：`codex` 271 · `community` 252 · `ours` 42。
-- 分级：半通用 83 · 通用 482。
+- 覆盖：566 个 winner skills / 58 个领域大类。
+- 来源：`codex` 271 · `community` 252 · `ours` 43。
+- 分级：半通用 83 · 通用 483。
 - 中文名是面向检索和结构审阅的参考译名；具体触发条件、边界和执行方式以每个 `SKILL.md` 为准。
 
 ## 来源层
@@ -31,7 +31,7 @@
 | `quality-delivery` | 质量与交付 | 24 | codex:19, community:5 | 测试、QA、CI、代码审计、迁移、重构、CLI 和 Git 交付。 |
 | `programming-languages` | 编程语言 | 21 | codex:12, community:9 | Python、JS/TS、Go、Rust、Java、C/C++、.NET、PHP、Ruby 等语言工程。 |
 | `ai-automation` | AI 与自动化 | 18 | codex:11, community:6, ours:1 | Agent、RAG、Prompt、MLOps、自动化浏览器、语音与评估能力。 |
-| `workflow-orchestration` | 工作流与编排 | 15 | codex:12, ours:3 | 项目工作流、项目启动文档、多 agent 编排、规格执行和 skill 创建。 |
+| `workflow-orchestration` | 工作流与编排 | 16 | codex:12, ours:4 | 项目工作流、项目启动文档、多 agent 编排、规格执行和 skill 创建。 |
 | `content-authoring` | 内容创作与文档 | 14 | codex:12, community:2 | Office、PDF、Notion、技术写作、研究文档和演示产物。 |
 | `payments-commerce` | 支付与电商 | 12 | codex:1, community:11 | Stripe、PayPal、微信支付、支付宝、钱包、Apple Pay 和 Google Pay。 |
 | `maps-location` | 地图与位置 | 11 | community:11 | 高德、百度、腾讯、Google Maps、Mapbox、GIS 和路线规划。 |
@@ -919,7 +919,7 @@
 | `webinar-marketing` | Webinar 营销 | `community` | 通用 |
 | `youtube-full` | YouTube 全链路 | `community` | 通用 |
 
-### `workflow-orchestration` — 工作流与编排（15）
+### `workflow-orchestration` — 工作流与编排（16）
 
 | skill slug | 中文参考名 | 来源 | 分级 |
 |---|---|---|---|
@@ -935,6 +935,7 @@
 | `spec` | 规格说明 | `codex` | 通用 |
 | `spec-check` | 规格检查 | `codex` | 通用 |
 | `spec-do` | 规格执行 | `codex` | 通用 |
+| `goal-driven-project-loop` | 目标驱动项目推进循环 | `ours` | 通用 |
 | `local-workflow` | 本地工作流 | `ours` | 通用 |
 | `project-inception-docs` | 项目启动文档 | `ours` | 通用 |
 | `project-workflow` | 项目工作流 | `ours` | 通用 |

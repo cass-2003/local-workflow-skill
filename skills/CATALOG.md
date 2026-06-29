@@ -12,7 +12,7 @@
 
 | 我想做什么 | 优先看这些领域 | 典型能力 |
 |---|---|---|
-| 新项目从想法起步 | `workflow-orchestration`、`product-management`、`frontend-ui`、`backend-api` | 需求访谈、项目地基、PRD、路线图、文档包、下一步工作包 |
+| 新项目从想法起步 | `workflow-orchestration`、`product-management`、`frontend-ui`、`backend-api` | 需求访谈、项目地基、PRD、路线图、文档包、下一步工作包、目标驱动推进循环 |
 | Web / 管理后台 / UI | `frontend-ui`、`content-authoring`、`quality-delivery` | 设计系统、页面实现、状态数据流、性能、可访问性、截图还原 |
 | 后端 / API / 数据库 | `backend-api`、`data-analysis`、`engineering-core`、`security-engineering` | API 设计、认证授权、事务一致性、后台任务、实时通信、错误可观测性 |
 | App / 小程序 / 跨端 | `mobile-crossplatform`、`payments-commerce`、`maps-location`、`product-growth` | App 架构、微信/支付宝小程序、登录支付、离线同步、推送、发布运营 |
@@ -47,7 +47,7 @@
 
 | 领域 | 覆盖内容 |
 |---|---|
-| `workflow-orchestration` | 项目工作流、项目启动文档、规格执行、多 agent 编排、skill 创建 |
+| `workflow-orchestration` | 项目工作流、目标驱动推进循环、项目启动文档、规格执行、多 agent 编排、skill 创建 |
 | `ai-automation` | Agent 开发、RAG、Prompt、Playwright、MLOps、语音、MCP、LLM guardrails |
 | `ai-governance-compliance` | AI Act、AI 管理体系、AI 审计 |
 | `research-knowledge` | Web fetch/search、Context7、科研写作、法律顾问、知识研究 |
@@ -127,6 +127,7 @@
 ```text
 使用项目启动工作流，先问需求，不要先写文件。
 帮我把这个想法变成 PRD、架构和下一步工作包。
+你继续推进这个项目：先定一个小目标，验证、自审、修复、同步状态并 commit。
 帮我审计这个 API 的权限、错误处理和可观测性。
 用移动端/小程序工程能力规划微信小程序登录支付闭环。
 帮我做前端页面实现和设计系统落地。

@@ -25,7 +25,7 @@ description: Orchestrate a generic project workflow by scanning repository autho
 - 解析权威：按角色识别“硬约束、命令语义、执行细节、项目真相、全局兜底”分别由谁负责。
 - 任务路由：把用户请求稳定送到 `status`、`audit`、`implement`、`fix`、`review`、`sync-docs` 或 Git 相关技能。
 - 控制阶段：让扫描、执行、验证、同步、交付和沉淀保持固定顺序。
-- 自主推进：把“继续推进项目”类请求转成 planning → goal selection → implement/fix → validate → self-audit → repair → commit → next goal 的循环。
+- 自主推进：把“继续推进项目”类请求路由到 `goal-driven-project-loop`，转成 planning → goal selection → implement/fix → validate → self-audit → repair → commit → next goal 的循环。
 - 沉淀经验：发现重复模式、旧路径、镜像漂移、重复解释时，转成可追踪的演进建议。
 
 ## Workflow Skeleton
@@ -56,7 +56,7 @@ description: Orchestrate a generic project workflow by scanning repository autho
 3. 每轮只选择一个小而完整的目标，按实现/验证/自审/修复/同步/提交推进。
 4. 完成后从路线图或自审缺口中选择下一目标；只有遇到明确停止条件才停下。
 
-详细规则见 `../../../../framework/core/08-autonomous-project-loop.md`。
+具体执行优先使用 `../goal-driven-project-loop/SKILL.md`；核心规则见 `../../../../framework/core/08-autonomous-project-loop.md`。
 
 ## Four State Systems
 
@@ -79,7 +79,7 @@ description: Orchestrate a generic project workflow by scanning repository autho
 
 - 看当前状态、进度、真相摘要时，优先路由到 `status`。
 - 做项目路线图、阶段拆分、下一步工作包时，优先路由到 `planning`，必要时委托 `project-inception-docs`。
-- 用户要求持续推进项目时，优先路由到 `autonomous-loop`；如果缺路线图，先走 `planning`。
+- 用户要求持续推进项目时，优先路由到 `autonomous-loop` 并使用 `goal-driven-project-loop`；如果缺路线图，先走 `planning`。
 - 做基线比对、缺口分析、验收预检时，优先路由到 `audit`。
 - 做新功能、多文件实现、从需求落地代码时，优先路由到 `implement`。
 - 修已知问题、关闭审计缺口、做回归修补时，优先路由到 `fix`。
@@ -111,7 +111,7 @@ description: Orchestrate a generic project workflow by scanning repository autho
 - 需确认日志/需求/记忆/进度从哪里恢复时 → `../../../../framework/core/02-state-systems.md`
 - 准备声明完成、提交、交付或 handoff 时 → `../../../../framework/core/05-validation.md` + `01-workflow.md`(Phase 8)
 - 审计、验收、验证、文档同步或状态同步需要留下文件产物时 → `../../../../framework/core/07-artifact-contracts.md`
-- 用户要求持续推进、自动审计修复、按路线图开发或需要先规划再循环执行时 → `../../../../framework/core/08-autonomous-project-loop.md`
+- 用户要求持续推进、自动审计修复、按路线图开发或需要先规划再循环执行时 → `../goal-driven-project-loop/SKILL.md` + `../../../../framework/core/08-autonomous-project-loop.md`
 - 发现旧路径、漂移、重复解释、重复手工决策时 → `../../../../framework/core/06-evolution.md`
 
 ## Output Discipline

@@ -4,6 +4,8 @@
 
 这份文件不替代 `01-workflow.md` 的阶段骨架；它把阶段骨架包成一个可重复的项目推进循环。
 
+能力库中的 `skills/workflow-orchestration/ours/goal-driven-project-loop/` 是本规则的可调用执行入口；core 仍是单一真相。
+
 ## 触发条件
 
 出现以下语义时，可以进入自主推进模式：

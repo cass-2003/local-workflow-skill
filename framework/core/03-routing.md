@@ -10,7 +10,7 @@
 |---|---|---|---|
 | status | 状态、进度、现在到哪了、当前情况 | `status` | 读四态系统 |
 | audit | 审计、差距分析、基线检查、验收预检 | `audit` | `review` |
-| autonomous progress | 继续推进项目、自己往下做、按计划开发、自动审计修复、推进到可用版本 | `autonomous-loop` | `planning` / `implement` / `audit` / `fix` |
+| autonomous progress | 继续推进项目、自己往下做、按计划开发、自动审计修复、推进到可用版本 | `autonomous-loop` | `goal-driven-project-loop` / `planning` / `implement` / `audit` / `fix` |
 | planning | 项目规划、路线图、下一步该做什么、先分析进度 | `planning` | `audit` / `status` |
 | implement | 实现、开发、做功能、新增能力 | `implement` | `validation` |
 | fix | 修复、repair、close findings、批量修 bug | `fix` | `review` |
@@ -21,7 +21,7 @@
 
 ## 二级路由：执行能力 → 能力库（`skills/`）
 
-`implement` / `fix` 真正动手时，按问题域委托到能力库对应领域大类。能力库为**双层结构** `skills/<领域大类>/<来源>/<skill>/`（来源 = ours｜codex｜community，去重优先级 ours>codex>community），共 **565 个技能 / 58 大类**：
+`implement` / `fix` 真正动手时，按问题域委托到能力库对应领域大类。能力库为**双层结构** `skills/<领域大类>/<来源>/<skill>/`（来源 = ours｜codex｜community，去重优先级 ours>codex>community），共 **566 个技能 / 58 大类**：
 
 | 问题域 | 领域大类 | 数量 | 代表技能 |
 |---|---|---|---|
@@ -54,7 +54,7 @@
 | 内容创作与文档 | `content-authoring/` | 14 | doc-office、pdf、presentation-authoring、notion-* |
 | 研究与知识 | `research-knowledge/` | 10 | research、academic-writing、search-engine、web-fetch |
 | 产品与增长 | `product-growth/` | 8 | product-manager、ai-content-marketing、social-media-ops |
-| 工作流与编排 | `workflow-orchestration/` | 15 | project-workflow、project-inception-docs、orchestration(多 agent)、skill-router |
+| 工作流与编排 | `workflow-orchestration/` | 16 | goal-driven-project-loop、project-workflow、project-inception-docs、orchestration(多 agent)、skill-router |
 
 > 能力库随筛选会变化，权威以 `skills/` 实际目录与 `skills/README.md` 索引为准；合并对照表见 `skills/_merge-manifest.csv`。新增大类时回这里补一行。
 
@@ -67,7 +67,7 @@
 - "检查最近改动有没有问题"通常是 `review`，不是 `audit`。
 - "关闭审计缺口"通常是 `fix`，不是 `audit`。
 - "按需求做功能"通常是 `implement`，不是 `review`。
-- "继续推进项目"通常先走 `autonomous-loop`；如果没有路线图，先进入 `planning`，再选择第一轮可验证工作包。
+- "继续推进项目"通常先走 `autonomous-loop` 并触发 `goal-driven-project-loop`；如果没有路线图，先进入 `planning`，再选择第一轮可验证工作包。
 - "先分析接下来该做什么"通常是 `planning`，不是直接 `implement`。
 - "更新计划或记录"通常是 `sync-docs`，不是 `status`。
 - "为什么这套流程开始混乱"通常先走 `evolution`，而不是直接编码。

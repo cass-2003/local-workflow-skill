@@ -6,17 +6,17 @@
 
 ## 当前焦点
 
-把能力库从偏工程/安全/逆向的结构扩展为更均衡、可发现的通用工作流技能库，并补齐 App / 小程序等真实项目常见开发能力；同时把跨 agent 工作流纪律（状态恢复、产物同步、原子 commit 闭环、项目启动访谈）同步到所有入口和模板。
+把能力库从偏工程/安全/逆向的结构扩展为更均衡、可发现的通用工作流技能库，并补齐 App / 小程序、目标驱动持续推进等真实项目常见开发能力；同时把跨 agent 工作流纪律（状态恢复、产物同步、原子 commit 闭环、项目启动访谈）同步到所有入口和模板。
 
 ## 进行中
 
-- 无。下一步可基于中文对照审阅是否需要调整领域结构。
+- 无。下一步是在真实项目中 dogfood “你继续推进”触发质量。
 
 ## 待办
 
 - [ ] 在后续真实项目中 dogfood `project-inception-docs`，检查是否能稳定生成 `docs/INDEX.md` 和完整文档包 — 关联 `REQ-002`
 - [ ] 在真实项目中 dogfood `07-artifact-contracts.md`，检查 `audit` / `fix` / `docs-sync` 是否稳定生成报告、索引和四态回写 — 关联 `REQ-009`
-- [ ] 在真实项目中 dogfood `08-autonomous-project-loop.md`，检查“继续推进项目”是否会先规划、再循环执行/自审/修复/commit — 关联 `REQ-010`
+- [ ] 在真实项目中 dogfood `goal-driven-project-loop` / `08-autonomous-project-loop.md`，检查“继续推进项目”是否会先规划、再循环执行/自审/修复/commit — 关联 `REQ-010` / `REQ-023`
 - [ ] 在真实项目中 dogfood `State Restore` 与 `Loop Record`，检查 agent 是否会主动替换占位状态并写回下一目标 — 关联 `REQ-011`
 - [ ] 把桌面 HTA 面板做成仓库可选包装，或明确作为本机私有便利入口 — 关联 `REQ-012`
 - [ ] 继续筛选许可清晰的开源 skill 源，重点补数据科学、法务、HR、教育、创意制作、行业知识和本地化等仍较薄领域 — 关联 `REQ-014`
@@ -31,12 +31,13 @@
 ## 已完成（近期）
 
 - [x] 加硬 UI 图标规范，禁止 emoji 充当生产图标并要求使用矢量 icon system — 2026-06-29（详情可见 LOG.md）
-- [x] 新增 `skills/DOMAIN-GLOSSARY.zh-CN.md`，提供 58 个领域和 565 个 skill slug 的全量中文对照 — 2026-06-29（详情可见 LOG.md）
+- [x] 新增 `goal-driven-project-loop`，把“继续推进”抽象为多 agent 可复用的目标驱动项目循环 — 2026-06-29（详情可见 LOG.md）
+- [x] 新增 `skills/DOMAIN-GLOSSARY.zh-CN.md`，提供 58 个领域和 566 个 skill slug 的全量中文对照 — 2026-06-29（详情可见 LOG.md）
 - [x] 将第三方授权来源统一并入 `community` 展示层，公开导览不再单独高亮商业来源 — 2026-06-29（详情可见 LOG.md）
 - [x] 新增 8 个 App / 小程序通用 `ours` 技能，能力库扩展到 565 技能 / 58 大类 — 2026-06-28（详情可见 LOG.md）
 - [x] 同步 Codex、Claude Code、`.agents`、workflow core、adapters、启动模板和 git/commit skills 的 commit 闭环纪律 — 2026-06-28（详情可见 LOG.md）
 - [x] 为项目初始化加入 Project Classification Gate 与 Discovery Interview，空目录/新想法先多轮需求访谈 — 2026-06-29（详情可见 LOG.md）
-- [x] 新增能力库人类导览和按目标快速找入口，让用户理解 565 技能 / 58 大类覆盖范围 — 2026-06-29（详情可见 LOG.md）
+- [x] 新增能力库人类导览和按目标快速找入口，让用户理解 566 技能 / 58 大类覆盖范围 — 2026-06-29（详情可见 LOG.md）
 - [x] 导入 34 个许可证明确的 OpenAI 官方 plugin skill，能力库扩展到 557 技能 / 58 大类 — 2026-06-28（详情可见 LOG.md）
 - [x] 新增 6 个前端 UI / 后端 API 通用 `ours` 技能，能力库扩展到 523 技能 / 58 大类 — 2026-06-28（详情可见 LOG.md）
 - [x] 第二批导入 78 个 MIT community 技能，能力库扩展到 517 技能 / 58 大类，覆盖至少 50 个领域大类 — 2026-06-28（详情可见 LOG.md）
@@ -59,11 +60,23 @@
 - [x] 明确 `project-workflow` 的全局工作流入口职责 — 2026-06-26（详情可见 LOG.md）
 - [x] 增加 Codex `AGENTS.md` 与 Claude Code `CLAUDE.md` 适配模板 — 2026-06-26（详情可见 Git 历史）
 
+## Loop Record · 2026-06-29 · goal-driven-project-loop
+
+- Goal: 把截图中的二手市场项目推进工作流抽象成多 agent 通用 skill，并合并到“继续推进”语义。
+- Acceptance Criteria: 新增 `goal-driven-project-loop`；skill 明确 State Restore、小目标、读文件、实现、验证、自审/修复、docs/state/Loop Record、原子 commit、下一目标；`project-workflow`、`03-routing`、`08-autonomous-project-loop` 指向该入口；manifest、README、TIERS、Catalog、中文对照和四态系统计数一致。
+- Validation Evidence: 已通过 `quick_validate.py` frontmatter 校验、manifest 计数（566 winner skills / 58 domains / workflow-orchestration 16 / ours 43 / 通用 483 / 半通用 83）、中文对照覆盖计数（566 skill rows / 58 domain sections）、索引关键词扫描和 `git diff --check`。
+- Self-Audit: 新 skill 是已有 core 的可调用执行入口，不复制或分叉 `08-autonomous-project-loop.md` 的完整规则；项目本地规则仍优先。
+- Repairs: 将原本只写在 core/README 的自主推进规则补成可被 skill 路由捕捉的具体执行器。
+- State/Docs Sync: 已同步 README、skills README、Catalog、TIERS、DOMAIN-GLOSSARY、manifest、REQ/LOG/MEMORY/PROGRESS。
+- Commit: 本轮提交使用 `feat: add goal driven project loop skill`。
+- Next Goal: 在真实项目中 dogfood “你继续推进”是否稳定触发该 skill，并检查 Loop Record 和自动 commit 质量。
+- Stop Reason: 本轮只做通用工作流能力抽象，不对目标业务项目执行推进。
+
 ## Loop Record · 2026-06-29 · skill-domain-glossary
 
 - Goal: 让用户能直接看懂能力库里所有英文领域目录和 skill slug 的中文含义。
-- Acceptance Criteria: 对照表覆盖 565 个 winner skill 和 58 个领域；公开入口从根 README、skills README、Catalog 可发现；不改变 manifest、目录结构或路由。
-- Validation Evidence: 已通过 manifest 计数（565 winner skills / 58 domains / codex 271 / community 252 / ours 42 / 通用 482 / 半通用 83）、中文对照覆盖计数（565 skill rows / 58 domain sections）、入口链接关键词扫描和 `git diff --check`。
+- Acceptance Criteria: 对照表覆盖 566 个 winner skill 和 58 个领域；公开入口从根 README、skills README、Catalog 可发现。
+- Validation Evidence: 已通过 manifest 计数（566 winner skills / 58 domains / codex 271 / community 252 / ours 43 / 通用 483 / 半通用 83）、中文对照覆盖计数（566 skill rows / 58 domain sections）、入口链接关键词扫描和 `git diff --check`。
 - Self-Audit: 本轮只做文档可发现性增强；中文参考名用于人工检索，不替代 `SKILL.md` 的 description 和触发规则。
 - Repairs: 将最初仅覆盖 58 个大类的领域对照升级为领域 + skill slug 两级全量对照。
 - State/Docs Sync: 已同步 README、skills README、Catalog、REQ/LOG/PROGRESS。

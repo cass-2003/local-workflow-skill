@@ -580,6 +580,7 @@ codex,skill-router,coff0xc-skill-router,workflow-orchestration,exact,yes,coff0xc
 codex,spec,spec,workflow-orchestration,exact,no,spec,WIN,通用
 codex,spec-check,spec-check,workflow-orchestration,exact,no,spec-check,WIN,通用
 codex,spec-do,spec-do,workflow-orchestration,exact,no,spec-do,WIN,通用
+ours,goal-driven-project-loop,goal-driven-project-loop,workflow-orchestration,rule:ours-path,yes,workflow-orchestration/ours/goal-driven-project-loop,WIN,通用
 ours,local-workflow,local-workflow,workflow-orchestration,rule:ours-path,yes,workflow-orchestration/ours/local-workflow,WIN,通用
 ours,project-inception-docs,project-inception-docs,workflow-orchestration,rule:ours-path,yes,workflow-orchestration/ours/project-inception-docs,WIN,通用
 ours,project-workflow,project-workflow,workflow-orchestration,rule:ours-path,yes,workflow-orchestration/ours/project-workflow,WIN,通用

@@ -24,7 +24,7 @@
 
 ## 规模与结构
 
-**565 个技能 · 58 个领域大类**，由三个来源层合并去重并剔除项目定制项而成：
+**566 个技能 · 58 个领域大类**，由三个来源层合并去重并剔除项目定制项而成：
 
 | 来源 | 含义 | 去重优先级 |
 |---|---|---|
@@ -294,12 +294,12 @@
 > 来源：community 3
 - **community**：video-content-strategist、webinar-marketing、youtube-full
 
-### workflow-orchestration — 工作流与编排（15）
-> 来源：codex 12 · ours 3
+### workflow-orchestration — 工作流与编排（16）
+> 来源：codex 12 · ours 4
 - **codex**：attack-chain-orchestrator、autoredteam-orchestrator、deep-thinking、dev、mcp-builder、memory、orchestration、skill-creator、skill-router、spec、spec-check、spec-do
-- **ours**：local-workflow、project-inception-docs、project-workflow
+- **ours**：goal-driven-project-loop、local-workflow、project-inception-docs、project-workflow
 ## 分级与变体（框架路线图阶段 6）
 
-- ✅ 已打"通用 / 半通用"标记，并剔除项目定制项：**通用 482 · 半通用 83 · 项目定制 0**，详见 `TIERS.md`。
+- ✅ 已打"通用 / 半通用"标记，并剔除项目定制项：**通用 483 · 半通用 83 · 项目定制 0**，详见 `TIERS.md`。
 - ✅ 已去掉全部 `anna-*`/`coff0xc-*` 前缀（36 个，技能全保留）；同域同源真撞名的 10 个取 `-2` 后缀。
 - `_merge-manifest.csv`（已含 `tier` 列）是后续筛选的工作底稿。
