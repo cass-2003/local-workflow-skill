@@ -136,6 +136,19 @@
 - `State Restore`：开工前说明四态来源、占位/陈旧项、当前目标、最近验证、阻塞和本轮假设。
 - `Loop Record`：每轮结束前写明目标、验收标准、验证证据、自审、修复、状态/文档同步、commit、下一目标或停止原因。
 
+## 🧭 项目启动访谈
+
+“初始化项目”不是单纯写文件动作，而是项目启动流程入口。Agent 需要先判断当前目录状态，再决定是访谈、后补 workflow，还是直接打最小地基。
+
+| 场景 | 默认动作 |
+|:--|:--|
+| 空目录 / 新想法 | 先进入需求访谈，不立刻生成完整文档包 |
+| 已给产品想法 | 按用户端、管理端、租户端、授权端、内容来源、商业化、合规、技术交付等角色多轮提问 |
+| 已有项目后补 workflow | 先 scan + State Restore，识别现有代码、文档、Git 和验证入口，再补缺口 |
+| 用户要求直接打地基 | 生成最小地基，未知项标 `待确认`，下一步继续访谈 |
+
+访谈模式每轮输出 `已确认 / 待确认 / 冲突或风险 / 下一轮问题`，直到用户确认可以生成文档、初始化地基或开始开发。详细规则见 [`project-discovery-interview.md`](skills/workflow-orchestration/ours/project-inception-docs/references/project-discovery-interview.md)。
+
 ---
 
 ## 🛠️ 能力库（565 技能 · 58 大类）
@@ -161,13 +174,15 @@
 把框架用到一个目标项目：
 
 ```text
-1. 先打项目地基：若目标目录没有 Git 且不在父级仓库中，让 Agent 执行 git init
-2. 补齐 .gitignore、README.md、AGENTS.md / CLAUDE.md、docs/INDEX.md 和基础验证命令
-3. 复制 framework/state-systems/templates/ 的四个文件到目标项目
+1. 先判断项目状态：空目录新想法、半初始化项目、已有项目后补 workflow、明确想法输入或直接地基请求
+2. 空目录或新想法先做需求访谈；已有项目先 scan + State Restore；用户明确直接打地基时才生成最小模板
+3. 若目标目录没有 Git 且不在父级仓库中，让 Agent 执行 git init
+4. 补齐 .gitignore、README.md、AGENTS.md / CLAUDE.md、docs/INDEX.md 和基础验证命令
+5. 复制 framework/state-systems/templates/ 的四个文件到目标项目
    （或映射到项目已有的等价文档），并写入当前目标/约束/焦点
-4. 让 Agent 第一次只做：scan + state restore + 路由分析，先不改业务代码
-5. 状态恢复与路由稳定后，再带验证闸门和文档同步跑完整任务
-6. 验证通过且状态同步后，默认要求 Agent 创建原子 commit；多逻辑变更先拆成多个 commit
+6. 让 Agent 第一次只做：scan + state restore + 路由分析，先不改业务代码
+7. 状态恢复与路由稳定后，再带验证闸门和文档同步跑完整任务
+8. 验证通过且状态同步后，默认要求 Agent 创建原子 commit；多逻辑变更先拆成多个 commit
 ```
 
 也可以直接使用仓库内初始化器：
@@ -197,6 +212,8 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass `
 
 | 地基项 | 默认动作 |
 |:--|:--|
+| 初始化分类 | 先判断空目录新想法 / 半初始化 / 已有项目后补 / 明确想法 / 直接地基请求 |
+| 需求访谈 | 空目录、新想法或用户要求先问问题时，先多轮收集需求，不直接臆测生成文档 |
 | Git | 没有 `.git/` 且不在父级仓库中时执行 `git init`；已有仓库只读状态，不重建、不改历史 |
 | 忽略文件 | 生成或合并 `.gitignore`，覆盖依赖、构建产物、日志、环境变量、本地缓存和密钥 |
 | Agent 入口 | 生成或更新 `AGENTS.md` / `CLAUDE.md`，指向四态系统和项目真相文档 |
@@ -211,6 +228,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass `
 
 ```text
 🗣️ 先扫描当前仓库，识别规则/技能/文档/验证入口，恢复四态系统状态，只做路由分析。
+🗣️ 初始化这个空目录项目前，先进入需求访谈模式，按角色问我问题，不要先写文件。
 🗣️ 如果当前项目还没有 Git、.gitignore、AGENTS/CLAUDE、README、docs/INDEX 或四态系统，先补齐项目地基。
 🗣️ 使用 project-inception-docs，把这个想法初始化成可开发项目，并生成启动文档包。
 🗣️ 判断这个需求该走 audit / implement / fix / review，并说明验证与文档同步策略。

@@ -123,6 +123,13 @@
 - **影响**：后续入口和技能不得把 commit 写成可选建议；阻塞 commit 时必须说明原因和下一步。push、merge、PR 和历史改写仍需要用户明确要求。
 - **时间**：2026-06-28
 
+### D-017 · 初始化项目先分类，空项目先访谈
+
+- **决定**：把“初始化项目”定义为项目启动流程入口，而不是立即写模板文件。Agent 必须先区分空目录新想法、半初始化项目、已有项目后补 workflow、明确想法输入和直接地基请求。
+- **为什么**：真实使用中，用户新建目录后说“初始化项目”往往还没有完整需求；如果 agent 直接生成 PRD/docs/state，会把臆测写成项目事实，后续跨 agent 协作会继承错误上下文。
+- **影响**：`project-inception-docs` 新增 Discovery Interview reference；空目录/新想法默认先按角色多轮提问，已有项目默认先 scan + State Restore。只有用户确认、需求足够清晰或允许未知项标 `待确认` 时，才生成完整文档和地基。
+- **时间**：2026-06-29
+
 ## 已知坑
 
 - `quick_validate.py` 不接受 `disable-model-invocation`、`user-invocable` 等旧 frontmatter 字段；新增或更新 skill 时只保留允许字段。

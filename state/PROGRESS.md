@@ -6,11 +6,11 @@
 
 ## 当前焦点
 
-把能力库从偏工程/安全/逆向的结构扩展为更均衡的通用工作流技能库，并补齐 App / 小程序等真实项目常见开发能力；同时把跨 agent 工作流纪律（状态恢复、产物同步、原子 commit 闭环）同步到所有入口和模板。
+把能力库从偏工程/安全/逆向的结构扩展为更均衡的通用工作流技能库，并补齐 App / 小程序等真实项目常见开发能力；同时把跨 agent 工作流纪律（状态恢复、产物同步、原子 commit 闭环、项目启动访谈）同步到所有入口和模板。
 
 ## 进行中
 
-- 加硬跨 agent commit 闭环纪律已完成修改，正在验证和提交。
+- 项目启动访谈门禁已开始实现，正在同步入口、模板和状态系统。
 
 ## 待办
 
@@ -32,6 +32,7 @@
 
 - [x] 新增 8 个 App / 小程序通用 `ours` 技能，能力库扩展到 565 技能 / 58 大类 — 2026-06-28（详情可见 LOG.md）
 - [x] 同步 Codex、Claude Code、`.agents`、workflow core、adapters、启动模板和 git/commit skills 的 commit 闭环纪律 — 2026-06-28（详情可见 LOG.md）
+- [x] 为项目初始化加入 Project Classification Gate 与 Discovery Interview，空目录/新想法先多轮需求访谈 — 2026-06-29（详情可见 LOG.md）
 - [x] 导入 34 个许可证明确的 OpenAI 官方 plugin skill，能力库扩展到 557 技能 / 58 大类 — 2026-06-28（详情可见 LOG.md）
 - [x] 新增 6 个前端 UI / 后端 API 通用 `ours` 技能，能力库扩展到 523 技能 / 58 大类 — 2026-06-28（详情可见 LOG.md）
 - [x] 第二批导入 78 个 MIT community 技能，能力库扩展到 517 技能 / 58 大类，覆盖至少 50 个领域大类 — 2026-06-28（详情可见 LOG.md）
@@ -113,3 +114,15 @@
 - Commit: 待验证通过后使用 `docs: enforce atomic commit closure`。
 - Next Goal: 在真实项目初始化和持续推进场景中 dogfood，确认 Codex/CC 是否会自动拆分提交并记录无法提交原因。
 - Stop Reason: 本轮目标是规则源头与本机镜像同步；验证和 commit 后停止，不自动 push。
+
+## Loop Record · 2026-06-29 · global-project-discovery-interview
+
+- Goal: 把“初始化项目先分类；空目录/新想法先多轮需求访谈；已有项目后补 workflow 先扫描恢复”固化为工作流模式。
+- Acceptance Criteria: `project-inception-docs` 包含 Project Classification Gate 与 Discovery Interview；新增访谈 reference；核心 workflow、README、启动模板和四态系统同步；本机全局入口与技能镜像同步；验证通过后原子 commit。
+- Validation Evidence: 已执行 Project Classification / Discovery Interview / project-discovery-interview 关键词扫描、全局入口命中检查、本机 `.agents` 与 `.codex` 技能镜像存在检查、`project-inception-docs` frontmatter 轻量校验、项目定制词扫描和 `git diff --check`（仅 Windows LF/CRLF 提示）。
+- Self-Audit: 本轮只改变通用初始化流程，不引入具体“表情包小程序”项目定制内容；示例问题保持通用角色框架，避免污染开源技能库。
+- Repairs: 已新增访谈 reference，并将“初始化项目”从单步写文件动作改为分类门禁 + 访谈门禁 + 地基/文档生成门禁。
+- State/Docs Sync: 已同步 README、REQ、MEMORY、LOG、PROGRESS、本机全局入口和 `.agents` / `.codex` 技能镜像。
+- Commit: 待验证通过后使用 `docs: add project discovery interview workflow`。
+- Next Goal: 在真实空目录项目中 dogfood，确认 agent 会先提问并在用户确认后再初始化文档和地基。
+- Stop Reason: 本轮目标是工作流规则源头与模板同步；验证和 commit 后停止，不自动 push。

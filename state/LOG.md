@@ -4,6 +4,13 @@
 
 ---
 
+## 2026-06-29
+
+- `change` 为项目初始化加入分类门禁与多轮需求访谈模式。
+  - 触发：用户希望新建目录后说“初始化项目”时，agent 先询问想做什么，并按用户端、租户端、管理端、授权端等角色多轮收集需求；已有项目后补 workflow 时则先扫描和恢复现状。
+  - 范围：新增 `project-discovery-interview.md`，更新 `project-inception-docs`、核心 workflow、README、启动模板和四态系统。
+  - 验证：关键词覆盖、模板同步、全局入口命中、frontmatter 校验和 `git diff --check` 均已完成；diff check 仅有 Windows LF/CRLF 提示。
+
 ## 2026-06-28
 
 - `change` 加硬跨 agent commit 闭环纪律，要求可验证修改默认进入原子 commit。

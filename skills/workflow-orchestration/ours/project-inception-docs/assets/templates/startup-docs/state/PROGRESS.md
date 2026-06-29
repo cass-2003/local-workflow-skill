@@ -14,6 +14,7 @@
 - Acceptance Criteria: README、docs/INDEX、四态系统和 AGENTS/CLAUDE 已可作为协作入口；第一轮目标、验收标准和验证方式已写入本文件或下一步工作包。
 - Validation: 待确认实际技术栈后记录 install/dev/test/lint/build 或人工验收方式。
 - Scope Boundary: 不在目标和验证方式明确前扩大到多功能实现。
+- Discovery Status: not-started / interviewing / ready-for-docs / ready-for-build
 
 ## Current Loop
 
@@ -47,6 +48,7 @@
 
 ## Next Candidate Goals
 
+- [ ] P0 继续需求访谈，确认目标用户、核心角色、MVP、权限、数据来源、风险和首轮验证方式。
 - [ ] P0 补齐项目事实与第一轮可验证工作包。
 - [ ] P1 打通最小主链路或关闭当前阻塞项。
 - [ ] P2 增强文档、测试或工程卫生。

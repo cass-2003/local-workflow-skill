@@ -7,6 +7,8 @@
 - Start substantial work with: scan -> state restore -> intent -> authority -> route -> execute -> validate -> sync -> deliver -> evolve.
 - Before business development, ensure the project foundation is ready: Git, `.gitignore`, README, docs index, Four-State files, validation commands, and this agent entry.
 - If this directory has no `.git/` and is not inside another Git worktree, initialize Git before continuing.
+- When the user says "初始化项目" in an empty or unclear project, first classify the project state and run a discovery interview before generating full docs or code.
+- For existing projects that are only missing workflow files, scan and restore project state first; do not restart product discovery from scratch.
 - Prefer project-local truth docs over global memory.
 - After completed and validated changes in a Git repository, create atomic commit(s) by default; split multiple logical changes and do not push unless explicitly requested.
 
@@ -50,6 +52,13 @@
 - Current status: `docs/planning/当前工程状态.md`
 - Roadmap: `docs/planning/开发路线图.md`
 - Next actions: `docs/planning/下一步工作包.md`
+
+## Discovery Interview
+
+- Empty directory or new idea: ask what the project should do, who it serves, target platform, MVP, roles, data, permissions, risks, and validation plan before writing full docs.
+- Existing project: scan code/docs/Git first, then ask only gap questions.
+- Each interview round should summarize `confirmed / open questions / risks / next questions`.
+- Do not treat assumptions as requirements; write unknowns as `待确认`.
 
 ## Artifact Contracts
 
