@@ -147,7 +147,7 @@
 | 已有项目后补 workflow | 先 scan + State Restore，识别现有代码、文档、Git 和验证入口，再补缺口 |
 | 用户要求直接打地基 | 生成最小地基，未知项标 `待确认`，下一步继续访谈 |
 
-访谈模式每轮输出 `已确认 / 待确认 / 冲突或风险 / 下一轮问题`，直到用户确认可以生成文档、初始化地基或开始开发。详细规则见 [`project-discovery-interview.md`](skills/workflow-orchestration/ours/project-inception-docs/references/project-discovery-interview.md)。
+访谈模式优先使用客户端提问工具（如 Claude Code `AskUserQuestion`、Codex `request_user_input` 或同类 Elicitation/select 工具）一轮轮收集答案，而不是在正文里一次性倾倒完整问题清单。每轮通常只问 1-3 个高价值问题卡片，并输出 `已确认 / 待确认 / 冲突或风险 / 下一轮问题`，直到用户确认可以生成文档、初始化地基或开始开发。详细规则见 [`project-discovery-interview.md`](skills/workflow-orchestration/ours/project-inception-docs/references/project-discovery-interview.md)。
 
 ---
 

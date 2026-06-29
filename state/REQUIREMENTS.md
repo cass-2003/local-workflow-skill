@@ -35,6 +35,7 @@
 | REQ-021 | UI 规范禁止 emoji 充当生产图标 | `UIdesign`、UI quality checklist 和 `design-system-implementation` 明确要求使用 SVG/vector icon system 或统一矢量图标库；emoji 不作为导航、状态、工具栏、按钮或空状态图标 | done | PROGRESS#ui-vector-icon-policy |
 | REQ-022 | 能力库应提供全量中文对照 | `skills/DOMAIN-GLOSSARY.zh-CN.md` 覆盖 58 个领域大类和 566 个 winner skill slug，并从根 README、skills README、Catalog 可发现 | done | PROGRESS#skill-domain-glossary |
 | REQ-023 | “继续推进”应有多 agent 可复用的目标驱动循环 skill | `skills/workflow-orchestration/ours/goal-driven-project-loop/SKILL.md` 抽象 State Restore -> 小目标 -> 读文件 -> 实现 -> 验证 -> 自审/修复 -> docs/state/Loop Record -> 原子 commit -> 下一目标；`project-workflow` 和路由矩阵指向该 skill | done | PROGRESS#goal-driven-project-loop |
+| REQ-024 | 需求发现访谈应优先使用交互式提问工具 | `project-inception-docs` 和启动模板要求有提问工具时使用工具分轮收集；每轮 1-3 个问题卡片；“尽量多提问”解释为多轮覆盖，不允许正文一次性倾倒长问题清单 | done | PROGRESS#interactive-discovery-questions |
 
 ## 约束与非目标
 

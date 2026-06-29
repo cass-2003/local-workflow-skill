@@ -191,3 +191,15 @@
 - Commit: 待验证通过后使用 `docs: require vector icons for ui`。
 - Next Goal: 后续可在项目初始化模板里加入可选 design brief 字段，记录项目选用的 icon library。
 - Stop Reason: 本轮目标是 UI 规范补丁；验证和 commit 后停止，不自动 push。
+
+## Loop Record · 2026-06-29 · interactive-discovery-questions
+
+- Goal: 让项目启动需求发现默认使用交互式提问工具，一轮轮问，而不是正文长列表轰炸用户。
+- Acceptance Criteria: `project-inception-docs` 和 `project-discovery-interview.md` 明确工具优先；启动模板 `AGENTS.md` / `CLAUDE.md` 继承规则；README 对外说明；“尽量多提问”解释为多轮覆盖；降级文本访谈也限制单轮问题数量。
+- Validation Evidence: 已执行关键词覆盖和旧表述残留扫描，确认规则正文命中 `AskUserQuestion` / `request_user_input` / `1-3 个` / `多轮覆盖`；已同步本机 `.codex`、`.agents`、`.claude` 技能镜像；`git diff --check` 仅有 Windows LF/CRLF 提示。
+- Self-Audit: 本轮只改通用需求发现体验，不加入任何小红书、表情包或具体项目定制需求。
+- Repairs: 将“可以一次给较多问题”替换为“多轮覆盖更多角色和主题”，并规定工具问题卡片数量与选项形式。
+- State/Docs Sync: 已同步 README、REQ、LOG、PROGRESS 和本机多 agent 技能镜像。
+- Commit: 待验证通过后使用 `docs: require interactive discovery questions`。
+- Next Goal: 同步到本机 Codex/Claude/`.agents` 技能镜像，并在新空目录项目中 dogfood。
+- Stop Reason: 本轮目标是需求发现 skill 行为补丁；验证和 commit 后停止，不自动 push。

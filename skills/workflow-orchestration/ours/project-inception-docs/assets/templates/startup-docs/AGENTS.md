@@ -57,6 +57,8 @@
 
 - Empty directory or new idea: ask what the project should do, who it serves, target platform, MVP, roles, data, permissions, risks, and validation plan before writing full docs.
 - Existing project: scan code/docs/Git first, then ask only gap questions.
+- If the client provides an interactive question tool, use it for discovery rounds instead of dumping a long question list in chat.
+- Ask 1-3 focused question cards per round, with concrete options and an Other/free-form path when available; interpret "ask many questions" as multi-round coverage, not one huge batch.
 - Each interview round should summarize `confirmed / open questions / risks / next questions`.
 - Do not treat assumptions as requirements; write unknowns as `待确认`.
 
