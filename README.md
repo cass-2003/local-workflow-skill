@@ -153,7 +153,30 @@
 
 ## 🛠️ 能力库（565 技能 · 58 大类）
 
-执行阶段委托的具体技能，四源合并去重，双层结构 `<领域大类>/<来源>/<skill>/`：
+执行阶段委托的具体技能，四源合并去重，双层结构 `<领域大类>/<来源>/<skill>/`。如果你只是想知道“这个库到底会什么”，先看人类导览版：
+
+- [`skills/CATALOG.md`](skills/CATALOG.md)：按场景、领域和常用说法找能力
+- [`skills/README.md`](skills/README.md)：完整领域索引和 skill slug
+- [`skills/TIERS.md`](skills/TIERS.md)：通用 / 半通用分级
+
+### 按目标快速找
+
+| 你想做什么 | 推荐领域 |
+|:--|:--|
+| 新项目从想法开始、先问需求、生成 PRD/架构/路线图 | `workflow-orchestration`、`product-management`、`frontend-ui`、`backend-api` |
+| Web / 管理后台 / UI / 设计系统 | `frontend-ui`、`quality-delivery`、`content-authoring` |
+| 后端 / API / 数据库 / 认证授权 | `backend-api`、`data-analysis`、`engineering-core`、`security-engineering` |
+| App / 小程序 / 跨端 / 登录支付 | `mobile-crossplatform`、`payments-commerce`、`maps-location` |
+| AI Agent / RAG / Prompt / 自动化 | `ai-automation`、`ai-governance-compliance`、`research-knowledge` |
+| 云部署 / DevOps / SRE / CI | `cloud-infra`、`quality-delivery`、`engineering-core` |
+| 测试 / 代码审计 / 重构 / Git 交付 | `quality-delivery`、`engineering-core` |
+| 安全 / 渗透 / 合规 / 隐私 | `security-engineering`、`security-compliance`、`privacy-compliance` |
+| 逆向 / 二进制 / 固件 / 驱动 | `reverse-engineering`、`hardware-systems` |
+| 产品 / 增长 / 运营 / 营销 | `product-management`、`product-growth`、`growth-experiments`、`content-strategy` |
+| 商业 / 销售 / 收入 / 组织协作 | `commercial-strategy`、`sales-enablement`、`revenue-operations`、`business-operations` |
+| 研究 / 学习 / 文档 / 知识管理 | `research-knowledge`、`research-ops`、`literature-review`、`markdown-publishing` |
+
+### 领域数量概览
 
 | 🏷️ 领域 | 数量 | 🏷️ 领域 | 数量 | 🏷️ 领域 | 数量 |
 |:--|:-:|:--|:-:|:--|:-:|

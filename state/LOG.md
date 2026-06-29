@@ -6,6 +6,11 @@
 
 ## 2026-06-29
 
+- `docs` 增强能力库可发现性，让用户按场景理解 565 个技能覆盖什么。
+  - 触发：用户指出 README 的能力库段落只有数量表，不知道有哪些类型、分类和领域的 skill。
+  - 范围：新增 `skills/CATALOG.md` 人类导览版目录；根 README 增加“按目标快速找”；`skills/README.md` 顶部增加导览入口和常用问法。
+  - 验证：待执行链接存在、关键词覆盖、README 表格和 `git diff --check` 检查。
+
 - `change` 为项目初始化加入分类门禁与多轮需求访谈模式。
   - 触发：用户希望新建目录后说“初始化项目”时，agent 先询问想做什么，并按用户端、租户端、管理端、授权端等角色多轮收集需求；已有项目后补 workflow 时则先扫描和恢复现状。
   - 范围：新增 `project-discovery-interview.md`，更新 `project-inception-docs`、核心 workflow、README、启动模板和四态系统。

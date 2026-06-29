@@ -6,11 +6,11 @@
 
 ## 当前焦点
 
-把能力库从偏工程/安全/逆向的结构扩展为更均衡的通用工作流技能库，并补齐 App / 小程序等真实项目常见开发能力；同时把跨 agent 工作流纪律（状态恢复、产物同步、原子 commit 闭环、项目启动访谈）同步到所有入口和模板。
+把能力库从偏工程/安全/逆向的结构扩展为更均衡、可发现的通用工作流技能库，并补齐 App / 小程序等真实项目常见开发能力；同时把跨 agent 工作流纪律（状态恢复、产物同步、原子 commit 闭环、项目启动访谈）同步到所有入口和模板。
 
 ## 进行中
 
-- 项目启动访谈门禁已开始实现，正在同步入口、模板和状态系统。
+- 能力库可发现性文档已开始实现，正在补人类导览和 README 入口。
 
 ## 待办
 
@@ -33,6 +33,7 @@
 - [x] 新增 8 个 App / 小程序通用 `ours` 技能，能力库扩展到 565 技能 / 58 大类 — 2026-06-28（详情可见 LOG.md）
 - [x] 同步 Codex、Claude Code、`.agents`、workflow core、adapters、启动模板和 git/commit skills 的 commit 闭环纪律 — 2026-06-28（详情可见 LOG.md）
 - [x] 为项目初始化加入 Project Classification Gate 与 Discovery Interview，空目录/新想法先多轮需求访谈 — 2026-06-29（详情可见 LOG.md）
+- [x] 新增能力库人类导览和按目标快速找入口，让用户理解 565 技能 / 58 大类覆盖范围 — 2026-06-29（详情可见 LOG.md）
 - [x] 导入 34 个许可证明确的 OpenAI 官方 plugin skill，能力库扩展到 557 技能 / 58 大类 — 2026-06-28（详情可见 LOG.md）
 - [x] 新增 6 个前端 UI / 后端 API 通用 `ours` 技能，能力库扩展到 523 技能 / 58 大类 — 2026-06-28（详情可见 LOG.md）
 - [x] 第二批导入 78 个 MIT community 技能，能力库扩展到 517 技能 / 58 大类，覆盖至少 50 个领域大类 — 2026-06-28（详情可见 LOG.md）
@@ -126,3 +127,15 @@
 - Commit: 待验证通过后使用 `docs: add project discovery interview workflow`。
 - Next Goal: 在真实空目录项目中 dogfood，确认 agent 会先提问并在用户确认后再初始化文档和地基。
 - Stop Reason: 本轮目标是工作流规则源头与模板同步；验证和 commit 后停止，不自动 push。
+
+## Loop Record · 2026-06-29 · skill-catalog-discoverability
+
+- Goal: 让用户不用阅读 565 个 skill slug，也能理解能力库有哪些领域、适合哪些任务、该从哪里进入。
+- Acceptance Criteria: 根 README 有按目标快速找能力；新增 `skills/CATALOG.md` 覆盖主要场景、领域地图和常用触发说法；`skills/README.md` 顶部指向导览、完整索引、TIERS 和 manifest；四态系统同步。
+- Validation Evidence: 已通过 `skills/CATALOG.md` / `skills/README.md` / `skills/TIERS.md` / `_merge-manifest.csv` 链接存在检查、能力库导览关键词覆盖扫描、README 入口片段检查和 `git diff --check`（仅 Windows LF/CRLF 提示）。
+- Self-Audit: 本轮只增强文档可发现性，不改变技能数量、manifest、路由规则或技能内容；避免在根 README 展开过长 slug 列表。
+- Repairs: 新增人类导览层，把“数量表”前置补成“按目标找能力”。
+- State/Docs Sync: 已同步 README、skills README、CATALOG、REQ、MEMORY、LOG、PROGRESS。
+- Commit: 待验证通过后使用 `docs: add skill catalog guide`。
+- Next Goal: 后续可考虑从 manifest 自动生成 CATALOG 的场景表，降低手工同步成本。
+- Stop Reason: 本轮目标是文档可发现性改造；验证和 commit 后停止，不自动 push。

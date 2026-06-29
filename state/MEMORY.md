@@ -130,6 +130,13 @@
 - **影响**：`project-inception-docs` 新增 Discovery Interview reference；空目录/新想法默认先按角色多轮提问，已有项目默认先 scan + State Restore。只有用户确认、需求足够清晰或允许未知项标 `待确认` 时，才生成完整文档和地基。
 - **时间**：2026-06-29
 
+### D-018 · 能力库入口采用“场景导览 + 完整索引”双层结构
+
+- **决定**：根 README 不再只展示技能数量表，而是先提供按用户目标查找的能力导览；完整 slug 和来源细节留在 `skills/README.md`，人类可读能力地图放在 `skills/CATALOG.md`。
+- **为什么**：565 个技能和 58 个领域对新用户是噪音；用户需要先知道“我想做小程序/后端/API/安全/增长时该看哪里”，再进入完整索引。
+- **影响**：新增或调整大类时，后续要同步 `skills/CATALOG.md` 的场景导览、根 README 的速查表、`skills/README.md` 的完整索引和四态记录。
+- **时间**：2026-06-29
+
 ## 已知坑
 
 - `quick_validate.py` 不接受 `disable-model-invocation`、`user-invocable` 等旧 frontmatter 字段；新增或更新 skill 时只保留允许字段。

@@ -30,6 +30,7 @@
 | REQ-016 | 官方 Codex plugin skill 导入必须许可清晰且可追溯 | 只导入 `openai/plugins` 中明确 MIT/Apache 等可再分发许可的 skill；保存 provenance；不重复导入已有 slug；manifest、README、skills README、TIERS、路由和四态系统计数一致 | done | PROGRESS#已完成 |
 | REQ-017 | App 与小程序开发应具备项目级工程骨架技能 | 新增通用 `ours` 技能覆盖 App 架构、离线同步、推送、发布运营、小程序架构、微信小程序、登录支付和 Taro/uniapp 跨端；manifest、README、skills README、TIERS、路由和四态系统计数一致 | done | PROGRESS#已完成 |
 | REQ-018 | 项目初始化应先分类并支持多轮需求访谈 | “初始化项目”先区分空目录新想法、半初始化、已有项目后补 workflow、明确想法或直接地基请求；空目录/新想法默认先按角色多轮提问，不臆测生成完整文档；启动模板和全局入口同步该规则 | done | PROGRESS#global-project-discovery-interview |
+| REQ-019 | 能力库应让用户看得懂有哪些领域和使用场景 | 根 README 提供按目标快速找能力；`skills/CATALOG.md` 提供人类导览版目录；`skills/README.md` 顶部指向导览、完整索引、分级和 manifest | done | PROGRESS#skill-catalog-discoverability |
 
 ## 约束与非目标
 
@@ -39,4 +40,5 @@
 - 约束：本仓库只保留通用或半通用 skill；项目定制 skill 应放在目标项目本地或私有仓库，不进入开源通用库。
 - 约束：自动生成的审计、验收、验证和文档同步产物必须基于项目事实、证据或明确待确认项，不为了凑文件生成空壳。
 - 约束：新项目需求访谈阶段不写业务代码、不生成完整文档包；只有用户确认、需求达到最低清晰度，或用户接受未知项标 `待确认` 时才进入生成阶段。
+- 约束：能力库公开入口不能只展示数量；必须提供面向用户目标、领域分类和完整 slug 索引的多层导览。
 - 非目标：不默认自动 push、merge 或创建 PR。
