@@ -8,7 +8,7 @@
 
 - `feat` 新增目标驱动项目推进循环 skill。
   - 触发：用户提供截图，希望把“State Restore -> 定一个详细小 goal -> 读文件 -> 实现 -> 验证 -> 同步 docs/state/Loop Record -> 原子 commit -> 继续选下一个 goal”抽象成多 agent 通用 skill，并合并到“你继续推进”语义里。
-  - 范围：新增 `goal-driven-project-loop`；`project-workflow`、核心路由和自主循环 core 指向该执行入口；同步能力库计数为 566 技能 / 58 大类。
+  - 范围：新增 `goal-driven-project-loop`；`project-workflow`、核心路由和自主循环 core 指向该执行入口；合并本机参考版中的 State Restore 摘要、紧凑目标卡、worktree/branch hygiene、验证建议和 Loop Record 字段；同步能力库计数为 566 技能 / 58 大类。
   - 验证：`quick_validate.py` 通过；manifest 计数为 566 winner skills / 58 domains / workflow-orchestration 16；中文对照覆盖 566 skill 行 / 58 领域段；索引命中和 `git diff --check` 已通过。
 
 - `docs` 新增能力库全量中文对照表。

@@ -160,7 +160,7 @@
 
 ### D-022 · “继续推进”需要可调用的目标驱动循环 skill
 
-- **决定**：新增 `skills/workflow-orchestration/ours/goal-driven-project-loop/SKILL.md`，把“State Restore -> 小目标 -> 读文件 -> 实现 -> 验证 -> 自审/修复 -> docs/state/Loop Record -> 原子 commit -> 下一目标”固化为多 agent 通用执行入口。
+- **决定**：新增 `skills/workflow-orchestration/ours/goal-driven-project-loop/SKILL.md`，把“State Restore -> 小目标 -> 读文件 -> 实现 -> 验证 -> 自审/修复 -> docs/state/Loop Record -> 原子 commit -> 下一目标”固化为多 agent 通用执行入口，并吸收本机参考版中的 worktree hygiene、紧凑 goal card、验证建议和 Loop Record 字段。
 - **为什么**：`08-autonomous-project-loop.md` 是 core 真相源，但真实触发时还需要一个具体 skill 名称承接“你继续推进”这类自然语言请求，否则容易只停在编排原则而缺少执行器。
 - **影响**：`project-workflow` 和 `03-routing.md` 的 autonomous-loop 路由指向该 skill；core 仍是单一真相，后续修改循环原则先改 core，再同步 skill 的薄包装。
 - **时间**：2026-06-29

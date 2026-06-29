@@ -63,10 +63,10 @@
 ## Loop Record · 2026-06-29 · goal-driven-project-loop
 
 - Goal: 把截图中的二手市场项目推进工作流抽象成多 agent 通用 skill，并合并到“继续推进”语义。
-- Acceptance Criteria: 新增 `goal-driven-project-loop`；skill 明确 State Restore、小目标、读文件、实现、验证、自审/修复、docs/state/Loop Record、原子 commit、下一目标；`project-workflow`、`03-routing`、`08-autonomous-project-loop` 指向该入口；manifest、README、TIERS、Catalog、中文对照和四态系统计数一致。
+- Acceptance Criteria: 新增 `goal-driven-project-loop`；skill 明确 State Restore、小目标、读文件、实现、验证、自审/修复、docs/state/Loop Record、原子 commit、下一目标；合并本机参考版中的 worktree hygiene、紧凑 goal card 和验证建议；`project-workflow`、`03-routing`、`08-autonomous-project-loop` 指向该入口；manifest、README、TIERS、Catalog、中文对照和四态系统计数一致。
 - Validation Evidence: 已通过 `quick_validate.py` frontmatter 校验、manifest 计数（566 winner skills / 58 domains / workflow-orchestration 16 / ours 43 / 通用 483 / 半通用 83）、中文对照覆盖计数（566 skill rows / 58 domain sections）、索引关键词扫描和 `git diff --check`。
 - Self-Audit: 新 skill 是已有 core 的可调用执行入口，不复制或分叉 `08-autonomous-project-loop.md` 的完整规则；项目本地规则仍优先。
-- Repairs: 将原本只写在 core/README 的自主推进规则补成可被 skill 路由捕捉的具体执行器。
+- Repairs: 将原本只写在 core/README 的自主推进规则补成可被 skill 路由捕捉的具体执行器，并吸收本机参考 skill 的实战执行细节。
 - State/Docs Sync: 已同步 README、skills README、Catalog、TIERS、DOMAIN-GLOSSARY、manifest、REQ/LOG/MEMORY/PROGRESS。
 - Commit: 本轮提交使用 `feat: add goal driven project loop skill`。
 - Next Goal: 在真实项目中 dogfood “你继续推进”是否稳定触发该 skill，并检查 Loop Record 和自动 commit 质量。

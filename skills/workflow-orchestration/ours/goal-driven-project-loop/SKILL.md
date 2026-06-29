@@ -7,6 +7,8 @@ description: "目标驱动项目推进循环。用于多 agent 通用的持续�
 
 Use this skill when the user authorizes continued project progress rather than a single isolated answer. It is a thin execution wrapper over `framework/core/08-autonomous-project-loop.md`; do not fork the core rules.
 
+Optimize for continuity: every loop restores state, completes one concrete goal, records evidence, and either creates the next goal or stops with a clear reason.
+
 ## Core Loop
 
 Run one small, complete, verifiable goal at a time:
@@ -35,6 +37,17 @@ Before editing:
 4. If there is no roadmap or next work package, create or update planning artifacts first.
 5. Pick exactly one goal for the current loop.
 
+Summarize the restore before changing files:
+
+- Sources checked.
+- Latest completed work.
+- Active target.
+- Assumptions for this loop.
+- Blockers or constraints.
+- Validation commands likely to apply.
+
+Mark anything not tool-verified as an assumption.
+
 ## Goal Contract
 
 Write the active goal in recoverable form before doing substantial work:
@@ -51,7 +64,30 @@ Write the active goal in recoverable form before doing substantial work:
 - Stop Conditions:
 ```
 
+For compact project updates, this minimal goal card is acceptable:
+
+```text
+Goal:
+Acceptance:
+Likely files:
+Validation:
+Docs/state:
+Commit:
+```
+
 A valid goal must be small enough for one atomic commit. Split goals that combine unrelated features, refactors, docs, dependencies, or migrations.
+
+Prefer goals that unblock the main user workflow, close risky incomplete behavior, expose already-built backend in UI, or add required observability and admin controls. Avoid widening scope unless the state restore proves it is necessary.
+
+## Worktree And Branch Hygiene
+
+When parallel work exists, prefer a separate worktree or branch before implementing. Before changing files, confirm:
+
+- Current branch and worktree path.
+- Existing uncommitted changes and whether they belong to this loop.
+- Exact files this goal may touch.
+
+Only stage files that belong to the current goal. If unrelated changes exist in touched files, read the diff and work around them instead of reverting them.
 
 ## Execution Rules
 
@@ -62,6 +98,18 @@ A valid goal must be small enough for one atomic commit. Split goals that combin
 - Run self-audit after implementation and before state sync.
 - Repair Critical / High / P0 / P1 findings that are in scope; record out-of-scope findings as next candidate goals.
 - Do not continue blindly when a decision, credential, destructive operation, production risk, or repeated validation failure requires stopping.
+- If two implementation paths have meaningfully different consequences, state the tradeoff and choose the safer project-consistent path unless user input is required.
+
+## Validation Guidance
+
+Run the narrowest meaningful checks for the touched surface:
+
+- Frontend: targeted lint, typecheck, build, browser, screenshot, or visual checks.
+- Backend: focused unit tests, route/schema tests, compile checks, health/openapi checks, or service probes.
+- Docs/config: link or index checks, formatting checks, and `git diff --check`.
+- Security/payment/auth/admin changes: extra failure-path and authorization review.
+
+If a validation command cannot run, record the exact reason and choose the next best evidence.
 
 ## State And Artifact Sync
 
@@ -98,9 +146,12 @@ Write or update a loop record before declaring the loop complete:
 
 - Goal:
 - Acceptance Criteria:
+- State Restore:
+- Completed:
 - Validation Evidence:
 - Self-Audit:
 - Repairs:
+- Risks:
 - State/Docs Sync:
 - Commit:
 - Next Goal:
