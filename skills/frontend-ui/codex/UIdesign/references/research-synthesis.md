@@ -11,7 +11,7 @@ This synthesis is based on a May 2026 review of 40 GitHub repositories and 12 de
 5. **Framework choice matters less than consistency.** React, Vue, Angular, and Svelte ecosystems all have mature options; the correct choice inside an existing repo is usually the one already present.
 6. **Agent-friendly design context is emerging.** `google-labs-code/design.md` formalizes visual identity for coding agents. Agents should read it when present and create a compact design brief when absent.
 7. **Visual verification is part of implementation.** Playwright, Storybook, and axe-core reinforce that UI quality requires browser checks, screenshots, and automated testing where possible.
-8. **Icons and motion need systems.** Lucide, Tabler Icons, and Motion show that consistent icon geometry and purposeful animation improve polish without requiring custom art each time.
+8. **Icons and motion need systems.** Lucide, Tabler Icons, Heroicons, Phosphor, Fluent Icons, and Motion show that consistent icon geometry and purposeful animation improve polish without requiring custom art each time. Emoji are not a production icon system because rendering, alignment, semantics, and brand fit vary by platform.
 9. **Data visualization needs semantic choices.** D3, Chart.js, and Recharts suggest choosing chart types, scales, legends, units, labels, and color accessibility deliberately, not decorating data.
 10. **Enterprise systems value density and predictability.** Ant Design, Blueprint, Carbon, Fluent, Polaris, and Primer favor reliable navigation, tables, forms, filters, commands, and repeatable workflows over flashy composition.
 
@@ -53,6 +53,7 @@ Use a sequential pipeline:
 
 - Start in the workspace, not an intro page.
 - Prefer icon buttons for tool commands and pair unfamiliar icons with tooltips.
+- Use a single vector icon family or the existing icon component system; do not use emoji as toolbar, menu, status, or empty-state icons.
 - Stabilize toolbars and canvases with fixed dimensions, min/max sizes, and overflow rules.
 - Preserve undo/redo, selection, preview, export, and keyboard flows when relevant.
 

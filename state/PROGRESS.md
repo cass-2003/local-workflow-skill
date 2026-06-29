@@ -10,7 +10,7 @@
 
 ## 进行中
 
-- 第三方授权来源已并入 `community` 展示层，正在做一致性验证和提交。
+- UI 图标规范已加入主工作流和设计系统 skill，正在做验证和提交。
 
 ## 待办
 
@@ -30,6 +30,7 @@
 
 ## 已完成（近期）
 
+- [x] 加硬 UI 图标规范，禁止 emoji 充当生产图标并要求使用矢量 icon system — 2026-06-29（详情可见 LOG.md）
 - [x] 将第三方授权来源统一并入 `community` 展示层，公开导览不再单独高亮商业来源 — 2026-06-29（详情可见 LOG.md）
 - [x] 新增 8 个 App / 小程序通用 `ours` 技能，能力库扩展到 565 技能 / 58 大类 — 2026-06-28（详情可见 LOG.md）
 - [x] 同步 Codex、Claude Code、`.agents`、workflow core、adapters、启动模板和 git/commit skills 的 commit 闭环纪律 — 2026-06-28（详情可见 LOG.md）
@@ -152,3 +153,15 @@
 - Commit: 待验证通过后使用 `chore: flatten third party skill sources`。
 - Next Goal: 后续可继续让 `skills/CATALOG.md` 从 manifest 自动生成，减少手工维护来源/领域表的成本。
 - Stop Reason: 本轮目标是来源展示收敛；验证和 commit 后停止，不自动 push。
+
+## Loop Record · 2026-06-29 · ui-vector-icon-policy
+
+- Goal: 把“禁止 emoji 充当正式 UI 图标，使用统一矢量图标体系”固化到 UI 工作流和设计系统技能中。
+- Acceptance Criteria: `UIdesign` 主流程明确禁止 emoji 作为生产 UI 图标；UI quality checklist 有验收项；research synthesis 解释原因；`design-system-implementation` 有 Iconography Rules；四态系统同步。
+- Validation Evidence: 已通过关键词覆盖扫描（`UIdesign`、UI quality checklist、research synthesis、`design-system-implementation`、REQ/MEMORY 均命中 emoji / SVG/vector / icon system 规则）、目标文件片段检查和 `git diff --check`（仅 Windows LF/CRLF 提示）。
+- Self-Audit: 本轮只改通用 UI 规范，不改技能数量、manifest、路由或第三方来源内容；emoji 在聊天文本、文档示意或明确品牌规范中仍可出现，但不能充当生产图标系统。
+- Repairs: 将 icon policy 写入 UI 主入口、设计系统实现入口和详细质量清单，避免 agent 只在某个边缘 skill 里看到规则。
+- State/Docs Sync: 已同步 REQ/LOG/MEMORY/PROGRESS。
+- Commit: 待验证通过后使用 `docs: require vector icons for ui`。
+- Next Goal: 后续可在项目初始化模板里加入可选 design brief 字段，记录项目选用的 icon library。
+- Stop Reason: 本轮目标是 UI 规范补丁；验证和 commit 后停止，不自动 push。

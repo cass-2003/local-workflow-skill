@@ -6,6 +6,11 @@
 
 ## 2026-06-29
 
+- `change` 加硬 UI 图标规范，禁止用 emoji 充当生产图标。
+  - 触发：用户要求在 UI 规范中加入“禁止 emoji 当图标，用矢量图标库”。
+  - 范围：更新 `UIdesign` 主工作流、UI 质量清单、研究总结和 `design-system-implementation`，要求使用项目现有 SVG/vector icon system 或统一矢量图标库。
+  - 验证：待执行关键词覆盖、UI skill 片段检查和 `git diff --check`。
+
 - `change` 将第三方授权来源统一并入 `community` 展示层，避免公开导览单独高亮商业来源。
   - 触发：用户指出第三方授权来源在能力库 README 中写得过于明显，不应单独分离展示。
   - 范围：移动 17 个领域下的旧来源目录到同领域 `community/`；更新 manifest、skills README、根 README、架构、路由、合并工具说明与四态系统。

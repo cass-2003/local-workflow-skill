@@ -32,6 +32,7 @@
 | REQ-018 | 项目初始化应先分类并支持多轮需求访谈 | “初始化项目”先区分空目录新想法、半初始化、已有项目后补 workflow、明确想法或直接地基请求；空目录/新想法默认先按角色多轮提问，不臆测生成完整文档；启动模板和全局入口同步该规则 | done | PROGRESS#global-project-discovery-interview |
 | REQ-019 | 能力库应让用户看得懂有哪些领域和使用场景 | 根 README 提供按目标快速找能力；`skills/CATALOG.md` 提供人类导览版目录；`skills/README.md` 顶部指向导览、完整索引、分级和 manifest | done | PROGRESS#skill-catalog-discoverability |
 | REQ-020 | 第三方授权 skill 来源不应在公开导览中单独高亮 | 目录结构、README、skills README、路由和合并工具公开说明只展示 `ours / codex / community` 三层；原始来源与许可保留在 provenance / manifest 审计资料中 | done | PROGRESS#third-party-source-flattening |
+| REQ-021 | UI 规范禁止 emoji 充当生产图标 | `UIdesign`、UI quality checklist 和 `design-system-implementation` 明确要求使用 SVG/vector icon system 或统一矢量图标库；emoji 不作为导航、状态、工具栏、按钮或空状态图标 | done | PROGRESS#ui-vector-icon-policy |
 
 ## 约束与非目标
 
@@ -43,4 +44,5 @@
 - 约束：新项目需求访谈阶段不写业务代码、不生成完整文档包；只有用户确认、需求达到最低清晰度，或用户接受未知项标 `待确认` 时才进入生成阶段。
 - 约束：能力库公开入口不能只展示数量；必须提供面向用户目标、领域分类和完整 slug 索引的多层导览。
 - 约束：第三方授权来源统一并入 `community/` 展示层；不要在公开 README 和领域索引里单独突出某个授权包或商业属性。
+- 约束：生产 UI 图标必须来自一致的 SVG/vector icon system；不要用 emoji 代替正式图标、状态标记或交互控件。
 - 非目标：不默认自动 push、merge 或创建 PR。

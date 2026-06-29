@@ -17,6 +17,7 @@ Use this file for substantial UI implementation, redesign, or review work.
 - No unnecessary dependency was added.
 - Components expose variants/states rather than one-off style forks.
 - Repeated UI uses reusable components when repetition is meaningful.
+- Production icons use a consistent SVG/vector icon library or existing icon component system; emoji are not used as UI icons, controls, status markers, or empty-state artwork.
 
 ## 3. Layout
 
@@ -52,6 +53,7 @@ Use this file for substantial UI implementation, redesign, or review work.
 - Letter spacing is normal unless the existing system intentionally says otherwise.
 - Palette is not dominated by one hue family unless it is a deliberate brand requirement.
 - Icons share stroke weight and optical size.
+- Icons are not emoji stand-ins; they come from one coherent vector set and align to the system's size, stroke/fill, color, and accessibility rules.
 - Images are relevant and not dark/blurred/cropped when users need to inspect the subject.
 - Motion clarifies state changes and does not slow repeated work.
 

@@ -40,11 +40,21 @@ For each component, define:
 - Composition rules: what can be nested, what should not be nested.
 - Data contract: controlled/uncontrolled values, async loading shape, error shape.
 
+## Iconography Rules
+
+- Do not use emoji as production UI icons, navigation items, status markers, toolbar controls, or empty-state artwork.
+- Prefer the project's existing SVG/vector icon component system.
+- If the project has no icon system, choose one coherent vector set such as Lucide, Tabler, Heroicons, Phosphor, Fluent Icons, or the platform-native equivalent.
+- Keep icons consistent in stroke/fill style, optical size, line cap, corner radius, color tokens, alignment, and hit target.
+- Pair unfamiliar icon-only controls with accessible labels, tooltips, or visible text.
+- Avoid importing a whole icon package when tree-shaken single-icon imports or local SVG components are available.
+
 ## Implementation Checklist
 
 - Use CSS variables for themeable values.
 - Keep variants finite; avoid arbitrary prop soup.
 - Expose composition slots instead of one-off boolean props when layouts vary.
+- Use a consistent vector icon system; never use emoji as formal UI iconography.
 - Ensure focus rings are visible and not removed by reset CSS.
 - Ensure disabled controls still communicate why action is unavailable when needed.
 - Support RTL with logical properties when layout direction may change.
@@ -114,4 +124,3 @@ Examples:
 - Capture screenshots or visual diffs for major variants.
 - Manually tab through dialogs, menus, forms, popovers, and navigation.
 - Confirm token changes update multiple components without one-off overrides.
-

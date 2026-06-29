@@ -14,7 +14,8 @@ Use this skill to turn a UI request into a coherent, implemented, and visually v
 3. **Make the first screen useful.** Apps and tools should open directly into the working experience; marketing-style landing pages belong only when the user explicitly asks for one.
 4. **Treat accessibility as structure.** Keyboard flow, focus states, contrast, semantic labels, target sizes, and reduced-motion behavior shape the UI, not a final lint pass.
 5. **Design every state.** Empty, loading, error, disabled, active, hover, focus, overflow, small-screen, and long-content states are part of the component contract.
-6. **Verify visually before claiming success.** Run the app, inspect the UI at relevant desktop and mobile viewports, and fix obvious overlap, blank areas, clipping, broken assets, and unreadable text.
+6. **Use real icon systems.** Do not use emoji as production UI icons or controls; use the project's existing SVG/vector icon system, or choose a consistent library such as Lucide, Tabler, Heroicons, Phosphor, or Fluent Icons when no system exists.
+7. **Verify visually before claiming success.** Run the app, inspect the UI at relevant desktop and mobile viewports, and fix obvious overlap, blank areas, clipping, broken assets, and unreadable text.
 
 ## When To Use
 
@@ -79,9 +80,10 @@ Choose the workflow by the center of gravity:
 1. Reuse local components, tokens, utilities, icon libraries, and data-fetching patterns before adding dependencies.
 2. Build the complete workflow, not just a pretty static shell: controls, navigation, validation, feedback, empty/loading/error states, and realistic content.
 3. Keep layout dimensions stable with explicit constraints for fixed-format UI such as boards, tables, toolbars, cards, panels, charts, media, and icon buttons.
-4. Use semantic HTML and accessible component APIs. Preserve keyboard navigation, labels, focus indicators, hit targets, and reduced-motion options.
-5. Use visual assets when the domain needs inspection or atmosphere. Prefer real/product/place/person media or existing assets; use generated or custom assets only when appropriate.
-6. Keep changes scoped. Do not refactor unrelated modules or replace the project's design language unless the user requested a redesign.
+4. Use vector icons from the existing icon system or a single coherent icon library. Never use emoji as decorative stand-ins, status icons, toolbar icons, menu icons, or empty-state illustrations in production UI.
+5. Use semantic HTML and accessible component APIs. Preserve keyboard navigation, labels, focus indicators, hit targets, and reduced-motion options.
+6. Use visual assets when the domain needs inspection or atmosphere. Prefer real/product/place/person media or existing assets; use generated or custom assets only when appropriate.
+7. Keep changes scoped. Do not refactor unrelated modules or replace the project's design language unless the user requested a redesign.
 
 **Exit:** The UI is implemented in code with all primary states and responsive behavior represented.
 
@@ -130,6 +132,7 @@ Before finishing, confirm:
 - [ ] Primary, empty, loading, error, disabled, hover/focus, and small-screen states are handled where relevant.
 - [ ] Text does not overflow or overlap at tested viewports.
 - [ ] Icons, images, charts, and media render correctly.
+- [ ] Production icons come from a consistent SVG/vector icon system, not emoji.
 - [ ] Keyboard/focus/labels/contrast are acceptable for the changed UI.
 - [ ] Verification commands and browser/screenshot checks were actually run, or blockers are stated.
 

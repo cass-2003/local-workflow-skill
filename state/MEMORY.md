@@ -144,6 +144,13 @@
 - **影响**：来源层收敛为 `ours / codex / community`；合并工具可选外部来源使用 `PAW_EXTERNAL_SKILLS_*`，输出仍归入 community；新增授权来源时不得在用户导览中制造新的来源孤岛。
 - **时间**：2026-06-29
 
+### D-020 · 生产 UI 图标必须使用矢量图标体系
+
+- **决定**：UI / 设计系统任务中，emoji 不得作为生产图标、导航图标、状态标记、工具栏控件或空状态插画；必须使用项目现有 SVG/vector icon system，或统一选择 Lucide、Tabler、Heroicons、Phosphor、Fluent Icons 等矢量图标库。
+- **为什么**：emoji 在不同平台的渲染、尺寸、对齐、语义和品牌一致性不可控，容易让正式界面显得廉价且不稳定。
+- **影响**：`UIdesign`、UI quality checklist、research synthesis 和 `design-system-implementation` 都把 icon system 纳入实现与验收；后续 UI 交付要检查图标来源、风格、stroke/fill、尺寸、可访问名称和打包体积。
+- **时间**：2026-06-29
+
 ## 已知坑
 
 - `quick_validate.py` 不接受 `disable-model-invocation`、`user-invocable` 等旧 frontmatter 字段；新增或更新 skill 时只保留允许字段。
@@ -155,3 +162,4 @@
 - community 导入需要同时更新 `tools/skill-merge/provenance/<source>/`、`skills/_merge-manifest.csv`、`skills/README.md`、`skills/TIERS.md` 和路由矩阵，否则后续 agent 会看到不一致的能力库地图。
 - 第三方授权包的原始来源不要在公开导览里单独高亮；使用 `PAW_EXTERNAL_SKILLS_DIR` / `PAW_EXTERNAL_SKILLS_README` 作为可选导入入口，最终目录和索引统一归入 `community/`。
 - `openai/plugins` 当前包含大量官方示例 plugin skill，但根仓库未提供统一 LICENSE；导入时要优先找插件目录 LICENSE、插件 README 许可段或 skill frontmatter `license` 字段。
+- UI 任务若发现用 emoji 充当正式图标，应视为设计系统问题修复；只有聊天文本、文档示意或已有品牌规范明确要求时才可保留 emoji。
