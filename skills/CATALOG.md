@@ -20,7 +20,7 @@
 | 云部署 / DevOps / SRE | `cloud-infra`、`quality-delivery`、`engineering-core` | Docker/K8s、Render/Vercel/Netlify、监控、灾备、发布工程、FinOps |
 | 测试 / 交付 / 重构 | `quality-delivery`、`engineering-core` | 测试工程、CI 修复、性能测试、代码审计、迁移、重构、commit 纪律 |
 | 安全 / 渗透 / 合规 | `security-engineering`、`security-compliance`、`privacy-compliance`、`compliance-programs` | Web/API/云/移动安全、威胁建模、SOC、合规审计、隐私工程 |
-| 逆向 / 二进制 / 固件 | `reverse-engineering`、`hardware-systems` | Android/Windows/Linux/固件/协议/恶意样本逆向、漏洞分析 |
+| 逆向 / 二进制 / 固件 | `reverse-engineering`、`hardware-systems` | Android/Windows/Linux/固件/协议/恶意样本逆向、APK/JS 工具链编排、漏洞分析 |
 | 产品 / 增长 / 运营 | `product-management`、`product-growth`、`growth-experiments`、`marketing-analytics` | 产品发现、路线图、A/B 实验、漏斗、SEO、增长实验 |
 | 内容 / 营销 / 品牌 | `content-strategy`、`copywriting-editing`、`seo`、`social-media`、`brand-strategy` | 内容策略、文案、SEO、社媒、品牌指南、广告创意 |
 | 商业 / 销售 / 收入 | `commercial-strategy`、`sales-enablement`、`revenue-operations`、`finance` | 定价、渠道、RFP、销售工程、SaaS 指标、收入运营 |
@@ -67,7 +67,7 @@
 
 | 领域 | 覆盖内容 |
 |---|---|
-| `reverse-engineering` | 二进制、Android、固件、协议、恶意样本、崩溃、内存、内核、WebAssembly 逆向 |
+| `reverse-engineering` | 二进制、Android、固件、协议、恶意样本、崩溃、内存、内核、WebAssembly、授权 APK/JS 工具链编排 |
 | `security-engineering` | Web/API/云/容器/移动/IoT/区块链安全、安全架构、威胁建模 |
 | `medical-regulatory` | FDA QSR、ISO13485、MDR 医疗监管 |
 | `quality-management` | QMS、CAPA、质量文档 |

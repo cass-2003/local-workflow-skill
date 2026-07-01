@@ -8,7 +8,7 @@
 
 ![status](https://img.shields.io/badge/status-alpha-orange)
 ![agents](https://img.shields.io/badge/agents-Claude_Code_·_Codex-5b6cf9)
-![skills](https://img.shields.io/badge/skills-566-2ea44f)
+![skills](https://img.shields.io/badge/skills-567-2ea44f)
 ![domains](https://img.shields.io/badge/domains-58-2ea44f)
 ![format](https://img.shields.io/badge/core-pure_Markdown-lightgrey)
 ![deps](https://img.shields.io/badge/runtime_deps-0-blue)
@@ -66,8 +66,8 @@
 └───────────────────────────┬─────────────────────────────────┘
                             │ Phase 4/5 委托 ↓
 ┌───────────────────────────▼─────────────────────────────────┐
-│  🛠️ skills/   566 技能 / 58 领域大类（双层 <大类>/<来源>/）      │
-│       安全 85 · 逆向 63 · Render/Expo/前后端等领域持续扩展       │
+│  🛠️ skills/   567 技能 / 58 领域大类（双层 <大类>/<来源>/）      │
+│       安全 85 · 逆向 64 · Render/Expo/前后端等领域持续扩展       │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -151,12 +151,12 @@
 
 ---
 
-## 🛠️ 能力库（566 技能 · 58 大类）
+## 🛠️ 能力库（567 技能 · 58 大类）
 
 执行阶段委托的具体技能，四源合并去重，双层结构 `<领域大类>/<来源>/<skill>/`。如果你只是想知道“这个库到底会什么”，先看人类导览版：
 
 - [`skills/CATALOG.md`](skills/CATALOG.md)：按场景、领域和常用说法找能力
-- [`skills/DOMAIN-GLOSSARY.zh-CN.md`](skills/DOMAIN-GLOSSARY.zh-CN.md)：58 个领域和 566 个 skill slug 的中文对照
+- [`skills/DOMAIN-GLOSSARY.zh-CN.md`](skills/DOMAIN-GLOSSARY.zh-CN.md)：58 个领域和 567 个 skill slug 的中文对照
 - [`skills/README.md`](skills/README.md)：完整领域索引和 skill slug
 - [`skills/TIERS.md`](skills/TIERS.md)：通用 / 半通用分级
 
@@ -172,7 +172,7 @@
 | 云部署 / DevOps / SRE / CI | `cloud-infra`、`quality-delivery`、`engineering-core` |
 | 测试 / 代码审计 / 重构 / Git 交付 | `quality-delivery`、`engineering-core` |
 | 安全 / 渗透 / 合规 / 隐私 | `security-engineering`、`security-compliance`、`privacy-compliance` |
-| 逆向 / 二进制 / 固件 / 驱动 | `reverse-engineering`、`hardware-systems` |
+| 逆向 / 二进制 / 固件 / 驱动 | `reverse-engineering`、`hardware-systems`，授权 APK/JS 逆向工具链走 `reverse-toolkit-orchestration` |
 | 产品 / 增长 / 运营 / 营销 | `product-management`、`product-growth`、`growth-experiments`、`content-strategy` |
 | 商业 / 销售 / 收入 / 组织协作 | `commercial-strategy`、`sales-enablement`、`revenue-operations`、`business-operations` |
 | 研究 / 学习 / 文档 / 知识管理 | `research-knowledge`、`research-ops`、`literature-review`、`markdown-publishing` |
@@ -181,7 +181,7 @@
 
 | 🏷️ 领域 | 数量 | 🏷️ 领域 | 数量 | 🏷️ 领域 | 数量 |
 |:--|:-:|:--|:-:|:--|:-:|
-| 安全工程 | 85 | 逆向工程 | 63 | 云基础设施 | 37 |
+| 安全工程 | 85 | 逆向工程 | 64 | 云基础设施 | 37 |
 | 移动跨端 | 37 | 前端 UI | 30 | 后端 API | 29 |
 | 通用工程 | 26 | 质量交付 | 24 | 编程语言 | 21 |
 | AI 自动化 | 18 | 内容创作 | 14 | 支付电商 | 12 |
@@ -189,7 +189,7 @@
 | 硬件系统 | 8 | 产品增长 | 8 | 产品管理 | 8 |
 | 商业策略 | 7 | 业务运营 | 6 | 其余长尾领域 | 102 |
 
-技能按通用性分级：**🟢 通用 483 · 🟡 半通用 83 · 🔵 项目定制 0**（见 [`skills/TIERS.md`](skills/TIERS.md)）。完整索引见 [`skills/README.md`](skills/README.md)，中文对照见 [`skills/DOMAIN-GLOSSARY.zh-CN.md`](skills/DOMAIN-GLOSSARY.zh-CN.md)。
+技能按通用性分级：**🟢 通用 484 · 🟡 半通用 83 · 🔵 项目定制 0**（见 [`skills/TIERS.md`](skills/TIERS.md)）。完整索引见 [`skills/README.md`](skills/README.md)，中文对照见 [`skills/DOMAIN-GLOSSARY.zh-CN.md`](skills/DOMAIN-GLOSSARY.zh-CN.md)。
 
 ---
 
@@ -299,7 +299,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass `
 │   ├─ state-systems/       ★ 四态系统说明 + drop-in 模板
 │   ├─ adapters/            各家 Agent 适配登记（CC / Codex）
 │   └─ validation/          dogfood 样板 + 端到端验证报告
-├─ 🛠️ skills/              能力库：566 技能 / 58 大类
+├─ 🛠️ skills/              能力库：567 技能 / 58 大类
 │   ├─ README.md             领域索引
 │   ├─ TIERS.md              分级（通用/半通用；项目定制不进入开源库）
 │   ├─ _merge-manifest.csv   四源合并对照表
@@ -317,7 +317,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass `
 - [x] 📑 四态系统 drop-in 模板
 - [x] 🤖 Claude Code 适配器
 - [x] 🤖 Codex 适配器
-- [x] 🛠️ 四源合并丰富能力库（566 技能 / 58 大类）
+- [x] 🛠️ 四源合并丰富能力库（567 技能 / 58 大类）
 - [x] 🏷️ 能力库分级标记 + 项目定制项清理
 - [x] 🧪 Claude Code 侧端到端 dogfood 跑通
 - [x] 🧪 Codex 侧端到端实测

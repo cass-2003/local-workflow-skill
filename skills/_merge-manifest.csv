@@ -466,6 +466,7 @@ community,vulnrev,vulnrev,reverse-engineering,rule:community-path,no,reverse-eng
 community,wasmrev,wasmrev,reverse-engineering,rule:community-path,no,reverse-engineering/community/wasmrev,WIN,通用
 community,webrev,webrev,reverse-engineering,rule:community-path,no,reverse-engineering/community/webrev,WIN,通用
 community,winrev,winrev,reverse-engineering,rule:community-path,no,reverse-engineering/community/winrev,WIN,通用
+ours,reverse-toolkit-orchestration,reverse-toolkit-orchestration,reverse-engineering,rule:ours-path,yes,reverse-engineering/ours/reverse-toolkit-orchestration,WIN,通用
 community,contract-and-proposal-writer,contract-and-proposal-writer,sales-enablement,rule:community-path,yes,sales-enablement/community/contract-and-proposal-writer,WIN,通用
 community,sales-engineer,sales-engineer,sales-enablement,rule:community-path,yes,sales-enablement/community/sales-engineer,WIN,通用
 community,iso27001-audit-prep,iso27001-audit-prep,security-compliance,rule:community-path,yes,security-compliance/community/iso27001-audit-prep,WIN,通用

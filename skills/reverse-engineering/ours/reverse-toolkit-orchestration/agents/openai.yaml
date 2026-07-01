@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reverse Toolkit Orchestration"
+  short_description: "Orchestrate authorized APK and JS reverse workflows"
+  default_prompt: "Use this skill to plan an authorized APK or frontend JS reverse workflow and route tools safely."

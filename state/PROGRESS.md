@@ -30,6 +30,7 @@
 
 ## 已完成（近期）
 
+- [x] 新增 `reverse-toolkit-orchestration`，把授权 APK/JS 逆向套件总览沉淀为通用工具链编排 skill — 2026-07-01（详情可见 LOG.md）
 - [x] 加硬 UI 图标规范，禁止 emoji 充当生产图标并要求使用矢量 icon system — 2026-06-29（详情可见 LOG.md）
 - [x] 新增 `goal-driven-project-loop`，把“继续推进”抽象为多 agent 可复用的目标驱动项目循环 — 2026-06-29（详情可见 LOG.md）
 - [x] 新增 `skills/DOMAIN-GLOSSARY.zh-CN.md`，提供 58 个领域和 566 个 skill slug 的全量中文对照 — 2026-06-29（详情可见 LOG.md）
@@ -203,3 +204,17 @@
 - Commit: 待验证通过后使用 `docs: require interactive discovery questions`。
 - Next Goal: 同步到本机 Codex/Claude/`.agents` 技能镜像，并在新空目录项目中 dogfood。
 - Stop Reason: 本轮目标是需求发现 skill 行为补丁；验证和 commit 后停止，不自动 push。
+
+## Loop Record · 2026-07-01 · reverse-toolkit-orchestration
+
+- Goal: 将用户提供的 APK 逆向 / 前端 JS 逆向套件总览抽象为开源通用能力库中的授权工具链编排 skill。
+- Acceptance Criteria: 新增 `reverse-toolkit-orchestration`；覆盖授权门禁、APK 工作流、前端 JS 工作流、anything-analyzer/playwright-mcp/js-reverse-mcp/JADX/Apktool/Frida/IDA Pro MCP/IDA-NO-MCP/radare2 路由、证据契约和停止条件；不导入私有 `skills.zip`、硬编码路径或易过期 Star 统计；manifest、README、skills README、Catalog、TIERS、中文对照和四态系统同步。
+- State Restore: 已检查仓库 `AGENTS.md`、state 四态、现有逆向技能和源文档；当前能力库目标是通用开源，多 agent 可复用；本轮假设为只沉淀通用方法论，不导入本机/作者私有脚本。
+- Completed: 新增 `skills/reverse-engineering/ours/reverse-toolkit-orchestration/`，并把能力库计数更新为 567 技能 / 58 大类，逆向工程 64。
+- Validation Evidence: `quick_validate.py` 通过；manifest 计数为 567 winners / 58 domains / reverse-engineering 64 / ours 44 / 通用 484 / 半通用 83；中文对照覆盖 567 skill 行 / 58 领域段；授权边界和工具路由关键词扫描通过；`git diff --check` 仅有 Windows LF/CRLF 提示。
+- Self-Audit: 新 skill 是编排层，负责安全边界和工具选择；深度 APK、JS、二进制、协议和报告仍交给已有细分 skills，避免重复堆长文。
+- Repairs: 避免直接搬运源文档中的本机配套 skill、`skills.zip` 和可能过期的工具 Star/Fork 统计；保留稳定流程和证据要求。
+- State/Docs Sync: 已同步 README、skills README、Catalog、TIERS、DOMAIN-GLOSSARY、manifest、REQ/LOG/PROGRESS。
+- Commit: 待提交，使用 `feat: add reverse toolkit orchestration skill`。
+- Next Goal: 后续可在授权样本或 CTF/lab 场景 dogfood 该 skill，检查是否能稳定路由到 `webrev`、`android-reversing`、`binrev` 和 `rev-report`。
+- Stop Reason: 本轮只吸收套件总览为通用能力，不执行具体逆向目标。

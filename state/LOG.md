@@ -4,6 +4,13 @@
 
 ---
 
+## 2026-07-01
+
+- `feat` 新增授权 APK/JS 逆向工具链编排 skill。
+  - 触发：用户提供“APK 逆向 / 前端 JS 逆向全套工具套件与方法论”，希望评估并加入能力库。
+  - 范围：新增 `reverse-toolkit-orchestration`，把 anything-analyzer、playwright-mcp、js-reverse-mcp、JADX、Apktool、Frida、IDA Pro MCP、IDA-NO-MCP、radare2 等抽象为授权场景下的工具路由；补充 APK 与前端 JS 两条端到端流程、证据契约和停止条件；同步能力库计数为 567 技能 / 58 大类。
+  - 验证：`quick_validate.py` 通过；manifest 计数为 567 winners / 58 domains / reverse-engineering 64 / ours 44 / 通用 484 / 半通用 83；中文对照覆盖 567 skill 行 / 58 领域段；授权边界和工具路由关键词扫描通过；`git diff --check` 仅有 Windows LF/CRLF 提示。
+
 ## 2026-06-29
 
 - `change` 强化项目启动需求发现访谈，要求优先使用交互式提问工具分轮提问。

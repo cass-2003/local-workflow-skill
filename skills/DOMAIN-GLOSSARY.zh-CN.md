@@ -4,9 +4,9 @@
 
 ## 统计口径
 
-- 覆盖：566 个 winner skills / 58 个领域大类。
-- 来源：`codex` 271 · `community` 252 · `ours` 43。
-- 分级：半通用 83 · 通用 483。
+- 覆盖：567 个 winner skills / 58 个领域大类。
+- 来源：`codex` 271 · `community` 252 · `ours` 44。
+- 分级：半通用 83 · 通用 484。
 - 中文名是面向检索和结构审阅的参考译名；具体触发条件、边界和执行方式以每个 `SKILL.md` 为准。
 
 ## 来源层
@@ -22,7 +22,7 @@
 | 英文目录 | 中文名 | 数量 | 来源构成 | 一句话说明 |
 |---|---|---:|---|---|
 | `security-engineering` | 安全工程 | 85 | codex:83, community:2 | Web/API/云/容器/移动/IoT/区块链安全、红队、SOC、威胁建模和检测响应。 |
-| `reverse-engineering` | 逆向工程 | 63 | codex:6, community:57 | 二进制、移动、固件、协议、恶意样本、内核和漏洞逆向。 |
+| `reverse-engineering` | 逆向工程 | 64 | codex:6, community:57, ours:1 | 二进制、移动、固件、协议、恶意样本、内核、授权 APK/JS 工具链编排和漏洞逆向。 |
 | `cloud-infra` | 云与基础设施 | 37 | codex:31, community:6 | Docker、Kubernetes、部署平台、SRE、监控、灾备和成本治理。 |
 | `mobile-crossplatform` | 移动与跨端 | 37 | codex:18, community:11, ours:8 | iOS、Android、Flutter、React Native、Expo、uniapp、Taro 和小程序工程。 |
 | `frontend-ui` | 前端与 UI | 30 | codex:22, community:4, ours:4 | UI 设计、前端实现、设计系统、Figma、可访问性、性能和状态数据流。 |
@@ -721,7 +721,7 @@
 |---|---|---|---|
 | `revenue-operations` | 收入运营 | `community` | 通用 |
 
-### `reverse-engineering` — 逆向工程（63）
+### `reverse-engineering` — 逆向工程（64）
 
 | skill slug | 中文参考名 | 来源 | 分级 |
 |---|---|---|---|
@@ -788,6 +788,7 @@
 | `wasmrev` | WebAssembly逆向 | `community` | 通用 |
 | `webrev` | Web 客户端逆向 | `community` | 通用 |
 | `winrev` | Windows逆向 | `community` | 通用 |
+| `reverse-toolkit-orchestration` | 逆向工具链编排 | `ours` | 通用 |
 
 ### `sales-enablement` — 销售赋能（2）
 

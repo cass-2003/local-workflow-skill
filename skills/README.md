@@ -24,7 +24,7 @@
 
 ## 规模与结构
 
-**566 个技能 · 58 个领域大类**，由三个来源层合并去重并剔除项目定制项而成：
+**567 个技能 · 58 个领域大类**，由三个来源层合并去重并剔除项目定制项而成：
 
 | 来源 | 含义 | 去重优先级 |
 |---|---|---|
@@ -264,10 +264,11 @@
 > 来源：community 1
 - **community**：revenue-operations
 
-### reverse-engineering — 逆向工程（63）
-> 来源：codex 6 · community 57
+### reverse-engineering — 逆向工程（64）
+> 来源：codex 6 · community 57 · ours 1
 - **codex**：android-reversing、binary-exploit、dotnet-reversing、reverse-analysis、reverse-engineering、reverse-engineering-2
 - **community**：abirev、asmrev、autorev、binrev、bootrev、carrev、cloudrev、containerrev、contractrev、crashrev、cryptrev、debugrev、diffrev、diskrev、docrev、dotnetrev、drmrev、ebpfrev、edrrev、fmtrev、fuzzrev、fwrev、gamerev、gorev、hvrev、hwrev、icsrev、iotrev、irrev、javarev、kernrev、linuxrev、macrev、malrev、memrev、mitirev、mlrev、mobile-reverse-engineering、opsecrev、packrev、protrev、rev-report、revauto、revlab、rktrev、rustrev、scriptrev、sdkrev、sigrev、supplyrev、swiftrev、ttdrev、vmrev、vulnrev、wasmrev、webrev、winrev
+- **ours**：reverse-toolkit-orchestration
 
 ### sales-enablement — 销售赋能（2）
 > 来源：community 2
@@ -300,6 +301,6 @@
 - **ours**：goal-driven-project-loop、local-workflow、project-inception-docs、project-workflow
 ## 分级与变体（框架路线图阶段 6）
 
-- ✅ 已打"通用 / 半通用"标记，并剔除项目定制项：**通用 483 · 半通用 83 · 项目定制 0**，详见 `TIERS.md`。
+- ✅ 已打"通用 / 半通用"标记，并剔除项目定制项：**通用 484 · 半通用 83 · 项目定制 0**，详见 `TIERS.md`。
 - ✅ 已去掉全部 `anna-*`/`coff0xc-*` 前缀（36 个，技能全保留）；同域同源真撞名的 10 个取 `-2` 后缀。
 - `_merge-manifest.csv`（已含 `tier` 列）是后续筛选的工作底稿。
